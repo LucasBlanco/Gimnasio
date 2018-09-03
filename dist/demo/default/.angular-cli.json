@@ -18,6 +18,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "m",
       "styles": [
+		  "../node_modules/select2/dist/css/select2.css",
+		  "../node_modules/animate.css/animate.css",
 		"styles.scss",
 		"assets/vendors/base/vendors.bundle.css",
 		"assets/demo/default/base/style.bundle.css",
@@ -26,7 +28,8 @@
 	  
       "scripts": [
 		"assets/vendors/base/vendors.bundle.js",
-		"assets/demo/default/base/scripts.bundle.js"
+    "assets/demo/default/base/scripts.bundle.js",
+    "../node_modules/datatables.net/js/jquery.dataTables.min.js"
 	],
       "environmentSource": "environments/environment.ts",
       "environments": {

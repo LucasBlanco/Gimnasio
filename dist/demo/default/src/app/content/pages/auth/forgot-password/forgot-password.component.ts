@@ -11,7 +11,6 @@ import { AuthenticationService } from '../../../../core/auth/authentication.serv
 import { NgForm } from '@angular/forms';
 import * as objectPath from 'object-path';
 import { AuthNoticeService } from '../../../../core/auth/auth-notice.service';
-import { SpinnerButtonOptions } from '../../../partials/content/general/spinner-button/button-options.interface';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -28,15 +27,6 @@ export class ForgotPasswordComponent implements OnInit {
 	@ViewChild('f') f: NgForm;
 	errors: any = [];
 
-	spinner: SpinnerButtonOptions = {
-		active: false,
-		spinnerSize: 18,
-		raised: true,
-		buttonColor: 'primary',
-		spinnerColor: 'accent',
-		fullWidth: false
-	};
-
 	constructor(
 		private authService: AuthenticationService,
 		public authNoticeService: AuthNoticeService,
@@ -52,7 +42,6 @@ export class ForgotPasswordComponent implements OnInit {
 	}
 
 	submit() {
-		this.spinner.active = true;
 		if (this.validate(this.f)) {
 			this.authService.requestPassword(this.model).subscribe(response => {
 				if (typeof response !== 'undefined') {
@@ -62,7 +51,6 @@ export class ForgotPasswordComponent implements OnInit {
 					// tslint:disable-next-line:max-line-length
 					this.authNoticeService.setNotice(this.translate.instant('AUTH.VALIDATION.NOT_FOUND', {name: this.translate.instant('AUTH.INPUT.EMAIL')}), 'error');
 				}
-				this.spinner.active = false;
 			});
 		}
 	}
@@ -82,7 +70,6 @@ export class ForgotPasswordComponent implements OnInit {
 
 		if (this.errors.length > 0) {
 			this.authNoticeService.setNotice(this.errors.join('<br/>'), 'error');
-			this.spinner.active = false;
 		}
 
 		return false;

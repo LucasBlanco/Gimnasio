@@ -1,0 +1,13 @@
+.modal-dialog {
+   max-width: 90%;
+   width: auto !important;
+   display: inline-block;
+}
+
+.modal-content {
+  height: 99%;
+}
+
+.modal {
+    text-align: center;
+}

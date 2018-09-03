@@ -1,6 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 //@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.TablaBlue{
+	border: 1px solid red;
+}
+
+.HeaderTablaBlue {
+	border-radius: 5px;
+	text-align: center;
+	color: white;
+	background: #4d8fc1;
+}
+
+.FooterTabla {
+	background-color: #d1d1d1;
+	color: rgb(71, 71, 71);
+}
 .mat-table__wrapper {
 	width: 100%;
 	overflow-x: auto;

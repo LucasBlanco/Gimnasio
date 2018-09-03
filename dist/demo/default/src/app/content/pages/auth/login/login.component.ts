@@ -15,7 +15,6 @@ import { AuthNoticeService } from '../../../../core/auth/auth-notice.service';
 import { NgForm } from '@angular/forms';
 import * as objectPath from 'object-path';
 import { TranslateService } from '@ngx-translate/core';
-import { SpinnerButtonOptions } from '../../../partials/content/general/spinner-button/button-options.interface';
 
 @Component({
 	selector: 'm-login',
@@ -33,15 +32,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 	@ViewChild('f') f: NgForm;
 	errors: any = [];
 
-	spinner: SpinnerButtonOptions = {
-		active: false,
-		spinnerSize: 18,
-		raised: true,
-		buttonColor: 'primary',
-		spinnerColor: 'accent',
-		fullWidth: false
-	};
-
 	constructor(
 		private authService: AuthenticationService,
 		private router: Router,
@@ -51,7 +41,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 	) {}
 
 	submit() {
-		this.spinner.active = true;
 		if (this.validate(this.f)) {
 			this.authService.login(this.model).subscribe(response => {
 				if (typeof response !== 'undefined') {
@@ -59,7 +48,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 				} else {
 					this.authNoticeService.setNotice(this.translate.instant('AUTH.VALIDATION.INVALID_LOGIN'), 'error');
 				}
-				this.spinner.active = false;
 				this.cdr.detectChanges();
 			});
 		}
@@ -101,7 +89,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 		if (this.errors.length > 0) {
 			this.authNoticeService.setNotice(this.errors.join('<br/>'), 'error');
-			this.spinner.active = false;
+
 		}
 
 		return false;

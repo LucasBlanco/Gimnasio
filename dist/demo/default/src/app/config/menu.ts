@@ -464,342 +464,40 @@ export class MenuConfig implements ConfigModel {
 						badge: {type: 'm-badge--danger', value: '2'},
 						translate: 'MENU.DASHBOARD'
 					},
-					{section: 'Components'},
+					{section: 'Gestion de socios'},
 					{
-						title: 'Google Material',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-interface-7',
-						submenu: [
-							{
-								title: 'Form Controls',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Auto Complete',
-										page: '/material/form-controls/autocomplete'
-									},
-									{
-										title: 'Checkbox',
-										page: '/material/form-controls/checkbox'
-									},
-									{
-										title: 'Radio Button',
-										page: '/material/form-controls/radiobutton'
-									},
-									{
-										title: 'Datepicker',
-										page: '/material/form-controls/datepicker'
-									},
-									{
-										title: 'Form Field',
-										page: '/material/form-controls/formfield'
-									},
-									{
-										title: 'Input',
-										page: '/material/form-controls/input'
-									},
-									{
-										title: 'Select',
-										page: '/material/form-controls/select'
-									},
-									{
-										title: 'Slider',
-										page: '/material/form-controls/slider'
-									},
-									{
-										title: 'Slider Toggle',
-										page:
-											'/material/form-controls/slidertoggle'
-									}
-								]
-							},
-							{
-								title: 'Navigation',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Menu',
-										page: '/material/navigation/menu'
-									},
-									{
-										title: 'Sidenav',
-										page: '/material/navigation/sidenav'
-									},
-									{
-										title: 'Toolbar',
-										page: '/material/navigation/toolbar'
-									}
-								]
-							},
-							{
-								title: 'Layout',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Card',
-										page: '/material/layout/card'
-									},
-									{
-										title: 'Divider',
-										page: '/material/layout/divider'
-									},
-									{
-										title: 'Expansion panel',
-										page: '/material/layout/expansion-panel'
-									},
-									{
-										title: 'Grid list',
-										page: '/material/layout/grid-list'
-									},
-									{
-										title: 'List',
-										page: '/material/layout/list'
-									},
-									{
-										title: 'Tabs',
-										page: '/material/layout/tabs'
-									},
-									{
-										title: 'Stepper',
-										page: '/material/layout/stepper'
-									},
-									{
-										title: 'Default Forms',
-										page: '/material/layout/default-forms'
-									},
-									{
-										title: 'Tree',
-										page: '/material/layout/tree'
-									}
-								]
-							},
-							{
-								title: 'Buttons & Indicators',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Button',
-										page:
-											'/material/buttons-and-indicators/button'
-									},
-									{
-										title: 'Button toggle',
-										page:
-											'/material/buttons-and-indicators/button-toggle'
-									},
-									{
-										title: 'Chips',
-										page:
-											'/material/buttons-and-indicators/chips'
-									},
-									{
-										title: 'Icon',
-										page:
-											'/material/buttons-and-indicators/icon'
-									},
-									{
-										title: 'Progress bar',
-										page:
-											'/material/buttons-and-indicators/progress-bar'
-									},
-									{
-										title: 'Progress spinner',
-										page:
-											'/material/buttons-and-indicators/progress-spinner'
-									}
-								]
-							},
-							{
-								title: 'Popups & Modals',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Bottom sheet',
-										page:
-											'/material/popups-and-modals/bottom-sheet'
-									},
-									{
-										title: 'Dialog',
-										page:
-											'/material/popups-and-modals/dialog'
-									},
-									{
-										title: 'Snackbar',
-										page:
-											'/material/popups-and-modals/snackbar'
-									},
-									{
-										title: 'Tooltip',
-										page:
-											'/material/popups-and-modals/tooltip'
-									}
-								]
-							},
-							{
-								title: 'Data table',
-								bullet: 'dot',
-								submenu: [
-									{
-										title: 'Paginator',
-										page: '/material/data-table/paginator'
-									},
-									{
-										title: 'Sort header',
-										page: '/material/data-table/sort-header'
-									},
-									{
-										title: 'Table',
-										page: '/material/data-table/table'
-									}
-								]
-							}
-						]
-					},
-					{
-						title: 'Ng-Bootstrap',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-multimedia-1',
-						submenu: [
-							{
-								title: 'Accordion',
-								page: '/ngbootstrap/accordion'
-							},
-							{
-								title: 'Alert',
-								page: '/ngbootstrap/alert'
-							},
-							{
-								title: 'Buttons',
-								page: '/ngbootstrap/buttons'
-							},
-							{
-								title: 'Carousel',
-								page: '/ngbootstrap/carousel'
-							},
-							{
-								title: 'Collapse',
-								page: '/ngbootstrap/collapse'
-							},
-							{
-								title: 'Datepicker',
-								page: '/ngbootstrap/datepicker'
-							},
-							{
-								title: 'Dropdown',
-								page: '/ngbootstrap/dropdown'
-							},
-							{
-								title: 'Modal',
-								page: '/ngbootstrap/modal'
-							},
-							{
-								title: 'Pagination',
-								page: '/ngbootstrap/pagination'
-							},
-							{
-								title: 'Popover',
-								page: '/ngbootstrap/popover'
-							},
-							{
-								title: 'Progressbar',
-								page: '/ngbootstrap/progressbar'
-							},
-							{
-								title: 'Rating',
-								page: '/ngbootstrap/rating'
-							},
-							{
-								title: 'Tabs',
-								page: '/ngbootstrap/tabs'
-							},
-							{
-								title: 'Timepicker',
-								page: '/ngbootstrap/timepicker'
-							},
-							{
-								title: 'Tooltips',
-								page: '/ngbootstrap/tooltip'
-							},
-							{
-								title: 'Typehead',
-								page: '/ngbootstrap/typehead'
-							}
-						]
-					},
-					{
-						title: 'Metronic',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-interface-8',
-						submenu: [
-							{
-								title: 'Accordion',
-								page: '/metronic/accordion'
-							},
-							{
-								title: 'Sticky Form Actions',
-								page: '/metronic/sticky-form-actions'
-							},
-							{
-								title: 'Forms',
-								page: '/metronic/forms'
-							}
-						]
-					},
-					{section: 'Applications'},
-					{
-						title: 'eCommerce',
-						bullet: 'dot',
-						icon: 'flaticon-business',
-						root: true,
-						submenu: [
-							{
-								title: 'Customers',
-								page: '/ecommerce/customers'
-							},
-							{
-								title: 'Orders',
-								page: '/ecommerce/orders'
-							},
-							{
-								title: 'Products',
-								page: '/ecommerce/products'
-							},
-							// {
-							// 	title: 'Create Product',
-							// 	page: '/ecommerce/products/add'
-							// }
-						]
-					},
-					{
-						title: 'User Management',
+						title: 'Socios',
 						root: true,
 						bullet: 'dot',
 						icon: 'flaticon-user',
-						page: '/user-management'
-					},
-					{
-						title: 'Audit Log',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-interface-5',
-						page: '/audit-log'
-					},
-					{section: 'Pages'},
-					{
-						title: 'User',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-interface-1',
 						submenu: [
 							{
-								title: 'Profile',
-								page: '/profile'
+								title: 'Alta',
+								page: '/socios/am'
 							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/socios/tabla'
+							}
 						]
 					},
+					{ section: 'Ventas' },
+					{
+						title: 'Clases',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-coins',
+						page: '/pagos/1'
+					},
+					{ section: 'Caja' },
+					{
+						title: 'Caja',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-bag',
+						page: '/caja'
+					},
+					{ section: 'Otros' },
 					{
 						title: 'Error',
 						root: true,

@@ -10,10 +10,8 @@ import { AuthenticationModule } from './core/auth/authentication.module';
 import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { FakeApiService } from './fake-api/fake-api.service';
 
 import { LayoutModule } from './content/layout/layout.module';
-import { PartialsModule } from './content/partials/partials.module';
 import { CoreModule } from './core/core.module';
 import { AclService } from './core/services/acl.service';
 import { LayoutConfigService } from './core/services/layout-config.service';
@@ -42,7 +40,6 @@ import { MenuHorizontalService } from './core/services/layout/menu-horizontal.se
 import { MenuAsideService } from './core/services/layout/menu-aside.service';
 import { LayoutRefService } from './core/services/layout/layout-ref.service';
 import { SplashScreenService } from './core/services/splash-screen.service';
-import { DataTableService } from './core/services/datatable.service';
 
 import 'hammerjs';
 
@@ -57,16 +54,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
-		HttpClientInMemoryWebApiModule.forRoot(FakeApiService),
 		LayoutModule,
-		PartialsModule,
 		CoreModule,
 		OverlayModule,
 		AuthenticationModule,
 		NgxPermissionsModule.forRoot(),
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
-		MatProgressSpinnerModule,
+		MatProgressSpinnerModule
 	],
 	providers: [
 		AclService,
@@ -82,7 +77,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		ClipboardService,
 		LogsService,
 		QuickSearchService,
-		DataTableService,
 		SplashScreenService,
 		{
 			provide: PERFECT_SCROLLBAR_CONFIG,

@@ -1,0 +1,88 @@
+<div class="m-portlet">
+	<div class="m-content">
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="m-portlet m-portlet--tab">
+					<div class="m-portlet__head">
+						<div class="m-portlet__head-caption">
+							<div class="m-portlet__head-title">
+						<span class="m-portlet__head-icon m--hide">
+						<i class="la la-gear"></i>
+						</span>
+								<h3 class="m-portlet__head-text">
+									Pago de Socios
+								</h3>
+							</div>
+						</div>
+					</div>
+					<!--begin::Form-->
+					<form class="m-form m-form--fit m-form--label-align-right" (submit)="buscarSocio()">
+						<div class="m-portlet__body">
+							<div class="form-group m-form__group">
+								<div class="row">
+									<div class="col-lg-2 m--align-center m--alig">
+										<label >Nombre</label>
+									</div>
+									<div class="col-lg-7">
+										<input type="text" class="form-control m-input m-input--air" name="numbre" [(ngModel)]="socioABuscar.nombre" placeholder="Juan">
+									</div>
+								</div>
+							</div>
+							<div class="form-group m-form__group">
+								<div class="row">
+									<div class="col-lg-2 m--align-center m--alig">
+										<label>Apellido</label>
+									</div>
+									<div class="col-lg-7">
+										<input type="text" class="form-control m-input m-input--air" name="apellido" [(ngModel)]="socioABuscar.apellido" placeholder="Garcia">
+									</div>
+								</div>
+							</div>
+							<div class="form-group m-form__group">
+								<div class="row">
+									<div class="col-lg-2 m--align-center m--alig">
+										<label>Dni</label>
+									</div>
+									<div class="col-lg-7">
+										<input type="number" class="form-control m-input m-input--air" name="dni" [(ngModel)]="socioABuscar.dni" placeholder="12345678">
+									</div>
+								</div>
+							</div>
+							<!--<div class="form-group m-form__group row">
+								<div class="col-md-6 col-lg-6 row">
+									<label class="col-lg-3 col-form-label">Clases:</label>
+									<div class="col-lg-9 col-md-9 col-sm-12">
+										<select class="js-example-basic-multiple" id="filtroObraSocial" name="states[]" multiple="multiple" style="width: inherit !important">
+											<option [value]="clase.nombre" *ngFor="let clase of clases"  style="width: inherit !important">{{clase.nombre}}</option>
+										</select>
+									</div>
+								</div>
+							</div>-->
+						</div>
+						<div class="m-portlet__foot m-portlet__foot--fit">
+							<div class="m-form__actions">
+								<div class="row">
+									<div class="col-lg-6">
+										<button type="submit" class="btn btn-accent">Buscar</button>
+										<button type="button" class="btn btn-secondary" (click)="borrar()">Cancelar</button>
+									</div>
+									<div class="col-lg-6 m--align-right">
+										<button type="button" class="btn btn-warning" (click)="cobrarSocio()" [disabled]="this.socioEncontrado.dni == null">Vender</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!--end::Form-->
+				</div>
+			</div>
+
+			<div class="col-lg-5">
+				<div [@expandContract]="change" (@expandContract.done)="change='out'">
+					<m-ficha-socio [socio]="socioEncontrado"></m-ficha-socio>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

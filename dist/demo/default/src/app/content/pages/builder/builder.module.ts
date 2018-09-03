@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '../../layout/layout.module';
 import { BuilderComponent } from './builder.component';
-import { PartialsModule } from '../../partials/partials.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material';
@@ -14,7 +13,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 	imports: [
 		CommonModule,
 		LayoutModule,
-		PartialsModule,
 		FormsModule,
 		NgbModule,
 		MatTabsModule,

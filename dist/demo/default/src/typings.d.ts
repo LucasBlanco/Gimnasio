@@ -12,3 +12,5 @@ declare var mToggle: any;
 declare var mQuicksearch: any;
 declare var mUtil: any;
 declare var mPortlet: any;
+declare var mDatatable: any
+

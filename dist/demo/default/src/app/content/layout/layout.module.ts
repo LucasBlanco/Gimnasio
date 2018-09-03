@@ -1,4 +1,4 @@
-import { ListTimelineModule } from '../partials/layout/quick-sidebar/list-timeline/list-timeline.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -101,7 +101,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		PerfectScrollbarModule,
 		NgbModule,
 		FormsModule,
-		ListTimelineModule,
 		MatProgressBarModule,
 		MatTabsModule,
 		MatButtonModule,

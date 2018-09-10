@@ -3,6 +3,7 @@ import {Socio} from "../../../models/socio";
 import {AMSociosComponent} from "./am-socios/am-socios.component";
 import {ActivatedRoute, Params} from "@angular/router";
 import {animate, style, transition, trigger} from "@angular/animations";
+import {HttpServiceSocios} from "../../../services/htppServiceSocios";
 
 @Component({
   selector: 'm-abm-socios',
@@ -20,7 +21,7 @@ export class AbmSociosComponent implements OnInit {
 	socioSeleccionado: Socio = new Socio()
 	editando: Boolean = true
 	realizandoAlta: Boolean = true
-  constructor( private router: ActivatedRoute) {
+  constructor( private router: ActivatedRoute, private httpService: HttpServiceSocios) {
   }
 
   ngOnInit() {
@@ -33,6 +34,9 @@ export class AbmSociosComponent implements OnInit {
 
   realizarAlta(socio: Socio){
   	console.log('Alta', socio)
+	  this.httpService.postSocio(socio).then( () =>{
+		  console.log('Socio creado')
+	  })
   }
 
 	cargarDatosModificacion(socio: Socio){

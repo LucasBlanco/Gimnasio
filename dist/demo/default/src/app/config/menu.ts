@@ -495,7 +495,16 @@ export class MenuConfig implements ConfigModel {
 						root: true,
 						bullet: 'dot',
 						icon: 'flaticon-bag',
-						page: '/caja'
+						submenu: [
+							{
+								title: 'Ingresos/egresos',
+								page: '/caja/ingresos'
+							},
+							{
+								title: 'Movimientos',
+								page: '/caja/movimientos'
+							}
+						]
 					},
 					{ section: 'Otros' },
 					{

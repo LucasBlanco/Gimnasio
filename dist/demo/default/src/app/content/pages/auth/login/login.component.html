@@ -7,18 +7,21 @@
 	<m-auth-notice></m-auth-notice>
 
 	<!--begin::Form-->
-	<form class="m-login__form m-form" name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+	<form class="m-login__form m-form" name="form" (ngSubmit)="login(model.user, model.password)" #f="ngForm" novalidate>
 		<div class="form-group">
 			<mat-form-field>
-				<mat-label>Email</mat-label>
-				<input matInput type="email" name="email" placeholder="Email address" autocomplete="off" [(ngModel)]="model.email" #email="ngModel" email="true" required>
+				<mat-label>Usuario</mat-label>
+				<input matInput type="text" name="email" placeholder="Usuario" autocomplete="off" [(ngModel)]="model.user" #email="ngModel" email="true" required>
 			</mat-form-field>
 		</div>
 		<div class="form-group">
 			<mat-form-field>
 				<mat-label>Password</mat-label>
-				<input matInput minlength="4" type="password" name="password" placeholder="Password" autocomplete="off" [(ngModel)]="model.password" #password="ngModel" required>
+				<input matInput minlength="4" type="password" name="password" placeholder="Contraseña" autocomplete="off" [(ngModel)]="model.password" #password="ngModel" required>
 			</mat-form-field>
+		</div>
+		<div class="m-form__actions">
+			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 	</form>
 	<!--end::Form-->

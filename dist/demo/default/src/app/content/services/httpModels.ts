@@ -1,9 +1,9 @@
 export class Post {
 	url: string;
 	data: any;
-	mensajeExito: string;
-	mensajeError: any;
-	constructor(url, data, mensajeExito, mensajeError) {
+	mensajeExito?: string;
+	mensajeError?: any;
+	constructor(url, data, mensajeExito?, mensajeError?) {
 		this.url = url;
 		this.data = data;
 		this.mensajeExito = mensajeExito;

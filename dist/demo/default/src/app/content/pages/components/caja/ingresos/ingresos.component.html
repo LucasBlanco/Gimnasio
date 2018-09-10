@@ -1,0 +1,80 @@
+<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
+	<div class="m-portlet__head">
+		<div class="m-portlet__head-caption">
+			<div class="m-portlet__head-title">
+        			<span class="m-portlet__head-icon">
+          				<i class="flaticon-user"></i>
+        			</span>
+				<h3 class="m-portlet__head-text">
+					Ingreso/egreso de caja
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="m-portlet__body">
+	<form class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed" (ngSubmit)="enviarEvento()" ngNativeValidate>
+		<div class="m-portlet__body">
+			<div class="form-group m-form__group row">
+				<div class="col-lg-6">
+					<label>* Monto:</label>
+					<input type="number" class="form-control m-input" placeholder="123" name="nombre"
+						   [(ngModel)]="caja.monto"
+						   required>
+					<span class="m-form__help">Ingrese el monto del producto</span>
+				</div>
+				<div class="col-lg-6">
+					<label class="">* Concepto:</label>
+					<input type="text" class="form-control m-input" placeholder="Bebida" name="apellido"
+					[(ngModel)]="caja.concepto"
+					required>
+					<span class="m-form__help">Ingrese el tipo de producto</span>
+				</div>
+			</div>
+			<div class="form-group m-form__group row">
+				<div class="col-lg-6">
+					<label class="">Tipo de pago:</label>
+					<div class="m-input-icon m-input-icon--right">
+						<input type="email" class="form-control m-input" name="email" placeholder="jperez@gmail.com"
+							   [(ngModel)]="caja.tipoDePago">
+					</div>
+					<span class="m-form__help">Ingrse el tipo de pago</span>
+				</div>
+				<div class="col-lg-6">
+					<label>Observacion:</label>
+					<div class="m-input-icon m-input-icon--right">
+						<input type="text" class="form-control m-input" name="nroSocio"
+							   [(ngModel)]="caja.observacion" required>
+					</div>
+					<span class="m-form__help">Ingrese una observacion</span>
+				</div>
+
+			</div>
+			<div class="form-group m-form__group row">
+				<div class="col-lg-6">
+					<label>Tipo de transaccion:</label>
+					<div class="m-radio-inline">
+						<label class="m-radio m-radio--solid">
+							<input type="radio" name="example_2" value="ingreso" [(ngModel)]="tipo"> Ingreso
+							<span></span>
+						</label>
+						<label class="m-radio m-radio--solid">
+							<input type="radio" name="example_2" value="egreso" [(ngModel)]="tipo"> Egreso
+							<span></span>
+						</label>
+					</div>
+					<span class="m-form__help">Seleccione el tipo de transaccion</span>
+				</div>
+			</div>
+		</div>
+		<div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
+			<div class="m-form__actions m-form__actions--solid">
+				<div class="row">
+					<div class="col-lg-6">
+						<button type="reset" class="btn btn-primary">Guardar</button>
+						<button type="reset" class="btn btn-secondary">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	</div>

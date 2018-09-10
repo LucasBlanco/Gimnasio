@@ -15,6 +15,8 @@ import { AuthNoticeService } from '../../../../core/auth/auth-notice.service';
 import { NgForm } from '@angular/forms';
 import * as objectPath from 'object-path';
 import { TranslateService } from '@ngx-translate/core';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import * as JWT from 'jwt-decode';
 
 @Component({
 	selector: 'm-login',
@@ -23,9 +25,10 @@ import { TranslateService } from '@ngx-translate/core';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit, OnDestroy {
-	public model: any = { email: 'admin@demo.com', password: 'demo' };
+	public model: any = { user: 'prueba', password: 'prueba' };
 	@Output() actionChange = new Subject<string>();
 	public loading = false;
+
 
 	@Input() action: string;
 
@@ -37,8 +40,29 @@ export class LoginComponent implements OnInit, OnDestroy {
 		private router: Router,
 		public authNoticeService: AuthNoticeService,
 		private translate: TranslateService,
-		private cdr: ChangeDetectorRef
+		private cdr: ChangeDetectorRef,
+		private http: Http
 	) {}
+
+	login(usuario: string, password: string) {
+
+		let userlogin: any = {};
+		userlogin.name = usuario;
+		userlogin.password = password;
+		let header = new Headers({ 'Content-Type': 'application/json' });
+		let options = new RequestOptions({ headers: header });
+		// https://agile-escarpment-72391.herokuapp.com
+		return this.http.post("http://localhost:8000/login", userlogin, options)
+			.toPromise()
+			.then((response: any) => {
+				let token = JSON.parse(response._body).data.token
+				let permisos = JWT(token).permisos
+				let user = JWT(token).user_id;
+				localStorage.setItem('user', JSON.stringify(user));
+				localStorage.setItem('token', token);
+				this.router.navigate(['/']);
+			})
+	}
 
 	submit() {
 		if (this.validate(this.f)) {

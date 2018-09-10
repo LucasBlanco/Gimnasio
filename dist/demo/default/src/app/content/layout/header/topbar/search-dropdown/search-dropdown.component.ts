@@ -22,6 +22,7 @@ import { QuickSearchService } from '../../../../../core/services/quick-search.se
 export class SearchDropdownComponent
 	implements OnInit, OnDestroy, AfterViewInit {
 	onSearch: Subscription;
+	idSocio
 	onLayoutConfigUpdated: Subscription;
 	@HostBinding('class') classes = '';
 	@HostBinding('id') id = 'm_quicksearch';
@@ -60,6 +61,10 @@ export class SearchDropdownComponent
 
 	ngOnDestroy() {
 		this.onSearch.unsubscribe();
+	}
+
+	buscarSocio(){
+
 	}
 
 	ngAfterViewInit(): void {

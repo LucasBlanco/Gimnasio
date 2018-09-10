@@ -1,3 +1,4 @@
+<div class="table-responsive-sm">
 <table class="table table-striped ">
 	<thead class="HeaderTablaBlue">
 		<tr>
@@ -90,7 +91,7 @@
 			<td [attr.colspan]="nombreColumnas.length+1">
 				<div class="form-group m-form__group row" style="margin-bottom: 0px;">
 					<label class="col-xl-1 col-lg-1 col-md-3 col-form-label">Registros:</label>
-					<div class="col-xl-1 col-lg-1 col-md-3">
+					<div class="col-xl-1 col-lg-2 col-md-4 col-sm-4">
 						<select style="cursor: pointer; text-align: center;" [(ngModel)]="Paginador.cantReg" (change)="Paginador.refreshPaginador()"
 						    class="form-control m-input" name="cantReg" required>
 							<option value="10" selected>10</option>
@@ -108,3 +109,4 @@
 		</tr>
 	</tfoot>
 </table>
+</div>

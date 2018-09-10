@@ -18,7 +18,6 @@ import { PageConfigService } from './core/services/page-config.service';
 import { filter } from 'rxjs/operators';
 import { SplashScreenService } from './core/services/splash-screen.service';
 import { AclService } from './core/services/acl.service';
-
 // language list
 import { locale as enLang } from './config/i18n/en';
 import { locale as chLang } from './config/i18n/ch';

@@ -24,7 +24,7 @@ const routes: Routes = [
 				component: PagoSociosComponent
 			},
 			{
-				path: 'caja',
+				path: 'caja/:view',
 				component: CajaComponent
 			},
 			{

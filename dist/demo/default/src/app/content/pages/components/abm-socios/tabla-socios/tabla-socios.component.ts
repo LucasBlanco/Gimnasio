@@ -2,6 +2,7 @@ import {Component, OnInit, AfterViewInit, ViewChild, Output, Input, EventEmitter
 import {Socio} from '../../../../models/socio';
 import {TablaComponent} from '../../shared-components/tabla/tabla.component';
 import {Router} from "@angular/router";
+import {HttpServiceSocios} from "../../../../services/htppServiceSocios";
 declare var $: any
 
 @Component({
@@ -31,11 +32,14 @@ export class TablaSociosComponent implements AfterViewInit, OnInit {
 	@Output('modificar') emitModificacion: EventEmitter<Socio> = new EventEmitter()
 	@ViewChild(TablaComponent) tabla: TablaComponent
 
-	constructor() {
+	constructor( private httpService: HttpServiceSocios) {
 
 	}
-	ngOnInit(){
-		this.socios = [new Socio('Carlos', 'Garcia', 'cgarcia@email.com', '2018-05-15', 123, 'mensual', 123,)]
+	ngOnInit() {
+		// this.socios = [new Socio('Carlos', 'Garcia', 'cgarcia@email.com', '2018-05-15', 123, 'mensual', 123,)]
+		this.httpService.getSocios().then(socios => {
+			(this.socios as any) = socios
+		})
 	}
 
 	ngAfterViewInit() {

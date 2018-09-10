@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import { PagoSocio } from 'models/pago-socio'
 import {Socio} from "../../../models/socio";
 import {
 	trigger,
@@ -11,7 +10,6 @@ import {HttpServiceSocios} from "../../../services/htppServiceSocios";
 import * as select2 from 'select2'
 import {ActivatedRoute} from "@angular/router";
 declare var $: any
-
 @Component({
   selector: 'm-pago-socios',
   templateUrl: './pago-socios.component.html',
@@ -34,9 +32,9 @@ export class PagoSociosComponent implements OnInit, AfterViewInit {
 
 	socios: Array<Socio>
 	clases: Array<{nombre: string, id: number}>
-	socioABuscar: {nombre: string, apellido: string, dni: number} = {nombre: null, apellido: null, dni: null}
+	venta: {clases: Array<{nombre: string, cantDias: number}>, promocion: string} = {clases: [], promocion: null}
 	socioEncontrado: Socio = new Socio()
-	dummySocio: Socio = new Socio()
+	cantidadDeClases: Array<any>= [null]
 	change: string = ''
 
   constructor(private service: HttpServiceSocios, private route: ActivatedRoute ) {
@@ -53,16 +51,20 @@ export class PagoSociosComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(){
-	}
-  buscarSocio(){
-		let socioEncontrado = this.socios.find(socio => socio.nombre === this.socioABuscar.nombre || socio.apellido === this.socioABuscar.apellido || socio.dni === this.socioABuscar.dni)
-	  	this.socioEncontrado = (socioEncontrado)? socioEncontrado : this.dummySocio
-	  	this.change = 'in'
-	}
+		$('.js-example-basic-multiple').select2()
+		/*jQuery('#filtroObraSocial').on(
+			'change',
+			(e) => {
+				console.log('Hola')
+				(<any>this.filtros.obrasSociales) = jQuery(e.target).val()
+				if (this.filtros.obrasSociales.some(elem => elem == 'Seleccionar todos')) {
+					let obrasSociales = this.obrasSociales.filter(os => os.nombre != 'Seleccionar todos').map(os => os.nombre)
+					$('#filtroObraSocial').val(obrasSociales);
+					$('#filtroObraSocial').trigger('change');
+				}
+			}
+		);*/
 
-	borrar(){
-		this.socioABuscar = {nombre: null, apellido:null, dni: null}
-		this.socioEncontrado = new Socio()
 	}
 
 	cobrarSocio(){

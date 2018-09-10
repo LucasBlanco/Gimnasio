@@ -19,7 +19,8 @@ import {CajaComponent} from "./components/caja/caja.component";
 import {PagoSociosComponent} from "./components/pago-socios/pago-socios.component";
 import {HttpServiceSocios} from "../services/htppServiceSocios";
 import {HttpModule} from "@angular/http";
-
+import {IngresosComponent} from "./components/caja/ingresos/ingresos.component";
+import {TablaMovimientosComponent} from "./components/caja/movimientos/tabla-movimientos.component";
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,9 @@ import {HttpModule} from "@angular/http";
 		AMSociosComponent,
 		TablaSociosComponent,
 		CajaComponent,
-		PagoSociosComponent
+		PagoSociosComponent,
+		IngresosComponent,
+		TablaMovimientosComponent
 	],
 	imports: [
 		FormsModule,

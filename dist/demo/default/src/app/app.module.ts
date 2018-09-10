@@ -42,7 +42,8 @@ import { LayoutRefService } from './core/services/layout/layout-ref.service';
 import { SplashScreenService } from './core/services/splash-screen.service';
 
 import 'hammerjs';
-
+import {HttpService} from "./content/services/httpService";
+import {HttpModule} from "@angular/http";
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
 };
@@ -61,9 +62,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgxPermissionsModule.forRoot(),
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		HttpModule
 	],
 	providers: [
+		HttpService,
 		AclService,
 		LayoutConfigService,
 		LayoutConfigStorageService,

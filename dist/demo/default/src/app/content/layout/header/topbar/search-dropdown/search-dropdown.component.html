@@ -10,10 +10,10 @@
 	<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
 	<div class="m-dropdown__inner ">
 		<div class="m-dropdown__header">
-			<form class="m-list-search__form">
+			<form class="m-list-search__form" (submit)="buscarSocio()">
 				<div class="m-list-search__form-wrapper">
 					<span class="m-list-search__form-input-wrapper">
-						<input id="m_quicksearch_input" autocomplete="off" type="text" name="q" class="m-list-search__form-input" value="" placeholder="Search...">
+						<input id="m_quicksearch_input" autocomplete="off" type="text" name="q" class="m-list-search__form-input" value=""  [(ngModel)]="idSocio" placeholder="Search...">
 					</span>
 					<span class="m-list-search__form-icon-close" id="m_quicksearch_close">
 						<i class="la la-remove"></i>

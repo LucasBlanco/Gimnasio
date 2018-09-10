@@ -5,10 +5,12 @@ import { CommonModule } from '@angular/common';
 import { FichaSocioComponent } from './shared-components/ficha-socio/ficha-socio.component';
 
 
+
 @NgModule({
 	declarations: [
 		TablaComponent,
 		FichaSocioComponent,
+
 	],
 	imports: [
 		FormsModule, CommonModule

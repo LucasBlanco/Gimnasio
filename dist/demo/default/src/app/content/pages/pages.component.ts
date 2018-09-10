@@ -17,6 +17,7 @@ import { LayoutRefService } from '../../core/services/layout/layout-ref.service'
 import { AnimationBuilder, AnimationPlayer, style, animate } from '@angular/animations';
 import { TranslationService } from '../../core/services/translation.service';
 
+
 @Component({
 	selector: 'm-pages',
 	templateUrl: './pages.component.html',

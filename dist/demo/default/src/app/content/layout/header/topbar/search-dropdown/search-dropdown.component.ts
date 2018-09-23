@@ -13,6 +13,7 @@ import * as objectPath from 'object-path';
 import { Subscription } from 'rxjs';
 import { QuickSearchDirective } from '../../../../../core/directives/quick-search.directive';
 import { QuickSearchService } from '../../../../../core/services/quick-search.service';
+import {Router} from "@angular/router";
 
 @Component({
 	selector: 'm-search-dropdown',
@@ -42,7 +43,8 @@ export class SearchDropdownComponent
 	constructor(
 		private layoutConfigService: LayoutConfigService,
 		private el: ElementRef,
-		private quickSearchService: QuickSearchService
+		private quickSearchService: QuickSearchService,
+		private router: Router
 	) {
 		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
 			const config = model.config;
@@ -64,7 +66,7 @@ export class SearchDropdownComponent
 	}
 
 	buscarSocio(){
-
+		this.router.navigate(['/pagos', this.idSocio]);
 	}
 
 	ngAfterViewInit(): void {

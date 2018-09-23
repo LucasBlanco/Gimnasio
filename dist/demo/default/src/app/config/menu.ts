@@ -481,13 +481,20 @@ export class MenuConfig implements ConfigModel {
 							}
 						]
 					},
-					{ section: 'Ventas' },
+					{ section: 'Socio' },
 					{
-						title: 'Clases',
+						title: 'Asignar clase',
 						root: true,
 						bullet: 'dot',
 						icon: 'flaticon-coins',
-						page: '/pagos/1'
+						page: '/socio/asignar-clase/0'
+					},
+					{
+						title: 'Perfil',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-user',
+						page: '/socio/perfil/0'
 					},
 					{ section: 'Caja' },
 					{

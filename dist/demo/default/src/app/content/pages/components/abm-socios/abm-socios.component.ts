@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Socio} from "../../../models/socio";
 import {AMSociosComponent} from "./am-socios/am-socios.component";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {animate, style, transition, trigger} from "@angular/animations";
 import {HttpServiceSocios} from "../../../services/htppServiceSocios";
 
@@ -21,11 +21,12 @@ export class AbmSociosComponent implements OnInit {
 	socioSeleccionado: Socio = new Socio()
 	editando: Boolean = true
 	realizandoAlta: Boolean = true
-  constructor( private router: ActivatedRoute, private httpService: HttpServiceSocios) {
+
+  constructor( private activatedRouter: ActivatedRoute, private httpService: HttpServiceSocios, private router: Router) {
   }
 
   ngOnInit() {
-	  this.router.params.subscribe((params: Params) =>{
+	  this.activatedRouter.params.subscribe((params: Params) =>{
 		  this.realizandoAlta = (params['view'] === 'am')
 		  this.editando = (params['view'] === 'tabla')
 		  this.socioSeleccionado = new Socio()
@@ -36,13 +37,13 @@ export class AbmSociosComponent implements OnInit {
   	console.log('Alta', socio)
 	  this.httpService.postSocio(socio).then( () =>{
 		  console.log('Socio creado')
+		  this.router.navigate(['/pagos', socio.dni]);
 	  })
   }
 
 	cargarDatosModificacion(socio: Socio){
-	  console.log('CArgar datos', socio)
-  	this.socioSeleccionado = socio
-	  this.realizandoAlta = true
+  		this.socioSeleccionado = socio
+	  	this.realizandoAlta = true
 		this.editando = false
   }
 

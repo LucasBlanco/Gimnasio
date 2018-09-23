@@ -16,11 +16,13 @@ import {SharedModule} from "./components/shared.module";
 import {AMSociosComponent} from "./components/abm-socios/am-socios/am-socios.component";
 import {TablaSociosComponent} from "./components/abm-socios/tabla-socios/tabla-socios.component";
 import {CajaComponent} from "./components/caja/caja.component";
-import {PagoSociosComponent} from "./components/pago-socios/pago-socios.component";
+import {AsignacionClasesComponent} from "./components/socio/asignacion-clases/asignacion-clases.component";
 import {HttpServiceSocios} from "../services/htppServiceSocios";
 import {HttpModule} from "@angular/http";
 import {IngresosComponent} from "./components/caja/ingresos/ingresos.component";
 import {TablaMovimientosComponent} from "./components/caja/movimientos/tabla-movimientos.component";
+import {SociosModule} from "./components/socio/socios.module";
+import {NavegacionSocioComponent} from "./components/socio/navegacion-socio/navegacion-socio.component";
 
 @NgModule({
 	declarations: [
@@ -32,7 +34,6 @@ import {TablaMovimientosComponent} from "./components/caja/movimientos/tabla-mov
 		AMSociosComponent,
 		TablaSociosComponent,
 		CajaComponent,
-		PagoSociosComponent,
 		IngresosComponent,
 		TablaMovimientosComponent
 	],
@@ -45,7 +46,8 @@ import {TablaMovimientosComponent} from "./components/caja/movimientos/tabla-mov
 		CoreModule,
 		LayoutModule,
 		AngularEditorModule,
-		SharedModule
+		SharedModule,
+		SociosModule
 	],
 	providers: [HttpServiceSocios]
 })

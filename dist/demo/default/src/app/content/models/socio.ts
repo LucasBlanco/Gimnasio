@@ -4,18 +4,17 @@ export class Socio {
 
     nombre: string
 	apellido: string
-    email: string
+    idDescuento: number
     fechaNacimiento: any
-	fechaIngreso: any
 	dni: number
 	telefono: string
 	direccion: string
 
-    constructor(nombre?, apellido?, email?, fechaNacimiento?, dni?, telefono?, direccion?) {
+    constructor(nombre?, apellido?, idDescuento?, fechaNacimiento?, dni?, telefono?, direccion?) {
 		this.nombre = (nombre) ? nombre : null
 		this.dni = (dni) ? dni : null
 		this.apellido = (apellido) ? apellido : null
-		this.email = (email) ? email : null
+		this.idDescuento = (idDescuento) ? idDescuento : null
 		this.fechaNacimiento = (fechaNacimiento) ? fechaNacimiento : null
 		this.telefono = (telefono) ? telefono : null
 		this.direccion = (direccion) ? direccion : null

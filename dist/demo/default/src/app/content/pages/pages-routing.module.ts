@@ -7,7 +7,9 @@ import { ProfileComponent } from './header/profile/profile.component';
 import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import {AbmSociosComponent} from "./components/abm-socios/abm-socios.component";
 import {CajaComponent} from "./components/caja/caja.component";
-import {PagoSociosComponent} from "./components/pago-socios/pago-socios.component";
+import {AsignacionClasesComponent} from "./components/socio/asignacion-clases/asignacion-clases.component";
+import {ServicioComponent} from "./components/servicio/servicio.component";
+import {MembresiaComponent} from "./components/membresia/membresia.component";
 
 const routes: Routes = [
 	{
@@ -20,8 +22,16 @@ const routes: Routes = [
 				loadChildren: './components/dashboard/dashboard.module#DashboardModule'
 			},
 			{
-				path: 'pagos/:id',
-				component: PagoSociosComponent
+				path: 'socio',
+				loadChildren: './components/socio/socios.module#SociosModule'
+			},
+			{
+				path: 'servicio',
+				component: ServicioComponent
+			},
+			{
+				path: 'membresia',
+				component: MembresiaComponent
 			},
 			{
 				path: 'caja/:view',

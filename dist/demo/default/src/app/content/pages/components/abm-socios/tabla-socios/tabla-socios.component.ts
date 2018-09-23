@@ -22,28 +22,31 @@ declare var $: any
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<m-tabla [datos]="tabla.datos"></m-tabla>
+				<m-tabla></m-tabla>
 			</div>
 		</div>`
 })
-export class TablaSociosComponent implements AfterViewInit, OnInit {
+export class TablaSociosComponent implements AfterViewInit{
 
-	@Input() socios: Array<Socio> = []
+	@Input() socios: Array<Socio> = [new Socio(1,1,1,1,1,1,1)]
 	@Output('modificar') emitModificacion: EventEmitter<Socio> = new EventEmitter()
 	@ViewChild(TablaComponent) tabla: TablaComponent
 
 	constructor( private httpService: HttpServiceSocios) {
 
 	}
-	ngOnInit() {
-		// this.socios = [new Socio('Carlos', 'Garcia', 'cgarcia@email.com', '2018-05-15', 123, 'mensual', 123,)]
-		this.httpService.getSocios().then(socios => {
-			(this.socios as any) = socios
-		})
+
+	async ngAfterViewInit() {
+		this.iniciarTabla()
+		this.tabla.setDatos(this.socios)
+		this.tabla.setDatos(await this.httpService.getSocios())
 	}
 
-	ngAfterViewInit() {
-		this.tabla.datos = this.socios
+	enviarModificacion(socio: Socio) {
+		this.emitModificacion.emit(socio)
+	}
+
+	iniciarTabla(){
 		this.tabla.nombreColumnas = ['Nombre', 'Apellido']
 		this.tabla.valorColumnas = ['nombre', 'apellido']
 		this.tabla.acciones = [
@@ -54,10 +57,5 @@ export class TablaSociosComponent implements AfterViewInit, OnInit {
 			}
 		]
 	}
-
-	enviarModificacion(socio: Socio) {
-		this.emitModificacion.emit(socio)
-	}
-
 
 }

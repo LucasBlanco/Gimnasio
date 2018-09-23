@@ -13,4 +13,5 @@ declare var mQuicksearch: any;
 declare var mUtil: any;
 declare var mPortlet: any;
 declare var mDatatable: any
+declare var mWizard: any;
 

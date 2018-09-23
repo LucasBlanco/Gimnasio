@@ -60,42 +60,58 @@ export class TablaComponent implements OnChanges, OnInit{
 
     ngOnChanges(changes: SimpleChanges) {
         if (this.datos) {
-            if (changes.datos.currentValue.length !== 0) {
-                this.Paginador.initPaginador(this.datos);
-            } else {
-                this.Paginador.datosPaginados = []
-            }
-            this.totalesACalcular.forEach(total => {
-                let indice = this.valorColumnas.indexOf(total)
-                this.totales[indice] = this.datos.reduce(function(sum, value) {
-                    return sum + value[total];
-                }, 0);
-            })
-            this.promediosACalcular.forEach(prom => {
-                let indice = this.valorColumnas.indexOf(prom)
-                this.totales[indice] = this.datos.reduce(function(sum, value) {
-                    return sum + value[prom];
-                }, 0);
-                let cantElemsPromedio = this.datos.filter(dato => (dato[prom] != null && dato[prom] !== '')).length
-                this.totales[indice] = this.totales[indice] / cantElemsPromedio
-            })
-            this.totales[0] = 'Total   ( ' + this.datos.length + ' )'
+        	this.actualizarPaginador(changes.datos.currentValue)
+            this.calcularTotales()
         }
+		/*if (this.datos !== undefined && this.datos != null) {
+			this.datos.forEach(_ => {
+				this.hideSubTabla.push(false)
+			});
+		}*/
+    }
+
+    setDatos(datos){
+    	this.datos = datos
+		this.actualizarPaginador(datos)
+		this.calcularTotales()
+	}
+
+    actualizarPaginador(datos){
+		if (datos.length !== 0) {
+			this.Paginador.initPaginador(this.datos);
+			console.log(this.Paginador.datosPaginados)
+		} else {
+			this.Paginador.datosPaginados = []
+		}
+	}
+
+	calcularTotales(){
+		this.totalesACalcular.forEach(total => {
+			let indice = this.valorColumnas.indexOf(total)
+			this.totales[indice] = this.datos.reduce(function(sum, value) {
+				return sum + value[total];
+			}, 0);
+		})
+		this.promediosACalcular.forEach(prom => {
+			let indice = this.valorColumnas.indexOf(prom)
+			this.totales[indice] = this.datos.reduce(function(sum, value) {
+				return sum + value[prom];
+			}, 0);
+			let cantElemsPromedio = this.datos.filter(dato => (dato[prom] != null && dato[prom] !== '')).length
+			this.totales[indice] = this.totales[indice] / cantElemsPromedio
+		})
+		this.totales[0] = 'Total   ( ' + this.datos.length + ' )'
+	}
+
+	inicializarFiltros(){
 		this.valorColumnas.forEach(valor => {
 			this.filtro[valor] = null
 			this.totales.push(null)
 		});
-		if (this.datos !== undefined && this.datos != null) {
-			this.datos.forEach(_ => {
-				this.hideSubTabla.push(false)
-			});
-		}
-
-    }
+	}
 
     ngOnInit() {
-    	let hola
-		hola = 'asdasdasdas'
+		this.inicializarFiltros()
         /*this.valorColumnas.forEach(valor => {
             this.filtro[valor] = null
             this.totales.push(null)
@@ -133,11 +149,6 @@ export class TablaComponent implements OnChanges, OnInit{
         }, 100);
 
     }
-
-    ngAfterViewInit() {
-        // $("#headerSubTabla").addClass("HeaderTablaBlue")
-    }
-
 
     enviarAccionAlPadre(dato: any, accion: Function) {
         accion(dato)

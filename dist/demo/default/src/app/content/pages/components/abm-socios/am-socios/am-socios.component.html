@@ -107,18 +107,21 @@
 				  </span>
 					</div>
 				</div>
+				<div class="col-lg-6">
+						<label for="exampleSelect1">Descuento</label>
+						<select class="form-control m-input" name="descuento" [(ngModel)]="socio.idDescuento" >
+							<option *ngFor="let descuento of descuentos" [value]="descuento.id">{{descuento.nombre}}</option>
+					</select>
+				</div>
 			</div>
 		</div>
 		<div class="m-portlet__foot">
 			<div class="row">
 				<div class="col-lg-6">
 					<button type="submit" class="btn btn-primary">Guardar</button>
-					<span class="m--margin-left-10">or
-     			 <a class="m-link m--font-bold" (click)="borrarSocio()">Cancelar</a>
+					<span class="m--margin-left-10">o
+     			 <a class="m-link m--font-bold" (click)="borrarSocio()">Borrar</a>
     		</span>
-				</div>
-				<div class="col-lg-6 m--align-right" *ngIf="(!editando)" >
-					<button type="button" class="btn btn-warning" (click)="irAVenderClase()" [disabled]="!this.socioCreado">->Vender clase</button>
 				</div>
 			</div>
 

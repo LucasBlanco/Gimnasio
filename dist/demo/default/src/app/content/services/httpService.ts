@@ -45,11 +45,19 @@ export class HttpService {
 		}
 	}
 
+	public mapper(httpServiceFunction, mapFunction){
+		return new Promise((resolve, reject) =>{
+			httpServiceFunction.then( respuesta => {
+				resolve(mapFunction(respuesta))
+			})
+		})
+	}
+
 	public post(post: Modelos.Post) {
 		/*Object.entries(post.data).forEach(entry => {
 			post.data[entry[0]] = (typeof entry[1] === 'string') ? (entry[1] as string).toUpperCase() : entry[1]
 		});*/
-		console.log(post)
+		console.log('Post', post)
 		// Helpers.setLoading(true);
 		return new Promise((resolve, reject) => {
 			this.http.post(this.ip + post.url, post.data, this.optionsPOST)
@@ -73,12 +81,15 @@ export class HttpService {
 
 	public get(get: Modelos.Get) {
 		// // Helpers.setLoading(true);
+		console.log('Get', get)
 		return new Promise((resolve, reject) => {
 			this.http.get(this.ip + get.url, this.optionsGET)
 				.toPromise()
 				.then((response: any) => {
 					// Helpers.setLoading(false);
-					resolve(JSON.parse(response._body))
+					response = JSON.parse(response._body)
+					resolve(response)
+					console.log('Respose', response)
 				})
 				.catch((response: any) => {
 					// Helpers.setLoading(false);

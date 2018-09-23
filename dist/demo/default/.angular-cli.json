@@ -15,7 +15,6 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
       "prefix": "m",
       "styles": [
 		  "../node_modules/select2/dist/css/select2.css",
@@ -31,7 +30,7 @@
 		  "../node_modules/select2/dist/js/select2.js",
 		"assets/vendors/base/vendors.bundle.js",
     "assets/demo/default/base/scripts.bundle.js",
-    "../node_modules/datatables.net/js/jquery.dataTables.min.js"
+		  "./app/content/pages/components/shared-components/wizard.js",
 	],
       "environmentSource": "environments/environment.ts",
       "environments": {

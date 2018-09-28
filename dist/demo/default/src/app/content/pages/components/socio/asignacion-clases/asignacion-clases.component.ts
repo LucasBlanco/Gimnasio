@@ -53,24 +53,9 @@ export class AsignacionClasesComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit(){
 
-		// $('.js-example-basic-multiple').select2()
-		/*jQuery('#filtroObraSocial').on(
-			'change',
-			(e) => {
-				console.log('Hola')
-				(<any>this.filtros.obrasSociales) = jQuery(e.target).val()
-				if (this.filtros.obrasSociales.some(elem => elem == 'Seleccionar todos')) {
-					let obrasSociales = this.obrasSociales.filter(os => os.nombre != 'Seleccionar todos').map(os => os.nombre)
-					$('#filtroObraSocial').val(obrasSociales);
-					$('#filtroObraSocial').trigger('change');
-				}
-			}
-		);*/
-
 	}
 
 	cobrarSocio(){
-		this.service.postCobrarSocio(this.socioEncontrado)
 		console.log('Cobrar', this.socioEncontrado.dni)
 	}
 }

@@ -8,7 +8,7 @@ export class HttpServiceCaja {
 
 	}
 
-	public getVentas(fechaInicio: any, fechaFin: any) {
+	public traerTodos(fechaInicio: any, fechaFin: any) {
 		return this.httpService.post(
 			new Modelos.Post("/ventas/all", {fechaDesde: fechaInicio, fechaHasta: fechaFin})
 		)

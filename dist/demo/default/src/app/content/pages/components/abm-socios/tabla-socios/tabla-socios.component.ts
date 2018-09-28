@@ -1,9 +1,6 @@
-import {Component, OnInit, AfterViewInit, ViewChild, Output, Input, EventEmitter} from '@angular/core';
+import {Component, OnInit,Output, Input, EventEmitter} from '@angular/core';
 import {Socio} from '../../../../models/socio';
 import {TablaComponent} from '../../shared-components/tabla/tabla.component';
-import {Router} from "@angular/router";
-import {HttpServiceSocios} from "../../../../services/htppServiceSocios";
-declare var $: any
 
 @Component({
 	selector: 'm-tabla-socios',
@@ -21,41 +18,29 @@ declare var $: any
 					</div>
 				</div>
 			</div>
+			
 			<div class="m-portlet__body">
-				<m-tabla></m-tabla>
+				<m-tabla [nombreColumnas]="['Nombre', 'Apellido']" [valorColumnas]="['nombre', 'apellido']" [datos]="socios" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })
-export class TablaSociosComponent implements AfterViewInit{
+export class TablaSociosComponent implements OnInit{
 
-	@Input() socios: Array<Socio> = [new Socio(1,1,1,1,1,1,1)]
+	@Input() socios: Array<Socio> = []
 	@Output('modificar') emitModificacion: EventEmitter<Socio> = new EventEmitter()
-	@ViewChild(TablaComponent) tabla: TablaComponent
+	acciones
 
-	constructor( private httpService: HttpServiceSocios) {
-
-	}
-
-	async ngAfterViewInit() {
-		this.iniciarTabla()
-		this.tabla.setDatos(this.socios)
-		this.tabla.setDatos(await this.httpService.getSocios())
+	 ngOnInit(){
+		this.acciones = [
+			{
+				callback: this.enviarModificacion.bind(this),
+				class: 'la la-edit',
+				name: 'Modificar'
+			}
+		]
 	}
 
 	enviarModificacion(socio: Socio) {
 		this.emitModificacion.emit(socio)
 	}
-
-	iniciarTabla(){
-		this.tabla.nombreColumnas = ['Nombre', 'Apellido']
-		this.tabla.valorColumnas = ['nombre', 'apellido']
-		this.tabla.acciones = [
-			{
-				callback: this.enviarModificacion.bind(this),
-				clase: 'la la-edit',
-				nombre: 'Modificar'
-			}
-		]
-	}
-
 }

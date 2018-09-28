@@ -21,6 +21,10 @@ export class AMSociosComponent implements OnChanges {
 	}
 
 
+	borrarSocio() {
+		this.socio = new Socio()
+	}
+
 	enviarEvento() {
 		if(this.socioAModificar){
 			this.altaEmitter.emit(this.socio)
@@ -28,9 +32,5 @@ export class AMSociosComponent implements OnChanges {
 			this.modificacionEmitter.emit(this.socio)
 		}
 		this.borrarSocio()
-	}
-
-	borrarSocio() {
-		this.socio = new Socio()
 	}
 }

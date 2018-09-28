@@ -1,5 +1,5 @@
 <div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
-	<form (ngSubmit)="enviarEvento()" ngNativeValidate>
+	<form (submit)="enviarEvento()" ngNativeValidate>
 		<div class="m-portlet__head">
 			<div class="m-portlet__head-caption">
 				<div class="m-portlet__head-title">
@@ -46,7 +46,7 @@
 					<label>* Dni:</label>
 					<div class="m-input-icon m-input-icon--right">
 						<input type="number" class="form-control m-input" name="nroSocio" placeholder="12345678"
-							   [(ngModel)]="socio.dni" required>
+							   [(ngModel)]="socio.dni" max="99999999" min="9999999" required>
 						<span class="m-input-icon__icon m-input-icon__icon--right">
             		<span>
               			<i class="la la-user-plus"></i>
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-						<label for="exampleSelect1">Descuento</label>
+						<label>Descuento</label>
 						<select class="form-control m-input" name="descuento" [(ngModel)]="socio.idDescuento" >
 							<option *ngFor="let descuento of descuentos" [value]="descuento.id">{{descuento.nombre}}</option>
 					</select>

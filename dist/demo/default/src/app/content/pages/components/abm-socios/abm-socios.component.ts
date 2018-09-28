@@ -1,8 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {Socio} from "../../../models/socio";
-import {AMSociosComponent} from "./am-socios/am-socios.component";
 import {ActivatedRoute, Params, Router} from "@angular/router";
-import {animate, style, transition, trigger} from "@angular/animations";
 import {HttpServiceSocios} from "../../../services/htppServiceSocios";
 
 @Component({
@@ -12,17 +10,18 @@ import {HttpServiceSocios} from "../../../services/htppServiceSocios";
 				<m-am-socios (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)" [socioAModificar]="socioSeleccionado"></m-am-socios>
 			</div>
 			<div *ngIf="editando" >
-				<m-tabla-socios (modificar)="cargarDatosModificacion($event)"></m-tabla-socios>
+				<m-tabla-socios (modificar)="cargarDatosModificacion($event)" [socios]="socios" ></m-tabla-socios>
 			</div>
 	`,
 })
-export class AbmSociosComponent implements OnInit {
+export class AbmSociosComponent implements OnInit, AfterViewInit {
 
 	socioSeleccionado: Socio = new Socio()
+	socios: Array<Socio> = []
 	editando: Boolean = true
 	realizandoAlta: Boolean = true
 
-  constructor( private activatedRouter: ActivatedRoute, private httpService: HttpServiceSocios, private router: Router) {
+  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios, private router: Router) {
   }
 
   ngOnInit() {
@@ -33,22 +32,29 @@ export class AbmSociosComponent implements OnInit {
 	  })
   }
 
+  ngAfterViewInit(){
+	  this.socioSrv.traerTodos().then( socios =>
+		  this.socios = socios)
+  }
+
   realizarAlta(socio: Socio){
-  	console.log('Alta', socio)
-	  this.httpService.postSocio(socio).then( () =>{
-		  console.log('Socio creado')
-		  this.router.navigate(['/pagos', socio.dni]);
+	  this.socioSrv.crear(socio).then( () =>{
+		 // this.router.navigate(['/pagos', socio.dni]);
 	  })
   }
 
 	cargarDatosModificacion(socio: Socio){
-  		this.socioSeleccionado = socio
-	  	this.realizandoAlta = true
-		this.editando = false
+		this.socioSrv.traerUno(socio).then( _socio => {
+			this.socioSeleccionado = _socio
+			this.realizandoAlta = true
+			this.editando = false
+		})
   }
 
   realizarModificacion(socio: Socio){
-  	console.log('Modificar socio:', socio)
+  	this.socioSrv.editar(socio).then( () =>
+		this.socios = this.socios.map( _socio => (_socio.id === socio.id)? socio: _socio)
+	)
   }
 
 }

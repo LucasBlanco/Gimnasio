@@ -34,7 +34,7 @@ export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 	}
 	ngOnInit() {
 		// this.socios = [new Socio('Carlos', 'Garcia', 'cgarcia@email.com', '2018-05-15', 123, 'mensual', 123,)]
-		this.movimientos= [new Caja(100, 'Bebida', 'es roja y tiene burbujitas', 'efectivo', 'Ingreso')]
+		this.movimientos= [new Caja(100, 'Bebida', 'es roja y tiene burbujitas', 'efectivo')]
 		/*this.httpService.getSocios().then(movimientos => {
 			(this.movimientos as any) = movimientos
 		})*/

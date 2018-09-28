@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PipeFiltroCompleto } from '../pipes/filter/filters.pipe';
+import { TablaComponent } from './tabla.component';
+import { SubtablaDirective } from './subtabla.directive';
 
 @NgModule({
     imports: [
         CommonModule, FormsModule
-    ],
-	declarations: [
-        PipeFiltroCompleto
+    ], exports: [
+    ], declarations: [
+		SubtablaDirective
     ]
+
 })
-export class TablaModule {
+export class tablaModule {
+
 }

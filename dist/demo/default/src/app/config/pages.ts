@@ -19,6 +19,14 @@ export class PagesConfig implements ConfigModel {
 					page: { title: 'Baja-Modificacion', desc: '' }
 				}
 			},
+			membresia: {
+				am: {
+					page: { title: 'Guardar', desc: '' }
+				},
+				tabla: {
+					page: { title: 'Baja-Modificacion', desc: '' }
+				}
+			},
 			'user-management': {
 				page: { title: 'User Management', desc: '' }
 			},

@@ -2,7 +2,8 @@
 import * as Modelos from './httpModels';
 import {HttpService} from "./httpService";
 import {Caja} from "../models/caja";
-
+import {Injectable} from "@angular/core";
+@Injectable()
 export class HttpServiceCaja {
 
 	constructor(private httpService: HttpService) {

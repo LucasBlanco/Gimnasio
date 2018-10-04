@@ -2,7 +2,8 @@
 import * as Modelos from './httpModels';
 import {HttpService} from "./httpService";
 import {Membresia} from "../models/membresia";
-
+import {Injectable} from "@angular/core";
+@Injectable()
 export class HttpServiceMembresia {
 
 	constructor(private httpService: HttpService) {}
@@ -44,8 +45,8 @@ export class HttpServiceMembresia {
 		)
 	}
 
-	public traerTodos(){
-		this.httpService.mapper(
+	public traerTodos(): Promise<any>{
+		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get("/membresia/all",
 					"Hubo un error al traer las membresias. Intente nuevamente.")
@@ -54,8 +55,8 @@ export class HttpServiceMembresia {
 		)
 	}
 
-	public traerUno(membresia: Membresia){
-		this.httpService.mapper(
+	public traerUno(membresia: Membresia): Promise<any>{
+		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get("/membresia/find/"+ membresia.id,
 					"Hubo un error al traer la membresia. Intente nuevamente.")

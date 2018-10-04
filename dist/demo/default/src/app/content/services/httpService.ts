@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as Modelos from './httpModels';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import swal from 'sweetalert2'
+import {Observable} from "rxjs";
 
 @Injectable()
 export class HttpService {
@@ -45,6 +46,12 @@ export class HttpService {
 		}
 	}
 
+	public prueba(): Promise<any>{
+		return new Promise((resolve, reject) => {
+			setTimeout(() =>  resolve(4), 1000);
+		})
+	}
+
 	public mapper(httpServiceFunction, mapFunction){
 		return new Promise((resolve, reject) =>{
 			httpServiceFunction.then( respuesta => {
@@ -77,6 +84,34 @@ export class HttpService {
 					reject()
 				});
 		})
+	}
+
+	public put(post: Modelos.Post) {
+		/*Object.entries(post.data).forEach(entry => {
+			post.data[entry[0]] = (typeof entry[1] === 'string') ? (entry[1] as string).toUpperCase() : entry[1]
+		});*/
+		console.log('Put', post)
+		// Helpers.setLoading(true);
+		return new Promise((resolve, reject) => {
+			this.http.put(this.ip + post.url, post.data, this.optionsPOST)
+				.toPromise()
+				.then((response: any) => {
+					// Helpers.setLoading(false);
+					if(post.mensajeExito !== undefined){
+						this.sendMessage(post.mensajeExito, 'success');
+					}
+					resolve()
+				})
+				.catch((response: any) => {
+					// Helpers.setLoading(false);
+					if(post.mensajeError !== undefined){
+						this.sendMessage(post.mensajeError, 'error');
+					}
+					reject()
+				});
+		})
+
+
 	}
 
 	public get(get: Modelos.Get) {

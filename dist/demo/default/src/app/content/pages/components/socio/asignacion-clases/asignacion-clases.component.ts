@@ -6,7 +6,7 @@ import {
 	animate,
 	transition, keyframes
 } from '@angular/animations';
-import {HttpServiceSocios} from "../../../../services/htppServiceSocios";
+import {HttpServiceSocios} from "../../../../services/httpServiceSocios";
 import {ActivatedRoute} from "@angular/router";
 declare var $: any
 @Component({

@@ -8,8 +8,9 @@ import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import {AbmSociosComponent} from "./components/abm-socios/abm-socios.component";
 import {CajaComponent} from "./components/caja/caja.component";
 import {AsignacionClasesComponent} from "./components/socio/asignacion-clases/asignacion-clases.component";
-import {ServicioComponent} from "./components/servicio/servicio.component";
-import {MembresiaComponent} from "./components/membresia/membresia.component";
+import {AbmMembresiaComponent} from "./components/abm-membresia/abm-membresia.component";
+import {AbmServicioComponent} from "./components/abm-servicio/abm-servicio.component";
+import {AbmDescuentoComponent} from "./components/abm-descuento/abm-descuento.component";
 
 const routes: Routes = [
 	{
@@ -26,12 +27,16 @@ const routes: Routes = [
 				loadChildren: './components/socio/socios.module#SociosModule'
 			},
 			{
-				path: 'servicio',
-				component: ServicioComponent
+				path: 'servicio/:view',
+				component: AbmServicioComponent
 			},
 			{
-				path: 'membresia',
-				component: MembresiaComponent
+				path: 'membresia/:view',
+				component: AbmMembresiaComponent
+			},
+			{
+				path: 'descuento/:view',
+				component: AbmDescuentoComponent
 			},
 			{
 				path: 'caja/:view',

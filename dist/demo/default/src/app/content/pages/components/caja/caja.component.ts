@@ -14,7 +14,6 @@ import {ActivatedRoute, Params} from "@angular/router";
 		  </div>
 	  </div>
 	  
-  		
   `
 })
 export class CajaComponent implements OnInit {

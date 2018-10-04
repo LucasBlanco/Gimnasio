@@ -41,8 +41,8 @@ export class HttpServiceSocios {
 	public editar(socio: Socio) {
 		return this.httpService.post(
 			new Modelos.Post("/socio/editar/" + socio.id, this.socioToBack(socio)['id'] = socio.id,
-				"El socio fue creado con exito",
-				"Hubo un error al crear el socio. Intente nuevamente.")
+				"El socio fue modificado con exito",
+				"Hubo un error al modificar el socio. Intente nuevamente.")
 		)
 	}
 

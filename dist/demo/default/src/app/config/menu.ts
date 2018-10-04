@@ -464,7 +464,7 @@ export class MenuConfig implements ConfigModel {
 						badge: {type: 'm-badge--danger', value: '2'},
 						translate: 'MENU.DASHBOARD'
 					},
-					{section: 'Gestion de socios'},
+					{section: 'ABM'},
 					{
 						title: 'Socios',
 						root: true,
@@ -478,6 +478,54 @@ export class MenuConfig implements ConfigModel {
 							{
 								title: 'Baja-Modificacion',
 								page: '/socios/tabla'
+							}
+						]
+					},
+					{
+						title: 'Membresias',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-rocket',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/membresia/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/membresia/tabla'
+							}
+						]
+					},
+					{
+						title: 'Servicios',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-rocket',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/servicio/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/servicio/tabla'
+							}
+						]
+					},
+					{
+						title: 'Descuentos',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-rocket',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/descuento/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/descuento/tabla'
 							}
 						]
 					},

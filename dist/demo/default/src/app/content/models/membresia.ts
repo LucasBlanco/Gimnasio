@@ -1,9 +1,11 @@
+import {Servicio} from "./servicio";
+
 export class Membresia {
 	nombre: string
 	precio: number
 	vencimiento: number
 	nroCuotas: number
-	servicios: Array<{id: number, cantidadCreditos: number}>
+	servicios: Array<Servicio>
 	descuentos: Array<number>
 	id: number
 
@@ -12,8 +14,8 @@ export class Membresia {
 		this.precio = precio || null
 		this.vencimiento = vencimiento || null
 		this.nroCuotas = nroCuotas || null
-		this.servicios = servicios || null
-		this.descuentos = descuentos || null
+		this.servicios = servicios || []
+		this.descuentos = descuentos || []
 		this.id = id || null
 	}
 }

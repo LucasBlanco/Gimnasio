@@ -1,7 +1,6 @@
-import {Component, OnInit, AfterViewInit, ViewChild, Input} from '@angular/core';
-import {HttpServiceSocios} from "../../../../services/htppServiceSocios";
+import {Component, OnInit, AfterViewInit, Input} from '@angular/core';
+import { HttpServiceCaja } from '../../../../services/httpServiceCaja'
 import {Caja} from "../../../../models/caja";
-import {TablaComponent} from "../../shared-components/tabla/tabla.component";
 
 @Component({
 	selector: 'm-tabla-movimientos',
@@ -20,16 +19,17 @@ import {TablaComponent} from "../../shared-components/tabla/tabla.component";
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<m-tabla [datos]="tabla.datos"></m-tabla>
+				<m-tabla [datos]="movimientos" [nombreColumnas]="['Tipo', 'Concepto', 'Monto', 'Observacion', 'Tipo de pago']"
+						 [valorColumnas]="['tipo', 'concepto', 'monto', 'observacion', 'tipoDePago']"
+				></m-tabla>
 			</div>
 		</div>`
 })
 export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 
 	@Input() movimientos: Array<Caja> = []
-	@ViewChild(TablaComponent) tabla: TablaComponent
 
-	constructor( private httpService: HttpServiceSocios) {
+	constructor( private cajaSrv: HttpServiceCaja) {
 
 	}
 	ngOnInit() {
@@ -41,9 +41,7 @@ export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 	}
 
 	ngAfterViewInit() {
-		this.tabla.datos = this.movimientos
-		this.tabla.nombreColumnas = ['Tipo', 'Concepto', 'Monto', 'Observacion', 'Tipo de pago']
-		this.tabla.valorColumnas = ['tipo', 'concepto', 'monto', 'observacion', 'tipoDePago']
+		this.cajaSrv.traerTodos('10-10-2018', '15-10-18').then( response => (this.movimientos as any) = response)
 	}
 
 }

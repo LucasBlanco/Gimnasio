@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4227936c-1589-49eb-8555-e9c3b7d0f20f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +19,7 @@
     <session id="1768496721">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
@@ -25,6 +27,7 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="3" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.44" value="1" />
@@ -36,7 +39,7 @@
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +50,7 @@
           <entry key="json" value="37" />
           <entry key="lock" value="2" />
           <entry key="scss" value="6" />
-          <entry key="ts" value="332" />
+          <entry key="ts" value="337" />
           <entry key="yarnclean" value="1" />
         </counts>
       </usages-collector>
@@ -59,7 +62,7 @@
           <entry key="JavaScript" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="6" />
-          <entry key="TypeScript" value="332" />
+          <entry key="TypeScript" value="337" />
           <entry key="tsconfig" value="13" />
           <entry key="yarn.lock" value="2" />
         </counts>
@@ -76,7 +79,7 @@
           <entry key="html" value="6739" />
           <entry key="json" value="206" />
           <entry key="scss" value="15" />
-          <entry key="ts" value="23824" />
+          <entry key="ts" value="23840" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -85,7 +88,7 @@
           <entry key="JSON" value="206" />
           <entry key="JavaScript" value="1" />
           <entry key="SCSS" value="15" />
-          <entry key="TypeScript" value="23758" />
+          <entry key="TypeScript" value="23774" />
         </counts>
       </usages-collector>
     </session>
@@ -93,114 +96,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1716">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="42" column="79" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3068">
-              <caret line="118" column="22" selection-start-line="107" selection-start-column="16" selection-end-line="118" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="338">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+            <state relative-caret-position="312">
+              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
               <folding>
-                <element signature="e#0#63#0" expanded="true" />
+                <element signature="e#0#139#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -262,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceVenta.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/movimientos/tabla-movimientos.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.module.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts" />
@@ -282,7 +191,6 @@
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts" />
@@ -301,7 +209,6 @@
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" />
@@ -313,6 +220,9 @@
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" />
       </list>
     </option>
   </component>
@@ -365,7 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -439,7 +348,20 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
@@ -452,21 +374,6 @@
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="socio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="socio" type="462c0819:PsiDirectoryNode" />
-              <item name="compras" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
@@ -483,6 +390,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -560,12 +468,13 @@
       <workItem from="1538854790154" duration="9098000" />
       <workItem from="1538998066317" duration="23044000" />
       <workItem from="1539105962944" duration="44000" />
-      <workItem from="1539114589762" duration="301000" />
+      <workItem from="1539114589762" duration="710000" />
+      <workItem from="1539116086456" duration="69000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179215000" />
+    <option name="totallyTimeSpent" value="179693000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -580,7 +489,7 @@
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.32894042" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.23668951" />
       <window_info id="Structure" order="1" sideWeight="0.28517824" side_tool="true" weight="0.24986821" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -607,16 +516,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/node_modules/typescript/lib/lib.es2015.promise.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -795,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -809,24 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1592">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-58">
           <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -951,17 +829,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
+        <state relative-caret-position="1170">
           <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="338">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/user-management/user-management.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#139#0" expanded="true" />
           </folding>
         </state>
       </provider>

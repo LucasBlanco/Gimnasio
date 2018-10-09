@@ -14,7 +14,7 @@ export class HttpService {
 		this.headerGET = new Headers({'Authorization': 'Bearer ' + token, 'Access-Control-Allow-Origin': '*'});
 		this.optionsGET = new RequestOptions({ headers: this.headerGET });
 		// this.ip = localStorage.getItem('currentServerIP');
-		this.ip = 'http://localhost:8000'
+		this.ip = 'http://gym.test:8000'
 	}
 	public usuario
 	private loading: boolean = false;

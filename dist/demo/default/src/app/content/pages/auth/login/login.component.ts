@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 		let header = new Headers({ 'Content-Type': 'application/json' });
 		let options = new RequestOptions({ headers: header });
 		// https://agile-escarpment-72391.herokuapp.com
-		return this.http.post("http://localhost:8000/login", userlogin, options)
+		return this.http.post("http://gym.test:8000/login", userlogin, options)
 			.toPromise()
 			.then((response: any) => {
 				let token = JSON.parse(response._body).data.token

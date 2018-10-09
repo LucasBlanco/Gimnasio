@@ -11,7 +11,7 @@ declare var $: any
   selector: 'm-compras',
   templateUrl: './compras.component.html',
 })
-export class ComprasComponent implements OnInit, AfterViewInit {
+export class ComprasComponent implements OnInit {
 
 	socio
 	membresias: {seleccionada: boolean,  membresia: Membresia}[] = []

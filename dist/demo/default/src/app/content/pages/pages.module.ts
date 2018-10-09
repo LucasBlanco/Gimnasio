@@ -15,7 +15,6 @@ import {SharedModule} from "./components/shared.module";
 import {AMSociosComponent} from "./components/abm-socios/am-socios/am-socios.component";
 import {TablaSociosComponent} from "./components/abm-socios/tabla-socios/tabla-socios.component";
 import {CajaComponent} from "./components/caja/caja.component";
-import {AsignacionClasesComponent} from "./components/socio/asignacion-clases/asignacion-clases.component";
 import {HttpServiceSocios} from "../services/httpServiceSocios";
 import {HttpServiceCaja} from "../services/httpServiceCaja";
 import {HttpModule} from "@angular/http";

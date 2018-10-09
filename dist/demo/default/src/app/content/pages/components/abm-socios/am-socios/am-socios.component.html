@@ -1,5 +1,4 @@
 <div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
-	<m-pruebita></m-pruebita>
 	<form (submit)="enviarEvento()" ngNativeValidate>
 		<div class="m-portlet__head">
 			<div class="m-portlet__head-caption">
@@ -56,7 +55,7 @@
 					<label>* Dni:</label>
 					<div class="m-input-icon m-input-icon--right">
 						<input type="number" class="form-control m-input" name="nroSocio" placeholder="12345678"
-							   [(ngModel)]="socio.dni" max="99999999" min="9999999" required>
+							   [(ngModel)]="socio.dni"  required>
 						<span class="m-input-icon__icon m-input-icon__icon--right">
             		<span>
               			<i class="la la-user-plus"></i>
@@ -95,7 +94,8 @@
 					<div class="m-input-icon m-input-icon--right">
 						<input type="text" class="form-control m-input" name="domicilio"
 							   placeholder="AV. 9 de Julio, 1234"
-							   [(ngModel)]="socio.direccion">
+							   [(ngModel)]="socio.direccion"
+								pattern="(.+)([/,/]{1})(.+)" title="Calle, Altura">
 						<span class="m-input-icon__icon m-input-icon__icon--right">
             				<span>
               					<i class="la la-home"></i>
@@ -119,9 +119,26 @@
 				</div>
 				<div class="col-lg-6">
 						<label>Descuento</label>
-						<select class="form-control m-input" name="descuento" [(ngModel)]="socio.idDescuento" >
-							<option *ngFor="let descuento of descuentos" [value]="descuento.id">{{descuento.nombre}}</option>
+						<select class="form-control m-input" name="descuento" [(ngModel)]="socio.descuento" >
+							<option *ngFor="let descuento of descuentos" [value]="descuento">{{descuento.nombre}}</option>
 					</select>
+				</div>
+			</div>
+			<div class="form-group m-form__group row">
+				<div class="col-lg-6">
+					<label>Genero:</label>
+					<div class="m-input-icon m-input-icon--right">
+						<div class="m-radio-inline">
+							<label class="m-radio m-radio--solid">
+								<input type="radio" name="example_2" value="masculino" [(ngModel)]="socio.genero"> Masculino
+								<span></span>
+							</label>
+							<label class="m-radio m-radio--solid">
+								<input type="radio" name="example_2" value="femenino" [(ngModel)]="socio.genero"> Femenino
+								<span></span>
+							</label>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

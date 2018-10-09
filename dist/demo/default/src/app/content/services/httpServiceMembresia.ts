@@ -3,18 +3,35 @@ import * as Modelos from './httpModels';
 import {HttpService} from "./httpService";
 import {Membresia} from "../models/membresia";
 import {Injectable} from "@angular/core";
+import {Servicio} from '../models/servicio';
+import {Descuento} from "../models/descuento";
+
 @Injectable()
 export class HttpServiceMembresia {
 
 	constructor(private httpService: HttpService) {}
 
 	private membresiaToFront(membresia){
-		return  new Membresia(membresia.nombre, membresia.precio, membresia.vencimiento_dias, membresia.nro_cuotas, membresia.servicios, membresia.descuentos)
+		return  new Membresia(
+			membresia.nombre,
+			membresia.precio,
+			membresia.vencimiento_dias,
+			membresia.nro_cuotas,
+			membresia.servicios && membresia.servicios.map(srv => {
+				 return {creditos: srv.pivot.creditos, vencimiento: srv.pivot.vto, servicio: new Servicio(srv.nombre, null, srv.id)}
+			}),
+			membresia.descuentos && membresia.descuentos.map( desc => {
+				return new Descuento(desc.nombre, desc.vencimiento_dias, desc.porcentaje, desc.aplicable_enconjunto, desc.id)
+			}),
+			membresia.id
+		)
 	}
 
-	private membresiaToBack({vencimiento, nroCuotas, ...resto}){
+	private membresiaToBack({vencimiento, nroCuotas, servicios, descuentos, ...resto}){
 		return {
 			...resto,
+			servicios: servicios.map( srv => ({id: srv.servicio.id, cantidadCreditos: (srv.creditos)? srv.creditos:null , vto: srv.vencimiento})),
+			descuentos: descuentos.map( d => d.id),
 			vencimiento_dias: vencimiento,
 			nro_cuotas: nroCuotas
 		}
@@ -30,7 +47,7 @@ export class HttpServiceMembresia {
 	}
 
 	public editar( membresia: Membresia ) {
-		return this.httpService.post(
+		return this.httpService.put(
 			new Modelos.Post("/membresia/editar/" + membresia.id, this.membresiaToBack(membresia),
 				"La membresia fue editada con exito",
 				"Hubo un error al editar la membresia. Intente nuevamente.")

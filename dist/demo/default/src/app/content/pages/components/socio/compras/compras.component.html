@@ -1,0 +1,90 @@
+<form class="m-form__section m-form__section--first" (submit)="comprar()" ngNativeValidate>
+	<div class="form-group m-form__group">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="row">
+					<div class="col-lg-3">
+						<label>Tipo de pago:</label>
+					</div>
+					<div class="col-lg-9">
+						<select class="form-control m-input" name="tipo" (ngModel)="tipoDePago">
+							<option value="efectivo">Efectivo</option>
+							<option value="debito">Tarjeta de debito</option>
+							<option value="credito">Tarjeta de credito</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-separator m-separator--dashed m-separator--lg"></div>
+	<div class="form-group m-form__group">
+		<label>Membresias:</label>
+		<div class="row">
+			<div class="col-lg-6" *ngFor="let membresia of membresias, let i = index">
+				<label class="m-option">
+					<span class="m-option__control">
+						<span class="m-radio m-radio--brand m-radio--check-bold">
+							<input type="checkbox" [name]="'option'+i" [(ngModel)]="membresia.seleccionada">
+							<span></span>
+						</span>
+					</span>
+					<span class="m-option__label">
+						<span class="m-option__head">
+							<span class="m-option__title">
+								{{membresia.membresia.nombre}}
+							</span>
+							<span class="m-option__focus">
+								$ {{membresia.membresia.precio}}
+							</span>
+						</span>
+						<span class="m-option__body">
+							{{getServicios(membresia)}}
+						</span>
+					</span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="m-separator m-separator--dashed m-separator--lg"></div>
+	<div class="form-group m-form__group" *ngFor="let membresia of membresias, let i = index">
+		<label>{{membresia.nombre}}:</label>
+		<div class="row">
+			<div class="col-lg-6">
+				<label>Descuento:</label>
+				<div class="m-input-icon m-input-icon--right">
+					<input type="date" class="form-control m-input" name="fechaNacimiento"
+						   [(ngModel)]="socio.fechaNacimiento" required>
+					<span class="m-input-icon__icon m-input-icon__icon--right">
+            		<span>
+              			<i class="la la-calendar"></i>
+            		</span>
+				  </span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<label>Cantidad:</label>
+				<div class="m-input-icon m-input-icon--right">
+					<input type="date" class="form-control m-input" name="fechaNacimiento"
+						   [(ngModel)]="socio.fechaNacimiento" required>
+					<span class="m-input-icon__icon m-input-icon__icon--right">
+            		<span>
+              			<i class="la la-calendar"></i>
+            		</span>
+				  </span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="m-portlet__foot">
+		<div class="row">
+			<div class="col-lg-6">
+				<button type="submit" class="btn btn-primary">Guardar</button>
+				<span class="m--margin-left-10">o
+     			 <a class="m-link m--font-bold" (click)="borrar()">Borrar</a>
+    		</span>
+			</div>
+		</div>
+	</div>
+</form>

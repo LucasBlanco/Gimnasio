@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {Socio} from 'models/socio'
+import {HttpServiceDescuento} from "../../../../services/httpServiceDescuento";
+import {Descuento} from "../../../../models/descuento";
 
 @Component({
 	selector: 'm-am-socios',
@@ -12,8 +14,13 @@ export class AMSociosComponent implements OnChanges {
 	@Output('alta') altaEmitter = new EventEmitter<Socio>()
 	@Output('modificar') modificacionEmitter = new EventEmitter<Socio>()
 	@Output('mostrarTabla') irALaTablaEmitter = new EventEmitter<void>()
+	descuentos: Descuento[]
 
+	constructor( private descuentoSrv: HttpServiceDescuento){}
 
+	ngOnInit(){
+		 this.descuentoSrv.traerTodos().then( descuentos => this.descuentos = descuentos)
+	}
 	ngOnChanges( changes: SimpleChanges) {
 		this.socio = (this.editando)? this.socioAModificar : new Socio()
 	}

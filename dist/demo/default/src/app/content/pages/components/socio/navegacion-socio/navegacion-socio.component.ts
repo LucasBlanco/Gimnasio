@@ -1,29 +1,21 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Socio} from "../../../../models/socio";
+import {SociosService} from "../serviceSocio";
 
 @Component({
   selector: 'm-navegacion-socio',
   templateUrl: './navegacion-socio.component.html',
 })
-export class NavegacionSocioComponent implements OnInit, AfterViewInit {
+export class NavegacionSocioComponent implements OnInit {
 
-	idSocio: number
-	nombreSocio: string
-  constructor(private route: ActivatedRoute ) { }
+	socio: Socio = new Socio()
+
+  constructor(private route: ActivatedRoute, private srvSocio: SociosService) { }
 
   ngOnInit() {
-	  this.route.params.subscribe(params => {
-		  let socioEncontrado = +params['id']
-	  });
+		this.socio =  this.srvSocio.socio
   }
 
-  ngAfterViewInit(){
-	  let options = {
-		  startStep: 1,
-		  manualStepForward: true
-	  };
-	  let wizard = new mWizard('m_wizard',options);
-  }
 
 }

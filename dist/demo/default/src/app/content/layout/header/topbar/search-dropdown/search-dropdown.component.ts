@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { QuickSearchDirective } from '../../../../../core/directives/quick-search.directive';
 import { QuickSearchService } from '../../../../../core/services/quick-search.service';
 import {Router} from "@angular/router";
+import {SociosService} from "../../../../pages/components/socio/serviceSocio";
 
 @Component({
 	selector: 'm-search-dropdown',
@@ -44,7 +45,8 @@ export class SearchDropdownComponent
 		private layoutConfigService: LayoutConfigService,
 		private el: ElementRef,
 		private quickSearchService: QuickSearchService,
-		private router: Router
+		private router: Router,
+		private sociosSrv: SociosService
 	) {
 		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
 			const config = model.config;
@@ -66,7 +68,7 @@ export class SearchDropdownComponent
 	}
 
 	buscarSocio(){
-		this.router.navigate(['/pagos', this.idSocio]);
+		this.sociosSrv.findUser(this.idSocio);
 	}
 
 	ngAfterViewInit(): void {

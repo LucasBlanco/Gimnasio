@@ -5,8 +5,7 @@ import { SubheaderService } from '../../../../core/services/layout/subheader.ser
 
 @Component({
 	selector: 'm-dashboard',
-	templateUrl: './dashboard.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
 

@@ -46,13 +46,15 @@ export class HttpService {
 		}
 	}
 
-	public prueba(): Promise<any>{
-		return new Promise((resolve, reject) => {
-			setTimeout(() =>  resolve(4), 1000);
-		})
+	public prueba() {
+		return new Promise(resolve => setTimeout(() => resolve('algo'), 1000))
+		/*return this.http.get(this.ip + "/socio/all", this.optionsGET)
+			.toPromise()
+			.then((response: any) =>  { return JSON.parse(response._body)} )*/
 	}
 
-	public mapper(httpServiceFunction, mapFunction){
+
+	public mapper(httpServiceFunction, mapFunction): Promise<any>{
 		return new Promise((resolve, reject) =>{
 			httpServiceFunction.then( respuesta => {
 				resolve(mapFunction(respuesta))

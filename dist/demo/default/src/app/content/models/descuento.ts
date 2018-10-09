@@ -9,7 +9,7 @@ export class Descuento {
 		this.nombre =  nombre || null
 		this.vencimiento =  vencimiento || null
 		this.porcentaje = porcentaje || null
-		this.aplicableEnConjunto = aplicableEnConjunto || null
+		this.aplicableEnConjunto = (aplicableEnConjunto ===  undefined || aplicableEnConjunto ===  null)? null : aplicableEnConjunto
 		if(id){ this.id = id }
 	}
 

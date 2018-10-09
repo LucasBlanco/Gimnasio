@@ -9,7 +9,7 @@ declare var $: any
 })
 export class FichaSocioComponent implements OnChanges, OnInit {
 	@ViewChildren('bold') elemsABoldear
-	@Input() socio: Socio = new Socio('...', '...', '...', '...', '...', '...', '...')
+	@Input() socio: Socio = new Socio('...', '...', '...', '...', '...', '...', '...', '...')
 
   constructor( private renderer: Renderer2) { }
 
@@ -28,7 +28,7 @@ export class FichaSocioComponent implements OnChanges, OnInit {
 					this.renderer.removeClass(elem.nativeElement,'m--font-bolder' )
 				})
 			}
-			this.socio = new Socio('...', '...', '...', '...', '...', '...', '...')
+			this.socio = new Socio('...', '...', '...', '...', '...', '...', '...', '...')
 		}
   }
 

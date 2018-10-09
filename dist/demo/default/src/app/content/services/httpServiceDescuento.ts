@@ -10,7 +10,7 @@ export class HttpServiceDescuento {
 	constructor(private httpService: HttpService) {}
 
 	private descuentoToFront(descuento){
-		return  new Descuento(descuento.nombre, descuento.vencimiento_dias, descuento.porcentaje, descuento.aplicable_enconjunto, descuento.id)
+		return  new Descuento(descuento.nombre, descuento.vencimiento_dias, descuento.porcentaje, descuento.aplicable_enconjunto === 1, descuento.id)
 	}
 
 	public descuentoToBack({vencimiento, aplicableEnConjunto, ...resto}){

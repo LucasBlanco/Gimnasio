@@ -5,8 +5,7 @@ import {
 	AfterViewInit,
 	OnInit,
 	ElementRef,
-	ViewChild,
-	ChangeDetectionStrategy,
+	ViewChild
 } from '@angular/core';
 import { LayoutConfigService } from './core/services/layout-config.service';
 import { ClassInitService } from './core/services/class-init.service';
@@ -32,8 +31,7 @@ import { locale as frLang } from './config/i18n/fr';
 @Component({
 	// tslint:disable-next-line:component-selector
 	selector: 'body[m-root]',
-	templateUrl: './app.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './app.component.html'
 })
 export class AppComponent implements AfterViewInit, OnInit {
 	title = 'Metronic';

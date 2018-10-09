@@ -70,7 +70,7 @@ export class HttpServiceServicio {
 		)
 	}
 
-	public traerTodos(): Promise<any>{
+	public traerTodos(): Promise<Array<Servicio>>{
 		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get("/servicio/all",
@@ -80,7 +80,7 @@ export class HttpServiceServicio {
 		)
 	}
 
-	public traerUno(servicio: Servicio): Promise<any>{
+	public traerUno(servicio: Servicio): Promise<Servicio>{
 		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get("/servicio/find/"+ servicio.id,

@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {NavegacionSocioComponent} from "./navegacion-socio/navegacion-socio.component";
-import {AsignacionClasesComponent} from "./asignacion-clases/asignacion-clases.component";
+import {ComprasComponent} from "./compras/compras.component";
 import {SharedModule} from "../shared.module";
 import { PerfilComponent } from './perfil/perfil.component';
+import {SociosService} from "./serviceSocio";
 
 
 const parentModuleRoutes: Routes = [
@@ -14,11 +15,11 @@ const parentModuleRoutes: Routes = [
 		component: NavegacionSocioComponent,
 		children: [                          // <---- child components declared here
 			{
-				path:'asignar-clase/:id',
-				component: AsignacionClasesComponent
+				path:'compras',
+				component: ComprasComponent
 			},
 			{
-				path:'perfil/:id',
+				path:'perfil',
 				component: PerfilComponent
 			}
 		]
@@ -32,9 +33,12 @@ const parentModuleRoutes: Routes = [
 		CommonModule
 	],
 	declarations: [
-		AsignacionClasesComponent,
+		ComprasComponent,
 		NavegacionSocioComponent,
 		PerfilComponent
+	],
+	providers: [
+
 	]
 })
 

@@ -1,27 +1,17 @@
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
-import {
-	Component,
-	OnInit,
-	HostBinding,
-	Input,
-	ViewChild,
-	ElementRef,
-	AfterViewInit,
-	ChangeDetectionStrategy
-} from '@angular/core';
+import {NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {AfterViewInit, Component, ElementRef, HostBinding, Input, OnInit, ViewChild} from '@angular/core';
 import * as objectPath from 'object-path';
-import { LayoutConfigService } from '../../core/services/layout-config.service';
-import { ClassInitService } from '../../core/services/class-init.service';
-import { Subject } from 'rxjs';
-import { LayoutRefService } from '../../core/services/layout/layout-ref.service';
-import { AnimationBuilder, AnimationPlayer, style, animate } from '@angular/animations';
-import { TranslationService } from '../../core/services/translation.service';
+import {LayoutConfigService} from '../../core/services/layout-config.service';
+import {ClassInitService} from '../../core/services/class-init.service';
+import {Subject} from 'rxjs';
+import {LayoutRefService} from '../../core/services/layout/layout-ref.service';
+import {animate, AnimationBuilder, AnimationPlayer, style} from '@angular/animations';
+import {TranslationService} from '../../core/services/translation.service';
 
 
 @Component({
 	selector: 'm-pages',
-	templateUrl: './pages.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './pages.component.html'
 })
 export class PagesComponent implements OnInit, AfterViewInit {
 	@HostBinding('class') classes = 'm-grid m-grid--hor m-grid--root m-page';

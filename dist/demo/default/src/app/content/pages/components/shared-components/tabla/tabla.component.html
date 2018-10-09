@@ -25,7 +25,19 @@
 					<i *ngIf="!hideSubTabla[indice]" style="color: #716aca" class="fa fa-caret-right"></i>
 					<i *ngIf="hideSubTabla[indice]" style="color: #716aca" class="fa fa-caret-down"></i>
 				</td>
-				<td *ngFor="let valor of valorColumnas">{{dato[valor]}}</td>
+				<td *ngFor="let valor of valorColumnas">
+					<ng-container *ngIf="dato[valor] === false">
+						<span class="m-badge  m-badge--danger m-badge--wide">No</span>
+					</ng-container>
+					<ng-container *ngIf="dato[valor] === true">
+						<span class="m-badge m-badge--success m-badge--wide">Si &nbsp;</span>
+					</ng-container>
+
+					<ng-container *ngIf="dato[valor] !== false && dato[valor] !== true">
+						{{dato[valor]}}
+					</ng-container>
+
+				</td>
 				<td *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0">
 					<div style="display: inline-flex">
 						<a *ngFor="let accion of acciones" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"

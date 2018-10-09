@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {Membresia} from "../../../models/membresia";
 import {HttpServiceMembresia} from "../../../services/httpServiceMembresia";
+import {HttpServiceServicio} from "../../../services/httpServiceServicio";
 
 @Component({
   selector: 'm-membresia',
@@ -12,7 +13,7 @@ import {HttpServiceMembresia} from "../../../services/httpServiceMembresia";
 							[editando]="editando"></m-am-membresia>
 		</div>
 		<div *ngIf="!mostrarAlta">
-			<m-tabla-membresia (modificar)="cargarDatosModificacion($event)" [membresias]="membresias"></m-tabla-membresia>
+			<m-tabla-membresia (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [membresias]="membresias"></m-tabla-membresia>
 		</div>
 	`,
 })
@@ -56,4 +57,7 @@ export class AbmMembresiaComponent implements OnInit, AfterViewInit {
 		})
 	}
 
+	realizarBaja(membresia: Membresia){
+  		this.membresiaSrv.borrar(membresia).then( () => this.membresias = this.membresias.filter( m => m.id !== membresia.id))
+	}
 }

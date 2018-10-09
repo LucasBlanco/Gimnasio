@@ -7,7 +7,6 @@ import { ProfileComponent } from './header/profile/profile.component';
 import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import {AbmSociosComponent} from "./components/abm-socios/abm-socios.component";
 import {CajaComponent} from "./components/caja/caja.component";
-import {AsignacionClasesComponent} from "./components/socio/asignacion-clases/asignacion-clases.component";
 import {AbmMembresiaComponent} from "./components/abm-membresia/abm-membresia.component";
 import {AbmServicioComponent} from "./components/abm-servicio/abm-servicio.component";
 import {AbmDescuentoComponent} from "./components/abm-descuento/abm-descuento.component";

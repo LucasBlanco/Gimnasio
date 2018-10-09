@@ -35,20 +35,25 @@
 				<!--end: Message container -->
 
 				<div class="row m-row--no-padding">
-					<div class="col-xl-3 col-lg-12">
+					<div class="col-xl-3 col-lg-12" style="border-right: 0.07rem solid #EBEDF2;">
 						<!--begin: Form Wizard Head -->
 						<div class="m-wizard__head">
-							<div class="row m--margin-bottom-25 centered">
-								<img  class="m--img-rounded m--marginless"  src="./assets/app/media/img//blog/weightlifter.png"
-									  style="max-height: 150px; max-width: 150px">
-								<br>
-								<span>Blanco, Lucas Manuel</span>
+							<div class="m--margin-bottom-25">
+								<div class="row centered">
+								<div class="col-12 centered m--margin-bottom-10">
+									<img  class="m--img-rounded m--marginless"  src="./assets/app/media/img//blog/weightlifter.png"
+										  style="max-height: 150px; max-width: 150px">
+								</div>
+								<div class="col-12 centered">
+									<span>{{socio.apellido+', '+socio.nombre}}</span>
+								</div>
+								</div>
 							</div>
 							<!--begin: Form Wizard Nav -->
 
 							<div class="m-wizard__nav">
 								<div class="m-wizard__steps">
-									<div class="m-wizard__step " m-wizard-target="m_wizard_form_step_1" [routerLink]="['/socio/perfil/0']" [queryParams]="{id: idSocio}" routerLinkActive="m-wizard__step--current">
+									<div class="m-wizard__step " m-wizard-target="m_wizard_form_step_1" [routerLink]="['/socio/perfil']"  routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>1</span></span>
@@ -61,7 +66,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2" [routerLink]="['/socio/asignar-clase/0']" [queryParams]="{id: idSocio}" routerLinkActive="m-wizard__step--current">
+									<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2" [routerLink]="['/socio/compras']" routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>2</span></span>
@@ -70,7 +75,7 @@
 												<span></span>
 											</div>
 											<div class="m-wizard__step-label">
-												Asignar clases
+												Compras
 											</div>
 										</div>
 									</div>
@@ -108,7 +113,7 @@
 					</div>
 					<div class="col-xl-9 col-lg-12">
 						<!--begin: Form Wizard Form-->
-						<div class="m-wizard__form">
+						<div class="m-wizard__form" style="border-left: 0px;">
 							<router-outlet></router-outlet>
 						</div>
 						<!--end: Form Wizard Form-->

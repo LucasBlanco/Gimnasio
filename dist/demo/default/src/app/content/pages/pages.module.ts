@@ -36,7 +36,7 @@ import {AbmDescuentoComponent} from "./components/abm-descuento/abm-descuento.co
 import {AmDescuentoComponent} from "./components/abm-descuento/am-descuento/am-descuento.component";
 import {TablaDescuentoComponent} from "./components/abm-descuento/tabla-descuento/tabla-servicio.component";
 import {HttpService} from "../services/httpService";
-import {PruebitaComponent} from "./components/pruebita/pruebita.component";
+import {SociosService} from "./components/socio/serviceSocio";
 
 @NgModule({
 	declarations: [
@@ -58,8 +58,7 @@ import {PruebitaComponent} from "./components/pruebita/pruebita.component";
 		AbmServicioComponent,
 		AbmDescuentoComponent,
 		AmDescuentoComponent,
-		TablaDescuentoComponent,
-		PruebitaComponent
+		TablaDescuentoComponent
 	],
 	imports: [
 		FormsModule,
@@ -79,6 +78,7 @@ import {PruebitaComponent} from "./components/pruebita/pruebita.component";
 		HttpServiceCaja,
 		HttpServiceMembresia,
 		HttpServiceServicio,
-		HttpServiceDescuento]
+		HttpServiceDescuento,
+		SociosService]
 })
 export class PagesModule {}

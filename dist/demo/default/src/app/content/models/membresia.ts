@@ -1,12 +1,13 @@
 import {Servicio} from "./servicio";
+import {Descuento} from "./descuento";
 
 export class Membresia {
 	nombre: string
 	precio: number
 	vencimiento: number
 	nroCuotas: number
-	servicios: Array<Servicio>
-	descuentos: Array<number>
+	servicios: Array<{creditos: number, vencimiento: number, servicio: Servicio}>
+	descuentos: Array<Descuento>
 	id: number
 
 	constructor(nombre?, precio?, vencimiento?, nroCuotas?, servicios?, descuentos?, id?) {

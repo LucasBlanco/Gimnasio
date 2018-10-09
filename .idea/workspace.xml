@@ -2,38 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4227936c-1589-49eb-8555-e9c3b7d0f20f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/servicio.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/wizard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.angular-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/.angular-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/e2e/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/e2e/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/abm-descuento.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/abm-descuento.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/abm-membresia.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/abm-membresia.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pago-socios/pago-socios.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pago-socios/pago-socios.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pruebita/pruebita.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pruebita/pruebita.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/typings.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceDescuento.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceDescuento.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceMembresia.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceMembresia.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,64 +51,75 @@
     <session id="1768496721">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="3" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.open.time.74" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.77" value="1" />
-          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="66" />
-          <entry key="js" value="5" />
-          <entry key="json" value="29" />
-          <entry key="lock" value="1" />
-          <entry key="scss" value="5" />
-          <entry key="ts" value="218" />
+          <entry key="html" value="87" />
+          <entry key="js" value="6" />
+          <entry key="json" value="37" />
+          <entry key="lock" value="2" />
+          <entry key="scss" value="6" />
+          <entry key="ts" value="332" />
+          <entry key="yarnclean" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="66" />
-          <entry key="JSON" value="18" />
-          <entry key="JavaScript" value="5" />
-          <entry key="SCSS" value="5" />
-          <entry key="TypeScript" value="218" />
-          <entry key="tsconfig" value="11" />
-          <entry key="yarn.lock" value="1" />
+          <entry key="HTML" value="87" />
+          <entry key="JSON" value="24" />
+          <entry key="JavaScript" value="6" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="SCSS" value="6" />
+          <entry key="TypeScript" value="332" />
+          <entry key="tsconfig" value="13" />
+          <entry key="yarn.lock" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="12" />
-          <entry key="TsLintLanguageService" value="11" />
+          <entry key="Angular2LanguageService" value="19" />
+          <entry key="TsLintLanguageService" value="18" />
+          <entry key="TypeScriptServerServiceImpl" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5014" />
-          <entry key="json" value="203" />
+          <entry key="html" value="6739" />
+          <entry key="json" value="206" />
           <entry key="scss" value="15" />
-          <entry key="ts" value="14466" />
+          <entry key="ts" value="23824" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5076" />
-          <entry key="JSON" value="203" />
+          <entry key="HTML" value="6804" />
+          <entry key="JSON" value="206" />
           <entry key="JavaScript" value="1" />
           <entry key="SCSS" value="15" />
-          <entry key="TypeScript" value="14403" />
+          <entry key="TypeScript" value="23758" />
         </counts>
       </usages-collector>
     </session>
@@ -113,76 +127,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#103#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1722">
-              <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#103#0" expanded="true" />
-                <element signature="e#3779#4201#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modelos/generales.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1716">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="42" column="79" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,26 +187,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+            <state relative-caret-position="3068">
+              <caret line="118" column="22" selection-start-line="107" selection-start-column="16" selection-end-line="118" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="416">
+              <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
+            <state relative-caret-position="63">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -226,34 +251,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>prefer</find>
-      <find>no-trailin</find>
-      <find>quo</find>
-      <find>ngModelOptions</find>
-      <find>accion.nombre</find>
       <find>m-aside-left</find>
       <find>Helpers</find>
       <find>Socio</find>
       <find>ABMSociosModule</find>
-      <find>console</find>
       <find>Socios</find>
       <find>caja</find>
       <find>enter</find>
       <find>Pago</find>
       <find>acciones.length</find>
       <find>m-footer</find>
-      <find>clases</find>
       <find>Search...</find>
       <find>pago</find>
       <find>example</find>
       <find>m-subheader</find>
       <find>datos</find>
       <find>*ngFor</find>
+      <find>mapS</find>
+      <find>cuil</find>
+      <find>Modelos</find>
+      <find>console</find>
+      <find>bab</find>
+      <find>babel</find>
+      <find>NgZone</find>
+      <find>ChangeDetection</find>
+      <find>pruebi</find>
+      <find>serviciosSe</find>
+      <find>dato</find>
+      <find>m-search-dropdown</find>
+      <find>clases</find>
+      <find>{</find>
     </findStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/dist/demo/default/src/app</dir>
       <dir>$PROJECT_DIR$/dist/demo/default/src/app/content/pages</dir>
+      <dir>$PROJECT_DIR$/dist/demo/default/node_modules</dir>
       <dir>$PROJECT_DIR$/dist/demo/default</dir>
+      <dir>$PROJECT_DIR$/dist/demo/default/src/app</dir>
+      <dir>$PROJECT_DIR$/dist/demo/default/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -262,57 +296,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/config/pages.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/index.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpModels.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceVenta.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceCaja.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/ingresos/ingresos.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/caja.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/movimientos/tabla-movimientos.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/ingresos/ingresos.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/caja.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/package.json" />
-        <option value="$PROJECT_DIR$/dist/demo/default/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/typings.d.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pago-socios/pago-socios.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pago-socios/pago-socios.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/styles.scss" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/membresia/membresia.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/am-servicio/am-servicio.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/servicio.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/tabla-servicio/tabla-servicio.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/abm-servicio.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/am-servicio/am-servicio.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pruebita/pruebita.component.html" />
+        <option value="$PROJECT_DIR$/dist/demo/default/node_modules/rxjs/package.json" />
+        <option value="$PROJECT_DIR$/dist/demo/default/package.json" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pruebita/pruebita.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/abm-membresia.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceMembresia.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.html" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/abm-descuento.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceDescuento.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/asignacion-clases.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" />
+        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html" />
       </list>
     </option>
   </component>
@@ -478,8 +512,7 @@
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="abm-socios" type="462c0819:PsiDirectoryNode" />
-              <item name="tabla-socios" type="462c0819:PsiDirectoryNode" />
+              <item name="socio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
@@ -492,7 +525,8 @@
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shared-components" type="462c0819:PsiDirectoryNode" />
+              <item name="socio" type="462c0819:PsiDirectoryNode" />
+              <item name="compras" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
@@ -505,8 +539,8 @@
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shared-components" type="462c0819:PsiDirectoryNode" />
-              <item name="tabla" type="462c0819:PsiDirectoryNode" />
+              <item name="socio" type="462c0819:PsiDirectoryNode" />
+              <item name="navegacion-socio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
@@ -518,41 +552,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="general" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -625,12 +624,22 @@
       <workItem from="1536847217046" duration="1684000" />
       <workItem from="1536865023862" duration="823000" />
       <workItem from="1537129746839" duration="12628000" />
-      <workItem from="1537558366092" duration="9212000" />
+      <workItem from="1537558366092" duration="12633000" />
+      <workItem from="1537879032693" duration="7062000" />
+      <workItem from="1537921056273" duration="19000" />
+      <workItem from="1538150088791" duration="34000" />
+      <workItem from="1538405611650" duration="1697000" />
+      <workItem from="1538675001558" duration="4104000" />
+      <workItem from="1538680817666" duration="7573000" />
+      <workItem from="1538689677617" duration="83000" />
+      <workItem from="1538854790154" duration="9098000" />
+      <workItem from="1538998066317" duration="23044000" />
+      <workItem from="1539105962944" duration="44000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122735000" />
+    <option name="totallyTimeSpent" value="178914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,9 +652,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.71482176" weight="0.24248815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.32894042" />
       <window_info id="Structure" order="1" sideWeight="0.28517824" side_tool="true" weight="0.24986821" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -658,32 +666,12 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26435536" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.24248815" />
-      <window_info id="Structure" order="1" sideWeight="0.28517824" side_tool="true" weight="0.24986821" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39761648" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32864866" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -692,325 +680,362 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/karma.conf.js" />
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/test.ts" />
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/main.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/node_modules/typescript/lib/lib.es2015.promise.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/tslint.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/tsconfig.json">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="104">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/angular.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/tsconfig.spec.json" />
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/tsconfig.app.json">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/framework/components/general/wizard.js">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/pruebita/pruebita.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="16" column="77" lean-forward="true" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/caja.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/wizard.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/.angular-cli.json">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/servicio.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="32" column="69" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="69" />
+        <state relative-caret-position="26">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/typings.d.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/am-servicio/am-servicio.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        <state relative-caret-position="1326">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/pages.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpModels.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="-156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/tabla-servicio/tabla-servicio.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="29" column="73" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/abm-servicio.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/abm-membresia.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/ingresos/ingresos.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="63" column="26" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="63" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-273">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceMembresia.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/tabla-descuento/tabla-servicio.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="11" column="132" selection-start-line="11" selection-start-column="132" selection-end-line="11" selection-end-column="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceDescuento.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="12" column="98" lean-forward="true" selection-start-line="12" selection-start-column="98" selection-end-line="12" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/abm-descuento.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceCaja.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="10" column="5" lean-forward="true" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="496" column="44" selection-start-line="496" selection-start-column="44" selection-end-line="496" selection-end-column="44" />
+        <state relative-caret-position="74">
+          <caret line="530" column="22" selection-start-line="530" selection-start-column="22" selection-end-line="530" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="171">
+          <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts">
+    <entry file="http://localhost:4200/components-socio-socios-module~pages-pages-module.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="35" selection-start-line="3" selection-end-line="3" selection-end-column="47" />
+        <state relative-caret-position="-325">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1592">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        <state relative-caret-position="-58">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/user-management/user-management.module.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78" />
+        <state relative-caret-position="312">
+          <caret line="79" column="28" lean-forward="true" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/builder/builder.module.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234" />
+        <state relative-caret-position="390">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.module.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78" />
+        <state relative-caret-position="338">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.html">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="5" selection-end-column="65" />
+        <state relative-caret-position="806">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="62" lean-forward="true" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="78">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/asignacion-clases/asignacion-clases.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/subheader/subheader.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/subheader/subheader.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        <state relative-caret-position="1716">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.html">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="52">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/membresia/membresia.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/servicio.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="111" column="59" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="59" />
+        <state relative-caret-position="1092">
+          <caret line="42" column="79" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpModels.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="3068">
+          <caret line="118" column="22" selection-start-line="107" selection-start-column="16" selection-end-line="118" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="11" column="112" selection-start-line="11" selection-start-column="112" selection-end-line="11" selection-end-column="112" />
+        <state relative-caret-position="416">
+          <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+        <state relative-caret-position="442">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modelos/generales.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state relative-caret-position="260">
+          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
           <folding>
-            <element signature="e#0#103#0" expanded="true" />
-            <element signature="e#3779#4201#0" />
+            <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/services/htppServiceSocios.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
+        <state relative-caret-position="63">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>

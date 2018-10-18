@@ -1,0 +1,62 @@
+<div class="m-portlet m-portlet--bordered-semi m-portlet--full-height  m-portlet--rounded-force">
+	<div class="m-portlet__body">
+		<div class="m-widget19">
+			<div class="m-widget19__pic m-portlet-fit--sides" style="text-align: center;">
+				<img src="./assets/app/media/img//blog/weightlifter.png"
+					 style="max-height: 350px; max-width: 250px">
+				<h3 class="m-widget19__title m--font-light">
+					Ficha de socio
+				</h3>
+				<div class="m-widget19__shadow"></div>
+			</div>
+			<div class="m-widget19__content">
+
+				<div class="m-content" style="font-size: 14px">
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Nombre: </span>
+								<span #bold>{{socio.nombre}}</span>
+							</p>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Apellido: </span>
+								<span #bold>{{socio.apellido}}</span>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Dni: </span>
+								<span #bold>{{socio.dni}}</span>
+							</p>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Fecha nacimiento: </span>
+								<span #bold>{{(socio.fechaNacimiento != '...')? (socio.fechaNacimiento | date: 'dd/MM/yyyy') : '...'}}</span>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Domicilio: </span>
+								<span #bold>{{socio.direccion}}</span>
+							</p>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<p>
+								<span class="m--font-primary">Telefono: </span>
+								<span #bold>{{socio.telefono}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

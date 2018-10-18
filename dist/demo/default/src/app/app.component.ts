@@ -24,7 +24,6 @@ import { locale as esLang } from './config/i18n/es';
 import { locale as jpLang } from './config/i18n/jp';
 import { locale as deLang } from './config/i18n/de';
 import { locale as frLang } from './config/i18n/fr';
-
 // LIST KNOWN ISSUES
 // [Violation] Added non-passive event listener; https://github.com/angular/angular/issues/8866
 
@@ -35,7 +34,6 @@ import { locale as frLang } from './config/i18n/fr';
 })
 export class AppComponent implements AfterViewInit, OnInit {
 	title = 'Metronic';
-
 	@Input() attributes: any;
 
 	@HostBinding('style') style: any;

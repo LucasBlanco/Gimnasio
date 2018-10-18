@@ -36,6 +36,10 @@ import {AmDescuentoComponent} from "./components/abm-descuento/am-descuento/am-d
 import {TablaDescuentoComponent} from "./components/abm-descuento/tabla-descuento/tabla-servicio.component";
 import {HttpService} from "../services/httpService";
 import {SociosService} from "./components/socio/serviceSocio";
+import {AbmProductoComponent} from "./components/abm-producto/abm-producto.component";
+
+import { PartialsModule } from '../partials/partials.module';
+
 
 @NgModule({
 	declarations: [
@@ -57,7 +61,8 @@ import {SociosService} from "./components/socio/serviceSocio";
 		AbmServicioComponent,
 		AbmDescuentoComponent,
 		AmDescuentoComponent,
-		TablaDescuentoComponent
+		TablaDescuentoComponent,
+		AbmProductoComponent
 	],
 	imports: [
 		FormsModule,
@@ -69,7 +74,8 @@ import {SociosService} from "./components/socio/serviceSocio";
 		LayoutModule,
 		AngularEditorModule,
 		SharedModule,
-		SociosModule
+		SociosModule,
+		PartialsModule
 	],
 	providers: [
 		HttpService,

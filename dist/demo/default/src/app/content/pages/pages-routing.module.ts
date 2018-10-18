@@ -10,6 +10,7 @@ import {CajaComponent} from "./components/caja/caja.component";
 import {AbmMembresiaComponent} from "./components/abm-membresia/abm-membresia.component";
 import {AbmServicioComponent} from "./components/abm-servicio/abm-servicio.component";
 import {AbmDescuentoComponent} from "./components/abm-descuento/abm-descuento.component";
+import {AbmProductoComponent} from "./components/abm-producto/abm-producto.component";
 
 const routes: Routes = [
 	{
@@ -30,7 +31,11 @@ const routes: Routes = [
 				component: AbmServicioComponent
 			},
 			{
-				path: 'membresia/:view',
+				path: 'producto/:view',
+				component: AbmProductoComponent
+			},
+			{
+				path: 'checkMembresia/:view',
 				component: AbmMembresiaComponent
 			},
 			{

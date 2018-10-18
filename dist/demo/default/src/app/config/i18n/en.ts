@@ -26,7 +26,7 @@ export const locale = {
 				CONTACT: 'Contact',
 			},
 			LOGIN: {
-				TITLE: 'Create Account',
+				TITLE: 'Ingresar al sistema',
 				BUTTON: 'Sign In',
 			},
 			FORGOT: {

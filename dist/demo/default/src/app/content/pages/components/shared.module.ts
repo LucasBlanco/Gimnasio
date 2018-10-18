@@ -6,6 +6,9 @@ import {FichaSocioComponent} from './shared-components/ficha-socio/ficha-socio.c
 import {ServicioComponent} from './servicio/servicio.component';
 import {NgxTypeaheadModule} from 'ngx-typeahead';
 import {TypeaheadComponent} from "./shared-components/typeahead/typeahead.component";
+import {ModalInput} from "./shared-components/modalSingleElement/modalInput.component";
+import {ModalSelect} from "./shared-components/modalSingleElement/modalSelect.component";
+import { AbmProductoComponent } from './abm-producto/abm-producto.component';
 
 
 @NgModule({
@@ -13,13 +16,15 @@ import {TypeaheadComponent} from "./shared-components/typeahead/typeahead.compon
 		TablaComponent,
 		FichaSocioComponent,
 		ServicioComponent,
-		TypeaheadComponent
+		TypeaheadComponent,
+		ModalInput,
+		ModalSelect
 	],
 	imports: [
 		FormsModule, CommonModule, NgxTypeaheadModule
 	],
 	exports: [
-		TablaComponent, FormsModule, FichaSocioComponent
+		TablaComponent, FormsModule, FichaSocioComponent, ModalInput, ModalSelect
 	]
 })
 export class SharedModule {}

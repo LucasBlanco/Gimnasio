@@ -26,6 +26,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {MessengerService} from './core/services/messenger.service';
 import {ClipboardService} from './core/services/clipboard.sevice';
 
+import { PartialsModule } from './content/partials/partials.module';
+
 import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 import {LayoutConfigStorageService} from './core/services/layout-config-storage.service';
 import {LogsService} from './core/services/logs.service';
@@ -36,7 +38,6 @@ import {MenuHorizontalService} from './core/services/layout/menu-horizontal.serv
 import {MenuAsideService} from './core/services/layout/menu-aside.service';
 import {LayoutRefService} from './core/services/layout/layout-ref.service';
 import {SplashScreenService} from './core/services/splash-screen.service';
-
 import 'hammerjs';
 import {HttpModule} from "@angular/http";
 
@@ -59,7 +60,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
-		HttpModule
+		HttpModule,
+		PartialsModule
 	],
 	providers: [
 		AclService,

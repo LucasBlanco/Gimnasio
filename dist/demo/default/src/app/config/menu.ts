@@ -489,11 +489,11 @@ export class MenuConfig implements ConfigModel {
 						submenu: [
 							{
 								title: 'Alta',
-								page: '/membresia/am'
+								page: '/checkMembresia/am'
 							},
 							{
 								title: 'Baja-Modificacion',
-								page: '/membresia/tabla'
+								page: '/checkMembresia/tabla'
 							}
 						]
 					},
@@ -545,46 +545,6 @@ export class MenuConfig implements ConfigModel {
 								page: '/caja/movimientos'
 							}
 						]
-					},
-					{ section: 'Otros' },
-					{
-						title: 'Error',
-						root: true,
-						bullet: 'dot',
-						icon: 'flaticon-interface-2',
-						submenu: [
-							{
-								title: 'Error-1',
-								page: '/error/1'
-							},
-							{
-								title: 'Error-2',
-								page: '/error/2'
-							},
-							{
-								title: 'Error-3',
-								page: '/error/3'
-							},
-							{
-								title: 'Error-4',
-								page: '/error/4'
-							},
-							{
-								title: 'Error-5',
-								page: '/error/5'
-							},
-							{
-								title: 'Error-6',
-								page: '/error/6'
-							},
-						]
-					},
-					{section: 'Tools'},
-					{
-						title: 'Layout Builder',
-						root: true,
-						icon: 'flaticon-settings',
-						page: '/builder'
 					}
 				]
 			}

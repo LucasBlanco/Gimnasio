@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as Modelos from './httpModels';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import swal from 'sweetalert2'
-import {Observable} from "rxjs";
+import { Http,  RequestOptions, Headers } from '@angular/http';
+import toastr from 'toastr'
+declare var $: any
 
 @Injectable()
 export class HttpService {
@@ -25,34 +25,42 @@ export class HttpService {
 	private optionsGET = new RequestOptions();
 
 	sendMessage(mensaje: string, tipo: string) {
+		toastr.options = {
+			"closeButton": true,
+			"debug": true,
+			"newestOnTop": true,
+			"progressBar": false,
+			"positionClass": "toast-bottom-right",
+			"preventDuplicates": false,
+			"showDuration": "300",
+			"hideDuration": "1000",
+			"timeOut": "5000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		};
 		if (tipo === 'success') {
-			swal({
-				title: '<div style="color:#575962; font-weight:500; font-size:1.35rem">Exito!</div>',
-				html: '<div style="color:#6f727d; font-weight:300; font-size:1.05rem">' + mensaje + '</div>',
-				type: 'success',
-				padding: 50,
-				showConfirmButton: false,
-				timer: 2000
-			})
+			toastr.success(mensaje, "Exelente!");
 		} else {
-			swal({
-				title: '<div style="color:#575962; font-weight:500; font-size:1.35rem">Error!</div>',
-				html: '<div style="color:#6f727d; font-weight:300; font-size:1.05rem">' + mensaje + '</div>',
-				type: 'error',
-				padding: 50,
-				showConfirmButton: false,
-				timer: 2000
-			})
+			toastr.error(mensaje, "Error!");
 		}
 	}
 
-	public prueba() {
-		return new Promise(resolve => setTimeout(() => resolve('algo'), 1000))
-		/*return this.http.get(this.ip + "/socio/all", this.optionsGET)
-			.toPromise()
-			.then((response: any) =>  { return JSON.parse(response._body)} )*/
+	private showLoadingMessage(){
+		$.blockUI({ message: '<div style=" display: flex; justify-content: center;">' +
+				'<div class="m-blockui " style="margin-left:-80px;">' +
+				'<span>Cargando...</span>' +
+				'<span><div class="m-loader  m-loader--success m-loader--lg"></div></span>' +
+				'</div>'+
+				'</div>',
+			css: {border: 'none', backgroundColor: 'none'}});
 	}
 
+	private hideLoadingMessage(){
+		$.unblockUI();
+	}
 
 	public mapper(httpServiceFunction, mapFunction): Promise<any>{
 		return new Promise((resolve, reject) =>{
@@ -63,23 +71,17 @@ export class HttpService {
 	}
 
 	public post(post: Modelos.Post) {
-		/*Object.entries(post.data).forEach(entry => {
-			post.data[entry[0]] = (typeof entry[1] === 'string') ? (entry[1] as string).toUpperCase() : entry[1]
-		});*/
 		console.log('Post', post)
-		// Helpers.setLoading(true);
 		return new Promise((resolve, reject) => {
 			this.http.post(this.ip + post.url, post.data, this.optionsPOST)
 				.toPromise()
 				.then((response: any) => {
-					// Helpers.setLoading(false);
 					if(post.mensajeExito !== undefined){
 						this.sendMessage(post.mensajeExito, 'success');
 					}
 					resolve()
 				})
 				.catch((response: any) => {
-					// Helpers.setLoading(false);
 					if(post.mensajeError !== undefined){
 						this.sendMessage(post.mensajeError, 'error');
 					}
@@ -89,23 +91,18 @@ export class HttpService {
 	}
 
 	public put(post: Modelos.Post) {
-		/*Object.entries(post.data).forEach(entry => {
-			post.data[entry[0]] = (typeof entry[1] === 'string') ? (entry[1] as string).toUpperCase() : entry[1]
-		});*/
+
 		console.log('Put', post)
-		// Helpers.setLoading(true);
 		return new Promise((resolve, reject) => {
 			this.http.put(this.ip + post.url, post.data, this.optionsPOST)
 				.toPromise()
 				.then((response: any) => {
-					// Helpers.setLoading(false);
 					if(post.mensajeExito !== undefined){
 						this.sendMessage(post.mensajeExito, 'success');
 					}
 					resolve()
 				})
 				.catch((response: any) => {
-					// Helpers.setLoading(false);
 					if(post.mensajeError !== undefined){
 						this.sendMessage(post.mensajeError, 'error');
 					}
@@ -117,19 +114,19 @@ export class HttpService {
 	}
 
 	public get(get: Modelos.Get) {
-		// // Helpers.setLoading(true);
 		console.log('Get', get)
+		this.showLoadingMessage()
 		return new Promise((resolve, reject) => {
 			this.http.get(this.ip + get.url, this.optionsGET)
 				.toPromise()
 				.then((response: any) => {
-					// Helpers.setLoading(false);
+					this.hideLoadingMessage()
 					response = JSON.parse(response._body)
 					resolve(response)
 					console.log('Respose', response)
 				})
 				.catch((response: any) => {
-					// Helpers.setLoading(false);
+					this.hideLoadingMessage()
 					this.sendMessage(get.mensajeError, 'error');
 					reject(response)
 				});

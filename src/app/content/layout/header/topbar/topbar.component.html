@@ -19,11 +19,19 @@
                     <m-user-profile></m-user-profile>
 
                     <!-- TODO; if layout config quick_sidebar.display is enabled -->
-                    <li id="m_quick_sidebar_toggle" class="m-nav__item">
-                        <a href="javascript:;" class="m-nav__link m-dropdown__toggle">
-					<span class="m-nav__link-icon">
+                    <li id="m_quick_sidebar_toggle" class="m-nav__item" >
+                        <a href="javascript:;" class="m-nav__link m-dropdown__toggle" >
+
+                                <span class="m-nav__link-icon"  style="position: absolute;">
 						<i class="flaticon-grid-menu"></i>
 					</span>
+                                <span class="m-badge m-badge--danger animated infinite swing delay-2s"
+                                      ng-reflect-klass="m-badge" ng-reflect-ng-class="m-badge--danger"
+                                      style="position: relative;bottom: 10px;left: 20px;"
+                                        [hidden]="!entradaSrv.getCantEntradasPendientes() > 0"
+                                >{{entradaSrv.getCantEntradasPendientes()}}</span>
+
+
                         </a>
                     </li>
                 </ul>

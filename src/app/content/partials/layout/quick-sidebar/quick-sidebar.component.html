@@ -1,31 +1,64 @@
 <!-- begin::Quick Sidebar -->
 <!-- <div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light"> -->
-<div class="m-quick-sidebar__content">
+<div class="m-quick-sidebar__content " style="padding-top: 50px">
 	<span id="m_quick_sidebar_close" class="m-quick-sidebar__close">
 		<i class="la la-close"></i>
 	</span>
+    <perfect-scrollbar style="height: 90vh;">
+        <label class="m-option shadow-sm m--margin-10 animated slideOutRigth slideInRigth" *ngFor="let socioServicio of sociosServicios">
+            <div class="row" style="margin-left: 0px">
+                <div class="col-6 ">
+                    <div class="row">
+                        <div class="col-12 self-centered">
+                            <img class="m--img-rounded m--marginless" src="./assets/app/media/img/blog/weightlifter.png"
+                                 style="max-height: 80px; max-width: 80px">
+                        </div>
 
-	<!--<ngb-tabset>
-		<ngb-tab title="Messages">
-			<ng-template ngbTabContent>
-				<m-messenger></m-messenger>
-			</ng-template>
-		</ngb-tab>
-		<ngb-tab title="Settings">
-			<ng-template ngbTabContent>
-				<m-list-settings></m-list-settings>
-			</ng-template>
-		</ngb-tab>
-		<ngb-tab title="Logs">
-			<ng-template ngbTabContent>
-				<perfect-scrollbar style="height: 90vh;">
-					<m-list-timeline [heading]="'System Logs'" [type]="'system'"></m-list-timeline>
-					<m-list-timeline [heading]="'Application Logs'" [type]="'application'"></m-list-timeline>
-					<m-list-timeline [heading]="'Server Logs'" [type]="'server'"></m-list-timeline>
-				</perfect-scrollbar>
-			</ng-template>
-		</ngb-tab>
-	</ngb-tabset>-->
+                        <div class="col-12 self-centered">
+                            <p>{{socioServicio.socio.apellido}}, {{socioServicio.socio.nombre}}</p>
+                        </div>
+                        <div class="m-form__group form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="m-checkbox-list">
+                            <label class="m-checkbox m-checkbox--state-success" *ngFor="let servicio of socioServicio.servicios">
+                                <input type="checkbox"> {{servicio.nombre}}
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="m--padding-top-10 col-12" style="text-align: right;">
+                        <button type="button" class="btn m-btn--pill m-btn m-btn--gradient-from-info m-btn--gradient-to-accent" style="align-self: right">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </label>
+    </perfect-scrollbar>
+
+    <!--<ngb-tabset>
+        <ngb-tab title="Messages">
+            <ng-template ngbTabContent>
+                <m-messenger></m-messenger>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Settings">
+            <ng-template ngbTabContent>
+                <m-list-settings></m-list-settings>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Logs">
+            <ng-template ngbTabContent>
+                <perfect-scrollbar style="height: 90vh;">
+                    <m-list-timeline [heading]="'System Logs'" [type]="'system'"></m-list-timeline>
+                    <m-list-timeline [heading]="'Application Logs'" [type]="'application'"></m-list-timeline>
+                    <m-list-timeline [heading]="'Server Logs'" [type]="'server'"></m-list-timeline>
+                </perfect-scrollbar>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>-->
 </div>
 <!-- </div> -->
 <!-- end::Quick Sidebar -->

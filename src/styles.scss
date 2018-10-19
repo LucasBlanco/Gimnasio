@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 //@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.centered {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.self-centered {
+  align-self: center;
+}
 .mat-table__wrapper {
 	width: 100%;
 	overflow-x: auto;

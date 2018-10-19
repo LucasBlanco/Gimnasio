@@ -85,7 +85,6 @@ import {HttpServiceEntrada} from '../services/httpServiceEntrada';
 		HttpServiceMembresia,
 		HttpServiceServicio,
 		HttpServiceDescuento,
-        HttpServiceEntrada,
 		SociosService]
 })
 export class PagesModule {}

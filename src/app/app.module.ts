@@ -45,6 +45,9 @@ import { SplashScreenService } from './core/services/splash-screen.service';
 import { DataTableService } from './core/services/datatable.service';
 
 import 'hammerjs';
+import {HttpServiceEntrada} from './content/services/httpServiceEntrada';
+import {HttpService} from './content/services/httpService';
+import {HttpModule} from '@angular/http';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
@@ -67,6 +70,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
+        HttpModule
 	],
 	providers: [
 		AclService,
@@ -97,7 +101,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		{
 			provide: HAMMER_GESTURE_CONFIG,
 			useClass: GestureConfig
-		}
+		},
+        HttpServiceEntrada,
+        HttpService
 	],
 	bootstrap: [AppComponent]
 })

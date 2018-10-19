@@ -9,22 +9,22 @@ import {
 import { LayoutConfigService } from '../../../../core/services/layout-config.service';
 import * as objectPath from 'object-path';
 import { Router } from '@angular/router';
+import {HttpServiceEntrada} from '../../../services/httpServiceEntrada';
 
 @Component({
 	selector: 'm-topbar',
-	templateUrl: './topbar.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './topbar.component.html'
 })
 export class TopbarComponent implements OnInit, AfterViewInit {
 	@HostBinding('id') id = 'm_header_nav';
 	@HostBinding('class')
 	classes = 'm-stack__item m-stack__item--fluid m-header-head';
-
 	@Input() searchType: any;
 
 	constructor(
 		private layoutConfigService: LayoutConfigService,
-		private router: Router
+		private router: Router,
+        public entradaSrv: HttpServiceEntrada
 	) {
 		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
 			const config = model.config;
@@ -32,7 +32,12 @@ export class TopbarComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	ngOnInit(): void {}
+	consolear(){
+	    console.log(this.entradaSrv.getCantEntradasPendientes())
+    }
+	ngOnInit(): void {
+
+    }
 
 	ngAfterViewInit(): void {}
 }

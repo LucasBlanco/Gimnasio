@@ -3,526 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="4227936c-1589-49eb-8555-e9c3b7d0f20f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.angular-cli.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/datatable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/ch.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/de.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/en.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/es.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/fr.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/i18n/jp.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/layout.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/config/pages.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/aside-left.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/aside-left.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/aside-left.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/aside-right/aside-right.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/aside-right/aside-right.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/menu-section/menu-section.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/aside/menu-section/menu-section.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/footer/footer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/footer/footer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/brand/brand.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/brand/brand.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header-search/header-search.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header-search/header-search.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/menu-horizontal/menu-horizontal.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/menu-horizontal/menu-horizontal.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/language-selector/language-selector.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/language-selector/language-selector.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/language-selector/language-selector.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/notification/notification.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/notification/notification.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/notification/notification.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/quick-action/quick-action.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/quick-action/quick-action.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-default/search-default.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-default/search-default.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/user-profile/user-profile.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/user-profile/user-profile.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/layout.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/subheader/subheader.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/layout/subheader/subheader.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/libraries/block-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/caja.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/formaDePago.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/generales.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/pago-socio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/servicio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth-notice/auth-notice.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth-notice/auth-notice.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth-notice/auth-notice.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth-notice/auth-notice.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/auth.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/forgot-password/forgot-password.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/forgot-password/forgot-password.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/forgot-password/forgot-password.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/forgot-password/forgot-password.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/register/register.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/register/register.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/register/register.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/register/register.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/builder/builder.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/builder/builder.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/builder/builder.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/abm-descuento.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/am-descuento/am-descuento.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/am-descuento/am-descuento.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/tabla-descuento/tabla-servicio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/abm-membresia.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/am-membresia/am-membresia.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-membresia/tabla-membresia/tabla-membresia.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/abm-servicio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/am-servicio/am-servicio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/am-servicio/am-servicio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-servicio/tabla-servicio/tabla-servicio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/abm-socios.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/tabla-socios/tabla-socios.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/caja.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/ingresos/ingresos.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/ingresos/ingresos.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/caja/movimientos/tabla-movimientos.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/servicio/servicio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/interfaces/modal-interface.components.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/lista/lista.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/lista/lista.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalInput.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalInput.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalInterface.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalSelect.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalSelect.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalTabla/modalTabla.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalTabla/modalTabla.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/pipes/cuil.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/pipes/filter/filters.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/preview-image/preview-image.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/preview-image/preview-image.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/paginador.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/subtabla.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/subtablaInterface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/typeahead-multiple/typeahead-multiple.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/typeahead/typeahead.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/typeahead/typeahead.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/wizard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/serviceSocio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/socios.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/user-management/user-management.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/user-management/user-management.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/user-management/user-management.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/header/action/action.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/header/action/action.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/header/profile/profile.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/header/profile/profile.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/snippets/error-page/error-page.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/snippets/error-page/error-page.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/snippets/error-page/error-page.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/snippets/error-page/error-page.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-settings/list-settings.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-settings/list-settings.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/list-timeline.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/list-timeline.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/list-timeline.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/timeline-item/timeline-item.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/timeline-item/timeline-item.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/timeline-item/timeline-item.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/list-timeline/timeline-item/timeline-item.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger-in/messenger-in.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger-in/messenger-in.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger-out/messenger-out.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger-out/messenger-out.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/messenger/messenger.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/scroll-top/scroll-top.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/scroll-top/scroll-top.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/tooltips/tooltips.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/tooltips/tooltips.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/partials.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpModels.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpService.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceCaja.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceDescuento.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceMembresia.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceServicio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceSocios.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/content/services/httpServiceVenta.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/access-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/auth-notice.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/auth-notice.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/authentication.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/authentication.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/credential.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/auth/token-storage.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/core.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/clipboard.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/header.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/menu-aside-offcanvas.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/menu-aside-toggle.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/menu-aside.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/menu-horizontal-offcanvas.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/menu-horizontal.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/portlet.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/quick-search.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/quick-sidebar-offcanvas.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/scroll-top.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/directives/tab-line.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/interfaces/config-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/interfaces/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/interfaces/log-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/interfaces/message-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/acl.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/breadcrumb.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/datatable-item.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/external-code-example.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/query-params.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/models/query-results.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/console-log.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/first-letter.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/get-object.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/join.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/safe.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/pipes/time-elapsed.pipe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/acl.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/class-init.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/clipboard.sevice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/http-utils.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout-config-storage.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout-config.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout/header.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout/layout-ref.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout/menu-aside.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout/menu-horizontal.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/layout/subheader.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/logs.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/menu-config.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/messenger.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/page-config.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/quick-search.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/splash-screen.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/translation.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/app/core/services/utils.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/gymnast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/weightlifter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/envato/screen1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/envato/screen2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/error/bg6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/css.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/csv.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/doc.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/html.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/javascript.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/jpg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/mp4.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/pdf.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/xml.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/zip.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/001-austria.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/002-belgium.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/003-switzerland.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/004-indonesia.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/005-portugal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/006-turkey.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/007-malasya.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/008-saudi-arabia.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/009-australia.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/010-india.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/011-brazil.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/012-uk.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/013-russia.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/014-japan.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/015-china.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/016-spain.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/017-germany.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/018-south-korea.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/019-france.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/flags/020-flag.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/icons/exchange.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/icons/logout.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/icons/question.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/icons/warning.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo_client_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo_client_white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo_invoice_dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/logos/logo_invoice_white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/notification_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/quick_actions_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/user_profile_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/300_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/user1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/user2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/user3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/user4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/user5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/base/scripts.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/base/style.bundle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/logo_compact.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/logo_default_dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/logo_default_light.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/logo/logo_large.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/misc/notification_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/misc/quick_actions_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/demo/default/media/img/misc/user_profile_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/CHANGES.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/README.ru.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/highlight.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/agate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/androidstudio.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/arduino-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/arta.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/ascetic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-cave-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-cave-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-dune-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-dune-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-estuary-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-estuary-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-forest-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-forest-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-heath-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-heath-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-lakeside-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-lakeside-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-plateau-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-plateau-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-savanna-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-savanna-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-seaside-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-seaside-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-sulphurpool-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atelier-sulphurpool-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atom-one-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/atom-one-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/brown-paper.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/brown-papersq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/codepen-embed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/color-brewer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/darcula.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/darkula.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/docco.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/dracula.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/far.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/foundation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/github-gist.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/github.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/googlecode.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/grayscale.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/gruvbox-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/gruvbox-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/hopscotch.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/hybrid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/idea.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/ir-black.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/kimbie.dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/kimbie.light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/magula.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/mono-blue.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/monokai-sublime.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/monokai.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/obsidian.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/ocean.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/paraiso-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/paraiso-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/pojoaque.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/pojoaque.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/purebasic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/qtcreator_dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/qtcreator_light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/railscasts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/rainbow.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/routeros.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/school-book.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/school-book.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/solarized-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/solarized-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/sunburst.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/tomorrow-night-blue.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/tomorrow-night-bright.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/tomorrow-night-eighties.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/tomorrow-night.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/tomorrow.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/vs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/vs2015.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/xcode.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/xt256.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/styles/zenburn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/flaticon/Flaticon.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/flaticon/Flaticon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/flaticon/Flaticon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/flaticon/Flaticon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/fontawesome5/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/line-awesome/line-awesome.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/line-awesome/line-awesome.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/line-awesome/line-awesome.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/line-awesome/line-awesome.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/line-awesome/line-awesome.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/metronic/Metronic_fda1334c35d0f5fe2afb3afebbb6774a.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/metronic/Metronic_fda1334c35d0f5fe2afb3afebbb6774a.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/metronic/Metronic_fda1334c35d0f5fe2afb3afebbb6774a.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/metronic/Metronic_fda1334c35d0f5fe2afb3afebbb6774a.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/metronic/Metronic_fda1334c35d0f5fe2afb3afebbb6774a.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/socicon/socicon.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/socicon/socicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/socicon/socicon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/fonts/socicon/socicon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/vendors.bundle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/vendors.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/src/typings.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/toastr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/default/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/toastr/build/toastr.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/toastr/build/toastr.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/config/layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/config/layout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/layout/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/layout/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/pages/pages.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/services/httpService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/services/httpService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/content/services/httpServiceEntrada.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/services/httpServiceEntrada.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -537,7 +32,7 @@
     <session id="1768496721">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="36" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
@@ -550,9 +45,11 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.70" value="1" />
@@ -564,74 +61,179 @@
           <entry key="project.open.time.78" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="html" value="112" />
+          <entry key="html" value="117" />
           <entry key="jpg" value="28" />
           <entry key="js" value="12" />
-          <entry key="json" value="43" />
+          <entry key="json" value="49" />
           <entry key="lock" value="2" />
           <entry key="png" value="6" />
-          <entry key="scss" value="9" />
+          <entry key="scss" value="10" />
           <entry key="svg" value="1" />
-          <entry key="ts" value="395" />
+          <entry key="ts" value="413" />
           <entry key="yarnclean" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="112" />
+          <entry key="HTML" value="117" />
           <entry key="Image" value="34" />
-          <entry key="JSON" value="30" />
+          <entry key="JSON" value="35" />
           <entry key="JavaScript" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SCSS" value="9" />
+          <entry key="SCSS" value="10" />
           <entry key="SVG" value="1" />
-          <entry key="TypeScript" value="395" />
-          <entry key="tsconfig" value="13" />
+          <entry key="TypeScript" value="413" />
+          <entry key="tsconfig" value="14" />
           <entry key="yarn.lock" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="Angular2LanguageService" value="30" />
-          <entry key="TsLintLanguageService" value="29" />
+          <entry key="Angular2LanguageService" value="31" />
+          <entry key="TsLintLanguageService" value="30" />
           <entry key="TypeScriptServerServiceImpl" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="html" value="8780" />
-          <entry key="json" value="386" />
-          <entry key="scss" value="21" />
-          <entry key="ts" value="26619" />
+          <entry key="html" value="9704" />
+          <entry key="json" value="425" />
+          <entry key="scss" value="75" />
+          <entry key="ts" value="27686" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="8851" />
-          <entry key="JSON" value="386" />
+          <entry key="HTML" value="9775" />
+          <entry key="JSON" value="425" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="11" />
-          <entry key="SCSS" value="21" />
-          <entry key="TypeScript" value="26547" />
+          <entry key="SCSS" value="75" />
+          <entry key="TypeScript" value="27614" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node_modules/toastr/build/toastr.css">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/services/httpServiceEntrada.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
+            <state relative-caret-position="260">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="e#4#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/pages/pages.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-546">
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/header.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#115#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/pages/pages.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="24" column="91" selection-start-line="24" selection-start-column="91" selection-end-line="24" selection-end-column="91" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/config/layout.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="86" column="44" lean-forward="true" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -648,7 +250,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>datos</find>
       <find>*ngFor</find>
       <find>mapS</find>
       <find>cuil</find>
@@ -678,6 +279,7 @@
       <find>Partial</find>
       <find>m-search-dropdown</find>
       <find>error</find>
+      <find>m-header</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist/demo/default/node_modules</dir>
@@ -686,6 +288,7 @@
       <dir>$PROJECT_DIR$/dist/demo/default/src/app/content/pages</dir>
       <dir>$PROJECT_DIR$/dist/demo/default/src</dir>
       <dir>$PROJECT_DIR$/dist/demo/default</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -694,19 +297,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/ficha-socio/ficha-socio.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/socio.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/perfil/perfil.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/tabla/tabla.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/dist/demo/default/node_modules/toastr/build/toastr.css" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/descuento.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-descuento/am-descuento/am-descuento.component.html" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/dist/demo/default/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared-components/modalSingleElement/modalInput.component.html" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/assets/vendors/base/vendors.bundle.js" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/models/membresia.ts" />
@@ -745,6 +335,19 @@
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" />
         <option value="$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" />
         <option value="$PROJECT_DIR$/node_modules/toastr/build/toastr.css" />
+        <option value="$PROJECT_DIR$/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html" />
+        <option value="$PROJECT_DIR$/src/styles.scss" />
+        <option value="$PROJECT_DIR$/angular.json" />
+        <option value="$PROJECT_DIR$/src/app/content/services/httpService.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" />
+        <option value="$PROJECT_DIR$/src/app/content/pages/pages.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/config/layout.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/services/httpServiceEntrada.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/layout/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.html" />
       </list>
     </option>
   </component>
@@ -765,10 +368,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="970" />
-    <option name="y" value="27" />
-    <option name="width" value="950" />
-    <option name="height" value="1053" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -790,12 +392,14 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -806,38 +410,116 @@
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="toastr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="toastr" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="topbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="quick-sidebar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gimnasio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gimnasio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/tslint" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/dist/demo/default/node_modules/tslint" />
+    <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/dist/demo/default/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -920,12 +602,14 @@
       <workItem from="1539742859373" duration="217000" />
       <workItem from="1539873081289" duration="164000" />
       <workItem from="1539873397451" duration="754000" />
-      <workItem from="1539882418159" duration="1050000" />
+      <workItem from="1539882418159" duration="2389000" />
+      <workItem from="1539890277529" duration="45000" />
+      <workItem from="1539894426505" duration="18340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232621000" />
+    <option name="totallyTimeSpent" value="252345000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,13 +644,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.23668951" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.71482176" visible="true" weight="0.23721665" />
       <window_info id="Structure" order="1" sideWeight="0.28517824" side_tool="true" weight="0.24986821" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22210184" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -998,285 +682,225 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/blog/blog5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/client-logos/logo4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/envato/screen1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/files/javascript.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/notification_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/quick_actions_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/misc/user_profile_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product4.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product6.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product7.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product8.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/users/100_2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/bg/bg-2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/dashboard/dashboard.component.html">
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product5.jpg" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/layout.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/tooltips/tooltips.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/highlight.pack.js" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/partials.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/core/core.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/layout.module.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts" />
+    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts" />
+    <entry file="file://$PROJECT_DIR$/node_modules/toastr/build/toastr.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="297">
+          <caret line="169" column="28" lean-forward="true" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/app/media/img/products/product5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/shared.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/pages/components/socio/navegacion-socio/navegacion-socio.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="260">
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="36" selection-end-line="44" selection-end-column="86" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="156">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-producto/abm-producto.component.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="-949" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/socio/compras/compras.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/components/abm-socios/am-socios/am-socios.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="49" column="26" selection-start-line="40" selection-start-column="20" selection-end-line="49" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/layout.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="96" column="27" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/tooltips/tooltips.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/assets/lib/hljs/highlight.pack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="18901" selection-start-line="1" selection-start-column="18901" selection-end-line="1" selection-end-column="18901" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/partials.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/content/services/httpService.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/core/core.module.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="86" column="21" lean-forward="true" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages-routing.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="-208">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#142#0" expanded="true" />
+            <element signature="e#790#842#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/pages.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2002">
-          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+        <state relative-caret-position="130">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#perfect-scrollbar#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#label#0;n#perfect-scrollbar#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#label#0;n#perfect-scrollbar#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#label#0;n#perfect-scrollbar#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#div#0;n#label#0;n#perfect-scrollbar#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1807">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/content/pages/pages.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/config/menu.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/config/layout.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14222">
-          <caret line="547" column="21" selection-start-line="466" selection-start-column="20" selection-end-line="547" selection-end-column="21" />
+        <state relative-caret-position="208">
+          <caret line="86" column="44" lean-forward="true" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/topbar.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="81" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="100" />
+        <state relative-caret-position="442">
+          <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/layout.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/layout.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        <state relative-caret-position="-2509">
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#0#105#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/partials/partials.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        <state relative-caret-position="-1014">
           <folding>
-            <element signature="e#0#133#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/layout/header/topbar/search-dropdown/search-dropdown.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/entrada-socio/entrada-socio.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/content/pages/auth/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        <state relative-caret-position="351">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
-            <element signature="e#0#139#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo/default/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/content/services/httpServiceEntrada.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="260">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/toastr/build/toastr.css">
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="169" column="27" selection-start-line="169" selection-start-column="27" selection-end-line="169" selection-end-column="27" />
+        <state relative-caret-position="364">
+          <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/content/partials/layout/quick-sidebar/quick-sidebar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#4#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/content/pages/pages.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546">
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/content/layout/header/topbar/topbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="24" column="91" selection-start-line="24" selection-start-column="91" selection-end-line="24" selection-end-column="91" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

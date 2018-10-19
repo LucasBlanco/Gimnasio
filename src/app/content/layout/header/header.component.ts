@@ -8,8 +8,7 @@ import { LoadingBarService } from '@ngx-loading-bar/core';
 @Component({
 	selector: 'm-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
 	@HostBinding('class') classes = 'm-grid__item m-header';

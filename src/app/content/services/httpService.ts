@@ -81,7 +81,14 @@ export class HttpService {
 					if (post.mensajeExito !== undefined) {
 						this.sendMessage(post.mensajeExito, 'success');
 					}
-					resolve();
+                    let respuesta
+					try{
+                        respuesta= JSON.parse(response._body)
+                    }
+                    catch(err){
+					    respuesta = response._body
+                    }
+					resolve(respuesta);
 				})
 				.catch((response: any) => {
 					if (post.mensajeError !== undefined) {
@@ -124,8 +131,9 @@ export class HttpService {
 				.then((response: any) => {
 					this.hideLoadingMessage();
 					response = JSON.parse(response._body);
+                    console.log('Respose', response);
 					resolve(response);
-					console.log('Respose', response);
+
 				})
 				.catch((response: any) => {
 					this.hideLoadingMessage();

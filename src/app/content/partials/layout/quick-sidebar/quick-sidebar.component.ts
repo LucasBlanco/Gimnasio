@@ -1,4 +1,4 @@
-import {
+    import {
 	Component,
 	OnInit,
 	HostBinding,
@@ -9,11 +9,12 @@ import {
 import { QuickSidebarOffcanvasDirective } from '../../../../core/directives/quick-sidebar-offcanvas.directive';
 import {HttpServiceEntrada} from '../../../services/httpServiceEntrada';
 import {Servicio} from '../../../models/servicio';
+    import {Socio} from '../../../models/socio';
+    import {HttpServiceSocios} from '../../../services/httpServiceSocios';
 
 @Component({
 	selector: 'm-quick-sidebar',
-	templateUrl: './quick-sidebar.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './quick-sidebar.component.html'
 })
 export class QuickSidebarComponent implements OnInit, AfterViewInit {
 	@HostBinding('id') id = 'm_quick_sidebar';
@@ -21,17 +22,23 @@ export class QuickSidebarComponent implements OnInit, AfterViewInit {
 	classes = 'm-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light';
 	@HostBinding('attr.mQuickSidebarOffcanvas')
 	mQuickSidebarOffcanvas: QuickSidebarOffcanvasDirective;
-    subscription
-    servicios: Servicio[]
+    subscription;
+    sociosServicios: {socio: Socio, servicios: Servicio[]}[] = [];
 
 	@HostBinding('style.overflow') styleOverflow: any = 'hidden';
 
 	constructor(private el: ElementRef, private entradaSrv: HttpServiceEntrada) {}
 
 	ngOnInit(): void {
-        this.subscription = this.entradaSrv.accesoSocio.subscribe(
-            servicios => {this.servicios = servicios; console.log('servicios', servicios)}
-        );
+        this.subscription = this.entradaSrv.onEntrada().subscribe(socioServicios => {
+            this.sociosServicios.push(socioServicios); console.log('servicios', socioServicios);
+        });
+
+    }
+
+    ngOnDestroy() {
+        // unsubscribe to ensure no memory leaks
+        this.subscription.unsubscribe();
     }
 
 	ngAfterViewInit(): void {

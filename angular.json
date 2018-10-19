@@ -25,7 +25,8 @@
               "src/assets/vendors/base/vendors.bundle.css",
               "src/assets/demo/default/base/style.bundle.css",
               "node_modules/material-design-icons/iconfont/material-icons.css",
-				"node_modules/toastr/build/toastr.css"
+				"node_modules/toastr/build/toastr.css",
+              "node_modules/animate.css/animate.css"
             ],
             "scripts": [
 				"node_modules/jquery/dist/jquery.js",

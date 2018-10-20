@@ -16,8 +16,7 @@ import { QuickSearchService } from '../../../../../core/services/quick-search.se
 import {SociosService} from '../../../../pages/components/socio/serviceSocio'
 @Component({
 	selector: 'm-search-dropdown',
-	templateUrl: './search-dropdown.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush
+	templateUrl: './search-dropdown.component.html'
 })
 export class SearchDropdownComponent
 	implements OnInit, OnDestroy, AfterViewInit {

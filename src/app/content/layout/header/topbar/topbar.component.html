@@ -25,10 +25,9 @@
                                 <span class="m-nav__link-icon"  style="position: absolute;">
 						<i class="flaticon-grid-menu"></i>
 					</span>
-                                <span class="m-badge m-badge--danger animated infinite swing delay-2s"
-                                      ng-reflect-klass="m-badge" ng-reflect-ng-class="m-badge--danger"
-                                      style="position: relative;bottom: 10px;left: 20px;"
-                                        [hidden]="!entradaSrv.getCantEntradasPendientes() > 0"
+                                <span ng-reflect-klass="m-badge" ng-reflect-ng-class="m-badge--danger"
+                                      style="position: relative;bottom: 10px;left: 20px;font-weight: bold;"
+                                        [class]="(entradaSrv.getCantEntradasPendientes() > 0)? 'm-badge m-badge--danger animated infinite swing delay-2s' : 'm-badge m-badge--danger'"
                                 >{{entradaSrv.getCantEntradasPendientes()}}</span>
 
 

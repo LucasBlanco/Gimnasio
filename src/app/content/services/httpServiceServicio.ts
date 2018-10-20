@@ -11,7 +11,7 @@ export class HttpServiceServicio {
 	private getID = (dia) => ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'].findIndex(_dia => _dia === dia) +1;
 	private getDia = (id) => ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'].find((_dia, i) => i+1 === id);
 
-	private servicioToFront(servicio){
+	public servicioToFront(servicio){
 		let dias = [];
 		if(servicio.dias){
 			dias = servicio.dias.map( dia =>

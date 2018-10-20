@@ -38,6 +38,7 @@ import { MatInputModule,
     MatCheckboxModule,
     MatIconModule,
     MatTooltipModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -101,7 +102,8 @@ import { MatInputModule,
 		MatCheckboxModule,
 		MatIconModule,
 		MatTooltipModule,
-		WidgetChartsModule
+		WidgetChartsModule,
+        FormsModule
 	]
 })
 export class PartialsModule {}

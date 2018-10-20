@@ -7,6 +7,8 @@ import {ComprasComponent} from './compras/compras.component';
 import {SharedModule} from '../shared-components/shared.module';
 import { PerfilComponent } from './perfil/perfil.component';
 import {SociosService} from './serviceSocio';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import {AccesosComponent} from './accesos/accesos.component';
 
 
 const parentModuleRoutes: Routes = [
@@ -15,13 +17,21 @@ const parentModuleRoutes: Routes = [
 		component: NavegacionSocioComponent,
 		children: [                          // <---- child components declared here
 			{
-				path:'compras',
+				path: 'compras',
 				component: ComprasComponent
 			},
 			{
-				path:'perfil',
+				path: 'perfil',
 				component: PerfilComponent
-			}
+			},
+            {
+                path: 'historial',
+                component: HistorialComprasComponent
+            },
+            {
+                path: 'accesos',
+                component: AccesosComponent
+            }
 		]
 	}
 ];
@@ -35,7 +45,9 @@ const parentModuleRoutes: Routes = [
 	declarations: [
 		ComprasComponent,
 		NavegacionSocioComponent,
-		PerfilComponent
+		PerfilComponent,
+		HistorialComprasComponent,
+        AccesosComponent
 	],
 	providers: [
 

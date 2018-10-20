@@ -10,5 +10,4 @@ export class Caja {
 		this.observacion = (observacion)? observacion : null
 		this.tipoDePago = (tipoDePago)? tipoDePago : null
     }
-    
 }

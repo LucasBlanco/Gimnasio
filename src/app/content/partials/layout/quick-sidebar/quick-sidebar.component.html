@@ -5,7 +5,7 @@
 		<i class="la la-close"></i>
 	</span>
     <perfect-scrollbar style="height: 90vh;">
-        <label class="m-option shadow-sm m--margin-10 animated slideOutRigth slideInRigth" *ngFor="let socioServicio of sociosServicios">
+        <label class="m-option shadow-sm m--margin-10 animated slideOutRigth slideInRigth" *ngFor="let socioServicio of sociosServicios; let i = index">
             <div class="row" style="margin-left: 0px">
                 <div class="col-6 ">
                     <div class="row">
@@ -24,14 +24,14 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="m-checkbox-list">
-                            <label class="m-checkbox m-checkbox--state-success" *ngFor="let servicio of socioServicio.servicios">
-                                <input type="checkbox"> {{servicio.nombre}}
+                            <label class="m-checkbox m-checkbox--state-success" *ngFor="let checkSrv of socioServicio.checkServicios">
+                                <input type="checkbox" [(ngModel)]="checkSrv.seleccionado"> {{checkSrv.servicio.nombre}}
                                 <span></span>
                             </label>
                         </div>
                     </div>
                     <div class="m--padding-top-10 col-12" style="text-align: right;">
-                        <button type="button" class="btn m-btn--pill m-btn m-btn--gradient-from-info m-btn--gradient-to-accent" style="align-self: right">Registrar</button>
+                        <button type="button" class="btn m-btn--pill m-btn m-btn--gradient-from-info m-btn--gradient-to-accent" (click)="registrar(socioServicio)" style="align-self: right">Registrar</button>
                     </div>
                 </div>
             </div>

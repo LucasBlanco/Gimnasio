@@ -46,7 +46,7 @@ export class HttpServiceEntrada {
                         null,
                         response.id
                     );
-                    const servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, srv.id));
+                    let servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, srv.id));
                     this.cantEntradasPendientes ++;
                     console.log(this.cantEntradasPendientes);
                     this.updateObserver({socio: socio, servicios: servicios});
@@ -54,14 +54,14 @@ export class HttpServiceEntrada {
             });
     }
 
-    public registrarEntrada(socios: Socio[], servicio: Servicio) {
-        this.cantEntradasPendientes --;
+    public registrarEntrada(socios: Socio[], servicios: Servicio[]) {
         const idSocios = socios.map(socio => socio.id);
+        const idServicios = servicios.map(servicio => servicio.id);
         return this.httpService.post(
-            new Modelos.Post('/servicio/registrarEntradas', {socios: idSocios, idServicio: servicio.id},
-                'Servicio: ${servicio.nombre} \n Socio: ${socio.apellido}, ${socio.nombre}',
+            new Modelos.Post('/servicio/registrarEntradas', {socios: idSocios, servicios: idServicios},
+                'Entrada registrada con exito',
                 'Hubo un error al registrar el ingreso. Intente nuevamente.')
-        );
+        ).then( () => this.cantEntradasPendientes --);
     }
 
 

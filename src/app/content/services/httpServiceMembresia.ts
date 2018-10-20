@@ -11,7 +11,7 @@ export class HttpServiceMembresia {
 
 	constructor(private httpService: HttpService) {}
 
-	private membresiaToFront(membresia){
+	public membresiaToFront(membresia){
 		return new Membresia(membresia.nombre,
 			membresia.precio,
 			membresia.vencimiento_dias,

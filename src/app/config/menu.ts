@@ -485,7 +485,7 @@ export class MenuConfig implements ConfigModel {
                         title: 'Membresias',
                         root: true,
                         bullet: 'dot',
-                        icon: 'flaticon-rocket',
+						icon: 'la la-trophy',
                         submenu: [
                             {
                                 title: 'Alta',
@@ -501,7 +501,7 @@ export class MenuConfig implements ConfigModel {
                         title: 'Servicios',
                         root: true,
                         bullet: 'dot',
-                        icon: 'flaticon-rocket',
+						icon: 'fa fa-dumbbell',
                         submenu: [
                             {
                                 title: 'Alta',

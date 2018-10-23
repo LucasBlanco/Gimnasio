@@ -1,77 +1,103 @@
 <div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
 
-		<div class="m-portlet__head">
-			<div class="m-portlet__head-caption">
-				<div class="m-portlet__head-title">
-        			<span class="m-portlet__head-icon">
-          				<i class="flaticon-user"></i>
-        			</span>
-					<h3 class="m-portlet__head-text">
-						{{(editando)? 'Modificar servicio' : 'Alta de servicio'}}
-					</h3>
-				</div>
-			</div>
-			<div class="m-portlet__head-tools" *ngIf="editando">
-				<ul class="m-portlet__nav">
-					<li class="m-portlet__nav-item">
-						<a class="btn btn-outline-secondary m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--outline-2x m-btn--pill m-btn--air"
-						   style="color:white" (click)="irALaTabla()">
-							<i class="la la-angle-right"></i>
-						</a>
-					</li>
-				</ul>
+	<div class="m-portlet__head">
+		<div class="m-portlet__head-caption">
+			<div class="m-portlet__head-title">
+				<span class="m-portlet__head-icon">
+					<i class="flaticon-user"></i>
+				</span>
+				<h3 class="m-portlet__head-text">
+					{{(editando)? 'Modificar descuento' : 'Alta de descuento'}}
+				</h3>
 			</div>
 		</div>
-		<div class="m-portlet__body ">
-			<form (submit)="enviarEvento()" class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed" id="form" ngNativeValidate>
-				<div class="form-group m-form__group row">
-					<div class="col-lg-6">
-						<label>* Nombre:</label>
-						<input type="text" class="form-control m-input" placeholder="2x1" name="nombre"
-							   [(ngModel)]="descuento.nombre"
-							   required>
-						<span class="m-form__help">Ingrese el nombre del descuento</span>
-					</div>
-					<div class="col-lg-6">
-						<label class="">* Porcentaje:</label>
-						<input type="number" step="0.1" class="form-control m-input" placeholder="12.3" name="porcentaje"
-							   [(ngModel)]="descuento.porcentaje"
-							   required>
-						<span class="m-form__help">Ingrese el porcentaje del descuento</span>
-					</div>
-				</div>
-				<div class="form-group m-form__group row">
-					<div class="col-lg-6">
-						<label class="">Duracion:</label>
-						<div class="m-input-icon m-input-icon--right">
-							<input type="number" class="form-control m-input" name="duracion" placeholder="12"
-								   [(ngModel)]="descuento.vencimiento">
-						</div>
-						<span class="m-form__help">Ingrese la duracion en dias del descuento</span>
-					</div>
-					<div class="col-lg-6">
-						<label>Tipo:</label>
-						<div class="m-input-icon m-input-icon--right">
-							<label class="m-radio m-radio--solid">
-								<input type="checkbox" name="example_2" [(ngModel)]="descuento.aplicableEnConjunto"> Aplicable en conjunto
-								<span></span>
-							</label>
-						</div>
-						<span class="m-form__help">Seleccione si el descuento se aplica en conjunto</span>
-					</div>
-
-				</div>
-			</form>
+		<div class="m-portlet__head-tools" *ngIf="editando">
+			<ul class="m-portlet__nav">
+				<li class="m-portlet__nav-item">
+					<a class="btn btn-outline-secondary m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--outline-2x m-btn--pill m-btn--air"
+					 style="color:white" (click)="irALaTabla()">
+						<i class="la la-angle-right"></i>
+					</a>
+				</li>
+			</ul>
 		</div>
-		<div class="m-portlet__foot">
-			<div class="row">
+	</div>
+	<div class="m-portlet__body ">
+		<form (submit)="enviarEvento()" class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed"
+		 id="form" ngNativeValidate>
+			<div class="form-group m-form__group row">
 				<div class="col-lg-6">
-					<button type="submit" form="form" class="btn btn-primary">Guardar</button>
-					<span class="m--margin-left-10">o
-     			 <a class="m-link m--font-bold" (click)="borrar()">Borrar</a>
-    		</span>
+					<label>* Nombre:</label>
+					<input type="text" class="form-control m-input" placeholder="2x1" name="nombre" [(ngModel)]="descuento.nombre"
+					 required>
+					<span class="m-form__help">Ingrese el nombre del descuento</span>
+				</div>
+				<div class="col-lg-6">
+					<label class="">* Porcentaje:</label>
+					<input type="number" step="0.1" class="form-control m-input" placeholder="12.3" name="porcentaje" [(ngModel)]="descuento.porcentaje"
+					 required>
+					<span class="m-form__help">Ingrese el porcentaje del descuento</span>
 				</div>
 			</div>
+			<div class="form-group m-form__group row">
+				<div class="col-lg-6">
+					<label class="">Duracion:</label>
+					<div class="m-input-icon m-input-icon--right">
+						<input type="number" class="form-control m-input" name="duracion" placeholder="12" [(ngModel)]="descuento.vencimiento">
+					</div>
+					<span class="m-form__help">Ingrese la duracion en dias del descuento</span>
+				</div>
+				<div class="col-lg-6">
+					<label>Tipo:</label>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="m-input-icon m-input-icon--right">
+								<label class="m-radio m-radio--solid">
+									<input type="checkbox" name="enConjunto" [(ngModel)]="descuento.aplicableEnConjunto"> Aplicable en conjunto
+									<span></span>
+								</label>
+							</div>
+							<span class="m-form__help">Seleccione si el descuento se aplica en conjunto</span>
+						</div>
 
+						<div class="col-lg-6">
+							<div class="row">
+								<div class="col-6">
+									<div class="m-input-icon m-input-icon--right">
+										<label class="m-radio m-radio--solid">
+											<input type="radio" name="tipo" value="membresia" [(ngModel)]="descuento.tipo"> Membresia
+											<span></span>
+										</label>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="m-input-icon m-input-icon--right">
+										<label class="m-radio m-radio--solid">
+											<input type="radio" name="tipo" value="socio" [(ngModel)]="descuento.tipo"> Socio
+											<span></span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+
+							<span class="m-form__help">Seleccione si el descuento se aplicara a una membresia o a un socio</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+	<div class="m-portlet__foot">
+		<div class="row">
+			<div class="col-lg-6">
+				<button type="submit" form="form" class="btn btn-primary">Guardar</button>
+				<span class="m--margin-left-10">o
+					<a class="m-link m--font-bold" (click)="borrar()">Borrar</a>
+				</span>
+			</div>
 		</div>
+
+	</div>
 </div>

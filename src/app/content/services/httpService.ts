@@ -14,7 +14,7 @@ export class HttpService {
 		this.headerGET = new Headers({'Authorization': 'Bearer ' + token, 'Access-Control-Allow-Origin': '*'});
 		this.optionsGET = new RequestOptions({ headers: this.headerGET });
 		// this.ip = localStorage.getItem('currentServerIP');
-		this.ip = 'http://gym.test:8000';
+		this.ip = 'https://back.thenewfit.com.ar';
 	}
 	public usuario;
 	private loading: boolean = false;
@@ -78,7 +78,7 @@ export class HttpService {
 			this.http.post(this.ip + post.url, post.data, this.optionsPOST)
 				.toPromise()
 				.then((response: any) => {
-					if (post.mensajeExito !== undefined) {
+					if (post.mensajeExito) {
 						this.sendMessage(post.mensajeExito, 'success');
 					}
                     let respuesta
@@ -106,13 +106,13 @@ export class HttpService {
 			this.http.put(this.ip + post.url, post.data, this.optionsPOST)
 				.toPromise()
 				.then((response: any) => {
-					if (post.mensajeExito !== undefined) {
+					if (post.mensajeExito) {
 						this.sendMessage(post.mensajeExito, 'success');
 					}
 					resolve();
 				})
 				.catch((response: any) => {
-					if (post.mensajeError !== undefined) {
+					if (post.mensajeError) {
 						this.sendMessage(post.mensajeError, 'error');
 					}
 					reject();

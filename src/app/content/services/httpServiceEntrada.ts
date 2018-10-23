@@ -9,6 +9,7 @@ import {HttpServiceSocios} from './httpServiceSocios';
 @Injectable()
 export class HttpServiceEntrada {
 
+
     accesoSocio = new Subject<{ socio: Socio, servicios: Servicio[] }>();
     cantEntradasPendientes = 0;
     constructor(private httpService: HttpService) {
@@ -27,11 +28,13 @@ export class HttpServiceEntrada {
     }
 
     public acceder(automatico: boolean, idSocio) {
+        const ACEPTO = 1;
+        const RECHAZO = 2;
         this.httpService.post(new Modelos.Post('/socio/acceder', {automatico: automatico, idSocio: idSocio}))
             .then((response: any) => {
-                if (response === 'no puede entrar') {
+                if (response === RECHAZO) {
                     this.httpService.sendMessage('El socio tiene la cuota impaga para el servicio. Dirijase a la compra para realizar la renovacion', 'error');
-                } else if (response === 'registrada') {
+                } else if (response === ACEPTO) {
                     this.httpService.sendMessage('Se ha registrado la entrada', 'success');
                 } else {
                     this.httpService.sendMessage('Hay servicios en conflicto para la hora actual. Se debera resolver manualmente', 'warning');
@@ -46,7 +49,7 @@ export class HttpServiceEntrada {
                         null,
                         response.id
                     );
-                    let servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, srv.id));
+                    let servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, null, srv.id));
                     this.cantEntradasPendientes ++;
                     console.log(this.cantEntradasPendientes);
                     this.updateObserver({socio: socio, servicios: servicios});

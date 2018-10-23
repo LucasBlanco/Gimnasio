@@ -13,7 +13,7 @@ import {any} from '../../../../node_modules/codelyzer/util/function';
 @Injectable()
 export class HttpServiceSocios {
 
-	constructor(private httpService: HttpService, private membresiaSrv: HttpServiceMembresia, private descuentoSrv: HttpServiceDescuento, private servicioSrv: HttpServiceServicio){
+	constructor(private httpService: HttpService, private membresiaSrv: HttpServiceMembresia, private descuentoSrv: HttpServiceDescuento, private servicioSrv: HttpServiceServicio) {
 
 	}
 
@@ -38,6 +38,7 @@ export class HttpServiceSocios {
 				socio.descuento && socio.descuento.vencimiento_dias,
 				socio.descuento && socio.descuento.porcentaje,
 				socio.descuento && socio.descuento.aplicableEnConjunto,
+				socio.descuento && socio.descuento.tipo,
 				socio.descuento && socio.descuento.id || socio.id_descuento
 			),
 			socio.fecha_nacimiento,

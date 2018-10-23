@@ -51,13 +51,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 		userlogin.password = password;
 		const header = new Headers({ 'Content-Type': 'application/json' });
 		const options = new RequestOptions({ headers: header });
-		// https://agile-escarpment-72391.herokuapp.com
-		this.http.post('http://gym.test:8000/login', userlogin, options)
+		// https://back.thenewfit.com.ar
+		// ng build --prod --base-href ./ --aot=false --build-optimizer=false --watch
+		this.http.post('https://back.thenewfit.com.ar/login', userlogin, options)
 			.toPromise()
 			.then((response: any) => {
 				const token = JSON.parse(response._body).data.token;
 				const permisos = JWT(token).permisos;
 				const user = JWT(token).user_id;
+				localStorage.setItem('username', JSON.stringify(usuario));
 				localStorage.setItem('user', JSON.stringify(user));
 				localStorage.setItem('token', token);
 				this.router.navigate(['/']);

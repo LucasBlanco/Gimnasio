@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Servicio} from "../../../../models/servicio";
+import {Servicio} from '../../../../models/servicio';
 
 @Component({
   selector: 'm-tabla-servicio',
@@ -17,16 +17,15 @@ import {Servicio} from "../../../../models/servicio";
 					</div>
 				</div>
 			</div>
-			
 			<div class="m-portlet__body">
-				<m-tabla [nombreColumnas]="['Nombre', 'Precio', 'Vencimiento']" [valorColumnas]="['nombre', 'precio', 'vencimiento']" [datos]="servicios" [acciones]="acciones"></m-tabla>
+				<m-tabla [nombreColumnas]="['Nombre']" [valorColumnas]="['nombre']" [datos]="servicios" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })
 export class TablaServicioComponent implements OnInit {
 	@Input() servicios: Array<Servicio>;
 	@Output('modificar') emitModificacion: EventEmitter<Servicio> = new EventEmitter();
-	@Output('baja') emitBaja: EventEmitter<Servicio> = new EventEmitter()
+	@Output('baja') emitBaja: EventEmitter<Servicio> = new EventEmitter();
 	acciones;
   ngOnInit() {
 	  this.acciones = [
@@ -40,15 +39,15 @@ export class TablaServicioComponent implements OnInit {
 			  class: 'la la-trash',
 			  name: 'Eliminar'
 		  }
-	  ]
+	  ];
   }
 
 	enviarModificacion(servicio: Servicio) {
-		this.emitModificacion.emit(servicio)
+		this.emitModificacion.emit(servicio);
 	}
 
-	enviarBaja(servicio: Servicio){
-  		this.emitBaja.emit(servicio)
+	enviarBaja(servicio: Servicio) {
+  		this.emitBaja.emit(servicio);
 	}
 
 }

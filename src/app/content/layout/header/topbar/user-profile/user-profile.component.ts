@@ -20,6 +20,8 @@ export class UserProfileComponent implements OnInit {
 
 	@ViewChild('mProfileDropdown') mProfileDropdown: ElementRef;
 
+	nombreUsuario = ''
+
 	constructor (
 		private router: Router,
 		private authService: AuthenticationService,
@@ -27,11 +29,16 @@ export class UserProfileComponent implements OnInit {
 	) {}
 
 	ngOnInit (): void {
+		this.nombreUsuario = JSON.parse(localStorage.getItem('username'));
 		if (!this.avatarBg)
 			this.avatarBg = this.sanitizer.bypassSecurityTrustStyle('url(./assets/app/media/img/misc/user_profile_bg.jpg)');
 	}
 
 	public logout () {
-		this.authService.logout(true);
+		localStorage.setItem('token', null);
+		localStorage.setItem('user', null);
+		localStorage.setItem('username', null);
+		this.router.navigate(['/login']);
+		//this.authService.logout(true);
 	}
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit, AfterViewInit, Input} from '@angular/core';
-import { HttpServiceCaja } from '../../../../services/httpServiceCaja'
-import {Caja} from "../../../../models/caja";
+import { HttpServiceCaja } from '../../../../services/httpServiceCaja';
+import	moment from 'moment';
+import { Caja } from '../../../../models/caja';
 
 @Component({
 	selector: 'm-tabla-movimientos',
@@ -27,21 +28,19 @@ import {Caja} from "../../../../models/caja";
 })
 export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 
-	@Input() movimientos: Array<Caja> = []
+	@Input() movimientos: Array<Caja> = [];
 
 	constructor( private cajaSrv: HttpServiceCaja) {
 
 	}
 	ngOnInit() {
-		// this.socios = [new Socio('Carlos', 'Garcia', 'cgarcia@email.com', '2018-05-15', 123, 'mensual', 123,)]
-		this.movimientos= [new Caja(100, 'Bebida', 'es roja y tiene burbujitas', 'efectivo')]
-		/*this.httpService.getSocios().then(movimientos => {
-			(this.movimientos as any) = movimientos
-		})*/
+
 	}
 
 	ngAfterViewInit() {
-		this.cajaSrv.traerTodos('10-10-2018', '15-10-18').then( response => (this.movimientos as any) = response)
+		const fechaDesde = moment().subtract(1, 'month').format('YYYY-MM-DD');
+		const fechaHasta = moment().format('YYYY-MM-DD');
+		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then( response => (this.movimientos as any) = response );
 	}
 
 }

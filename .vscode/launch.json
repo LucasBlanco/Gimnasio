@@ -3,14 +3,18 @@
     // Mantenga el puntero para ver las descripciones de los existentes atributos 
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Lanzar Chrome contra localhost",
-            "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+    "configurations": [{
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chromium against localhost",
+        "url": "http://localhost:4200/#",
+        "webRoot": "${workspaceFolder}",
+        "runtimeExecutable": "/usr/bin/chromium-browser",
+        "runtimeArgs": [
+            "--new-window",
+            "-user-data-dir=\"/${workspaceFolder}/DevProfile\"",
+            "--remote-debugging-port=9222",
+            "--disable-background-networking"
+        ]
+    }]
 }

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {Servicio} from "../../../../models/servicio";
+import {Servicio} from '../../../../models/servicio';
 
 
 @Component({
@@ -25,31 +25,31 @@ export class AmServicioComponent implements OnChanges {
   constructor() { }
 
 	ngOnChanges( changes: SimpleChanges) {
-		this.servicio = (this.editando)? this.servicioAModificar : new Servicio()
-		if(this.editando){
+		this.servicio = (this.editando) ? this.servicioAModificar : new Servicio();
+		if (this.editando) {
 			this.dias = this.dias.map( dia => {
-				let horario = this.servicioAModificar.horarios.find(_horario => _horario.dia === dia.dia)
-				return (horario)? {seleccionado: true, ...horario}: dia
-			})
+				const horario = this.servicioAModificar.horarios.find(_horario => _horario.dia === dia.dia);
+				return (horario) ? {seleccionado: true, ...horario} : dia;
+			});
 		}
 	}
 
 	borrar() {
 		this.servicio = new Servicio();
-		this.dias = this.dias.map((dia) => ({seleccionado: false, dia: dia.dia, horaInicio: null, horaFin: null, entradaDesde: null, entradaHasta: null}))
+		this.dias = this.dias.map((dia) => ({seleccionado: false, dia: dia.dia, horaInicio: null, horaFin: null, entradaDesde: null, entradaHasta: null}));
 	}
 
-	irALaTabla(){
-		this.irALaTablaEmitter.emit()
+	irALaTabla() {
+		this.irALaTablaEmitter.emit();
 	}
 
 	enviarEvento() {
-  		this.servicio.horarios = this.dias.filter( dia => dia.seleccionado)
-		if(!this.editando){
-			this.altaEmitter.emit(this.servicio)
-		}else{
-			this.modificacionEmitter.emit(this.servicio)
+  		this.servicio.horarios = this.dias.filter( dia => dia.seleccionado);
+		if (!this.editando) {
+			this.altaEmitter.emit(this.servicio);
+		} else {
+			this.modificacionEmitter.emit(this.servicio);
 		}
-		this.borrar()
+		this.borrar();
 	}
 }

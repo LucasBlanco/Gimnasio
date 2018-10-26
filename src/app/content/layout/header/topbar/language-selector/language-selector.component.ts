@@ -2,6 +2,7 @@ import { filter } from 'rxjs/operators';
 import { Component, ElementRef, HostBinding, OnInit } from '@angular/core';
 import { TranslationService } from '../../../../../core/services/translation.service';
 import { NavigationStart, Router } from '@angular/router';
+import { HttpServiceEntrada } from '../../../../services/httpServiceEntrada';
 
 interface LanguageFlag {
 	lang: string;
@@ -19,7 +20,7 @@ export class LanguageSelectorComponent implements OnInit {
 	// tslint:disable-next-line:max-line-length
 	@HostBinding('class') classes = 'm-nav__item m-topbar__languages m-dropdown m-dropdown--small m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width';
 	@HostBinding('attr.m-dropdown-toggle') mDropdownToggle = 'click';
-	language: LanguageFlag;
+	/*language: LanguageFlag;
 	languages: LanguageFlag[] = [
 		{
 			lang: 'en',
@@ -51,24 +52,29 @@ export class LanguageSelectorComponent implements OnInit {
 			country: 'France',
 			flag: 'assets/app/media/img/flags/019-france.svg'
 		},
-	];
+	];*/
 
 	constructor(
-		private translationService: TranslationService,
+		private httpServiceEntrada: HttpServiceEntrada
+		/*private translationService: TranslationService,
 		private router: Router,
-		private el: ElementRef
+		private el: ElementRef*/
 	) {}
 
 	ngOnInit() {
-		this.setSelectedLanguage();
+		/*this.setSelectedLanguage();
 		this.router.events
 			.pipe(filter(event => event instanceof NavigationStart))
 			.subscribe(event => {
 				this.setSelectedLanguage();
-			});
+			});*/
 	}
 
-	setLanguage(lang) {
+	cambiarAutomatico(automatico: boolean) {
+		this.httpServiceEntrada.automatico = automatico;
+	}
+
+	/*setLanguage(lang) {
 		this.languages.forEach((language: LanguageFlag) => {
 			if (language.lang === lang) {
 				language.active = true;
@@ -90,5 +96,5 @@ export class LanguageSelectorComponent implements OnInit {
 				});
 			}
 		});
-	}
+	}*/
 }

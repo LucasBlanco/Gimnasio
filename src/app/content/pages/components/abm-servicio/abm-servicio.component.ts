@@ -27,6 +27,7 @@ export class AbmServicioComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 	  this.activatedRouter.params.subscribe((params: Params) => {
 		  this.mostrarAlta = (params['view'] === 'am');
+		  this.editando = false
 		  this.servicioSeleccionado = new Servicio();
 	  });
   }

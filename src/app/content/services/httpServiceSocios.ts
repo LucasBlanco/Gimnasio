@@ -23,7 +23,9 @@ export class HttpServiceSocios {
 			apellido: socio.apellido,
 			celular: socio.telefono,
 			domicilio: socio.direccion,
-			id_descuento: socio.descuento.id,
+			id_descuento: socio.descuento && socio.descuento.id,
+			genero: socio.genero,
+			email: socio.email,
 			dni: socio.dni,
 			fecha_nacimiento: socio.fechaNacimiento
 		};
@@ -46,6 +48,7 @@ export class HttpServiceSocios {
 			socio.celular,
 			socio.domicilio,
 			socio.genero,
+			socio.email,
 			socio.id);
 	}
 
@@ -73,9 +76,10 @@ export class HttpServiceSocios {
             new Modelos.Get('/ventas/historialCompra/' + miSocio.id,
                 'Hubo un error al traer el historial de compras. intente nuevamente')
         ), (response) => response.map(
-                ({socio, membresia, descuento, ...resto}) => ({
+                ({socio, membresia, descuento_membresia, descuento_socio, ...resto}) => ({
                     membresia: this.membresiaSrv.membresiaToFront(membresia),
-                        descuento: descuento && this.descuentoSrv.descuentoToFront(descuento),
+						descuento_socio: descuento_socio && this.descuentoSrv.descuentoToFront(descuento_socio),
+						descuento_membresia: descuento_membresia && this.descuentoSrv.descuentoToFront(descuento_membresia),
                         socio: this.socioToFront(socio),
                             ...resto
                 })
@@ -88,7 +92,8 @@ export class HttpServiceSocios {
             this.httpService.get(
                 new Modelos.Get('/socio/accesos/' + miSocio.id,
                     'Hubo un error al traer los accesos. intente nuevamente')
-            ), (accesos) => accesos.map( ({created_at, servicio, ...resto}) => ({fecha: created_at, servicio: this.servicioSrv.servicioToFront(servicio)}))
+			),
+			(accesos) => accesos.map( ({created_at, servicio, ...resto}) => ({fecha: created_at, servicio: this.servicioSrv.servicioToFront(servicio)}))
             );
     }
 
@@ -107,7 +112,7 @@ export class HttpServiceSocios {
 	}
 
 	public comprar(idSocio: number, tipoPago: string, membresias: Array<Membresia>) {
-		const membresiasBack =  membresias.map(({id, descuento, ...resto}) => ({id: id, idDescuento: descuento && descuento.id, cantidad: 0}));
+		const membresiasBack =  membresias.map(({id, descuento, ...resto}) => ({id: id, idDescuento: descuento && descuento.id, cantidad: 1}));
 		return this.httpService.post(
 			new Modelos.Post('/socio/comprar', {idSocio: idSocio, tipoPago: tipoPago, observacion: 'observacion', membresias: membresiasBack},
 				'La compra fue realizada exitosamente',

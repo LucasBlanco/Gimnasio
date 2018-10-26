@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpServiceSocios} from '../../../../services/httpServiceSocios';
 import {SociosService} from '../serviceSocio';
+import moment from 'moment';
 
 @Component({
     selector: 'm-accesos',
@@ -21,7 +22,7 @@ export class AccesosComponent implements OnInit {
             this.accesos = response;
             console.log(this.accesos);
             this.accesosTabla = this.accesos.map(
-                ({fecha, servicio}) => ({fecha, servicio: servicio.nombre}));
+                ({ fecha, servicio }) => ({ fecha: moment(fecha).format('DD/MM/YYYY  hh:mm'), servicio: servicio.nombre}));
         });
     }
 

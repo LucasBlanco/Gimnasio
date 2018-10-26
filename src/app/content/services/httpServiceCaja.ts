@@ -37,7 +37,7 @@ export class HttpServiceCaja {
 	public traerTodos(fechaInicio: any, fechaFin: any) {
 		return this.httpService.mapper(
 		this.httpService.post(
-			new Modelos.Post('/caja/movimientos/', {fechaInicio: fechaInicio, fechaFin: fechaFin},
+			new Modelos.Post('/caja/movimientos', {fechaInicio: fechaInicio, fechaFin: fechaFin},
 			null,
 					'Hubo un error al traer los movimientos. Intente nuevamente.')),
 			(movimientos) => movimientos.map(

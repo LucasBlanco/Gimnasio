@@ -41,9 +41,9 @@
 			</div>
 			<div class="form-group m-form__group row">
 				<div class="col-lg-6">
-					<label class="">Duracion:</label>
+					<label class="">* Duracion:</label>
 					<div class="m-input-icon m-input-icon--right">
-						<input type="number" class="form-control m-input" name="duracion" placeholder="12" [(ngModel)]="descuento.vencimiento">
+						<input type="number" class="form-control m-input" name="duracion" placeholder="12" [(ngModel)]="descuento.vencimiento" required>
 					</div>
 					<span class="m-form__help">Ingrese la duracion en dias del descuento</span>
 				</div>
@@ -65,7 +65,7 @@
 								<div class="col-6">
 									<div class="m-input-icon m-input-icon--right">
 										<label class="m-radio m-radio--solid">
-											<input type="radio" name="tipo" value="membresia" [(ngModel)]="descuento.tipo"> Membresia
+											<input type="radio" name="tipo" value="membresia" [(ngModel)]="descuento.tipo" required> Membresia
 											<span></span>
 										</label>
 									</div>
@@ -73,7 +73,7 @@
 								<div class="col-6">
 									<div class="m-input-icon m-input-icon--right">
 										<label class="m-radio m-radio--solid">
-											<input type="radio" name="tipo" value="socio" [(ngModel)]="descuento.tipo"> Socio
+											<input type="radio" name="tipo" value="socio" [(ngModel)]="descuento.tipo" required> Socio
 											<span></span>
 										</label>
 									</div>

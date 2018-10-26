@@ -32,7 +32,7 @@
 				<div class="form-group m-form__group row">
 					<div class="col-lg-6">
 						<label class="">Tipo de pago:</label>
-						<select class="form-control m-input" name="tipoDePago" [(ngModel)]="caja.tipoDePago">
+						<select class="form-control m-input" name="tipoDePago" [(ngModel)]="caja.tipoDePago" required>
 							<option [value]="'efectivo'">Efectivo</option>
 							<option [value]="'debito'">Tarjeta de debito</option>
 							<option [value]="'credito'">Tarjeta de credito</option>
@@ -42,7 +42,7 @@
 					<div class="col-lg-6">
 						<label>Observacion:</label>
 						<div class="m-input-icon m-input-icon--right">
-							<input type="text" class="form-control m-input" name="nroSocio" [(ngModel)]="caja.observacion" required>
+							<input type="text" class="form-control m-input" name="nroSocio" [(ngModel)]="caja.observacion">
 						</div>
 						<span class="m-form__help">Ingrese una observacion</span>
 					</div>
@@ -53,11 +53,11 @@
 						<label>Tipo de transaccion:</label>
 						<div class="m-radio-inline">
 							<label class="m-radio m-radio--solid">
-								<input type="radio" name="example_2" value="ingreso" [(ngModel)]="tipo"> Ingreso
+								<input type="radio" name="example_2" value="ingreso" [(ngModel)]="tipo" required> Ingreso
 								<span></span>
 							</label>
 							<label class="m-radio m-radio--solid">
-								<input type="radio" name="example_2" value="egreso" [(ngModel)]="tipo"> Egreso
+								<input type="radio" name="example_2" value="egreso" [(ngModel)]="tipo" required> Egreso
 								<span></span>
 							</label>
 						</div>

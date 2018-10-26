@@ -22,7 +22,7 @@ import { PageConfigService } from './core/services/page-config.service';
 import { UserService } from './core/services/user.service';
 import { UtilsService } from './core/services/utils.service';
 import { ClassInitService } from './core/services/class-init.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { GestureConfig, MatProgressSpinnerModule } from '@angular/material';
@@ -48,6 +48,13 @@ import 'hammerjs';
 import {HttpServiceEntrada} from './content/services/httpServiceEntrada';
 import {HttpService} from './content/services/httpService';
 import {HttpModule} from '@angular/http';
+import { HttpServiceSocios } from './content/services/httpServiceSocios';
+import { HttpServiceCaja } from './content/services/httpServiceCaja';
+import { HttpServiceMembresia } from './content/services/httpServiceMembresia';
+import { HttpServiceServicio } from './content/services/httpServiceServicio';
+import { HttpServiceDescuento } from './content/services/httpServiceDescuento';
+import { SociosService } from './content/pages/components/socio/serviceSocio';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
@@ -70,7 +77,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
-        HttpModule
+		HttpModule
 	],
 	providers: [
 		AclService,
@@ -102,8 +109,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 			provide: HAMMER_GESTURE_CONFIG,
 			useClass: GestureConfig
 		},
-        HttpServiceEntrada,
-        HttpService
+		HttpServiceEntrada,
+		HttpService,
+		HttpServiceSocios,
+		HttpServiceCaja,
+		HttpServiceMembresia,
+		HttpServiceServicio,
+		HttpServiceDescuento,
+		SociosService,
+		{ provide: LocationStrategy, useClass: HashLocationStrategy }
 	],
 	bootstrap: [AppComponent]
 })

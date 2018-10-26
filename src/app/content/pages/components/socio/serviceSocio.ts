@@ -11,9 +11,9 @@ export class SociosService {
 
 	private subscribers = [];
 	public socio: Socio = new Socio();
+	
 
 	constructor(private httpSrvSocio: HttpServiceSocios, private router: Router) {
-
 	}
 
 	 public subscribe(subscriber) {

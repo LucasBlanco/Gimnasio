@@ -23,13 +23,14 @@ import { LanguageSelectorComponent } from './header/topbar/language-selector/lan
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatProgressBarModule, MatTabsModule, MatButtonModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { FormsModule } from '@angular/forms';
 import {EntradaSocioComponent} from './header/topbar/entrada-socio/entrada-socio.component';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
@@ -63,7 +64,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 		SearchDefaultComponent,
 
-		HeaderSearchComponent,
+		HeaderSearchComponent
 
 	],
 	exports: [
@@ -109,6 +110,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		MatButtonModule,
 		TranslateModule.forChild(),
 		LoadingBarModule.forRoot(),
+		NgxTypeaheadModule
 	]
 })
 export class LayoutModule {}

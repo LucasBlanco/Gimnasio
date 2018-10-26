@@ -27,7 +27,7 @@ export class HttpServiceServicio {
 		return  new Servicio(servicio.nombre, dias, servicio.registra_entrada, servicio.id);
 	}
 
-	private servicioToBack({horarios, ...resto}) {
+	private servicioToBack({horarios, registraEntrada, ...resto}) {
 
 		const dias = horarios.map( horario =>
 			({
@@ -40,6 +40,7 @@ export class HttpServiceServicio {
 		);
 		return {
 				...resto,
+				registra_entrada: registraEntrada,
 			dias: dias,
 		};
 

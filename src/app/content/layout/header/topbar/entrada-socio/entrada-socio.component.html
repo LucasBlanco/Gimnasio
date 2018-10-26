@@ -1,8 +1,22 @@
 <div class="m-input-icon m-input-icon--right">
-    <input type="text" class="form-control m-input m-input--air m-input--pill" #socio (keyup.enter)="acceder(socio.value)">
-    <span class="m-input-icon__icon m-input-icon__icon--right">
-        <span>
-            <i class="la la-search"></i>
-        </span>
-    </span>
+    <div class="search-results">
+        <div style="position: relative">
+<div class="m-input-icon m-input-icon--right" (click)="buscarSocios()" >
+                <input class="form-control m-input m-input--air m-input--pill" [value]="search" ngxTypeahead [taList]="datosBuscables"
+                    [taItemTpl]="itemTpl" (taSelected)="handleResultSelected($event)" [taDisplayOnFocus]="false"
+                    [taAllowEmpty]="true" placeholder="Entrada socio...">
+
+                <ng-template #itemTpl let-result>
+                    <div style="text-align: left">
+                        <span>- {{ result.result }}</span>
+                    </div>
+                </ng-template>
+                <span class="m-input-icon__icon m-input-icon__icon--right">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>

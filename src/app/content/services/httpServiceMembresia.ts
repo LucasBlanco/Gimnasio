@@ -41,24 +41,24 @@ export class HttpServiceMembresia {
 		delete membresia.id;
 		return this.httpService.post(
 			new Modelos.Post('/membresia/crear', this.membresiaToBack(membresia),
-				'La checkMembresia fue creada con exito',
-				'Hubo un error al crear la checkMembresia. Intente nuevamente.')
+				'La membresia fue creada con exito',
+				'Hubo un error al crear la membresia. Intente nuevamente.')
 		);
 	}
 
 	public editar( membresia: Membresia ) {
 		return this.httpService.put(
 			new Modelos.Post('/membresia/editar/' + membresia.id, this.membresiaToBack(membresia),
-				'La checkMembresia fue editada con exito',
-				'Hubo un error al editar la checkMembresia. Intente nuevamente.')
+				'La membresia fue editada con exito',
+				'Hubo un error al editar la membresia. Intente nuevamente.')
 		);
 	}
 
 	public borrar(membresia: Membresia) {
 		return this.httpService.post(
 			new Modelos.Post('/membresia/borrar/', membresia.id,
-				'La checkMembresia fue eliminada con exito',
-				'Hubo un error al eliminar la checkMembresia. Intente nuevamente.')
+				'La membresia fue eliminada con exito',
+				'Hubo un error al eliminar la membresia. Intente nuevamente.')
 		);
 	}
 
@@ -66,7 +66,7 @@ export class HttpServiceMembresia {
 		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get('/membresia/all',
-					'Hubo un error al traer las checkMembresias. Intente nuevamente.')
+					'Hubo un error al traer las membresias. Intente nuevamente.')
 			),
 			(membresias) => membresias.map(membresia => this.membresiaToFront(membresia))
 		);
@@ -76,7 +76,7 @@ export class HttpServiceMembresia {
 		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get('/membresia/allConTodo',
-					'Hubo un error al traer las checkMembresias. Intente nuevamente.')
+					'Hubo un error al traer las membresias. Intente nuevamente.')
 			),
 			(membresias) => membresias.map(membresia => this.membresiaToFront(membresia))
 		);
@@ -86,7 +86,7 @@ export class HttpServiceMembresia {
 		return this.httpService.mapper(
 			this.httpService.get(
 				new Modelos.Get('/membresia/find/' + membresia.id,
-					'Hubo un error al traer la checkMembresia. Intente nuevamente.')
+					'Hubo un error al traer la membresia. Intente nuevamente.')
 			),
 			(_membresia) => this.membresiaToFront(_membresia)
 		);

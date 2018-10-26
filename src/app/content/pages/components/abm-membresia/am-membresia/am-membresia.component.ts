@@ -71,4 +71,6 @@ export class AmMembresiaComponent implements OnChanges, OnInit {
 	descuentosSocio = () => this.descuentos.filter(d => d.descuento.tipo === 'socio');
 
 	actualizarVencimientoServicios = (vencimiento) => this.servicios.forEach(s => s.vencimiento = vencimiento);
+
+	hayUnServicioSeleccionado = () => this.servicios.some(s => s.seleccionado);
 }

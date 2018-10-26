@@ -35,9 +35,9 @@ export class UserProfileComponent implements OnInit {
 	}
 
 	public logout () {
-		localStorage.setItem('token', null);
-		localStorage.setItem('user', null);
-		localStorage.setItem('username', null);
+		localStorage.setItem('token', '');
+		localStorage.setItem('user', '');
+		localStorage.setItem('username', '');
 		this.router.navigate(['/login']);
 		//this.authService.logout(true);
 	}

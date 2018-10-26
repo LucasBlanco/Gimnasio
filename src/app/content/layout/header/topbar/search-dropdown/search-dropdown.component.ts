@@ -14,14 +14,20 @@ import { Subscription } from 'rxjs';
 import { QuickSearchDirective } from '../../../../../core/directives/quick-search.directive';
 import { QuickSearchService } from '../../../../../core/services/quick-search.service';
 import {SociosService} from '../../../../pages/components/socio/serviceSocio'
+import { HttpServiceEntrada } from '../../../../services/httpServiceEntrada';
+import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 @Component({
 	selector: 'm-search-dropdown',
 	templateUrl: './search-dropdown.component.html'
 })
 export class SearchDropdownComponent
-	implements OnInit, OnDestroy, AfterViewInit {
+	implements OnInit, AfterViewInit {
 	onSearch: Subscription;
-    idSocio
+	idSocio
+	datos: Array<any> = [];
+	filtro: string = 'nombre';
+	search: string = '';
+	datosBuscables: Array<string> = [];
 	onLayoutConfigUpdated: Subscription;
 	@HostBinding('class') classes = '';
 	@HostBinding('id') id = 'm_quicksearch';
@@ -42,7 +48,8 @@ export class SearchDropdownComponent
 		private layoutConfigService: LayoutConfigService,
 		private el: ElementRef,
 		private quickSearchService: QuickSearchService,
-        private sociosSrv: SociosService
+		private entradaSrv: HttpServiceEntrada,
+		private sociosSrv: SociosService
 	) {
 		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
 			const config = model.config;
@@ -59,16 +66,27 @@ export class SearchDropdownComponent
 
 	ngOnInit(): void {}
 
-	ngOnDestroy() {
-		this.onSearch.unsubscribe();
+
+	buscarSocios() {
+		this.datos = this.entradaSrv.socios.map(({ nombre, apellido, ...socio }) => ({
+			nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio
+		}));
+		this.datosBuscables = this.generarArray();
 	}
 
-    buscarSocio(){
-        this.sociosSrv.findUser(this.idSocio);
-    }
+	generarArray() {
+		const algo = this.datos.map(dato => dato[this.filtro]);
+		return algo;
+	}
+
+	handleResultSelected(result) {
+		this.search = result;
+		const objectToReturn = this.datos.filter(dato => Object.entries(dato).some(([key, value]) => key === this.filtro && value === result));
+		 this.sociosSrv.findUser(objectToReturn[0].id);
+	}
 
 	ngAfterViewInit(): void {
-		Promise.resolve(null).then(() => {
+		/*Promise.resolve(null).then(() => {
 			this.mQuickSearchDirective = new QuickSearchDirective(this.el);
 			this.mQuickSearchDirective.ngAfterViewInit();
 
@@ -83,6 +101,6 @@ export class SearchDropdownComponent
 					});
 				}
 			);
-		});
+		});*/
 	}
 }

@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Membresia} from "../../../../models/membresia";
-import {Servicio} from "../../../../models/servicio";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Membresia } from "../../../../models/membresia";
+import { Servicio } from "../../../../models/servicio";
 
 @Component({
-  selector: 'm-tabla-membresia',
+	selector: 'm-tabla-membresia',
 	template: `
 		<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
 			<div class="m-portlet__head">
@@ -29,26 +29,26 @@ export class TablaMembresiaComponent implements OnInit {
 	@Output('modificar') emitModificacion: EventEmitter<Membresia> = new EventEmitter();
 	@Output('baja') emitBaja: EventEmitter<Servicio> = new EventEmitter()
 	acciones;
-  ngOnInit() {
-	  this.acciones = [
-		  {
-			  callback: this.enviarModificacion.bind(this),
-			  class: 'la la-edit',
-			  name: 'Modificar'
-		  },
-		  {
-			  callback: this.enviarBaja.bind(this),
-			  class: 'la la-trash',
-			  name: 'Eliminar'
-		  }
-	  ]
-  }
+	ngOnInit() {
+		this.acciones = [
+			{
+				callback: this.enviarModificacion.bind(this),
+				class: 'la la-edit',
+				name: 'Modificar'
+			},
+			{
+				callback: this.enviarBaja.bind(this),
+				class: 'la la-trash',
+				name: 'Eliminar'
+			}
+		]
+	}
 
 	enviarModificacion(membresia: Membresia) {
 		this.emitModificacion.emit(membresia)
 	}
 
-	enviarBaja(servicio: Servicio){
+	enviarBaja(servicio: Servicio) {
 		this.emitBaja.emit(servicio)
 	}
 

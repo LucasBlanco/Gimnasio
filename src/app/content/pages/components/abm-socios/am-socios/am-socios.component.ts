@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {Socio} from '../../../../models/socio'
-import {HttpServiceDescuento} from "../../../../services/httpServiceDescuento";
-import {Descuento} from "../../../../models/descuento";
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Socio } from '../../../../models/socio'
+import { HttpServiceDescuento } from "../../../../services/httpServiceDescuento";
+import { Descuento } from "../../../../models/descuento";
 
 @Component({
 	selector: 'm-am-socios',
@@ -16,27 +16,30 @@ export class AMSociosComponent implements OnChanges {
 	@Output('mostrarTabla') irALaTablaEmitter = new EventEmitter<void>()
 	descuentos: Descuento[]
 
-	constructor( private descuentoSrv: HttpServiceDescuento){}
+	constructor(private descuentoSrv: HttpServiceDescuento) { }
 
-	ngOnInit(){
-		 this.descuentoSrv.traerTodos().then( descuentos => this.descuentos = descuentos)
+	ngOnInit() {
+		this.descuentoSrv.traerTodos().then(descuentos => {
+			this.descuentos = descuentos.filter(d => d.tipo === 'socio')
+			console.log(this.descuentos)}
+		)
 	}
-	ngOnChanges( changes: SimpleChanges) {
-		this.socio = (this.editando)? this.socioAModificar : new Socio()
+	ngOnChanges(changes: SimpleChanges) {
+		this.socio = (this.editando) ? this.socioAModificar : new Socio()
 	}
 
 	borrarSocio() {
 		this.socio = new Socio()
 	}
 
-	irALaTabla(){
+	irALaTabla() {
 		this.irALaTablaEmitter.emit()
 	}
 
 	enviarEvento() {
-		if(!this.editando){
+		if (!this.editando) {
 			this.altaEmitter.emit(this.socio)
-		}else{
+		} else {
 			this.modificacionEmitter.emit(this.socio)
 		}
 		this.borrarSocio()

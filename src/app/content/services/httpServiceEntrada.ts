@@ -1,22 +1,33 @@
 import * as Modelos from './httpModels';
-import {HttpService} from './httpService';
-import {Injectable} from '@angular/core';
-import {Socio} from '../models/socio';
-import {Servicio} from '../models/servicio';
-import {Observable, Subject} from 'rxjs';
-import {HttpServiceSocios} from './httpServiceSocios';
+import { HttpService } from './httpService';
+import { Injectable } from '@angular/core';
+import { Socio } from '../models/socio';
+import { Servicio } from '../models/servicio';
+import { Observable, Subject } from 'rxjs';
+import { HttpServiceSocios } from './httpServiceSocios';
 
 @Injectable()
 export class HttpServiceEntrada {
 
 
     accesoSocio = new Subject<{ socio: Socio, servicios: Servicio[] }>();
+    subjectSocios = new Subject<{ socios: Socio[] }>();
+    socios: Socio[];
     cantEntradasPendientes = 0;
-    constructor(private httpService: HttpService) {
+    automatico: boolean = true;
+    constructor(private httpService: HttpService, private httpSocios: HttpServiceSocios) {
+        this.httpSocios.traerTodos().then(socios => {
+            this.socios = socios;
+            this.updateSociosObservers(this.socios);
+        });
     }
 
     public getCantEntradasPendientes() {
         return this.cantEntradasPendientes;
+    }
+
+    private updateSociosObservers(socios) {
+        this.subjectSocios.next(socios);
     }
 
     private updateObserver(servicios) {
@@ -26,11 +37,14 @@ export class HttpServiceEntrada {
     public onEntrada(): Observable<any> {
         return this.accesoSocio.asObservable();
     }
+    public getSocios(): Observable<any> {
+        return this.subjectSocios.asObservable();
+    }
 
-    public acceder(automatico: boolean, idSocio) {
+    public acceder(idSocio) {
         const ACEPTO = 1;
         const RECHAZO = 2;
-        this.httpService.post(new Modelos.Post('/socio/acceder', {automatico: automatico, idSocio: idSocio}))
+        this.httpService.post(new Modelos.Post('/socio/acceder', { automatico: this.automatico, idSocio: idSocio }))
             .then((response: any) => {
                 if (response === RECHAZO) {
                     this.httpService.sendMessage('El socio tiene la cuota impaga para el servicio. Dirijase a la compra para realizar la renovacion', 'error');
@@ -47,12 +61,13 @@ export class HttpServiceEntrada {
                         null,
                         null,
                         null,
+                        null,
                         response.id
                     );
-                    let servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, null, srv.id));
-                    this.cantEntradasPendientes ++;
+                    const servicios = response.servicios.map(srv => new Servicio(srv.nombre, null, null, srv.id));
+                    this.cantEntradasPendientes++;
                     console.log(this.cantEntradasPendientes);
-                    this.updateObserver({socio: socio, servicios: servicios});
+                    this.updateObserver({ socio: socio, servicios: servicios });
                 }
             });
     }
@@ -61,17 +76,17 @@ export class HttpServiceEntrada {
         const idSocios = socios.map(socio => socio.id);
         const idServicios = servicios.map(servicio => servicio.id);
         return this.httpService.post(
-            new Modelos.Post('/servicio/registrarEntradas', {socios: idSocios, servicios: idServicios},
+            new Modelos.Post('/servicio/registrarEntradas', { socios: idSocios, servicios: idServicios },
                 'Entrada registrada con exito',
                 'Hubo un error al registrar el ingreso. Intente nuevamente.')
-        ).then( () => this.cantEntradasPendientes --);
+        ).then(() => this.cantEntradasPendientes--);
     }
 
 
     public devolverEntradas(socios: Socio[], servicio: Servicio) {
         const idSocios = socios.map(socio => socio.id);
         return this.httpService.post(
-            new Modelos.Post('/servicio/devolverEntradas', {idServicio: servicio.id, socios: idSocios},
+            new Modelos.Post('/servicio/devolverEntradas', { idServicio: servicio.id, socios: idSocios },
                 'Se ha devuelto la entrada a los socios con exito.',
                 'Hubo un error al devolver la entrada. Intente nuevamente.')
         );

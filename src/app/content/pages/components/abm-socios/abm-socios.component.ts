@@ -1,11 +1,12 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Socio} from "../../../models/socio";
-import {ActivatedRoute, Params} from "@angular/router";
-import {HttpServiceSocios} from "../../../services/httpServiceSocios";
+import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
+import {Socio} from '../../../models/socio';
+import {ActivatedRoute, Params} from '@angular/router';
+import {HttpServiceSocios} from '../../../services/httpServiceSocios';
+import { HttpServiceEntrada } from '../../../services/httpServiceEntrada';
 
 @Component({
   selector: 'm-abm-socios',
-	template: `		
+	template: `
 		<div *ngIf="mostrarAlta">
 				<m-am-socios (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)" (mostrarTabla)="this.mostrarAlta = false" [socioAModificar]="socioSeleccionado" [editando]="editando"></m-am-socios>
 			</div>
@@ -14,46 +15,54 @@ import {HttpServiceSocios} from "../../../services/httpServiceSocios";
 			</div>
 	`,
 })
-export class AbmSociosComponent implements OnInit, AfterViewInit {
+export class AbmSociosComponent implements OnInit, OnDestroy {
 
 	socioSeleccionado: Socio = new Socio();
 	socios: Array<Socio>;
 	mostrarAlta: boolean = true;
 	editando: boolean = false;
+	subscription;
 
-  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios) {
+  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios, private entradaSrv: HttpServiceEntrada) {
   }
 
   ngOnInit() {
-	  this.activatedRouter.params.subscribe((params: Params) =>{
+	  this.activatedRouter.params.subscribe((params: Params) => {
 		  this.mostrarAlta = (params['view'] === 'am');
-		  this.socioSeleccionado = new Socio()
-	  })
+		  this.editando = false;
+		  this.socioSeleccionado = new Socio();
+	  });
+	  this.subscription = this.entradaSrv.getSocios().subscribe(socios => {
+		  this.socios = socios;
+	  });
   }
 
-  ngAfterViewInit(){
-	  this.socioSrv.traerTodos().then( socios => this.socios = socios)
-  }
 
-  realizarAlta(socio: Socio){
-	  this.socioSrv.crear(socio).then( () =>{
+	ngOnDestroy() {
+		// unsubscribe to ensure no memory leaks
+		this.subscription.unsubscribe();
+	}
+
+  realizarAlta(socio: Socio) {
+	  this.socioSrv.crear(socio).then( () => {
+		  this.entradaSrv.socios.push(socio);
 	  	// this.router.navigate(['/pagos', socio.dni]);
-	  })
+	  });
   }
 
-	cargarDatosModificacion(socio: Socio){
+	cargarDatosModificacion(socio: Socio) {
 		this.socioSrv.traerUno(socio).then( _socio => {
 			this.socioSeleccionado = _socio;
 			this.editando = true;
-			this.mostrarAlta = true
-		})
+			this.mostrarAlta = true;
+		});
   }
 
-  realizarModificacion(socio: Socio){
-  	this.socioSrv.editar(socio).then( () =>{
-		this.socios = this.socios.map( _socio => (_socio.id === socio.id)? socio: _socio);
-		this.mostrarAlta = false
-  	})
+  realizarModificacion(socio: Socio) {
+  	this.socioSrv.editar(socio).then( () => {
+		this.entradaSrv.socios = this.entradaSrv.socios.map( _socio => (_socio.id === socio.id) ? socio : _socio);
+		this.mostrarAlta = false;
+  	});
   }
 
 }

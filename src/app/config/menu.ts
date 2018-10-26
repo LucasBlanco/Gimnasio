@@ -456,12 +456,12 @@ export class MenuConfig implements ConfigModel {
 				self: {},
 				items: [
 					{
-						title: 'Dashboard',
+						title: 'Inicio',
 						desc: 'Some description goes here',
 						root: true,
 						icon: 'flaticon-line-graph',
 						page: '/',
-						badge: {type: 'm-badge--danger', value: '2'},
+						// badge: {type: 'm-badge--danger', value: '2'},
 						translate: 'MENU.DASHBOARD'
 					},
                     {section: 'ABM'},
@@ -545,8 +545,8 @@ export class MenuConfig implements ConfigModel {
                                 page: '/caja/movimientos'
                             }
                         ]
-                    },
-					{section: 'Components'},
+                    }
+					/*{section: 'Components'},
 					{
 						title: 'Google Material',
 						root: true,
@@ -920,7 +920,7 @@ export class MenuConfig implements ConfigModel {
 						root: true,
 						icon: 'flaticon-settings',
 						page: '/builder'
-					}
+					}*/
 				]
 			}
 		};

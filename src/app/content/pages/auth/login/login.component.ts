@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 		const options = new RequestOptions({ headers: header });
 		// https://back.thenewfit.com.ar
 		// ng build --prod --base-href ./ --aot=false --build-optimizer=false --watch
-		this.http.post('https://back.thenewfit.com.ar/login', userlogin, options)
+		this.http.post('http://localhost:8000/login', userlogin, options)
 			.toPromise()
 			.then((response: any) => {
 				const token = JSON.parse(response._body).data.token;

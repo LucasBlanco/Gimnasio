@@ -9,11 +9,12 @@ export class Socio {
     fechaNacimiento: any;
 	dni: number;
 	telefono: string;
+	email: string
 	direccion: string;
 	genero: string;
 	id: number;
 
-	constructor(nombre?, apellido?, descuento?, fechaNacimiento?, dni?, telefono?, direccion?, genero?, id?) {
+	constructor(nombre?, apellido?, descuento?, fechaNacimiento?, dni?, telefono?, direccion?, genero?, email?,id?) {
 		this.nombre = nombre || null;
 		this.dni = dni || null;
 		this.apellido = apellido || null;
@@ -22,6 +23,7 @@ export class Socio {
 		this.telefono = telefono || null;
 		this.direccion = direccion || null;
 		this.genero = genero || null;
+		this.email = email || null;
 		if (id) {this.id = id; }
 	}
 }

@@ -28,6 +28,7 @@ export class AbmMembresiaComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 	  this.activatedRouter.params.subscribe((params: Params) =>{
 		  this.mostrarAlta = (params['view'] === 'am')
+		  this.editando = false
 		  this.membresiaSeleccionada = new Membresia(undefined, undefined, undefined, undefined, undefined, undefined, null)
 	  })
   }
@@ -38,7 +39,7 @@ export class AbmMembresiaComponent implements OnInit, AfterViewInit {
 
 	realizarAlta(membresia: Membresia){
 		this.membresiaSrv.crear(membresia).then( () =>{
-			// this.router.navigate(['/pagos', checkMembresia.dni]);
+			this.membresias.push(membresia)
 		})
 	}
 

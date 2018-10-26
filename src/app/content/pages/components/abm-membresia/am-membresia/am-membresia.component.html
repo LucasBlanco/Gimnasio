@@ -52,7 +52,7 @@
 				</div>
 				<div class="form-group m-form__group row">
 					<div class="col-lg-6">
-						<label>* Duracion:</label>
+						<label>* Duracion en dias:</label>
 						<div class="m-input-icon m-input-icon--right">
 							<input type="number" class="form-control m-input" name="duracion" placeholder="123" [(ngModel)]="membresia.vencimiento"
 							 (change)="actualizarVencimientoServicios($event.target.value)" required>
@@ -64,9 +64,9 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<label class="">Nro cuotas:</label>
+						<label class="">* Nro cuotas:</label>
 						<div class="m-input-icon m-input-icon--right">
-							<input type="number" class="form-control m-input" name="cuotas" placeholder="12" [(ngModel)]="membresia.nroCuotas">
+							<input type="number" class="form-control m-input" name="cuotas" placeholder="12" [(ngModel)]="membresia.nroCuotas" required>
 							<span class="m-input-icon__icon m-input-icon__icon--right">
 								<span>
 									<i class="la la-credit-card"></i>
@@ -84,7 +84,7 @@
 						<ng-container *ngFor="let servicio of servicios, let i = index">
 							<div class="row">
 								<div class="col-12" style="display: inline-flex">
-									<span class="m-switch m-switch--sm m-switch--icon" style="margin-right: 10px;">
+									<span class="m-switch m-switch--sm m-switch--icon" style="margin-right: 15px;">
 										<label>
 											<input type="checkbox" [(ngModel)]="servicio.seleccionado" [name]="'dia'+i">
 											<span></span>
@@ -101,13 +101,13 @@
 										<label class="col-form-label col-3 col-lg-6">Creditos</label>
 
 										<input type="number" class="form-control m-input" placeholder="Ilimitado" [(ngModel)]="servicio.creditos"
-										 [name]="'inicio'+i">
+										 [name]="'creditos'+i">
 
 									</div>
 									<div class="col-lg-6 col-xl-5" style="display:inline-flex">
 										<label class="col-form-label col-3 col-lg-6">Duracion</label>
 
-										<input type="number" class="form-control m-input" placeholder="12" [(ngModel)]="servicio.vencimiento" [name]="'inicio'+i">
+										<input type="number" class="form-control m-input" placeholder="12" [(ngModel)]="servicio.vencimiento" [name]="'duracion'+i">
 
 									</div>
 								</ng-container>
@@ -115,45 +115,51 @@
 						</ng-container>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12">
-						<label>* Descuentos de membresia:</label>
-						<div *ngFor="let descuento of descuentosSocio()">
-							<div class="row">
-								<div class="col-sm-2 col-4">
-									<span class="m-switch m-switch--sm m-switch--icon">
-										<label>
-											<input type="checkbox" [(ngModel)]="descuento.seleccionado" [name]="'descuento' + i">
-											<span></span>
-										</label>
-									</span>
-								</div>
-								<div class=" col-form-label">
-									<span>{{descuento.descuento.nombre}}</span>
-								</div>
-							</div>
-						</div>
-						<label>* Descuentos de socio aplicables a esta membresia:</label>
-						<div *ngFor="let descuento of descuentosMembresia(), let i = index">
-							<div class="row">
-								<div class="col-sm-2 col-4">
-									<span class="m-switch m-switch--sm m-switch--icon">
-										<label>
-											<input type="checkbox" [(ngModel)]="descuento.seleccionado" [name]="'descuento' + i">
-											<span></span>
-										</label>
-									</span>
-								</div>
-								<div class=" col-form-label">
-									<span>{{descuento.descuento.nombre}}</span>
+						<div style="margin-bottom: 20px;">
+							<label>* Descuentos de membresia:</label>
+							<div *ngFor="let descuento2 of descuentosMembresia(), let i = index">
+								<div class="row">
+									<div class="col-auto">
+										<span class="m-switch m-switch--sm m-switch--icon">
+											<label>
+												<input type="checkbox" [(ngModel)]="descuento2.seleccionado" [name]="'descuento2' + i">
+												<span></span>
+											</label>
+										</span>
+									</div>
+									<div class="col-form-label">
+										<span>{{descuento2.descuento.nombre}}</span>
+									</div>
 								</div>
 							</div>
 						</div>
+						<div>
+							<label>* Descuentos de socio aplicables a esta membresia:</label>
+							<div *ngFor="let descuento1 of descuentosSocio(), let i = index">
+								<div class="row">
+									<div class="col-auto">
+										<span class="m-switch m-switch--sm m-switch--icon">
+											<label>
+												<input type="checkbox" [(ngModel)]="descuento1.seleccionado" [name]="'descuento1' + i">
+												<span></span>
+											</label>
+										</span>
+									</div>
+									<div class=" col-form-label">
+										<span>{{descuento1.descuento.nombre}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 					</div>
 				</div>
 			</div>
 			<div class="m-portlet__foot">
 				<div class="row">
 					<div class="col-lg-6">
-						<button type="submit" class="btn btn-primary">Guardar</button>
+						<button type="submit" class="btn btn-primary" [disabled]="!hayUnServicioSeleccionado()">Guardar</button>
 						<span class="m--margin-left-10">o
 							<a class="m-link m--font-bold" (click)="borrar()">Borrar</a>
 						</span>

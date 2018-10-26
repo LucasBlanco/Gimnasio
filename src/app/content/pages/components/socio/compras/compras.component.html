@@ -23,7 +23,7 @@
 
 							<ul class="row m--margin-bottom-10" style="padding: 0px">
 								<div class="col-lg-4 col-6" *ngFor="let servicio of checkMembresia.membresia.servicios">
-									<li >{{servicio.servicio.nombre}}</li>
+									<li>{{servicio.servicio.nombre}}</li>
 								</div>
 							</ul>
 							<div class="row">
@@ -38,13 +38,15 @@
 								</div>
 								<div class="col-2">
 
-								<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia)" class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
-									<i class="la la-plus" style="font-size: 0.9rem"></i>
-								</button>
-									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null" class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
-									<i class="la la-minus" style="font-size: 0.9rem"></i>
-								</button>
-							</div>
+									<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia)"
+									 class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
+										<i class="la la-plus" style="font-size: 0.9rem"></i>
+									</button>
+									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null"
+									 class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
+										<i class="la la-minus" style="font-size: 0.9rem"></i>
+									</button>
+								</div>
 							</div>
 
 						</span>
@@ -78,39 +80,70 @@
 
 		<!--begin::Item-->
 		<div class="m-accordion__item">
-			<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_1_head" data-toggle="collapse" href="#m_accordion_1_item_1_body" aria-expanded="false">
+			<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_1_head" data-toggle="collapse" href="#m_accordion_1_item_1_body"
+			 aria-expanded="false">
 				<span class="m-accordion__item-icon"><i style="color: #36a3f7" class="la la-money"></i></span>
 				<span class="m-accordion__item-title">Total: {{calcularTotal()}}</span>
 				<span class="m-accordion__item-mode"></span>
 			</div>
 
-			<div class="m-accordion__item-body collapse" id="m_accordion_1_item_1_body" role="tabpanel" aria-labelledby="m_accordion_1_item_1_head" data-parent="#m_accordion_1" style="">
+			<div class="m-accordion__item-body collapse" id="m_accordion_1_item_1_body" role="tabpanel" aria-labelledby="m_accordion_1_item_1_head"
+			 data-parent="#m_accordion_1">
 				<div class="m-accordion__item-content">
 
-						<div class="m-demo__preview">
-							<div class="m-list-timeline">
-								<div class="m-list-timeline__items">
-									<div class="m-list-timeline__item">
-										<div class="row m--padding-bottom-10" *ngFor="let membresia of membresiasSeleccionadas()">
-											<div class="col-md-3" style="display: inline-flex;">
-												<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
-												<span class="m-list-timeline__text">{{membresia.nombre}}: <strong>${{membresia.precio}}</strong></span>
-											</div>
-											<div class="col-md-3" >
-												<ng-container *ngIf="membresia.descuento">
-													{{membresia.descuento?.nombre}}: <strong>{{membresia.descuento?.porcentaje}}%</strong>
-												</ng-container>
-											</div>
-											<div class="col-md-6" style="text-align: right">
-												Total: <strong>${{(membresia.descuento)? membresia.precio * membresia.descuento.porcentaje/100 : membresia.precio}}</strong>
-											</div>
+					<div class="m-demo__preview">
+						<div class="m-list-timeline">
+							<div class="m-list-timeline__items">
+								<div class="m-list-timeline__item">
+									<div class="row m--padding-bottom-10" *ngFor="let membresia of membresiasSeleccionadas()">
+										<div class="col-12" style="display: inline-flex;">
+											<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
+											<span class="m-list-timeline__text">
+												<div class="row">
+													<div class="col">
+														{{membresia.nombre}}:
+													</div>
+													<div class="col-8">
+														<strong style="color:green">+ ${{membresia.precio}}</strong>
+													</div>
+												</div>
+											</span>
 										</div>
-
+										<div class="col-12" style="padding-left: 35px;">
+											<ng-container *ngIf="membresia.descuento">
+												<div class="row">
+													<div class="col">
+														{{membresia.descuento?.nombre}}:
+													</div>
+													<div class="col-8">
+														<strong style="color: #e85b5b">- ${{ descuentoMembresia(membresia)}}</strong>
+													</div>
+												</div>
+											</ng-container>
+										</div>
+										<div class="col-12" style="padding-left: 35px;">
+											<ng-container *ngIf="descuentoSocio(membresia)">
+												<div class="row">
+													<div class="col">
+														{{descuentoSocio(membresia)?.descuento.nombre}}:
+													</div>
+													<div class="col-8">
+														<strong style="color: #e85b5b">- ${{descuentoSocio(membresia)?.precio}}</strong>
+													</div>
+												</div>
+											</ng-container>
+										</div>
+										<div class="col" style="text-align: right">
+											Total:
+											<strong>${{calcularTotalParcial(membresia)}}</strong>
+										</div>
 									</div>
 
 								</div>
+
 							</div>
 						</div>
+					</div>
 
 
 				</div>
@@ -119,6 +152,19 @@
 		<!--end::Item-->
 	</div>
 
+	<div class="m-separator m-separator--dashed m-separator--lg"></div>
+
+	<div class="form-group m-form__group row">
+		<div class="col-lg-6">
+			<label>Abona con:</label>
+			<input type="number" class="form-control m-input" [(ngModel)]="abonaCon" name="abonaCon" placeholder="123">
+		</div>
+		<div class="col-lg-6">
+			<label class="">Vuelto:</label>
+<input type="number" class="form-control m-input" [value]="(abonaCon - calcularTotal() > 0)? abonaCon - calcularTotal() : 0"
+ placeholder="12" disabled>
+		</div>
+	</div>
 
 	<br>
 	<div class="m-portlet__foot">

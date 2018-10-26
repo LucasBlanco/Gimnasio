@@ -52,4 +52,33 @@ export class AmServicioComponent implements OnChanges {
 		}
 		this.borrar();
 	}
+
+	primerDia() {
+		return this.dias.find(dia => dia.seleccionado);
+	}
+
+	actualizarRestoDias(dia) {
+		if (dia.seleccionado && dia === this.primerDia()) {
+			this.dias.forEach(
+				(dia2) => {
+					dia2.horaInicio = dia.horaInicio;
+					dia2.horaFin = dia.horaFin;
+					dia2.entradaDesde = dia.entradaDesde;
+					dia2.entradaHasta = dia.entradaHasta;
+				});
+		} else {
+			if (this.primerDia()) {
+				dia = this.primerDia();
+				this.dias.forEach(
+					(dia2) => {
+						dia2.horaFin = dia.horaFin;
+						dia2.horaInicio = dia.horaInicio;
+						dia2.entradaDesde = dia.entradaDesde;
+						dia2.entradaHasta = dia.entradaHasta;
+					});
+			}
+		}
+	}
+
+	hayUnDiaSeleccionado = () => this.dias.some(d => d.seleccionado);
 }

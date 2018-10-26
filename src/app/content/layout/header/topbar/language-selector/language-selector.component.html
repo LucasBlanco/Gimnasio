@@ -1,28 +1,30 @@
 <!-- <li class="m-nav__item m-topbar__languages m-dropdown m-dropdown--small m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width" m-dropdown-toggle="click"> -->
 <a href="javascript:;" class="m-nav__link m-dropdown__toggle">
 	<span class="m-nav__link-text">
-		<img class="m-topbar__language-selected-img" src="{{language?.flag}}">
+		<i class="flaticon-cogwheel" style="font-size: large;color: #ad5beb;"></i>
 	</span>
 </a>
 <div class="m-dropdown__wrapper">
 	<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
 	<div class="m-dropdown__inner">
 		<div class="m-dropdown__header m--align-center">
-			<span class="m-dropdown__header-subtitle" translate="TRANSLATOR.SELECT"></span>
+			<span class="m-dropdown__header-subtitle">Configuracion</span>
 		</div>
 		<div class="m-dropdown__body">
 			<div class="m-dropdown__content">
 				<ul class="m-nav m-nav--skin-light">
-					<ng-container *ngFor="let language of languages">
-						<li class="m-nav__item" [ngClass]="{'m-nav__item--active': language.active}">
-							<a href="javascript:;" (click)="setLanguage(language.lang)" [ngClass]="{'m-nav__link--active': language.active}" class="m-nav__link">
-								<span class="m-nav__link-icon">
-									<img class="m-topbar__language-img" src="{{language.flag}}">
-								</span>
-								<span class="m-nav__link-title m-topbar__language-text m-nav__link-text">{{language.country}}</span>
-							</a>
-						</li>
-					</ng-container>
+					<div class="m-form__group form-group row">
+
+						<div class="col-auto" >
+							<span class="m-switch m-switch--icon m-switch--success">
+								<label>
+									<input type="checkbox" checked="checked" name="automatico" #automatico (change)="cambiarAutomatico(automatico.checked)">
+									<span></span>
+								</label>
+							</span>
+						</div>
+						<label class="col col-form-label">Automatico</label>
+					</div>
 				</ul>
 			</div>
 		</div>

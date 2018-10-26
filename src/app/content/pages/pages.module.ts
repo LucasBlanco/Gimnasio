@@ -39,7 +39,7 @@ import {SociosService} from './components/socio/serviceSocio';
 import {AbmProductoComponent} from './components/abm-producto/abm-producto.component';
 
 import { PartialsModule } from '../partials/partials.module';
-import {HttpServiceEntrada} from '../services/httpServiceEntrada';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 
 
 @NgModule({
@@ -76,15 +76,10 @@ import {HttpServiceEntrada} from '../services/httpServiceEntrada';
 		AngularEditorModule,
 		SharedModule,
 		SociosModule,
-		PartialsModule
+		PartialsModule,
+		NgxTypeaheadModule
 	],
 	providers: [
-		HttpService,
-		HttpServiceSocios,
-		HttpServiceCaja,
-		HttpServiceMembresia,
-		HttpServiceServicio,
-		HttpServiceDescuento,
-		SociosService]
+		]
 })
 export class PagesModule {}

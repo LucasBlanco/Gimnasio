@@ -1,7 +1,7 @@
 <div class="m-input-icon m-input-icon--right">
     <div class="search-results">
         <div style="position: relative">
-<div class="m-input-icon m-input-icon--right" (click)="buscarSocios()" >
+<div class="m-input-icon m-input-icon--right" >
                 <input class="form-control m-input m-input--air m-input--pill" [value]="search" ngxTypeahead [taList]="datosBuscables"
                     [taItemTpl]="itemTpl" (taSelected)="handleResultSelected($event)" [taDisplayOnFocus]="false"
                     [taAllowEmpty]="true" placeholder="Entrada socio...">

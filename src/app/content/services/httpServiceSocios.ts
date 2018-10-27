@@ -8,13 +8,28 @@ import {Descuento} from '../models/descuento';
 import {HttpServiceMembresia} from './httpServiceMembresia';
 import {HttpServiceDescuento} from './httpServiceDescuento';
 import {HttpServiceServicio} from './httpServiceServicio';
-import {any} from '../../../../node_modules/codelyzer/util/function';
+import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable()
 export class HttpServiceSocios {
 
-	constructor(private httpService: HttpService, private membresiaSrv: HttpServiceMembresia, private descuentoSrv: HttpServiceDescuento, private servicioSrv: HttpServiceServicio) {
+	subjectSocios = new BehaviorSubject<Socio[]>([]);
+	socios: Socio[] = [];
 
+	constructor(private httpService: HttpService, private membresiaSrv: HttpServiceMembresia, private descuentoSrv: HttpServiceDescuento, private servicioSrv: HttpServiceServicio) {
+		this.traerTodos().then(socios => {
+			this.socios = socios;
+			this.updateSociosObservers();
+		});
+	}
+
+	public getSociosSubscription(): Observable<any> {
+		return this.subjectSocios.asObservable();
+	}
+
+	private updateSociosObservers() {
+		this.subjectSocios.next(this.socios);
 	}
 
 	private socioToBack(socio: Socio) {
@@ -59,7 +74,7 @@ export class HttpServiceSocios {
 			new Modelos.Post('/socio/crear', this.socioToBack(socio),
 			'El socio fue creado con exito',
 			'Hubo un error al crear el socio. Intente nuevamente.')
-		);
+		).then( () => { this.socios.push(socio); this.updateSociosObservers(); });
 	}
 
 	public editar(socio: Socio) {
@@ -67,7 +82,7 @@ export class HttpServiceSocios {
 			new Modelos.Post('/socio/editar/' + socio.id, this.socioToBack(socio),
 				'El socio fue modificado con exito',
 				'Hubo un error al modificar el socio. Intente nuevamente.')
-		);
+		).then(() => { this.socios = this.socios.filter(s => s.id !== socio.id).concat([socio]); this.updateSociosObservers() });
 	}
 
     public traerHistorial(miSocio: Socio) {

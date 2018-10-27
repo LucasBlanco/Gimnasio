@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, OnInit } from '@angular/core';
 import { Socio } from '../../../../models/socio'
-import { HttpServiceDescuento } from "../../../../services/httpServiceDescuento";
-import { Descuento } from "../../../../models/descuento";
+import { HttpServiceDescuento } from '../../../../services/httpServiceDescuento';
+import { Descuento } from '../../../../models/descuento';
 
 @Component({
 	selector: 'm-am-socios',
 	templateUrl: './am-socios.component.html'
 })
-export class AMSociosComponent implements OnChanges {
+export class AMSociosComponent implements OnChanges, OnInit {
 	socio: Socio
 	@Input() socioAModificar: Socio = new Socio()
 	@Input() editando: boolean = false

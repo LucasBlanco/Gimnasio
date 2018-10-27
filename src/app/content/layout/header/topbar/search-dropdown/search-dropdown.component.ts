@@ -4,30 +4,28 @@ import {
 	HostBinding,
 	OnDestroy,
 	ElementRef,
-	AfterViewInit,
-	ChangeDetectionStrategy
+	AfterViewInit
 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { LayoutConfigService } from '../../../../../core/services/layout-config.service';
 import * as objectPath from 'object-path';
 import { Subscription } from 'rxjs';
 import { QuickSearchDirective } from '../../../../../core/directives/quick-search.directive';
 import { QuickSearchService } from '../../../../../core/services/quick-search.service';
 import {SociosService} from '../../../../pages/components/socio/serviceSocio'
-import { HttpServiceEntrada } from '../../../../services/httpServiceEntrada';
 import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 @Component({
 	selector: 'm-search-dropdown',
 	templateUrl: './search-dropdown.component.html'
 })
 export class SearchDropdownComponent
-	implements OnInit, AfterViewInit {
+	implements OnInit, AfterViewInit, OnDestroy {
 	onSearch: Subscription;
 	idSocio
 	datos: Array<any> = [];
 	filtro: string = 'nombre';
 	search: string = '';
 	datosBuscables: Array<string> = [];
+	subscription;
 	onLayoutConfigUpdated: Subscription;
 	@HostBinding('class') classes = '';
 	@HostBinding('id') id = 'm_quicksearch';
@@ -48,7 +46,7 @@ export class SearchDropdownComponent
 		private layoutConfigService: LayoutConfigService,
 		private el: ElementRef,
 		private quickSearchService: QuickSearchService,
-		private entradaSrv: HttpServiceEntrada,
+		private httpSociosSrv: HttpServiceSocios,
 		private sociosSrv: SociosService
 	) {
 		this.layoutConfigService.onLayoutConfigUpdated$.subscribe(model => {
@@ -64,14 +62,20 @@ export class SearchDropdownComponent
 		});
 	}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.subscription = this.httpSociosSrv.getSociosSubscription().subscribe(
+			socios => {
+				this.datos = socios.map(({ nombre, apellido, ...socio }) => ({
+					nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio
+				}));
+				this.datosBuscables = this.generarArray();
+			}
+		)
+	}
 
-
-	buscarSocios() {
-		this.datos = this.entradaSrv.socios.map(({ nombre, apellido, ...socio }) => ({
-			nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio
-		}));
-		this.datosBuscables = this.generarArray();
+	ngOnDestroy() {
+		// unsubscribe to ensure no memory leaks
+		this.subscription.unsubscribe();
 	}
 
 	generarArray() {

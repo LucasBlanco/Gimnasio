@@ -3,7 +3,7 @@ import { HttpService } from './httpService';
 import { Injectable } from '@angular/core';
 import { Socio } from '../models/socio';
 import { Servicio } from '../models/servicio';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject} from 'rxjs';
 import { HttpServiceSocios } from './httpServiceSocios';
 
 @Injectable()
@@ -11,24 +11,16 @@ export class HttpServiceEntrada {
 
 
     accesoSocio = new Subject<{ socio: Socio, servicios: Servicio[] }>();
-    subjectSocios = new Subject<{ socios: Socio[] }>();
     socios: Socio[];
     cantEntradasPendientes = 0;
     automatico: boolean = true;
-    constructor(private httpService: HttpService, private httpSocios: HttpServiceSocios) {
-        this.httpSocios.traerTodos().then(socios => {
-            this.socios = socios;
-            this.updateSociosObservers(this.socios);
-        });
+    constructor(private httpService: HttpService) {
     }
 
     public getCantEntradasPendientes() {
         return this.cantEntradasPendientes;
     }
 
-    private updateSociosObservers(socios) {
-        this.subjectSocios.next(socios);
-    }
 
     private updateObserver(servicios) {
         this.accesoSocio.next(servicios);
@@ -36,9 +28,6 @@ export class HttpServiceEntrada {
 
     public onEntrada(): Observable<any> {
         return this.accesoSocio.asObservable();
-    }
-    public getSocios(): Observable<any> {
-        return this.subjectSocios.asObservable();
     }
 
     public acceder(idSocio) {

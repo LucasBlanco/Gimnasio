@@ -1,15 +1,15 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import {HttpServiceEntrada} from '../../../../services/httpServiceEntrada';
-import { HttpParams } from '@angular/common/http';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Socio } from '../../../../models/socio';
+import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
+import { HttpServiceEntrada } from '../../../../services/httpServiceEntrada';
 
 @Component({
   selector: 'm-entrada-socio',
   templateUrl: './entrada-socio.component.html'
 })
-export class EntradaSocioComponent implements OnInit {
+export class EntradaSocioComponent implements OnInit, OnDestroy {
 
-  constructor( private entradaSrv: HttpServiceEntrada) { }
+  constructor( private socioSrv: HttpServiceSocios, private entradaSrv: HttpServiceEntrada) { }
 
   datos: Array<any> = [];
   filtro: string = 'nombre';
@@ -19,17 +19,21 @@ export class EntradaSocioComponent implements OnInit {
   socioSeleccionado: Socio;
 
   ngOnInit(): void {
-
-
+    this.subscription = this.socioSrv.getSociosSubscription().subscribe( 
+      socios => {
+        this.datos = socios.map(({ nombre, apellido, ...socio }) => ({
+          nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio
+        }));
+        this.datosBuscables = this.generarArray();
+      }
+    )
 
   }
 
-  buscarSocios() {
-    this.datos = this.entradaSrv.socios.map(({ nombre, apellido, ...socio }) => ({
-      nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio}));
-    this.datosBuscables = this.generarArray();
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
   }
-
 
   generarArray() {
     const algo = this.datos.map(dato => dato[this.filtro]);

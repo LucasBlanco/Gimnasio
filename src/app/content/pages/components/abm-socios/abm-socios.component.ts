@@ -1,14 +1,14 @@
-import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Socio} from '../../../models/socio';
 import {ActivatedRoute, Params} from '@angular/router';
 import {HttpServiceSocios} from '../../../services/httpServiceSocios';
-import { HttpServiceEntrada } from '../../../services/httpServiceEntrada';
 
 @Component({
   selector: 'm-abm-socios',
 	template: `
 		<div *ngIf="mostrarAlta">
-				<m-am-socios (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)" (mostrarTabla)="this.mostrarAlta = false" [socioAModificar]="socioSeleccionado" [editando]="editando"></m-am-socios>
+				<m-am-socios (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)" 
+				(mostrarTabla)="this.mostrarAlta = false" [socioAModificar]="socioSeleccionado" [editando]="editando"></m-am-socios>
 			</div>
 			<div *ngIf="!mostrarAlta" >
 				<m-tabla-socios (modificar)="cargarDatosModificacion($event)" [socios]="socios" ></m-tabla-socios>
@@ -23,7 +23,7 @@ export class AbmSociosComponent implements OnInit, OnDestroy {
 	editando: boolean = false;
 	subscription;
 
-  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios, private entradaSrv: HttpServiceEntrada) {
+  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios) {
   }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class AbmSociosComponent implements OnInit, OnDestroy {
 		  this.editando = false;
 		  this.socioSeleccionado = new Socio();
 	  });
-	  this.subscription = this.entradaSrv.getSocios().subscribe(socios => {
+	  this.subscription = this.socioSrv.getSociosSubscription().subscribe(socios => {
 		  this.socios = socios;
 	  });
   }
@@ -44,10 +44,7 @@ export class AbmSociosComponent implements OnInit, OnDestroy {
 	}
 
   realizarAlta(socio: Socio) {
-	  this.socioSrv.crear(socio).then( () => {
-		  this.entradaSrv.socios.push(socio);
-	  	// this.router.navigate(['/pagos', socio.dni]);
-	  });
+	  this.socioSrv.crear(socio);
   }
 
 	cargarDatosModificacion(socio: Socio) {
@@ -60,7 +57,6 @@ export class AbmSociosComponent implements OnInit, OnDestroy {
 
   realizarModificacion(socio: Socio) {
   	this.socioSrv.editar(socio).then( () => {
-		this.entradaSrv.socios = this.entradaSrv.socios.map( _socio => (_socio.id === socio.id) ? socio : _socio);
 		this.mostrarAlta = false;
   	});
   }

@@ -31,6 +31,10 @@ export class AmServicioComponent implements OnChanges {
 				const horario = this.servicioAModificar.horarios.find(_horario => _horario.dia === dia.dia);
 				return (horario) ? {seleccionado: true, ...horario} : dia;
 			});
+		} else {
+			this.dias = this.dias.map(({dia}) => 
+			({ seleccionado: false, dia: dia, horaInicio: null, horaFin: null, entradaDesde: null, entradaHasta: null})
+			)
 		}
 	}
 

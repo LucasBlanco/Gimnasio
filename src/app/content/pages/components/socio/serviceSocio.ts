@@ -3,33 +3,34 @@ import {HttpServiceSocios} from '../../../services/httpServiceSocios';
 import {Router} from '@angular/router';
 import * as moment from 'moment';
 import {Socio} from '../../../models/socio';
+import { Compra } from '../../../models/compra'
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class SociosService {
 
-	private subscribers = [];
-	public socio: Socio = new Socio();
+	public idSocio: Number = 0
+	subjectId = new BehaviorSubject<Number>(0);
 	
 
 	constructor(private httpSrvSocio: HttpServiceSocios, private router: Router) {
 	}
 
-	 public subscribe(subscriber) {
-		 this.subscribers = this.subscribers.filter(s => s !== subscriber).concat([subscriber]);
-		 console.log(this.subscribers);
+	public getIdSubscription(): Observable<any> {
+		return this.subjectId.asObservable();
 	}
 
-	public getSocio =  () => this.socio;
+	private updateIdObservers() {
+		this.subjectId.next(this.idSocio);
+	}
+
+	public changeIdSocio = (id: Number) => {this.idSocio = id; this.updateIdObservers()}
 
 	public findUser = (id) => {
-		this.httpSrvSocio.traerUno(null, id || 1).then( socio => {
-			this.socio = socio;
-			this.socio.fechaNacimiento = moment(this.socio.fechaNacimiento).format('DD/MM/YYYY');
-			this.subscribers.forEach( sub => sub.update());
-			this.router.navigate(['socio/compras']);
-		});
+		this.idSocio = id
+		this.router.navigate(['socio/compras', id]);
 	}
 
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpServiceSocios} from '../../../../services/httpServiceSocios';
 import {SociosService} from '../serviceSocio';
 import moment from 'moment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'm-accesos',
@@ -13,17 +14,23 @@ export class AccesosComponent implements OnInit {
     accesos;
     accesosTabla;
 
-    constructor(private httpSrvSocio: HttpServiceSocios, private srvSocio: SociosService) {
+    constructor(private activatedRouter: ActivatedRoute, private httpSrvSocio: HttpServiceSocios, private srvSocio: SociosService) {
     }
 
     ngOnInit() {
-        const miSocio = this.srvSocio.getSocio();
-        this.httpSrvSocio.traerAccesos(miSocio).then(response => {
-            this.accesos = response;
-            console.log(this.accesos);
-            this.accesosTabla = this.accesos.map(
-                ({ fecha, servicio }) => ({ fecha: moment(fecha).format('DD/MM/YYYY  hh:mm'), servicio: servicio.nombre}));
+        this.activatedRouter.params.subscribe((params) => {
+            this.srvSocio.changeIdSocio(+params['id'])
+            this.httpSrvSocio.subjectSocios.subscribe(socios => {
+                let miSocio = socios.find(s => s.id === this.srvSocio.idSocio)
+                this.httpSrvSocio.traerAccesos(miSocio).then(response => {
+                    this.accesos = response;
+                    console.log(this.accesos);
+                    this.accesosTabla = this.accesos.map(
+                        ({ fecha, servicio }) => ({ fecha: moment(fecha).format('DD/MM/YYYY HH:mm'), servicio: servicio.nombre }));
+                });
+            })
         });
+        
     }
 
 }

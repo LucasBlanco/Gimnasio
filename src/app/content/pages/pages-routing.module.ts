@@ -11,6 +11,7 @@ import {AbmMembresiaComponent} from './components/abm-membresia/abm-membresia.co
 import {AbmServicioComponent} from './components/abm-servicio/abm-servicio.component';
 import {AbmDescuentoComponent} from './components/abm-descuento/abm-descuento.component';
 import {AbmProductoComponent} from './components/abm-producto/abm-producto.component';
+import { VencimientoSociosComponent } from './components/vencimiento-socios/vencimiento-socios.component';
 
 const routes: Routes = [
 	{
@@ -61,6 +62,11 @@ const routes: Routes = [
 			{
 				path: 'socios/:view',
 				component: AbmSociosComponent,
+			}
+			,
+			{
+				path: 'vencimientos',
+				component: VencimientoSociosComponent,
 			}
 		]
 	},

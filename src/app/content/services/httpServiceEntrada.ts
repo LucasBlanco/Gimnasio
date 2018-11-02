@@ -14,6 +14,7 @@ export class HttpServiceEntrada {
     socios: Socio[];
     cantEntradasPendientes = 0;
     automatico: boolean = true;
+    
     constructor(private httpService: HttpService) {
     }
 

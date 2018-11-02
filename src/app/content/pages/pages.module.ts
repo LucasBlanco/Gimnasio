@@ -40,6 +40,7 @@ import {AbmProductoComponent} from './components/abm-producto/abm-producto.compo
 
 import { PartialsModule } from '../partials/partials.module';
 import { NgxTypeaheadModule } from 'ngx-typeahead';
+import { VencimientoSociosComponent } from './components/vencimiento-socios/vencimiento-socios.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { NgxTypeaheadModule } from 'ngx-typeahead';
 		AbmDescuentoComponent,
 		AmDescuentoComponent,
 		TablaDescuentoComponent,
-		AbmProductoComponent
+		AbmProductoComponent,
+		VencimientoSociosComponent
 	],
 	imports: [
 		FormsModule,

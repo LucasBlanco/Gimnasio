@@ -42,7 +42,8 @@
 					<label>* Registrable en entrada:</label>
 					<div class="m-input-icon m-input-icon--right">
 						<label class="m-radio m-radio--solid">
-							<input type="checkbox" name="example_2" [(ngModel)]="servicio.registraEntrada"> Registrable
+							<input type="checkbox" name="example_2" [checked]="servicio.registraEntrada" [(ngModel)]="servicio.registraEntrada">
+							Registrable
 							<span></span>
 						</label>
 					</div>
@@ -78,8 +79,8 @@
 											<label class="col-form-label">Inicio</label>
 										</div>
 										<div class="col-6 col-lg-9">
-											<input type="time" class="form-control m-input" style="padding: 5px" 
-											[(ngModel)]="dia.horaInicio" [max]="dia.horaFin" [name]="'inicio'+i" required>
+											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.horaInicio" [max]="dia.horaFin"
+											 [name]="'inicio'+i" required>
 										</div>
 									</div>
 								</div>
@@ -89,8 +90,8 @@
 											<label class="col-form-label">Fin</label>
 										</div>
 										<div class="col-6 col-lg-9">
-											<input type="time" class="form-control m-input" style="padding: 5px" 
-											 [(ngModel)]="dia.horaFin" [min]="dia.horaInicio" [name]="'fin'+i" required>
+											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.horaFin" [min]="dia.horaInicio"
+											 [name]="'fin'+i" required>
 										</div>
 									</div>
 								</div>
@@ -100,8 +101,8 @@
 											<label class="col-form-label">Entrada desde</label>
 										</div>
 										<div class="col-6">
-											<input type="time" class="form-control m-input" style="padding: 5px" 
-											 [(ngModel)]="dia.entradaDesde" [name]="'entrada'+i" required>
+											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.entradaDesde" [name]="'entrada'+i"
+											 required>
 										</div>
 									</div>
 								</div>
@@ -111,8 +112,8 @@
 											<label class="col-form-label">Entrada hasta</label>
 										</div>
 										<div class="col-6 ">
-											<input type="time" class="form-control m-input" style="padding: 5px" 
-											 [(ngModel)]="dia.entradaHasta" [name]="'entrada'+i" required>
+											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.entradaHasta" [name]="'entrada'+i"
+											 required>
 										</div>
 									</div>
 								</div>

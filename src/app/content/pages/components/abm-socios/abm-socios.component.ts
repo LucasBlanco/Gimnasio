@@ -2,6 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Socio} from '../../../models/socio';
 import {ActivatedRoute, Params} from '@angular/router';
 import {HttpServiceSocios} from '../../../services/httpServiceSocios';
+import { ABM } from '../abm/abm';
 
 @Component({
   selector: 'm-abm-socios',
@@ -15,7 +16,7 @@ import {HttpServiceSocios} from '../../../services/httpServiceSocios';
 			</div>
 	`,
 })
-export class AbmSociosComponent implements OnInit, OnDestroy {
+export class AbmSociosComponent implements OnInit, OnDestroy{
 
 	socioSeleccionado: Socio = new Socio();
 	socios: Array<Socio>;
@@ -23,18 +24,20 @@ export class AbmSociosComponent implements OnInit, OnDestroy {
 	editando: boolean = false;
 	subscription;
 
-  constructor( private activatedRouter: ActivatedRoute, private socioSrv: HttpServiceSocios) {
+	constructor(private socioSrv: HttpServiceSocios, private activatedRouter: ActivatedRoute) {
+	
   }
 
   ngOnInit() {
-	  this.activatedRouter.params.subscribe((params: Params) => {
-		  this.mostrarAlta = (params['view'] === 'am');
-		  this.editando = false;
-		  this.socioSeleccionado = new Socio();
-	  });
+		this.activatedRouter.params.subscribe((params: Params) => {
+			this.mostrarAlta = (params['view'] === 'am');
+			this.editando = false
+			this.socioSeleccionado = new Socio();
+		});
 	  this.subscription = this.socioSrv.getSociosSubscription().subscribe(socios => {
 		  this.socios = socios;
-	  });
+		});
+		
   }
 
 

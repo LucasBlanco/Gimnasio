@@ -29,6 +29,7 @@ export class TablaComponent implements  OnChanges, OnInit, AfterViewInit{
     @Input() claseHead: string = ''; // Clase del head de la tabla
     @Input() filtered: boolean = true // Si la tabla contiene filtros
     @Input() datos: Array<any>; // Los datos que se mostraran en la tabla. Ejemplo: [{'name': Lucas, 'lastName': Blanco}]
+    @Input() estilos = {}
     @Input() subDatos: string;
     @Input() noRecordMsg: string;
     @Input() nombreColumnas: Array<string>; // Los nombres ordenados de cada una de las columnas. Ejemplo: ['Nombre', 'Apellido']

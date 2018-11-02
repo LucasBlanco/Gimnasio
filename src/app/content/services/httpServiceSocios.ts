@@ -10,6 +10,7 @@ import {HttpServiceDescuento} from './httpServiceDescuento';
 import {HttpServiceServicio} from './httpServiceServicio';
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import * as moment from 'moment';
 
 @Injectable()
 export class HttpServiceSocios {
@@ -129,7 +130,7 @@ export class HttpServiceSocios {
 	public comprar(idSocio: number, tipoPago: string, membresias: Array<Membresia>) {
 		const membresiasBack =  membresias.map(({id, descuento, ...resto}) => ({id: id, idDescuento: descuento && descuento.id, cantidad: 1}));
 		return this.httpService.post(
-			new Modelos.Post('/socio/comprar', {idSocio: idSocio, tipoPago: tipoPago, observacion: 'observacion', membresias: membresiasBack},
+			new Modelos.Post('/socio/comprar', {idSocio: idSocio, tipoPago: tipoPago, observacion: '', membresias: membresiasBack},
 				'La compra fue realizada exitosamente',
 				'Hubo un error al realizar la compra. Intente nuevamente.')
 		);
@@ -141,6 +142,10 @@ export class HttpServiceSocios {
 				'La entrada fue registrada exitosamente',
 				'Hubo un error al registrar la entrada. Intente nuevamente.')
 		);
+	}
+
+	public traerVencimientos() {
+		return this.traerTodos().then(socios => socios.map(socio => ({ socio, fecha: '2018-10-20'})))
 	}
 
 }

@@ -33,9 +33,9 @@
 						<span class="m-badge m-badge--success m-badge--wide font-weight-normal">Si &nbsp;</span>
 					</ng-container>
 
-					<ng-container *ngIf="dato[valor] !== false && dato[valor] !== true">
+					<div *ngIf="dato[valor] !== false && dato[valor] !== true" [ngClass]="estilos[valor]? estilos[valor](dato[valor]): ''">
 						{{dato[valor]}}
-					</ng-container>
+					</div>
 
 				</td>
 				<td *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0">

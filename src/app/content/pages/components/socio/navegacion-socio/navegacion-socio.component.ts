@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Socio} from "../../../../models/socio";
 import {SociosService} from "../serviceSocio";
+import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 
 @Component({
   selector: 'm-navegacion-socio',
@@ -10,15 +11,22 @@ import {SociosService} from "../serviceSocio";
 export class NavegacionSocioComponent implements OnInit {
 
 	socio: Socio = new Socio()
+	idSocio = null
 
-  constructor(private route: ActivatedRoute, private srvSocio: SociosService) { }
+  constructor(private router: Router, private httpSrvSocio: HttpServiceSocios, private socioSrv: SociosService) { }
 
   ngOnInit() {
-	  this.srvSocio.subscribe(this)
-		this.socio =  this.srvSocio.getSocio()
-  }
-	public update(){
-		this.socio = this.srvSocio.getSocio()
+		this.socioSrv.getIdSubscription().subscribe(id => {
+			this.idSocio = id
+			this.socio = this.httpSrvSocio.socios.find(s => s.id === this.socioSrv.idSocio) || this.socio
+		})
+		this.httpSrvSocio.getSociosSubscription().subscribe(socios => {
+			this.socio = socios.find(s => s.id === this.socioSrv.idSocio) || this.socio
+		})
+	}
+	
+	isActive(url): boolean {
+		return this.router.url.includes(url);
 	}
 
 }

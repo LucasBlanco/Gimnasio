@@ -30,16 +30,16 @@ import { Caja } from '../../../../models/caja';
 						<div class="col-lg-3">
 							<input type="date" class="form-control m-input" #hasta required>
 						</div>
-						<div class="col-auto">
-						<button type="submit" class="btn btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill" >
+						<div class="col-lg-auto d-flex justify-content-end pt-2 pt-lg-0">
+						<button type="submit" class="btn btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill " >
 									<i class="la la-filter" style="color:white"></i>
 								</button>
 						</div>
 					</form>
 					
 					<div class="m-separator m-separator--dashed m-separator--lg"></div>
-				<m-tabla [datos]="movimientos" [nombreColumnas]="['Tipo', 'Concepto', 'Monto', 'Observacion', 'Tipo de pago']"
-						 [valorColumnas]="['tipo', 'concepto', 'monto', 'observacion', 'tipoDePago']"
+				<m-tabla [datos]="movimientos" [nombreColumnas]="['Tipo', 'Fecha','Concepto', 'Monto', 'Observacion', 'Tipo de pago']"
+						 [valorColumnas]="['tipo', 'fecha','concepto','monto', 'observacion', 'tipoDePago']"
 				></m-tabla>
 			</div>
 		</div>`
@@ -58,13 +58,19 @@ export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 	ngAfterViewInit() {
 		const fechaDesde = moment().subtract(1, 'month').format('YYYY-MM-DD');
 		const fechaHasta = moment().format('YYYY-MM-DD');
-		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => (this.movimientos as any) = response);
+		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => { 
+			(this.movimientos as any) = response
+			this.movimientos.forEach( mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
+		});
 	}
 
 	filtrar(desde, hasta){
 		const fechaDesde = moment(desde).format('YYYY-MM-DD');
 		const fechaHasta = moment(hasta).format('YYYY-MM-DD');
-		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => (this.movimientos as any) = response);
+		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => {
+			(this.movimientos as any) = response
+			this.movimientos.forEach(mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
+		});
 	}
 
 }

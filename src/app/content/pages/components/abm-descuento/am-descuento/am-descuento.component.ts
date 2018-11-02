@@ -30,6 +30,7 @@ export class AmDescuentoComponent implements OnChanges {
 	}
 
 	enviarEvento() {
+		this.descuento.vencimiento = (this.descuento.tipo === 'membresia') ? 0 : this.descuento.vencimiento
 		if(!this.editando){
 			this.altaEmitter.emit(this.descuento)
 		}else{

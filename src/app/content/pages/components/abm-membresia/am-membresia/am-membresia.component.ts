@@ -44,6 +44,8 @@ export class AmMembresiaComponent implements OnChanges, OnInit {
 
 	ngOnChanges( changes: SimpleChanges) {
 		this.membresia = (this.editando) ? this.membresiaAModificar : new Membresia(undefined, undefined, undefined, undefined, undefined, undefined, null);
+		this.servicios.forEach(s => {s.seleccionado = false; s.creditos = null; s.vencimiento = null})
+		this.descuentos.forEach(d => d.seleccionado = false)
 	}
 
 	borrar() {

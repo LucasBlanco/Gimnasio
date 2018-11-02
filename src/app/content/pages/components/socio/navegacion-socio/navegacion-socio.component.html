@@ -53,7 +53,7 @@
 
 							<div class="m-wizard__nav">
 								<div class="m-wizard__steps">
-									<div class="m-wizard__step " m-wizard-target="m_wizard_form_step_1" [routerLink]="['/socio/perfil']"  routerLinkActive="m-wizard__step--current">
+									<div class="m-wizard__step " m-wizard-target="m_wizard_form_step_1" [routerLink]="['/socio/perfil', idSocio]"  routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>1</span></span>
@@ -66,7 +66,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2" [routerLink]="['/socio/compras']" routerLinkActive="m-wizard__step--current">
+<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2" [routerLink]="['/socio/compras', idSocio]"
+ routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>2</span></span>
@@ -79,7 +80,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3" [routerLink]="['/socio/historial']" routerLinkActive="m-wizard__step--current">
+<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3" [routerLink]="['/socio/historial', idSocio]"
+ routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>3</span></span>
@@ -92,7 +94,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4" [routerLink]="['/socio/accesos']" routerLinkActive="m-wizard__step--current">
+<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4" [routerLink]="['/socio/accesos', idSocio]"
+ routerLinkActive="m-wizard__step--current">
 										<div class="m-wizard__step-info">
 											<a class="m-wizard__step-number">
 												<span><span>4</span></span>

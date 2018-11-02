@@ -17,19 +17,19 @@ const parentModuleRoutes: Routes = [
 		component: NavegacionSocioComponent,
 		children: [                          // <---- child components declared here
 			{
-				path: 'compras',
+				path: 'compras/:id',
 				component: ComprasComponent
 			},
 			{
-				path: 'perfil',
+				path: 'perfil/:id',
 				component: PerfilComponent
 			},
             {
-                path: 'historial',
+                path: 'historial/:id',
                 component: HistorialComprasComponent
             },
             {
-                path: 'accesos',
+                path: 'accesos/:id',
                 component: AccesosComponent
             }
 		]

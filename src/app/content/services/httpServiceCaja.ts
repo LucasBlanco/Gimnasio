@@ -10,7 +10,7 @@ export class HttpServiceCaja {
 
 	}
 
-	private cajaToBack({ tipoDePago, ...resto }: Caja) {
+	private cajaToBack({ tipoDePago, fecha, ...resto }: Caja) {
 		return {
 			tipoPago: tipoDePago,
 			...resto

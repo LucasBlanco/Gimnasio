@@ -34,12 +34,15 @@
 									<div>Nro cuotas: {{checkMembresia.membresia.nroCuotas}}</div>
 								</div>
 								<div class="col-10">
-									<div>Descuento: {{checkMembresia.membresia.descuento?.nombre}}</div>
+									<div [hidden]="checkMembresia.membresia.descuentosDisponibles.length === 0">Descuento:
+										{{checkMembresia.membresia.descuento?.nombre}}</div>
+									<div [hidden]="checkMembresia.membresia.descuentosDisponibles.length > 0">Sin descuentos disponibles</div>
 								</div>
 								<div class="col-2">
 
 									<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia)"
-									 class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
+									 [hidden]="checkMembresia.membresia.descuentosDisponibles.length === 0" class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill"
+									 style="width: 20px; height: 20px">
 										<i class="la la-plus" style="font-size: 0.9rem"></i>
 									</button>
 									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null"
@@ -100,10 +103,10 @@
 											<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
 											<span class="m-list-timeline__text">
 												<div class="row">
-													<div class="col">
+													<div class="col-2">
 														{{membresia.nombre}}:
 													</div>
-													<div class="col-8">
+													<div class="col">
 														<strong style="color:green">+ ${{membresia.precio}}</strong>
 													</div>
 												</div>
@@ -112,10 +115,10 @@
 										<div class="col-12" style="padding-left: 35px;">
 											<ng-container *ngIf="membresia.descuento">
 												<div class="row">
-													<div class="col">
+													<div class="col-2">
 														{{membresia.descuento?.nombre}}:
 													</div>
-													<div class="col-8">
+													<div class="col">
 														<strong style="color: #e85b5b">- ${{ descuentoMembresia(membresia)}}</strong>
 													</div>
 												</div>
@@ -124,10 +127,10 @@
 										<div class="col-12" style="padding-left: 35px;">
 											<ng-container *ngIf="descuentoSocio(membresia)">
 												<div class="row">
-													<div class="col">
+													<div class="col-auto">
 														{{descuentoSocio(membresia)?.descuento.nombre}}:
 													</div>
-													<div class="col-8">
+													<div class="col">
 														<strong style="color: #e85b5b">- ${{descuentoSocio(membresia)?.precio}}</strong>
 													</div>
 												</div>
@@ -161,8 +164,8 @@
 		</div>
 		<div class="col-lg-6">
 			<label class="">Vuelto:</label>
-<input type="number" class="form-control m-input" [value]="(abonaCon - calcularTotal() > 0)? abonaCon - calcularTotal() : 0"
- placeholder="12" disabled>
+			<input type="number" class="form-control m-input" [value]="(abonaCon - calcularTotal() > 0)? abonaCon - calcularTotal() : 0"
+			 placeholder="12" disabled>
 		</div>
 	</div>
 

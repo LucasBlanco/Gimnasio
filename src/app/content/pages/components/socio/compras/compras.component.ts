@@ -7,6 +7,7 @@ import { Membresia } from '../../../../models/membresia';
 import { Descuento } from '../../../../models/descuento';
 import { ModalSelect } from '../../shared-components/modalSingleElement/modalSelect.component';
 import * as Modelos from '../../../../models/generales';
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 @Component({
 	selector: 'm-compras',
@@ -20,14 +21,18 @@ export class ComprasComponent implements OnInit {
 	abonaCon: number = null
 	@ViewChild(ModalSelect) modalSelect;
 
-	constructor(private httpSrvSocio: HttpServiceSocios, private httpServiceMembresia: HttpServiceMembresia, private srvSocio: SociosService) {
+	constructor(private activatedRouter: ActivatedRoute, private httpSrvSocio: HttpServiceSocios, private httpServiceMembresia: HttpServiceMembresia, private srvSocio: SociosService) {
 
 	}
 
 
 	ngOnInit() {
-		this.srvSocio.subscribe(this);
-		this.socio = this.srvSocio.getSocio();
+		this.activatedRouter.params.subscribe((params) => {
+			this.srvSocio.changeIdSocio(+params['id'])
+			this.httpSrvSocio.subjectSocios.subscribe(socios => {
+				this.socio = socios.find(s => s.id === this.srvSocio.idSocio)
+			})
+		});
 		this.httpServiceMembresia.traerTodosCompleto().then(membresias => {
 			this.checkMembresias = membresias.map(m => ({ seleccionada: false, membresia: m }));
 			console.log(membresias);
@@ -35,7 +40,6 @@ export class ComprasComponent implements OnInit {
 	}
 
 	public update() {
-		this.socio = this.srvSocio.getSocio();
 		this.checkMembresias.forEach(cm => { cm.seleccionada = false; cm.membresia.descuento = null; });
 	}
 
@@ -92,8 +96,5 @@ export class ComprasComponent implements OnInit {
 		const descuentoMembresia = this.descuentoMembresia(membresia);
 		const descuentoSocio = (this.descuentoSocio(membresia)) ? this.descuentoSocio(membresia).precio : 0;
 		return membresia.precio - descuentoMembresia - descuentoSocio;
-	}
-	consolear(algo){
-		console.log(algo)
 	}
 }

@@ -478,7 +478,11 @@ export class MenuConfig implements ConfigModel {
                             {
                                 title: 'Baja-Modificacion',
                                 page: '/socios/tabla'
-                            }
+							},
+							{
+								title: 'Vencimientos',
+								page: '/vencimientos'
+							}
                         ]
                     },
                     {

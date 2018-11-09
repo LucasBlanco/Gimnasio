@@ -21,7 +21,7 @@ export class AccesosComponent implements OnInit {
         this.activatedRouter.params.subscribe((params) => {
             this.srvSocio.changeIdSocio(+params['id'])
             this.httpSrvSocio.subjectSocios.subscribe(socios => {
-                let miSocio = socios.find(s => s.id === this.srvSocio.idSocio)
+                const miSocio = socios.find(s => s.id === this.srvSocio.idSocio)
                 this.httpSrvSocio.traerAccesos(miSocio).then(response => {
                     this.accesos = response;
                     console.log(this.accesos);

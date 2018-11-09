@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Socio} from "../../../../models/socio";
-import {SociosService} from "../serviceSocio";
+import {Socio} from '../../../../models/socio';
+import {SociosService} from '../serviceSocio';
 import * as moment from 'moment'
 import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 import { ActivatedRoute } from '@angular/router';

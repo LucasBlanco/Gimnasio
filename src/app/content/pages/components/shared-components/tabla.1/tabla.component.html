@@ -1,0 +1,135 @@
+<table class="table table-striped">
+	<thead class="HeaderTablaBlue">
+		<tr>
+			<th *ngIf="subDatos != undefined"></th>
+			<th scope="col" *ngFor="let columna of nombreColumnas">{{columna}}</th>
+			<th *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0">Acciones</th>
+		</tr>
+	</thead>
+	<tbody style="border: 1px solid rgb(224, 224, 224); box-sizing: border-box;">
+		<tr *ngIf="filtered">
+			<th *ngIf="subDatos != undefined"></th>
+			<th scope="col" *ngFor="let columna of valorColumnas">
+				<input type="text" class="form-control" (ngModelChange)="Filtrar(columna)" [(ngModel)]="filtro[columna]">
+			</th>
+			<th *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0"></th>
+		</tr>
+		<tr style="border: 1px solid #f4f5f8; box-sizing: border-box;" *ngIf="datos == undefined || datos == null || datos.length < 1 || Paginador.datosPaginados.length < 1 || Paginador.datosPaginados == null || Paginador.datosPaginados == undefined">
+			<td [attr.colspan]="(valorColumnas.length)+(acciones.length >= 1 ? 1 : 0)" style="text-align: center;">
+				No se han encontrado registros.
+			</td>
+		</tr>
+		<ng-container *ngFor="let dato of Paginador.datosPaginados; let indice = index">
+			<tr (click)="(acciones.length == 1)? enviarAccionAlPadre(dato, acciones[0].nombre) : null">
+				<td *ngIf="subDatos != undefined" (click)="mostrarSubtabla(indice); ">
+					<i *ngIf="!hideSubTabla[indice]" style="color: #716aca" class="fa fa-caret-right"></i>
+					<i *ngIf="hideSubTabla[indice]" style="color: #716aca" class="fa fa-caret-down"></i>
+				</td>
+				<td *ngFor="let valor of valorColumnas">
+					<ng-container *ngIf="dato[valor] === false">
+						<span class="m-badge  m-badge--danger m-badge--wide font-weight-normal">No</span>
+					</ng-container>
+					<ng-container *ngIf="dato[valor] === true">
+						<span class="m-badge m-badge--success m-badge--wide font-weight-normal">Si &nbsp;</span>
+					</ng-container>
+
+					<div *ngIf="dato[valor] !== false && dato[valor] !== true" [ngClass]="estilos[valor]? estilos[valor](dato[valor]): ''">
+						{{dato[valor]}}
+					</div>
+
+				</td>
+				<td *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0">
+					<div style="display: inline-flex">
+						<a *ngFor="let accion of acciones" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+						 [title]="accion.name" (click)="accion.callback(dato)">
+							<i [class]="accion.class"></i>
+						</a>
+					</div>
+
+					<div class="dropdown" *ngIf="dropDownAcciones.length > 0">
+						<button class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" type="button"
+						 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white">
+							<i class="la la-ellipsis-v"></i>
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+							<a class="dropdown-item" *ngFor="let accion of dropDownAcciones" (click)="enviarAccionAlPadre(dato, accion.nombre)">
+								<i [class]="accion.clase"></i> {{accion.nombre}}</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+
+			<tr [hidden]="subDatos == undefined || !hideSubTabla[indice]" [@enterAnimation]>
+
+				<td [attr.colspan]="(valorColumnas.length +1)+(acciones.length >= 1 ? 1 : 0)" style="background-color: #8080800d">
+					<div style="box-shadow: -6px 5px 27px -5px rgba(184,184,184,1); ">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col" *ngFor="let subNombre of subNombreColumnas" style="background-color: #006699; color: white">{{subNombre}}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<ng-container *ngFor="let subDato of dato[subDatos]">
+									<tr>
+										<td *ngFor="let subValor of subValorColumnas">{{subDato[subValor]}}</td>
+									</tr>
+								</ng-container>
+
+							</tbody>
+						</table>
+					</div>
+				</td>
+				<!--<td [attr.colspan]="(valorColumnas.length)+(acciones.length > 1 ? 1 : 0)" style="background-color: #8080800d">
+					<div style="box-shadow: -6px 5px 27px -5px rgba(184,184,184,1); ">
+						<tabla [datos]="dato[subDatos]" [nombreColumnas]="subNombreColumnas" [valorColumnas]="subValorColumnas" [filtered]="false"
+						    [claseTabla]="'table'">
+						</tabla>
+					</div>
+				</td>-->
+			</tr>
+
+		</ng-container>
+
+	</tbody>
+
+	<tfoot class="FooterTabla">
+		<tr *ngIf="totalesACalcular.length > 0" style="background-color: #f4f5f8">
+			<td *ngFor="let total of totales">{{(!isString(total))? ( total | number:'1.0-2') : total}}</td>
+			<td *ngIf="acciones.length >= 1 || dropDownAcciones.length > 0"></td>
+		</tr>
+		<tr>
+			<td [attr.colspan]="nombreColumnas.length+1">
+				<div class="form-group m-form__group row" style="margin-bottom: 0px;">
+					<label class="col-xl-1 col-lg-1 col-md-3 col-form-label">Registros:</label>
+					<div class="col-xl-1 col-lg-1 col-md-3">
+						<select style="cursor: pointer; text-align: center;" [(ngModel)]="Paginador.cantReg" (change)="Paginador.refreshPaginador()"
+						 class="form-control m-input" name="cantReg" required>
+							<option value="10" selected>10</option>
+							<option value="25">25</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-6 offset-lg-6">
+						<button style="margin-right: 5px; border-radius: 50%;" (click)="Paginador.retrocederPaginas()" class="btn btn-dark"
+						 type="button"><i class="la la-angle-left"></i></button>
+						<button style="margin-right: 5px; border-radius: 50%;" (click)="Paginador.setPage(x)" [class]="(Paginador.paginaActual == x)? 'btn btn-dark active' : 'btn btn-dark'"
+						 *ngFor="let x of Paginador.paginas.slice(Paginador.primeraPagina, Paginador.ultimaPagina)" type="button">{{x}}</button>
+						<button style="margin-right: 5px; border-radius: 50%;" (click)="Paginador.avanzarPaginas()" class="btn btn-dark"
+						 type="button"><i class="la la-angle-right"></i></button>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+<div class="dropdown ' + (i.getPageSize() - a <= 4 ? 'dropup' : '') + '"><a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+	 data-toggle="dropdown"><i class="la la-ellipsis-h"></i></a>
+	<div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit
+			Details</a>\t\t\t\t\t\t \t<a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
+		\t<a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>\t\t\t\t\t\t \t</div>
+</div>
+<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+ title="View "><i class="la la-edit"></i></a>

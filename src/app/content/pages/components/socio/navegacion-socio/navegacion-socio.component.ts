@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params, Router} from "@angular/router";
-import {Socio} from "../../../../models/socio";
-import {SociosService} from "../serviceSocio";
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Socio} from '../../../../models/socio';
+import {SociosService} from '../serviceSocio';
 import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 
 @Component({

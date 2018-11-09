@@ -19,7 +19,9 @@ import {Descuento} from "../../../../models/descuento";
 			</div>
 			
 			<div class="m-portlet__body">
-				<m-tabla [nombreColumnas]="['Nombre', 'Porcentaje', 'Vencimiento', 'AEC']" [valorColumnas]="['nombre', 'porcentaje', 'vencimiento', 'aplicableEnConjunto']" [datos]="descuentos" [acciones]="acciones"></m-tabla>
+				<m-tabla [nombreColumnas]="['/*Nombre', '/*Porcentaje', 'Vencimiento', '/AEC']" 
+				[valorColumnas]="['nombre', 'porcentaje', 'vencimiento', 'aplicableEnConjunto']" 
+				[datos]="descuentos" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })

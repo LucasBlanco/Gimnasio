@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Servicio} from '../../../../models/servicio';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Servicio } from '../../../../models/servicio';
 
 @Component({
-  selector: 'm-tabla-servicio',
+	selector: 'm-tabla-servicio',
 	template: `
 		<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
 			<div class="m-portlet__head">
@@ -18,7 +18,7 @@ import {Servicio} from '../../../../models/servicio';
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<m-tabla [nombreColumnas]="['Nombre']" [valorColumnas]="['nombre']" [datos]="servicios" [acciones]="acciones"></m-tabla>
+				<m-tabla [nombreColumnas]="['/*Nombre']" [valorColumnas]="['nombre']" [datos]="servicios" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })
@@ -27,27 +27,27 @@ export class TablaServicioComponent implements OnInit {
 	@Output('modificar') emitModificacion: EventEmitter<Servicio> = new EventEmitter();
 	@Output('baja') emitBaja: EventEmitter<Servicio> = new EventEmitter();
 	acciones;
-  ngOnInit() {
-	  this.acciones = [
-		  {
-			  callback: this.enviarModificacion.bind(this),
-			  class: 'la la-edit',
-			  name: 'Modificar'
-		  },
-		  {
-			  callback: this.enviarBaja.bind(this),
-			  class: 'la la-trash',
-			  name: 'Eliminar'
-		  }
-	  ];
-  }
+	ngOnInit() {
+		this.acciones = [
+			{
+				callback: this.enviarModificacion.bind(this),
+				class: 'la la-edit',
+				name: 'Modificar'
+			},
+			{
+				callback: this.enviarBaja.bind(this),
+				class: 'la la-trash',
+				name: 'Eliminar'
+			}
+		];
+	}
 
 	enviarModificacion(servicio: Servicio) {
 		this.emitModificacion.emit(servicio);
 	}
 
 	enviarBaja(servicio: Servicio) {
-  		this.emitBaja.emit(servicio);
+		this.emitBaja.emit(servicio);
 	}
 
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit,Output, Input, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core';
 import {Socio} from '../../../../models/socio';
 import {TablaComponent} from '../../shared-components/tabla/tabla.component';
 
@@ -20,7 +20,7 @@ import {TablaComponent} from '../../shared-components/tabla/tabla.component';
 			</div>
 			
 			<div class="m-portlet__body">
-				<m-tabla [nombreColumnas]="['Nombre', 'Apellido']" [valorColumnas]="['nombre', 'apellido']" [datos]="socios" [acciones]="acciones"></m-tabla>
+				<m-tabla [nombreColumnas]="['/*Nombre', 'Apellido']" [valorColumnas]="['nombre', 'apellido']" [datos]="socios" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })

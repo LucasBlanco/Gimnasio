@@ -23,7 +23,7 @@ import * as moment from 'moment'
 			</div>
 			
 			<div class="m-portlet__body">
-        <m-tabla [nombreColumnas]="['Apellido', 'Nombre', 'Vencimiento']" [valorColumnas]="['apellido','nombre','fecha']" 
+        <m-tabla [nombreColumnas]="['/*Apellido', 'Nombre', '/*Vencimiento']" [valorColumnas]="['apellido','nombre','fecha']" 
         [datos]="vencimientos" [estilos]="estilos" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`

@@ -38,7 +38,7 @@ import { Caja } from '../../../../models/caja';
 					</form>
 					
 					<div class="m-separator m-separator--dashed m-separator--lg"></div>
-				<m-tabla [datos]="movimientos" [nombreColumnas]="['Tipo', 'Fecha','Concepto', 'Monto', 'Observacion', 'Tipo de pago']"
+				<m-tabla [datos]="movimientos" [nombreColumnas]="['/*Tipo', '/*Fecha','/Concepto', '/*Monto', 'Observacion', 'Tipo de pago']"
 						 [valorColumnas]="['tipo', 'fecha','concepto','monto', 'observacion', 'tipoDePago']"
 				></m-tabla>
 			</div>
@@ -64,7 +64,7 @@ export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 		});
 	}
 
-	filtrar(desde, hasta){
+	filtrar(desde, hasta) {
 		const fechaDesde = moment(desde).format('YYYY-MM-DD');
 		const fechaHasta = moment(hasta).format('YYYY-MM-DD');
 		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => {

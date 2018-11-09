@@ -20,7 +20,7 @@ import { Servicio } from "../../../../models/servicio";
 			</div>
 			
 			<div class="m-portlet__body">
-				<m-tabla [nombreColumnas]="['Nombre', 'Precio', 'Vencimiento']" [valorColumnas]="['nombre', 'precio', 'vencimiento']" [datos]="membresias" [acciones]="acciones"></m-tabla>
+				<m-tabla [nombreColumnas]="['/*Nombre', '/*Precio', 'Vencimiento']" [valorColumnas]="['nombre', 'precio', 'vencimiento']" [datos]="membresias" [acciones]="acciones"></m-tabla>
 			</div>
 		</div>`
 })

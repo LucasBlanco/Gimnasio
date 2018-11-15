@@ -27,7 +27,8 @@
               "node_modules/material-design-icons/iconfont/material-icons.css",
               "node_modules/toastr/build/toastr.css",
               "node_modules/animate.css/animate.css",
-              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
+              "./src/iconos/font/flaticon.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

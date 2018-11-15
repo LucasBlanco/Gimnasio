@@ -9,7 +9,7 @@ import {Descuento} from "../../../../models/descuento";
 				<div class="m-portlet__head-caption">
 					<div class="m-portlet__head-title">
         			<span class="m-portlet__head-icon">
-          				<i class="flaticon-edit"></i>
+          				<i style="font-size: 2.2rem;" class="flaticon-tag"></i>
         			</span>
 						<h3 class="m-portlet__head-text">
 							Tabla de descuentos

@@ -5,7 +5,8 @@
 		<i class="la la-close"></i>
 	</span>
     <perfect-scrollbar style="height: 90vh;">
-        <label class="m-option shadow-sm m--margin-10 animated slideOutRigth slideInRigth" *ngFor="let socioServicio of sociosServicios; let i = index">
+<label class="m-option shadow-sm m--margin-10 animated slideOutRigth slideInRigth" *ngFor="let socioServicio of sociosServicios; let i = index"
+    @slowEnterRight>
             <div class="row" style="margin-left: 0px">
                 <div class="col-6 ">
                     <div class="row">

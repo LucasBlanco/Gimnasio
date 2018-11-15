@@ -1,18 +1,29 @@
 import { ActivatedRoute, Params } from "@angular/router";
+import { OnDestroy, OnInit } from "@angular/core";
+import { HttpServiceMembresia } from "../../../services/httpServiceMembresia";
 
-export class ABM {
-    editando: boolean
-    mostrarAlta: boolean
+export abstract class ABM implements OnDestroy, OnInit {
+    private editando: boolean
+    private mostrarAlta: boolean
     alta: Function
     traerUno: Function
     editar: Function
     borrar: Function
     datoSeleccionado
+    subscription
+    datos
+    dataService
 
-    constructor(public activatedRouter: ActivatedRoute) {
+    constructor(public activatedRouter: ActivatedRoute, public membresiaSrv: HttpServiceMembresia) {
         this.activatedRouter.params.subscribe((params: Params) => {
             this.mostrarAlta = (params['view'] === 'am');
             this.editando = false;
+        });
+        
+    }
+    ngOnInit() {
+        this.subscription = this.dataService.getSubscription().subscribe(datos => {
+            this.datos = datos;
         });
     }
 
@@ -32,5 +43,14 @@ export class ABM {
         this.editar(dato).then(() => {
             this.mostrarAlta = false;
         });
+    }
+
+    realizarBaja(dato) {
+        this.borrar(dato)
+    }
+
+    ngOnDestroy() {
+        // unsubscribe to ensure no memory leaks
+        this.subscription.unsubscribe();
     }
 }

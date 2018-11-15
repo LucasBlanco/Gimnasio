@@ -2,19 +2,22 @@
 //@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .centered {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 }
+
 .self-centered {
-  align-self: center;
+	align-self: center;
 }
+
 .mat-table__wrapper {
 	width: 100%;
 	overflow-x: auto;
 
 
-	mat-cell, mat-header-cell {
+	mat-cell,
+	mat-header-cell {
 		min-height: 100%;
 	}
 
@@ -109,9 +112,10 @@ mat-radio-button {
 	margin: -1.1rem -2.2rem 0;
 	overflow-x: hidden;
 }
+
 .mat-table__wrapper .mat-table .mat-row-editing.mat-row-inactive {
 	height: 0;
 	min-height: 0;
 	padding: 0 !important;
-	border-bottom:0 !important;
+	border-bottom: 0 !important;
 }

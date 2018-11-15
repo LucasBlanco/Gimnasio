@@ -250,14 +250,4 @@
 .flaticon-youtube:before { content: "\f1d3"; }
 .flaticon-add-label-button:before { content: "\f1d4"; }
 
-.flaticon-membership:before {
-  content: "\f100";
-}
-
-.flaticon-weight:before {
-  content: "\f101";
-}
-
-.flaticon-payment:before {
-  content: "\f102";
-}
+.flaticon-membership:before {content: "\f1d5"}

@@ -4,7 +4,7 @@
 		<div class="m-portlet__head-caption">
 			<div class="m-portlet__head-title">
 				<span class="m-portlet__head-icon">
-					<i class="flaticon-user"></i>
+					<i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
 				</span>
 				<h3 class="m-portlet__head-text">
 					{{(editando)? 'Modificar servicio' : 'Alta de servicio'}}
@@ -50,78 +50,169 @@
 					<span class="m-form__help">Desactive esta opcion si no desea registrar la entrada a este servicio</span>
 				</div>
 			</div>
-			<div class=" form-group m-form__group row">
-				<div class="col-lg-12 col-md-12 col-sm-12">
-					<label>* Servicios:</label>
-					<div *ngFor="let dia of dias; let i = index">
-						<div class="row">
-							<div class="col-lg-2 col-md-3">
+			<div class="containter px-4 pt-4">
+				<ul class="nav nav-tabs  m-tabs-line m-tabs-line--primary" role="tablist">
+					<li class="nav-item m-tabs__item">
+						<a [class]="(mostrando === 'horarios')? 'nav-link m-tabs__link active': 'nav-link m-tabs__link'" (click)="mostrando ='horarios'"
+						 data-toggle="tab" #horariosTab role="tab">Horarios</a>
+					</li>
+					<li class="nav-item m-tabs__item">
+						<a [class]="(mostrando === 'profesores')? 'nav-link m-tabs__link active': 'nav-link m-tabs__link'" (click)="mostrando ='profesores'"
+						 data-toggle="tab" #profesoresTab role="tab">Profesores</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tab-content">
+				<div class="tab-pane active" [hidden]="mostrando !== 'horarios'" role="tabpanel">
+					<div class=" form-group m-form__group row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<label>* Servicios:</label>
+							<div *ngFor="let dia of dias; let i1 = index">
 								<div class="row">
-									<div class="col-4">
-										<span class="m-switch m-switch--sm m-switch--icon">
-											<label>
-												<input type="checkbox" [(ngModel)]="dia.seleccionado" [name]="'dia'+i" (change)="actualizarRestoDias(dia)">
-												<span></span>
-											</label>
-										</span>
-									</div>
-									<div class="col-6">
-										<div class="col-form-label">
-											<span>{{dia.dia}}</span>
+									<div class="col-lg-2 col-md-3">
+										<div class="row">
+											<div class="col-4">
+												<span class="m-switch m-switch--sm m-switch--icon">
+													<label>
+														<input type="checkbox" [(ngModel)]="dia.seleccionado" [name]="'dia'+i1">
+														<span></span>
+													</label>
+												</span>
+											</div>
+											<div class="col-6">
+												<div class="col-form-label">
+													<span>{{dia.dia}}</span>
+												</div>
+											</div>
 										</div>
+									</div>
+									<div class="col" *ngIf="dia.seleccionado" @slowEnterRight>
+										<div class="row" *ngFor="let hora of dia.horarios, let i2 = index" @slowEnterUp>
+											<div class="col-lg-2">
+												<div class="row" style="padding-top: 10px; padding-bottom: 10px">
+													<div class="col-6 col-lg-3">
+														<label class="col-form-label">Inicio</label>
+													</div>
+													<div class="col-6 col-lg-9">
+														<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="hora.horaInicio"
+														 (focusout)="actualizarRestoDias(hora); actualizarRestoHorario(hora, ultimoValor)" (focusin)="guardarUltimoValor(hora.horaInicio);"
+														 [max]="hora.horaFin" [name]="'inicio'+i1+i2" required>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2">
+												<div class="row " style="padding-top: 10px; padding-bottom: 10px">
+													<div class="col-6 col-lg-3">
+														<label class="col-form-label">Fin</label>
+													</div>
+													<div class="col-6 col-lg-9">
+														<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="hora.horaFin" [min]="hora.horaInicio"
+														 [name]="'fin'+i1+i2" required (focusout)="actualizarRestoDias(hora)">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3">
+												<div class="row" style="padding-top: 10px; padding-bottom: 10px">
+													<div class="col-6 ">
+														<label class="col-form-label">Entrada desde</label>
+													</div>
+													<div class="col-6">
+														<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="hora.entradaDesde"
+														 [name]="'entradaDesde'+i1+i2" required (focusout)="actualizarRestoDias(hora)">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3">
+												<div class="row" style="padding-top: 10px; padding-bottom: 10px">
+													<div class="col-6 ">
+														<label class="col-form-label">Entrada hasta</label>
+													</div>
+													<div class="col-6 ">
+														<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="hora.entradaHasta"
+														 [name]="'entradaHasta'+i1+i2" required (focusout)="actualizarRestoDias(hora)">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-1 align-self-center">
+
+												<button type="button" *ngIf="i2 > 0" (click)="eliminarHorario(dia, i2)" class="btn btn-danger m-btn m-btn--icon btn-sm m-btn--icon-only m-btn--pill">
+													<i class="la la-minus"></i>
+												</button>
+
+											</div>
+										</div>
+										<button type="button" (click)="agregarHorario(dia)" class="btn btn-success m-btn m-btn--icon btn-sm m-btn--icon-only m-btn--pill">
+											<i class="la la-plus"></i>
+										</button>
 									</div>
 								</div>
 							</div>
-							<ng-container *ngIf="dia.seleccionado">
-								<div class="col-lg-2">
-									<div class="row" style="padding-top: 10px; padding-bottom: 10px">
-										<div class="col-6 col-lg-3">
-											<label class="col-form-label">Inicio</label>
-										</div>
-										<div class="col-6 col-lg-9">
-											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.horaInicio" [max]="dia.horaFin"
-											 [name]="'inicio'+i" required>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-2">
-									<div class="row " style="padding-top: 10px; padding-bottom: 10px">
-										<div class="col-6 col-lg-3">
-											<label class="col-form-label">Fin</label>
-										</div>
-										<div class="col-6 col-lg-9">
-											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.horaFin" [min]="dia.horaInicio"
-											 [name]="'fin'+i" required>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3">
-									<div class="row" style="padding-top: 10px; padding-bottom: 10px">
-										<div class="col-6 ">
-											<label class="col-form-label">Entrada desde</label>
-										</div>
-										<div class="col-6">
-											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.entradaDesde" [name]="'entrada'+i"
-											 required>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3">
-									<div class="row" style="padding-top: 10px; padding-bottom: 10px">
-										<div class="col-6 ">
-											<label class="col-form-label">Entrada hasta</label>
-										</div>
-										<div class="col-6 ">
-											<input type="time" class="form-control m-input" style="padding: 5px" [(ngModel)]="dia.entradaHasta" [name]="'entrada'+i"
-											 required>
-										</div>
-									</div>
-								</div>
-							</ng-container>
 						</div>
 					</div>
 				</div>
+				<div class="tab-pane active" [hidden]="mostrando !== 'profesores'" role="tabpanel">
+					<div class="p-4">
+						<div class="row align-items-center" *ngFor="let dia of diasSeleccionados()">
+							<div class="col-1 font-weight-bold">
+								{{dia.dia}}
+							</div>
+							<div class="col">
+								<div class="row align-items-center py-2" *ngFor="let horario of dia.horarios, let i = index">
+									<div class="col">{{horario.horaInicio}}-{{horario.horaFin}}</div>
+									<div class="col">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<label>Profesor</label>
+											</div>
+											<div class="col">
+												<select class="form-control m-input" [name]="'profesor'+i" [(ngModel)]="horario.profesor" (ngModelChange)="actualizarResto(horario, 'profesor')">
+													<option>Carlos</option>
+													<option>Juan</option>
+													<option>Pedro</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<label>Tipo de pago</label>
+											</div>
+											<div class="col">
+												<select class="form-control m-input" [name]="'tipoPago'+i" [(ngModel)]="horario.tipoPago" (ngModelChange)="actualizarResto(horario, 'tipoPago')">
+													<option>Clase</option>
+													<option>Hora</option>
+													<option>Fijo</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<label>Importe:</label>
+											</div>
+											<div class="col">
+												<input type="number" class="form-control m-input" [name]="'importe'+i" [(ngModel)]="horario.importe"
+												 (focusout)="actualizarResto(horario, 'importe')">
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+							<div class="m-form__seperator m-form__seperator--dashed my-3"></div>
+						</div>
+						<div *ngIf="!hayUnDiaSeleccionado()">
+							Seleccione un dia para realizar la seleccion de profesores
+						</div>
+
+					</div>
+				</div>
 			</div>
+
 		</form>
 	</div>
 	<div class="m-portlet__foot">

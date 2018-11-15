@@ -11,7 +11,7 @@ import { Caja } from '../../../../models/caja';
 				<div class="m-portlet__head-caption">
 					<div class="m-portlet__head-title">
         			<span class="m-portlet__head-icon">
-          				<i class="flaticon-edit"></i>
+          				<i style="font-size: 2.2rem;" class="flaticon-edit"></i>
         			</span>
 						<h3 class="m-portlet__head-text">
 							Movimientos
@@ -58,9 +58,9 @@ export class TablaMovimientosComponent implements AfterViewInit, OnInit {
 	ngAfterViewInit() {
 		const fechaDesde = moment().subtract(1, 'month').format('YYYY-MM-DD');
 		const fechaHasta = moment().format('YYYY-MM-DD');
-		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => { 
+		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => {
 			(this.movimientos as any) = response
-			this.movimientos.forEach( mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
+			this.movimientos.forEach(mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
 		});
 	}
 

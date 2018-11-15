@@ -5,12 +5,31 @@ import {Membresia} from '../models/membresia';
 import {Injectable} from '@angular/core';
 import {Servicio} from '../models/servicio';
 import {Descuento} from '../models/descuento';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 // 1: membresia, 2: socio
 @Injectable()
 export class HttpServiceMembresia {
 
-	constructor(private httpService: HttpService) {}
+	subject = new BehaviorSubject<Membresia[]>([]);
+	datos: Membresia[] = []
+
+	constructor(private httpService: HttpService) {
+		this.traerTodosCompleto().then(datos => {
+			this.datos = datos;
+			this.updateObservers();
+		});
+	}
+
+	private updateObservers() {
+		this.subject.next(this.datos);
+	}
+
+	public getSubscription(): Observable<any> {
+		return this.subject.asObservable();
+	}
+
+	
 
 	public membresiaToFront(membresia) {
 		return new Membresia(membresia.nombre,
@@ -43,7 +62,11 @@ export class HttpServiceMembresia {
 			new Modelos.Post('/membresia/crear', this.membresiaToBack(membresia),
 				'La membresia fue creada con exito',
 				'Hubo un error al crear la membresia. Intente nuevamente.')
-		);
+		).then((id: number) => {
+			membresia.id = id
+			this.datos.push(membresia)
+			this.updateObservers()
+		});
 	}
 
 	public editar( membresia: Membresia ) {
@@ -51,7 +74,10 @@ export class HttpServiceMembresia {
 			new Modelos.Post('/membresia/editar/' + membresia.id, this.membresiaToBack(membresia),
 				'La membresia fue editada con exito',
 				'Hubo un error al editar la membresia. Intente nuevamente.')
-		);
+		).then(() => {
+			this.datos = this.datos.map(_membresia => (_membresia.id === membresia.id) ? membresia : _membresia)
+			this.updateObservers()
+		});
 	}
 
 	public borrar(membresia: Membresia) {
@@ -59,7 +85,7 @@ export class HttpServiceMembresia {
 			new Modelos.Post('/membresia/borrar/', membresia.id,
 				'La membresia fue eliminada con exito',
 				'Hubo un error al eliminar la membresia. Intente nuevamente.')
-		);
+		).then(() => {this.datos = this.datos.filter(m => m.id !== membresia.id); this.updateObservers()});
 	}
 
 	public traerTodos(): Promise<any> {

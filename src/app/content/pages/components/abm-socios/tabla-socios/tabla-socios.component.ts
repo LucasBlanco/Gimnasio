@@ -10,7 +10,7 @@ import {TablaComponent} from '../../shared-components/tabla/tabla.component';
 				<div class="m-portlet__head-caption">
 					<div class="m-portlet__head-title">
         			<span class="m-portlet__head-icon">
-          				<i class="flaticon-edit"></i>
+          				<i style="font-size: 2.2rem;" class="flaticon-edit"></i>
         			</span>
 						<h3 class="m-portlet__head-text">
 							Tabla de usuarios

@@ -464,92 +464,92 @@ export class MenuConfig implements ConfigModel {
 						// badge: {type: 'm-badge--danger', value: '2'},
 						translate: 'MENU.DASHBOARD'
 					},
-                    {section: 'ABM'},
-                    {
-                        title: 'Socios',
-                        root: true,
-                        bullet: 'dot',
-                        icon: 'flaticon-user',
-                        submenu: [
-                            {
-                                title: 'Alta',
-                                page: '/socios/am'
-                            },
-                            {
-                                title: 'Baja-Modificacion',
-                                page: '/socios/tabla'
+					{ section: 'ABM' },
+					{
+						title: 'Socios',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-user',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/socios/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/socios/tabla'
 							},
 							{
 								title: 'Vencimientos',
 								page: '/vencimientos'
 							}
-                        ]
-                    },
-                    {
-                        title: 'Membresias',
-                        root: true,
-                        bullet: 'dot',
-						icon: 'la la-trophy',
-                        submenu: [
-                            {
-                                title: 'Alta',
-                                page: '/checkMembresia/am'
-                            },
-                            {
-                                title: 'Baja-Modificacion',
-                                page: '/checkMembresia/tabla'
-                            }
-                        ]
-                    },
-                    {
-                        title: 'Servicios',
-                        root: true,
-                        bullet: 'dot',
-						icon: 'fa fa-dumbbell',
-                        submenu: [
-                            {
-                                title: 'Alta',
-                                page: '/servicio/am'
-                            },
-                            {
-                                title: 'Baja-Modificacion',
-                                page: '/servicio/tabla'
-                            }
-                        ]
-                    },
-                    {
-                        title: 'Descuentos',
-                        root: true,
-                        bullet: 'dot',
-                        icon: 'flaticon-rocket',
-                        submenu: [
-                            {
-                                title: 'Alta',
-                                page: '/descuento/am'
-                            },
-                            {
-                                title: 'Baja-Modificacion',
-                                page: '/descuento/tabla'
-                            }
-                        ]
-                    },
-                    { section: 'Caja' },
-                    {
-                        title: 'Caja',
-                        root: true,
-                        bullet: 'dot',
-                        icon: 'flaticon-bag',
-                        submenu: [
-                            {
-                                title: 'Ingresos/egresos',
-                                page: '/caja/ingresos'
-                            },
-                            {
-                                title: 'Movimientos',
-                                page: '/caja/movimientos'
-                            }
-                        ]
-                    }
+						]
+					},
+					{
+						title: 'Membresias',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-membership',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/checkMembresia/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/checkMembresia/tabla'
+							}
+						]
+					},
+					{
+						title: 'Servicios',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-kettlebell',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/servicio/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/servicio/tabla'
+							}
+						]
+					},
+					{
+						title: 'Descuentos',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-tag',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/descuento/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/descuento/tabla'
+							}
+						]
+					},
+					{ section: 'Caja' },
+					{
+						title: 'Caja',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-bag',
+						submenu: [
+							{
+								title: 'Ingresos/egresos',
+								page: '/caja/ingresos'
+							},
+							{
+								title: 'Movimientos',
+								page: '/caja/movimientos'
+							}
+						]
+					}
 					/*{section: 'Components'},
 					{
 						title: 'Google Material',

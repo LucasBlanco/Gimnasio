@@ -14,7 +14,7 @@ export abstract class ABM implements OnDestroy, OnInit {
     datos
     dataService
 
-    constructor(public activatedRouter: ActivatedRoute, public membresiaSrv: HttpServiceMembresia) {
+    constructor(public activatedRouter: ActivatedRoute, public srv) {
         this.activatedRouter.params.subscribe((params: Params) => {
             this.mostrarAlta = (params['view'] === 'am');
             this.editando = false;

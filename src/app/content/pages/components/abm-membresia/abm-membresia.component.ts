@@ -32,28 +32,3 @@ export class AbmMembresiaComponent extends ABM {
 
 }
 
-
-/*realizarAlta(membresia: Membresia) {
-		this.membresiaSrv.crear(membresia).then(() => {
-			this.membresias.push(membresia)
-		})
-	}
-
-	cargarDatosModificacion(membresia: Membresia) {
-		this.membresiaSrv.traerUno(membresia).then(_membresia => {
-			this.membresiaSeleccionada = _membresia
-			this.editando = true
-			this.mostrarAlta = true
-		})
-	}
-
-	realizarModificacion(membresia: Membresia) {
-		this.membresiaSrv.editar(membresia).then(() => {
-			this.membresias = this.membresias.map(_membresia => (_membresia.id === membresia.id) ? membresia : _membresia)
-			this.mostrarAlta = false
-		})
-	}
-
-	realizarBaja(membresia: Membresia) {
-		this.membresiaSrv.borrar(membresia).then(() => this.membresias = this.membresias.filter(m => m.id !== membresia.id))
-	}*/

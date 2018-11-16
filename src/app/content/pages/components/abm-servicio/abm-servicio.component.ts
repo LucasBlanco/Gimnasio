@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Servicio} from '../../../models/servicio';
 import {HttpServiceServicio} from '../../../services/httpServiceServicio';
+import { ABM } from '../abm/abm';
 
 @Component({
   selector: 'm-membresia',
@@ -12,52 +13,19 @@ import {HttpServiceServicio} from '../../../services/httpServiceServicio';
 							[editando]="editando"></m-am-servicio>
 		</div>
 		<div *ngIf="!mostrarAlta">
-			<m-tabla-servicio (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [servicios]="servicios"></m-tabla-servicio>
+			<m-tabla-servicio (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [datos]="datos"></m-tabla-servicio>
 		</div>
 	`,
 })
-export class AbmServicioComponent implements OnInit, AfterViewInit {
-	servicios: Array<Servicio> = [];
-	servicioSeleccionado: Servicio;
-	mostrarAlta: boolean = true;
-	editando: boolean = false;
+export class AbmServicioComponent extends ABM {
 
-  constructor(private activatedRouter: ActivatedRoute, private servicioSrv: HttpServiceServicio) { }
+  constructor(public activatedRouter: ActivatedRoute, private servicioSrv: HttpServiceServicio) {
+		super(activatedRouter, servicioSrv)
+		this.alta = this.servicioSrv.crear.bind(this.servicioSrv)
+		this.traerUno = this.servicioSrv.traerUno.bind(this.servicioSrv)
+		this.editar = this.servicioSrv.editar.bind(this.servicioSrv)
+		this.borrar = this.servicioSrv.borrar.bind(this.servicioSrv)
+	  	this.dataService = this.servicioSrv
+   }
 
-  ngOnInit() {
-	  this.activatedRouter.params.subscribe((params: Params) => {
-		  this.mostrarAlta = (params['view'] === 'am');
-		  this.editando = false
-		  this.servicioSeleccionado = new Servicio();
-	  });
-  }
-
-	ngAfterViewInit() {
-		this.servicioSrv.traerTodos().then( servicios => this.servicios = servicios);
-	}
-
-	realizarAlta(servicio: Servicio) {
-		this.servicioSrv.crear(servicio).then( () => {
-			this.servicios.push(servicio);
-		});
-	}
-
-	cargarDatosModificacion(servicio: Servicio) {
-		this.servicioSrv.traerUno(servicio).then( _servicio => {
-			this.servicioSeleccionado = _servicio;
-			this.editando = true;
-			this.mostrarAlta = true;
-		});
-	}
-
-	realizarModificacion(servicio: Servicio) {
-  		this.servicioSrv.editar(servicio).then( () => {
-			this.servicios = this.servicios.map( _servicio => (_servicio.id === servicio.id) ? servicio : _servicio);
-			this.mostrarAlta = false;
-		});
-	}
-
-	realizarBaja(servicio: Servicio) {
-		this.servicioSrv.borrar(servicio).then(  () => this.servicios = this.servicios.filter( srv => srv.id !== servicio.id));
-	}
 }

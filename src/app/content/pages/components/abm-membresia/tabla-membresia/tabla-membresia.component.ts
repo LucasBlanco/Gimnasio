@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Membresia } from '../../../../models/membresia';
-import { Servicio } from '../../../../models/servicio';
+import { Component} from '@angular/core';
+
 import { Tabla } from '../../abm/tabla'
 
 @Component({
@@ -25,22 +24,7 @@ import { Tabla } from '../../abm/tabla'
 			</div>
 		</div>`
 })
-export class TablaMembresiaComponent extends Tabla implements OnInit  {
+export class TablaMembresiaComponent extends Tabla {
 
-	acciones;
-	ngOnInit() {
-		this.acciones = [
-			{
-				callback: this.enviarModificacion.bind(this),
-				class: 'la la-edit',
-				name: 'Modificar'
-			},
-			{
-				callback: this.enviarBaja.bind(this),
-				class: 'la la-trash',
-				name: 'Eliminar'
-			}
-		]
-	}
 
 }

@@ -3,10 +3,27 @@ import * as Modelos from './httpModels';
 import {HttpService} from './httpService';
 import {Servicio} from '../models/servicio';
 import {Injectable} from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class HttpServiceServicio {
 
-	constructor(private httpService: HttpService) {}
+	subject = new BehaviorSubject<Servicio[]>([]);
+	datos: Servicio[] = []
+
+	constructor(private httpService: HttpService) {
+		this.traerTodos().then(datos => {
+			this.datos = datos;
+			this.updateObservers();
+		});
+	}
+
+	private updateObservers() {
+		this.subject.next(this.datos);
+	}
+
+	public getSubscription(): Observable<any> {
+		return this.subject.asObservable();
+	}
 
 	private getID = (dia) => ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'].findIndex(_dia => _dia === dia) + 1;
 	private getDia = (id) => ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'].find((_dia, i) => i + 1 === id);
@@ -52,7 +69,7 @@ export class HttpServiceServicio {
 			new Modelos.Post('/servicio/crear', this.servicioToBack(servicio),
 				'El servicio fue creado con exito',
 				'Hubo un error al crear el servicio. Intente nuevamente.')
-		);
+		).then(() => {this.datos.push(servicio); this.updateObservers()});
 	}
 
 	public editar( servicio: Servicio ) {
@@ -60,7 +77,10 @@ export class HttpServiceServicio {
 			new Modelos.Post('/servicio/editar/' + servicio.id, this.servicioToBack(servicio),
 				'El servicio fue editado con exito',
 				'Hubo un error al editar el servicio. Intente nuevamente.')
-		);
+		).then(() => {
+			this.datos = this.datos.map(_servicio => (_servicio.id === servicio.id) ? servicio : _servicio);
+			this.updateObservers()
+		});
 	}
 
 	public borrar(servicio: Servicio) {
@@ -68,7 +88,7 @@ export class HttpServiceServicio {
 			new Modelos.Post('/servicio/borrar/', {id: servicio.id},
 				'El servicio fue eliminado con exito',
 				'Hubo un error al eliminar el servicio. Intente nuevamente.')
-		);
+		).then(() => {this.datos = this.datos.filter(srv => srv.id !== servicio.id); this.updateObservers()});
 	}
 
 	public traerTodos(): Promise<Array<Servicio>> {

@@ -23,23 +23,28 @@ export class AmMembresiaComponent implements OnChanges, OnInit {
   constructor(private servicioSrv: HttpServiceServicio, private descuentoSrv: HttpServiceDescuento) { }
 
   ngOnInit() {
-  		this.servicioSrv.traerTodos().then(servicios => {
-  			this.servicios = servicios.map( x => ({seleccionado: false, creditos: null, vencimiento: null, servicio: x}));
-			if (this.editando) {
-				this.membresiaAModificar.servicios.forEach( srv => {
-				const servicio = this.servicios.find( s => s.servicio.id === srv.servicio.id);
-				servicio.seleccionado = true;
-				servicio.vencimiento = srv.vencimiento;
-				servicio.creditos = srv.creditos;
-			}); }
-  		});
-		this.descuentoSrv.traerTodos().then(descuentos => {
-			this.descuentos = descuentos.map( x => ({seleccionado: false, descuento: x}));
-			if (this.editando) {this.descuentos.forEach( desc => {
-				desc.seleccionado = this.membresiaAModificar.descuentosDisponibles.some(d => d.id === desc.descuento.id);
+	  this.servicioSrv.getSubscription().subscribe(servicios => {
+		  this.servicios = servicios.map(x => ({ seleccionado: false, creditos: null, vencimiento: null, servicio: x }));
+		  if (this.editando) {
+			  this.membresiaAModificar.servicios.forEach(srv => {
+				  const servicio = this.servicios.find(s => s.servicio.id === srv.servicio.id);
+				  servicio.seleccionado = true;
+				  servicio.vencimiento = srv.vencimiento;
+				  servicio.creditos = srv.creditos;
+			  });
+		  }
+	  })
+
+	  this.descuentoSrv.getSubscription().subscribe( descuentos => {
+		  this.descuentos = descuentos.map(x => ({ seleccionado: false, descuento: x }));
+		  if (this.editando) {
+			  this.descuentos.forEach(desc => {
+				  desc.seleccionado = this.membresiaAModificar.descuentosDisponibles.some(d => d.id === desc.descuento.id);
+			  })
 			}
-			); }
-		});
+	  })
+
+		
 	}
 
 	ngOnChanges( changes: SimpleChanges) {

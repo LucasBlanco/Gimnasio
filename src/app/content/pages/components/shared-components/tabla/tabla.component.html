@@ -7,8 +7,17 @@
     </thead>
     <tbody>
         <tr *ngFor="let dato of datos, let i = index">
-
-            <td *ngFor="let fila of valorColumnas" [ngClass]="estilos[fila]? estilos[fila](dato[fila]): ''">{{dato[fila]}}</td>
+            <td *ngFor="let fila of valorColumnas" [ngClass]="estilos[fila]? estilos[fila](dato[fila]): ''">
+                <ng-container *ngIf="dato[fila] === false">
+                    <span class="m-badge  m-badge--danger m-badge--wide font-weight-normal">No</span>
+                </ng-container>
+                <ng-container *ngIf="dato[fila] === true">
+                    <span class="m-badge m-badge--success m-badge--wide font-weight-normal">Si &nbsp;</span>
+                </ng-container>
+                <ng-container *ngIf="dato[fila] != false && dato[fila] != true">
+                    {{dato[fila]}}
+                </ng-container>
+                </td>
             <td *ngIf="hayAcciones()">
                 <ng-container class="hidden-sm-down">
                     <button *ngFor="let accion of acciones" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"

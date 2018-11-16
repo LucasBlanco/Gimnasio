@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Caja } from '../../../models/caja';
 import { ActivatedRoute, Params } from '@angular/router';
 import { HttpServiceCaja } from '../../../services/httpServiceCaja';
@@ -17,12 +17,13 @@ import { HttpServiceCaja } from '../../../services/httpServiceCaja';
 
   `
 })
-export class CajaComponent implements OnInit {
+export class CajaComponent implements OnInit, OnDestroy {
 
 	tipo: string;
 	verIngresos: Boolean = false;
 	verMovimientos: Boolean = false;
 	movimientos: Array<Caja> = [new Caja()];
+	subscription
 
 	constructor(private router: ActivatedRoute, private cajaSrv: HttpServiceCaja) { }
 
@@ -30,6 +31,9 @@ export class CajaComponent implements OnInit {
 		this.router.params.subscribe((params: Params) => {
 			this.verIngresos = (params['view'] === 'ingresos');
 			this.verMovimientos = (params['view'] === 'movimientos');
+		});
+		this.subscription = this.cajaSrv.getSubscription().subscribe(datos => {
+			this.movimientos = datos;
 		});
 	}
 
@@ -39,5 +43,10 @@ export class CajaComponent implements OnInit {
 
 	egreso(caja: Caja) {
 		this.cajaSrv.egreso(caja).then(() => this.movimientos.push(caja));
+	}
+
+	ngOnDestroy() {
+		// unsubscribe to ensure no memory leaks
+		this.subscription.unsubscribe();
 	}
 }

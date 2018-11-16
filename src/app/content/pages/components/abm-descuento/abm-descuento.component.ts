@@ -2,63 +2,32 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Descuento} from '../../../models/descuento';
 import {HttpServiceDescuento} from '../../../services/httpServiceDescuento';
+import { ABM } from '../abm/abm';
 
 @Component({
   selector: 'm-descuento',
 	template: `
 		<div *ngIf="mostrarAlta">
 			<m-am-descuento (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)"
-							(mostrarTabla)="this.mostrarAlta = false" [descuentoAModificar]="descuentoSeleccionado"
+							(mostrarTabla)="this.mostrarAlta = false" [descuentoAModificar]="datoSeleccionado"
 							[editando]="editando"></m-am-descuento>
 		</div>
 		<div *ngIf="!mostrarAlta">
-			<m-tabla-descuento (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [descuentos]="descuentos"></m-tabla-descuento>
+			<m-tabla-descuento (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [datos]="datos"></m-tabla-descuento>
 		</div>
 	`,
 })
-export class AbmDescuentoComponent implements OnInit, AfterViewInit {
-	descuentos: Array<Descuento> = [];
-	descuentoSeleccionado: Descuento;
-	mostrarAlta: boolean = true;
-	editando: boolean = false;
+export class AbmDescuentoComponent extends ABM implements OnInit {
+	datos: Array<Descuento> = [];
+	datoSeleccionado: Descuento;
 
-  constructor(private activatedRouter: ActivatedRoute, private descuentoSrv: HttpServiceDescuento) { }
-
-  ngOnInit() {
-	  this.activatedRouter.params.subscribe((params: Params) => {
-		  this.mostrarAlta = (params['view'] === 'am');
-		  this.editando = false;
-		  this.descuentoSeleccionado = new Descuento();
-	  });
-  }
-
-	ngAfterViewInit() {
-		this.descuentoSrv.traerTodos().then( descuentos =>
-			this.descuentos = descuentos);
+	constructor(public activatedRouter: ActivatedRoute, public descuentoSrv: HttpServiceDescuento) {
+		super(activatedRouter, descuentoSrv)
+		this.alta = this.descuentoSrv.crear.bind(this.descuentoSrv)
+		this.traerUno = this.descuentoSrv.traerUno.bind(this.descuentoSrv)
+		this.editar = this.descuentoSrv.editar.bind(this.descuentoSrv)
+		this.borrar = this.descuentoSrv.borrar.bind(this.descuentoSrv)
+		this.dataService = this.descuentoSrv
 	}
-
-	realizarAlta(descuento: Descuento) {
-		this.descuentoSrv.crear(descuento).then( () => {
-			this.descuentos.push(descuento);
-		});
-	}
-
-	cargarDatosModificacion(descuento: Descuento) {
-		this.descuentoSrv.traerUno(descuento).then( _descuento => {
-			this.descuentoSeleccionado = _descuento;
-			this.editando = true;
-			this.mostrarAlta = true;
-		});
-	}
-
-	realizarModificacion(descuento: Descuento) {
-  		this.descuentoSrv.editar(descuento).then( () => {
-			this.descuentos = this.descuentos.map( _descuento => (_descuento.id === descuento.id) ? descuento : _descuento);
-				this.mostrarAlta = false;
-		});
-	}
-
-	realizarBaja(descuento: Descuento) {
-		this.descuentoSrv.borrar(descuento).then(  () => this.descuentos = this.descuentos.filter( srv => srv.id !== descuento.id));
-	}
+  
 }

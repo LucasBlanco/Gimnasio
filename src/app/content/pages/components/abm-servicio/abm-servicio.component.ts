@@ -9,7 +9,7 @@ import { ABM } from '../abm/abm';
 	template: `
 		<div *ngIf="mostrarAlta">
 			<m-am-servicio (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)"
-							(mostrarTabla)="this.mostrarAlta = false" [servicioAModificar]="servicioSeleccionado"
+							(mostrarTabla)="this.mostrarAlta = false" [servicioAModificar]="datoSeleccionado"
 							[editando]="editando"></m-am-servicio>
 		</div>
 		<div *ngIf="!mostrarAlta">

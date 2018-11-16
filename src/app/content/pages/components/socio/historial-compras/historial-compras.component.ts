@@ -36,14 +36,6 @@ export class HistorialComprasComponent implements OnInit {
                 });
             })
         });
-
-        this.acciones = [
-            {
-                callback: null,
-                class: 'la la-money',
-                name: 'Cobrar'
-            }
-        ]
     }
 
 }

@@ -3,8 +3,8 @@ import { OnDestroy, OnInit } from "@angular/core";
 import { HttpServiceMembresia } from "../../../services/httpServiceMembresia";
 
 export abstract class ABM implements OnDestroy, OnInit {
-    private editando: boolean
-    private mostrarAlta: boolean
+    public editando: boolean
+    public mostrarAlta: boolean
     alta: Function
     traerUno: Function
     editar: Function

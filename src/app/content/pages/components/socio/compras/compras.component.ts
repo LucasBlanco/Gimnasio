@@ -29,13 +29,12 @@ export class ComprasComponent implements OnInit {
 	ngOnInit() {
 		this.activatedRouter.params.subscribe((params) => {
 			this.srvSocio.changeIdSocio(+params['id'])
-			this.httpSrvSocio.subjectSocios.subscribe(socios => {
+			this.httpSrvSocio.getSociosSubscription().subscribe(socios => {
 				this.socio = socios.find(s => s.id === this.srvSocio.idSocio)
 			})
-		});
-		this.httpServiceMembresia.traerTodosCompleto().then(membresias => {
-			this.checkMembresias = membresias.map(m => ({ seleccionada: false, membresia: m }));
-			console.log(membresias);
+			this.httpServiceMembresia.getSubscription().subscribe(membresias => {
+				this.checkMembresias = membresias.map(m => ({ seleccionada: false, membresia: m }));
+			})
 		});
 	}
 

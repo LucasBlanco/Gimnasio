@@ -19,10 +19,10 @@ export class AMSociosComponent implements OnChanges, OnInit {
 	constructor(private descuentoSrv: HttpServiceDescuento) { }
 
 	ngOnInit() {
-		this.descuentoSrv.traerTodos().then(descuentos => {
-			this.descuentos = descuentos.filter(d => d.tipo === 'socio')
-			console.log(this.descuentos)}
-		)
+		this.descuentoSrv.getSubscription().subscribe(
+			descuentos => { this.descuentos = descuentos.filter(d => d.tipo === 'socio')}
+			)
+
 	}
 	ngOnChanges(changes: SimpleChanges) {
 		this.socio = (this.editando) ? this.socioAModificar : new Socio()

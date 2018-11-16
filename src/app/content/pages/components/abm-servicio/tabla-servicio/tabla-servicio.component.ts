@@ -23,21 +23,7 @@ import { Tabla } from '../../abm/tabla';
 			</div>
 		</div>`
 })
-export class TablaServicioComponent extends Tabla implements OnInit {
+export class TablaServicioComponent extends Tabla {
 
-	ngOnInit() {
-		this.acciones = [
-			{
-				callback: this.enviarModificacion.bind(this),
-				class: 'la la-edit',
-				name: 'Modificar'
-			},
-			{
-				callback: this.enviarBaja.bind(this),
-				class: 'la la-trash',
-				name: 'Eliminar'
-			}
-		];
-	}
-
+	
 }

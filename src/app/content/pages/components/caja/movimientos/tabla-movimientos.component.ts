@@ -44,33 +44,17 @@ import { Caja } from '../../../../models/caja';
 			</div>
 		</div>`
 })
-export class TablaMovimientosComponent implements AfterViewInit, OnInit {
+export class TablaMovimientosComponent {
 
 	@Input() movimientos: Array<Caja> = [];
 
-	constructor(private cajaSrv: HttpServiceCaja) {
+	constructor(private cajaSrv: HttpServiceCaja) {}
 
-	}
-	ngOnInit() {
-
-	}
-
-	ngAfterViewInit() {
-		const fechaDesde = moment().subtract(1, 'month').format('YYYY-MM-DD');
-		const fechaHasta = moment().format('YYYY-MM-DD');
-		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => {
-			(this.movimientos as any) = response
-			this.movimientos.forEach(mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
-		});
-	}
 
 	filtrar(desde, hasta) {
 		const fechaDesde = moment(desde).format('YYYY-MM-DD');
 		const fechaHasta = moment(hasta).format('YYYY-MM-DD');
-		this.cajaSrv.traerTodos(fechaDesde, fechaHasta).then(response => {
-			(this.movimientos as any) = response
-			this.movimientos.forEach(mov => mov.fecha = moment(mov.fecha).format('DD/MM/YYYY'))
-		});
+		this.cajaSrv.traerTodos(fechaDesde, fechaHasta)
 	}
 
 }

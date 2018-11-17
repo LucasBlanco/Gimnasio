@@ -69,7 +69,7 @@ export class HttpServiceServicio {
 			new Modelos.Post('/servicio/crear', this.servicioToBack(servicio),
 				'El servicio fue creado con exito',
 				'Hubo un error al crear el servicio. Intente nuevamente.')
-		).then(() => {this.datos.push(servicio); this.updateObservers()});
+		).then((id: number) => { servicio.id = id; this.datos.push(servicio); this.updateObservers()});
 	}
 
 	public editar( servicio: Servicio ) {

@@ -1,8 +1,8 @@
 
 import * as Modelos from './httpModels';
-import {HttpService} from './httpService';
-import {Descuento} from '../models/descuento';
-import {Injectable} from '@angular/core';
+import { HttpService } from './httpService';
+import { Descuento } from '../models/descuento';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
@@ -27,10 +27,10 @@ export class HttpServiceDescuento {
 	}
 
 	public descuentoToFront(descuento) {
-		return  new Descuento(descuento.nombre, descuento.vencimiento_dias, descuento.porcentaje, descuento.aplicable_enconjunto === 1, (descuento.tipo ===1)? 'membresia':'socio', descuento.id);
+		return new Descuento(descuento.nombre, descuento.vencimiento_dias, descuento.porcentaje, descuento.aplicable_enconjunto === 1, (descuento.tipo === 1) ? 'membresia' : 'socio', descuento.id);
 	}
 
-	public descuentoToBack({vencimiento, aplicableEnConjunto, tipo, ...resto}) {
+	public descuentoToBack({ vencimiento, aplicableEnConjunto, tipo, ...resto }) {
 		return {
 			...resto,
 			tipo: (tipo === 'membresia') ? 1 : 2,
@@ -40,19 +40,20 @@ export class HttpServiceDescuento {
 
 	}
 
-	public crear( descuento: Descuento) {
+	public crear(descuento: Descuento) {
 		delete descuento.id;
 		return this.httpService.post(
 			new Modelos.Post('/descuento/crear', this.descuentoToBack(descuento),
 				'El descuento fue creado con exito',
 				'Hubo un error al crear el descuento. Intente nuevamente.')
-		).then(() => {
+		).then((id: number) => {
+			descuento.id = id
 			this.datos.push(descuento);
 			this.updateObservers()
 		});
 	}
 
-	public editar( descuento: Descuento ) {
+	public editar(descuento: Descuento) {
 		return this.httpService.put(
 			new Modelos.Post('/descuento/editar/' + descuento.id, this.descuentoToBack(descuento),
 				'El descuento fue editado con exito',
@@ -65,10 +66,10 @@ export class HttpServiceDescuento {
 
 	public borrar(descuento: Descuento) {
 		return this.httpService.post(
-			new Modelos.Post('/descuento/borrar/', {id: descuento.id},
+			new Modelos.Post('/descuento/borrar/', { id: descuento.id },
 				'El descuento fue eliminado con exito',
 				'Hubo un error al eliminar el descuento. Intente nuevamente.')
-		).then(() => { this.datos = this.datos.filter(srv => srv.id !== descuento.id); this.updateObservers()});
+		).then(() => { this.datos = this.datos.filter(srv => srv.id !== descuento.id); this.updateObservers() });
 	}
 
 	public traerTodos(): Promise<any> {

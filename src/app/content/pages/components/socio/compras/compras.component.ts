@@ -79,12 +79,12 @@ export class ComprasComponent implements OnInit {
 			return { descuento: descuento, precio: precio };
 		}
 		if (descuento.aplicableEnConjunto || membresia.descuento.aplicableEnConjunto) {
-			 const precioConDescuentoMembresia = membresia.precio - (membresia.precio * membresia.descuento.porcentaje / 100);
+			const precioConDescuentoMembresia = membresia.precio - (membresia.precio * membresia.descuento.porcentaje / 100);
 			precio = precioConDescuentoMembresia * descuento.porcentaje / 100;
 		} else {
 			precio = membresia.precio * descuento.porcentaje / 100;
 		}
-		return {descuento: descuento, precio: precio};
+		return { descuento: descuento, precio: precio };
 	}
 
 	descuentoMembresia(membresia) {

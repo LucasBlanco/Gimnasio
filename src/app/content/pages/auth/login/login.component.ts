@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private cdr: ChangeDetectorRef,
 		private http: Http
-	) {}
+	) { }
 
 	login(usuario: string, password: string) {
 
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 		const options = new RequestOptions({ headers: header });
 		// https://back.thenewfit.com.ar
 		// ng build --prod --base-href ./ --aot=false --build-optimizer=false --watch
-		this.http.post('http://localhost:8000/login', userlogin, options)
+		this.http.post('http://gym.test:8000/login', userlogin, options)
 			.toPromise()
 			.then((response: any) => {
 				const token = JSON.parse(response._body).data.token;
@@ -94,17 +94,17 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 		this.errors = [];
 		if (objectPath.get(f, 'form.controls.email.errors.email')) {
-			this.errors.push(this.translate.instant('AUTH.VALIDATION.INVALID', {name: this.translate.instant('AUTH.INPUT.EMAIL')}));
+			this.errors.push(this.translate.instant('AUTH.VALIDATION.INVALID', { name: this.translate.instant('AUTH.INPUT.EMAIL') }));
 		}
 		if (objectPath.get(f, 'form.controls.email.errors.required')) {
-			this.errors.push(this.translate.instant('AUTH.VALIDATION.REQUIRED', {name: this.translate.instant('AUTH.INPUT.EMAIL')}));
+			this.errors.push(this.translate.instant('AUTH.VALIDATION.REQUIRED', { name: this.translate.instant('AUTH.INPUT.EMAIL') }));
 		}
 
 		if (objectPath.get(f, 'form.controls.password.errors.required')) {
-			this.errors.push(this.translate.instant('AUTH.VALIDATION.INVALID', {name: this.translate.instant('AUTH.INPUT.PASSWORD')}));
+			this.errors.push(this.translate.instant('AUTH.VALIDATION.INVALID', { name: this.translate.instant('AUTH.INPUT.PASSWORD') }));
 		}
 		if (objectPath.get(f, 'form.controls.password.errors.minlength')) {
-			this.errors.push(this.translate.instant('AUTH.VALIDATION.MIN_LENGTH', {name: this.translate.instant('AUTH.INPUT.PASSWORD')}));
+			this.errors.push(this.translate.instant('AUTH.VALIDATION.MIN_LENGTH', { name: this.translate.instant('AUTH.INPUT.PASSWORD') }));
 		}
 
 		if (this.errors.length > 0) {

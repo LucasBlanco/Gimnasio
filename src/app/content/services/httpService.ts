@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as Modelos from './httpModels';
-import { Http,  RequestOptions, Headers } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import toastr from 'toastr';
 declare var $: any;
 
@@ -9,12 +9,12 @@ export class HttpService {
 
 	constructor(private http: Http) {
 		const token = localStorage.getItem('token');
-		 this.headerPOST = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token });
+		this.headerPOST = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token });
 		this.optionsPOST = new RequestOptions({ headers: this.headerPOST });
-		this.headerGET = new Headers({'Authorization': 'Bearer ' + token, 'Access-Control-Allow-Origin': '*'});
+		this.headerGET = new Headers({ 'Authorization': 'Bearer ' + token, 'Access-Control-Allow-Origin': '*' });
 		this.optionsGET = new RequestOptions({ headers: this.headerGET });
 		// this.ip = localStorage.getItem('currentServerIP');
-		this.ip = 'http://localhost:8000';
+		this.ip = 'http://gym.test:8000';
 	}
 	public usuario;
 	private loading: boolean = false;
@@ -44,20 +44,22 @@ export class HttpService {
 		if (tipo === 'success') {
 			toastr.success(mensaje, 'Exelente!');
 		} else if (tipo === 'warning') {
-            toastr.warning(mensaje, 'Advertencia!');
-        } else {
+			toastr.warning(mensaje, 'Advertencia!');
+		} else {
 			toastr.error(mensaje, 'Error!');
 		}
 	}
 
 	private showLoadingMessage() {
-		$.blockUI({ message: '<div style=" display: flex; justify-content: center;">' +
+		$.blockUI({
+			message: '<div style=" display: flex; justify-content: center;">' +
 				'<div class="m-blockui " style="margin-left:-80px;">' +
 				'<span>Cargando...</span>' +
 				'<span><div class="m-loader  m-loader--success m-loader--lg"></div></span>' +
 				'</div>' +
 				'</div>',
-			css: {border: 'none', backgroundColor: 'none'}});
+			css: { border: 'none', backgroundColor: 'none' }
+		});
 	}
 
 	private hideLoadingMessage() {
@@ -66,7 +68,7 @@ export class HttpService {
 
 	public mapper(httpServiceFunction, mapFunction): Promise<any> {
 		return new Promise((resolve, reject) => {
-			httpServiceFunction.then( respuesta => {
+			httpServiceFunction.then(respuesta => {
 				resolve(mapFunction(respuesta));
 			});
 		});
@@ -81,13 +83,12 @@ export class HttpService {
 					if (post.mensajeExito) {
 						this.sendMessage(post.mensajeExito, 'success');
 					}
-                    let respuesta
-					try{
-                        respuesta= JSON.parse(response._body)
-                    }
-                    catch(err){
-					    respuesta = response._body
-                    }
+					let respuesta
+					try {
+						respuesta = JSON.parse(response._body)
+					} catch (err) {
+						respuesta = response._body
+					}
 					resolve(respuesta);
 				})
 				.catch((response: any) => {
@@ -131,7 +132,7 @@ export class HttpService {
 				.then((response: any) => {
 					this.hideLoadingMessage();
 					response = JSON.parse(response._body);
-                    console.log('Respose', response);
+					console.log('Respose', response);
 					resolve(response);
 
 				})

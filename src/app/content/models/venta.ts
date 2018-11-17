@@ -1,7 +1,7 @@
-import {Servicio} from './servicio';
-import {Descuento} from './descuento';
-import {Socio} from './socio';
-import {Membresia} from './membresia';
+import { Servicio } from './servicio';
+import { Descuento } from './descuento';
+import { Socio } from './socio';
+import { Membresia } from './membresia';
 
 export class Venta {
     socio: Socio;

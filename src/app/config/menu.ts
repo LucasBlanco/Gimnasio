@@ -533,6 +533,22 @@ export class MenuConfig implements ConfigModel {
 							}
 						]
 					},
+					{
+						title: 'Profesores',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-tag',
+						submenu: [
+							{
+								title: 'Alta',
+								page: '/profesor/am'
+							},
+							{
+								title: 'Baja-Modificacion',
+								page: '/profesor/tabla'
+							}
+						]
+					},
 					{ section: 'Caja' },
 					{
 						title: 'Caja',

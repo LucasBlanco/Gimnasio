@@ -12,7 +12,7 @@ export abstract class ABM implements OnDestroy, OnInit {
     datoSeleccionado
     subscription
     datos
-    dataService
+    dataServiceSubscription
 
     constructor(public activatedRouter: ActivatedRoute, public srv) {
         this.activatedRouter.params.subscribe((params: Params) => {
@@ -20,9 +20,10 @@ export abstract class ABM implements OnDestroy, OnInit {
             this.editando = false;
         });
         
+        
     }
     ngOnInit() {
-        this.subscription = this.dataService.getSubscription().subscribe(datos => {
+        this.subscription = this.dataServiceSubscription.subscribe(datos => {
             this.datos = datos;
         });
     }

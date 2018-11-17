@@ -41,6 +41,9 @@ import {AbmProductoComponent} from './components/abm-producto/abm-producto.compo
 import { PartialsModule } from '../partials/partials.module';
 import { NgxTypeaheadModule } from 'ngx-typeahead';
 import { VencimientoSociosComponent } from './components/vencimiento-socios/vencimiento-socios.component';
+import { AbmProfesoresComponent } from './components/abm_profesor/abm-profesor.component';
+import { AMProfesoresComponent } from './components/abm_profesor/am-profesor/am-profesor.component';
+import { TablaProfesoresComponent } from './components/abm_profesor/tabla-profesor/tabla-profesor.component';
 
 
 @NgModule({
@@ -65,7 +68,10 @@ import { VencimientoSociosComponent } from './components/vencimiento-socios/venc
 		AmDescuentoComponent,
 		TablaDescuentoComponent,
 		AbmProductoComponent,
-		VencimientoSociosComponent
+		VencimientoSociosComponent,
+		AbmProfesoresComponent, 
+		AMProfesoresComponent,
+		TablaProfesoresComponent
 	],
 	imports: [
 		FormsModule,

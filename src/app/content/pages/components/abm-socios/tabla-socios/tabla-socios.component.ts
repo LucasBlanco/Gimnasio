@@ -24,13 +24,13 @@ import {TablaComponent} from '../../shared-components/tabla/tabla.component';
 			</div>
 		</div>`
 })
-export class TablaSociosComponent implements OnInit{
+export class TablaSociosComponent implements OnInit {
 
 	@Input() socios: Array<Socio> = []
 	@Output('modificar') emitModificacion: EventEmitter<Socio> = new EventEmitter()
 	acciones
 
-	 ngOnInit(){
+	 ngOnInit() {
 		this.acciones = [
 			{
 				callback: this.enviarModificacion.bind(this),

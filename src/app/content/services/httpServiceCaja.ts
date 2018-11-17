@@ -32,32 +32,32 @@ export class HttpServiceCaja {
 		};
 	}
 
-	public ingreso( ingreso: Caja ) {
+	public ingreso(ingreso: Caja) {
 		return this.httpService.post(
 			new Modelos.Post('/caja/ingreso', this.cajaToBack(ingreso),
 				'El ingreso fue realizado con exito',
 				'Hubo un error al realizar el ingreso. Intente nuevamente.')
-		).then(() => this.datos.push(ingreso));
+		).then((id: number) => { ingreso.id = id; this.datos.push(ingreso); this.updateObservers() });
 	}
 
-	public egreso( egreso: Caja ) {
+	public egreso(egreso: Caja) {
 		return this.httpService.post(
 			new Modelos.Post('/caja/egreso', this.cajaToBack(egreso),
 				'El egreso fue realizado con exito',
 				'Hubo un error al realizar el egreso. Intente nuevamente.')
-		).then(() => this.datos.push(egreso));
+		).then((id: number) => { egreso.id = id; this.datos.push(egreso); this.updateObservers() });
 	}
 
 
 	public traerTodos(fechaInicio: any, fechaFin: any) {
 		return this.httpService.mapper(
-		this.httpService.post(
-			new Modelos.Post('/caja/movimientos', {fechaInicio: fechaInicio, fechaFin: fechaFin},
-			null, 'Hubo un error al traer los movimientos. Intente nuevamente.')),
+			this.httpService.post(
+				new Modelos.Post('/caja/movimientos', { fechaInicio: fechaInicio, fechaFin: fechaFin },
+					null, 'Hubo un error al traer los movimientos. Intente nuevamente.')),
 			(movimientos) => movimientos.map(
 				({ ingreso, egreso, tipo_pago, ...resto }) => ({ tipoDePago: tipo_pago, monto: ingreso + egreso, tipo: (egreso > 0) ? 'egreso' : 'ingreso', ...resto })
 			)
-		).then( datos => {this.datos = datos; this.updateObservers()});
+		).then(datos => { this.datos = datos; this.updateObservers() });
 	}
 
 }

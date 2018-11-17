@@ -53,7 +53,9 @@ import { HttpServiceCaja } from './content/services/httpServiceCaja';
 import { HttpServiceMembresia } from './content/services/httpServiceMembresia';
 import { HttpServiceServicio } from './content/services/httpServiceServicio';
 import { HttpServiceDescuento } from './content/services/httpServiceDescuento';
+import { HttpServiceProfesor } from './content/services/httpServiceProfesor'
 import { SociosService } from './content/pages/components/socio/serviceSocio';
+
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -116,6 +118,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		HttpServiceMembresia,
 		HttpServiceServicio,
 		HttpServiceDescuento,
+		HttpServiceProfesor,
 		SociosService,
 		{ provide: LocationStrategy, useClass: HashLocationStrategy }
 	],

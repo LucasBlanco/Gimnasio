@@ -25,7 +25,7 @@ export class AbmServicioComponent extends ABM {
 		this.traerUno = this.servicioSrv.traerUno.bind(this.servicioSrv)
 		this.editar = this.servicioSrv.editar.bind(this.servicioSrv)
 		this.borrar = this.servicioSrv.borrar.bind(this.servicioSrv)
-	  	this.dataService = this.servicioSrv
+	  	this.dataServiceSubscription = this.servicioSrv.getSubscription()
    }
 
 }

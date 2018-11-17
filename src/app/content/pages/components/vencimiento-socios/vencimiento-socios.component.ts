@@ -31,14 +31,14 @@ import * as moment from 'moment'
 })
 export class VencimientoSociosComponent implements OnInit {
 
-  vencimientos: {fecha: any, socio: Socio}
+  vencimientos: { fecha: any, socio: Socio }
   estilos
   acciones
 
-  constructor( private httpSociosSrv: HttpServiceSocios, private sociosSrv: SociosService) { }
+  constructor(private httpSociosSrv: HttpServiceSocios, private sociosSrv: SociosService) { }
 
   ngOnInit() {
-    this.httpSociosSrv.traerVencimientos().then(venc => {this.vencimientos = venc.map(({fecha, socio}) => ({fecha, ...socio}))})
+    this.httpSociosSrv.traerVencimientos().then(venc => { this.vencimientos = venc.map(({ fecha, socio }) => ({ fecha, ...socio })) })
     this.acciones = [
       {
         callback: (socio) => this.sociosSrv.findUser(Number(socio.id)),
@@ -46,10 +46,11 @@ export class VencimientoSociosComponent implements OnInit {
         name: 'Cobrar'
       }
     ]
-    this.estilos = { fecha: (fecha) => 
-      (moment(fecha) >= moment()) ? 'm--font-success font-weight-bold'
-        : (moment(fecha) >= moment().subtract(1, 'week')) ? 'm--font-warning font-weight-bold'
-          : 'm--font-danger font-weight-bold' 
+    this.estilos = {
+      fecha: (fecha) =>
+        (moment(fecha) >= moment()) ? 'm--font-success font-weight-bold'
+          : (moment(fecha) >= moment().subtract(1, 'week')) ? 'm--font-warning font-weight-bold'
+            : 'm--font-danger font-weight-bold'
     }
   }
 

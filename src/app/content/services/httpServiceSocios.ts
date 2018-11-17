@@ -1,13 +1,13 @@
 
 import * as Modelos from './httpModels';
-import {Socio} from '../models/socio';
-import {Membresia} from '../models/membresia';
-import {HttpService} from './httpService';
-import {Injectable} from '@angular/core';
-import {Descuento} from '../models/descuento';
-import {HttpServiceMembresia} from './httpServiceMembresia';
-import {HttpServiceDescuento} from './httpServiceDescuento';
-import {HttpServiceServicio} from './httpServiceServicio';
+import { Socio } from '../models/socio';
+import { Membresia } from '../models/membresia';
+import { HttpService } from './httpService';
+import { Injectable } from '@angular/core';
+import { Descuento } from '../models/descuento';
+import { HttpServiceMembresia } from './httpServiceMembresia';
+import { HttpServiceDescuento } from './httpServiceDescuento';
+import { HttpServiceServicio } from './httpServiceServicio';
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import * as moment from 'moment';
@@ -73,9 +73,9 @@ export class HttpServiceSocios {
 		delete socio.id;
 		return this.httpService.post(
 			new Modelos.Post('/socio/crear', this.socioToBack(socio),
-			'El socio fue creado con exito',
-			'Hubo un error al crear el socio. Intente nuevamente.')
-		).then( () => { this.socios.push(socio); this.updateSociosObservers(); });
+				'El socio fue creado con exito',
+				'Hubo un error al crear el socio. Intente nuevamente.')
+		).then((id: number) => { socio.id = id; this.socios.push(socio); this.updateSociosObservers(); });
 	}
 
 	public editar(socio: Socio) {
@@ -86,37 +86,37 @@ export class HttpServiceSocios {
 		).then(() => { this.socios = this.socios.filter(s => s.id !== socio.id).concat([socio]); this.updateSociosObservers() });
 	}
 
-    public traerHistorial(miSocio: Socio) {
-        return this.httpService.mapper(
-         this.httpService.get(
-            new Modelos.Get('/ventas/historialCompra/' + miSocio.id,
-                'Hubo un error al traer el historial de compras. intente nuevamente')
-        ), (response) => response.map(
-                ({socio, membresia, descuento_membresia, descuento_socio, ...resto}) => ({
-                    membresia: this.membresiaSrv.membresiaToFront(membresia),
-						descuento_socio: descuento_socio && this.descuentoSrv.descuentoToFront(descuento_socio),
-						descuento_membresia: descuento_membresia && this.descuentoSrv.descuentoToFront(descuento_membresia),
-                        socio: this.socioToFront(socio),
-                            ...resto
-                })
-            )
-    );
-    }
+	public traerHistorial(miSocio: Socio) {
+		return this.httpService.mapper(
+			this.httpService.get(
+				new Modelos.Get('/ventas/historialCompra/' + miSocio.id,
+					'Hubo un error al traer el historial de compras. intente nuevamente')
+			), (response) => response.map(
+				({ socio, membresia, descuento_membresia, descuento_socio, ...resto }) => ({
+					membresia: this.membresiaSrv.membresiaToFront(membresia),
+					descuento_socio: descuento_socio && this.descuentoSrv.descuentoToFront(descuento_socio),
+					descuento_membresia: descuento_membresia && this.descuentoSrv.descuentoToFront(descuento_membresia),
+					socio: this.socioToFront(socio),
+					...resto
+				})
+			)
+		);
+	}
 
-    public traerAccesos(miSocio: Socio) {
-        return this.httpService.mapper(
-            this.httpService.get(
-                new Modelos.Get('/socio/accesos/' + miSocio.id,
-                    'Hubo un error al traer los accesos. intente nuevamente')
+	public traerAccesos(miSocio: Socio) {
+		return this.httpService.mapper(
+			this.httpService.get(
+				new Modelos.Get('/socio/accesos/' + miSocio.id,
+					'Hubo un error al traer los accesos. intente nuevamente')
 			),
-			(accesos) => accesos.map( ({created_at, servicio, ...resto}) => ({fecha: created_at, servicio: this.servicioSrv.servicioToFront(servicio)}))
-            );
-    }
+			(accesos) => accesos.map(({ created_at, servicio, ...resto }) => ({ fecha: created_at, servicio: this.servicioSrv.servicioToFront(servicio) }))
+		);
+	}
 
 	public traerTodos(): Promise<any> {
 		return this.httpService.mapper(
 			this.httpService.get(new Modelos.Get('/socio/all', 'Hubo un error al traer los socios. Intente nuevamente.')),
-				(socios) => (socios.map(socio => this.socioToFront(socio)))
+			(socios) => (socios.map(socio => this.socioToFront(socio)))
 		);
 	}
 
@@ -128,9 +128,9 @@ export class HttpServiceSocios {
 	}
 
 	public comprar(idSocio: number, tipoPago: string, membresias: Array<Membresia>) {
-		const membresiasBack =  membresias.map(({id, descuento, ...resto}) => ({id: id, idDescuento: descuento && descuento.id, cantidad: 1}));
+		const membresiasBack = membresias.map(({ id, descuento, ...resto }) => ({ id: id, idDescuento: descuento && descuento.id, cantidad: 1 }));
 		return this.httpService.post(
-			new Modelos.Post('/socio/comprar', {idSocio: idSocio, tipoPago: tipoPago, observacion: '', membresias: membresiasBack},
+			new Modelos.Post('/socio/comprar', { idSocio: idSocio, tipoPago: tipoPago, observacion: '', membresias: membresiasBack },
 				'La compra fue realizada exitosamente',
 				'Hubo un error al realizar la compra. Intente nuevamente.')
 		);
@@ -138,14 +138,14 @@ export class HttpServiceSocios {
 
 	public entrarAServicio(idSocio: number, idServicio: number) {
 		return this.httpService.post(
-			new Modelos.Post('/socio/registrarEntradaAServicio', {idSocio: idSocio, idServicio: idServicio},
+			new Modelos.Post('/socio/registrarEntradaAServicio', { idSocio: idSocio, idServicio: idServicio },
 				'La entrada fue registrada exitosamente',
 				'Hubo un error al registrar la entrada. Intente nuevamente.')
 		);
 	}
 
 	public traerVencimientos() {
-		return this.traerTodos().then(socios => socios.map(socio => ({ socio, fecha: '2018-10-20'})))
+		return this.traerTodos().then(socios => socios.map(socio => ({ socio, fecha: '2018-10-20' })))
 	}
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
-import { Socio } from '../../../../models/socio';
+import { Profesor } from '../../../../models/profesor';
 import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 import { HttpServiceEntrada } from '../../../../services/httpServiceEntrada';
 
@@ -16,7 +16,7 @@ export class EntradaSocioComponent implements OnInit, OnDestroy {
   search: string = '';
   datosBuscables: Array<string> = [];
   subscription;
-  socioSeleccionado: Socio;
+  socioSeleccionado: Profesor;
 
   ngOnInit(): void {
     this.subscription = this.socioSrv.getSociosSubscription().subscribe( 

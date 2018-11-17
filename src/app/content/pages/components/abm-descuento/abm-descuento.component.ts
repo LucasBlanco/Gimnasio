@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {Descuento} from '../../../models/descuento';
-import {HttpServiceDescuento} from '../../../services/httpServiceDescuento';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Descuento } from '../../../models/descuento';
+import { HttpServiceDescuento } from '../../../services/httpServiceDescuento';
 import { ABM } from '../abm/abm';
 
 @Component({
-  selector: 'm-descuento',
+	selector: 'm-descuento',
 	template: `
 		<div *ngIf="mostrarAlta">
 			<m-am-descuento (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)"
@@ -27,7 +27,7 @@ export class AbmDescuentoComponent extends ABM implements OnInit {
 		this.traerUno = this.descuentoSrv.traerUno.bind(this.descuentoSrv)
 		this.editar = this.descuentoSrv.editar.bind(this.descuentoSrv)
 		this.borrar = this.descuentoSrv.borrar.bind(this.descuentoSrv)
-		this.dataService = this.descuentoSrv
+		this.dataServiceSubscription = this.descuentoSrv.getSubscription()
 	}
-  
+
 }

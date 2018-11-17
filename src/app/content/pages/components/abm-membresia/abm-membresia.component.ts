@@ -27,7 +27,7 @@ export class AbmMembresiaComponent extends ABM {
 		this.traerUno = this.membresiaSrv.traerUno.bind(this.membresiaSrv)
 		this.editar = this.membresiaSrv.editar.bind(this.membresiaSrv)
 		this.borrar = this.membresiaSrv.borrar.bind(this.membresiaSrv)
-		this.dataService = this.membresiaSrv
+		this.dataServiceSubscription = this.membresiaSrv.getSubscription()
 	}
 
 }

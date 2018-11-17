@@ -3,7 +3,7 @@ import { HttpService } from './httpService';
 import { Injectable } from '@angular/core';
 import { Socio } from '../models/socio';
 import { Servicio } from '../models/servicio';
-import { Observable, Subject} from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpServiceSocios } from './httpServiceSocios';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class HttpServiceEntrada {
     socios: Socio[];
     cantEntradasPendientes = 0;
     automatico: boolean = true;
-    
+
     constructor(private httpService: HttpService) {
     }
 

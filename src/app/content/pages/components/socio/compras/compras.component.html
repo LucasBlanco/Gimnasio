@@ -40,12 +40,12 @@
 								</div>
 								<div class="col-2">
 
-									<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia)"
+									<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia); false"
 									 [hidden]="checkMembresia.membresia.descuentosDisponibles.length === 0" class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill"
 									 style="width: 20px; height: 20px">
 										<i class="la la-plus" style="font-size: 0.9rem"></i>
 									</button>
-									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null"
+									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null; false"
 									 class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
 										<i class="la la-minus" style="font-size: 0.9rem"></i>
 									</button>

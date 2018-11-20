@@ -82,7 +82,7 @@ export class HttpServiceMembresia {
 
 	public borrar(membresia: Membresia) {
 		return this.httpService.post(
-			new Modelos.Post('/membresia/borrar/', membresia.id,
+			new Modelos.Post('/membresia/borrar/', {id: membresia.id},
 				'La membresia fue eliminada con exito',
 				'Hubo un error al eliminar la membresia. Intente nuevamente.')
 		).then(() => {this.datos = this.datos.filter(m => m.id !== membresia.id); this.updateObservers()});

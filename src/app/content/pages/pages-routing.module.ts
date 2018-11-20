@@ -13,6 +13,7 @@ import {AbmDescuentoComponent} from './components/abm-descuento/abm-descuento.co
 import {AbmProductoComponent} from './components/abm-producto/abm-producto.component';
 import { VencimientoSociosComponent } from './components/vencimiento-socios/vencimiento-socios.component';
 import { AbmProfesoresComponent } from './components/abm_profesor/abm-profesor.component';
+import { AuthGuardService } from '../services/authService'
 
 const routes: Routes = [
 	{
@@ -22,56 +23,69 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				loadChildren: './components/dashboard/dashboard.module#DashboardModule'
+				loadChildren: './components/dashboard/dashboard.module#DashboardModule', 
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'socio',
-				loadChildren: './components/socio/socios.module#SociosModule'
+				loadChildren: './components/socio/socios.module#SociosModule',
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'servicio/:view',
-				component: AbmServicioComponent
+				component: AbmServicioComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'producto/:view',
-				component: AbmProductoComponent
+				component: AbmProductoComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'checkMembresia/:view',
-				component: AbmMembresiaComponent
+				component: AbmMembresiaComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'descuento/:view',
-				component: AbmDescuentoComponent
+				component: AbmDescuentoComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'profesor/:view',
-				component: AbmProfesoresComponent
+				component: AbmProfesoresComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'caja/:view',
-				component: CajaComponent
+				component: CajaComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'builder',
-				loadChildren: './builder/builder.module#BuilderModule'
+				loadChildren: './builder/builder.module#BuilderModule',
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'header/actions',
-				component: ActionComponent
+				component: ActionComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'profile',
-				component: ProfileComponent
+				component: ProfileComponent,
+				canActivate: [AuthGuardService]
 			},
 			{
 				path: 'socios/:view',
 				component: AbmSociosComponent,
+				canActivate: [AuthGuardService]
 			}
 			,
 			{
 				path: 'vencimientos',
 				component: VencimientoSociosComponent,
+				canActivate: [AuthGuardService]
 			}
 		]
 	},

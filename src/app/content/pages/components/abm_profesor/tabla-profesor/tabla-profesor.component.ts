@@ -12,7 +12,7 @@ import { Tabla } from '../../abm/tabla';
           				<i style="font-size: 2.2rem;" class="flaticon-edit"></i>
         			</span>
 						<h3 class="m-portlet__head-text">
-							Tabla de usuarios
+							Tabla de profesores
 						</h3>
 					</div>
 				</div>

@@ -57,6 +57,8 @@ import { HttpServiceProfesor } from './content/services/httpServiceProfesor'
 import { SociosService } from './content/pages/components/socio/serviceSocio';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AuthService } from 'ngx-auth';
+import { AuthGuardService } from './content/services/authService';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
@@ -120,6 +122,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		HttpServiceDescuento,
 		HttpServiceProfesor,
 		SociosService,
+		AuthGuardService,
 		{ provide: LocationStrategy, useClass: HashLocationStrategy }
 	],
 	bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ import { ABM } from '../abm/abm';
 				(mostrarTabla)="this.mostrarAlta = false" [profesorAModificar]="datoSeleccionado" [editando]="editando"></m-am-profesores>
 			</div>
 			<div *ngIf="!mostrarAlta" >
-				<m-tabla-profesores (modificar)="cargarDatosModificacion($event)" [datos]="datos" ></m-tabla-profesores>
+				<m-tabla-profesores (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)"  [datos]="datos" ></m-tabla-profesores>
 			</div>
 	`,
 })
@@ -26,6 +26,7 @@ export class AbmProfesoresComponent extends ABM {
 		this.alta = this.profesorSrv.crear.bind(this.profesorSrv)
 		this.traerUno = this.profesorSrv.traerUno.bind(this.profesorSrv)
 		this.editar = this.profesorSrv.editar.bind(this.profesorSrv)
+		this.borrar = this.profesorSrv.borrar.bind(this.profesorSrv)
 		this.dataServiceSubscription = this.profesorSrv.getSubscription()
 	}
 

@@ -22,6 +22,7 @@ export class TablaComponent implements OnChanges, OnInit, AfterViewInit, OnDestr
     @Input() acciones: Array<{ callback: Function, class: string, name: string }> = []; // El nombre de la accion a realizar un coma y el icono del boton.
     @Input() totalesACalcular: Array<string> = [];
     @Input() promediosACalcular: Array<string> = [];
+    @Input() imagen: Array<string>
     columnas
     totales: Array<any> = []
     tabla

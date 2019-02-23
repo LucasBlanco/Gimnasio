@@ -19,6 +19,11 @@
             class="m-badge m-badge--info m-badge--wide"
             >Cuota {{ cuotaAPagar().nroCuota }}</span
           >
+          <span
+            *ngIf="!membresiaTieneCuotasImpagas()"
+            class="m-badge m-badge--success m-badge--wide"
+            >Pagada</span
+          >
         </span>
       </span>
       <span class="m-option__focus" *ngIf="!membresiaConDescuento()">
@@ -41,7 +46,10 @@
         <div class="col-6" *ngFor="let servicio of membresia.servicios">
           <div class="row">
             <div class="col-12">
-              <li [class]="'hover bold ' + estadoServicio(servicio) " (click)="mostrarDetalleServicio(servicio)">
+              <li
+                [class]="'hover bold ' + estadoServicio(servicio)"
+                (click)="mostrarDetalleServicio(servicio)"
+              >
                 {{ servicio.nombre }}
               </li>
             </div>
@@ -51,7 +59,7 @@
               {{ servicio.vencimiento }}
               <br />
               <span class="bold">Creditos:</span>
-              {{ servicio.creditos || 'Ilimintado'}}
+              {{ servicio.creditos === null ? "Ilimitado" : servicio.creditos }}
             </div>
           </div>
         </div>

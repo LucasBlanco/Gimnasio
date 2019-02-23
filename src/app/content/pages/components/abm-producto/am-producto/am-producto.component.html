@@ -1,0 +1,165 @@
+<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <span class="m-portlet__head-icon">
+          <i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+        </span>
+        <h3 class="m-portlet__head-text">
+          {{ editando ? "Modificar producto" : "Alta de producto" }}
+        </h3>
+      </div>
+    </div>
+    <div class="m-portlet__head-tools" *ngIf="editando">
+      <ul class="m-portlet__nav">
+        <li class="m-portlet__nav-item">
+          <a
+            class="btn btn-outline-secondary m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--outline-2x m-btn--pill m-btn--air"
+            style="color:white"
+            (click)="irALaTabla()"
+          >
+            <i class="la la-angle-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-portlet__body ">
+    <form
+      (submit)="enviarEvento()"
+      class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed"
+      id="form"
+      ngNativeValidate
+    >
+      <div class="form-group m-form__group  row">
+        <div class="col-md-6">
+          <label>* Concepto:</label>
+          <div class="m-input-icon m-input-icon--right">
+            <input
+              type="text"
+              class="form-control m-input"
+              placeholder="Agua"
+              name="nombre"
+              [(ngModel)]="producto.concepto"
+              required
+            />
+            <span class="m-input-icon__icon m-input-icon__icon--right">
+              <span>
+                <i class="la la-coffee"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>* Precio compra:</label>
+          <div class="m-input-icon m-input-icon--right">
+            <input
+              type="number"
+              class="form-control m-input"
+              placeholder="50"
+              name="precioCompra"
+              [(ngModel)]="producto.precioCompra"
+              required
+            />
+            <span class="m-input-icon__icon m-input-icon__icon--right">
+              <span>
+                <i class="la la-money"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group m-form__group  row">
+        <div class="col-md-6">
+          <label>* Precio venta:</label>
+          <div class="m-input-icon m-input-icon--right">
+            <input
+              type="number"
+              class="form-control m-input"
+              placeholder="55"
+              name="precioVenta"
+              [(ngModel)]="producto.precioVenta"
+              required
+            />
+            <span class="m-input-icon__icon m-input-icon__icon--right">
+              <span>
+                <i class="la la-money"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>* Punto de reposicion:</label>
+          <div class="m-input-icon m-input-icon--right">
+            <input
+              type="number"
+              class="form-control m-input"
+              placeholder="12"
+              name="repo"
+              [(ngModel)]="producto.puntoReposicion"
+            />
+            <span class="m-input-icon__icon m-input-icon__icon--right">
+              <span>
+                <i class="la la-dot-circle-o"></i>
+              </span>
+            </span>
+          </div>
+          <span class="m-form__help"
+            >Stock minimo que se desea tener del producto.</span
+          >
+        </div>
+      </div>
+      <div class="form-group m-form__group  row">
+        <div class="col-md-6">
+          <label>* Cantidad inicial:</label>
+          <div class="m-input-icon m-input-icon--right">
+            <input
+              type="number"
+              class="form-control m-input"
+              placeholder="0"
+              name="cant"
+              [(ngModel)]="producto.stock"
+              required
+            />
+            <span class="m-input-icon__icon m-input-icon__icon--right">
+              <span>
+                <i class="la la-money"></i>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>* Imagen:</label>
+          <m-file-upload
+			(fileChange)="producto.imagen = $event"
+			[defaultFile]="producto.imagen"
+			[fallbackFile]="getProductImg()"
+          ></m-file-upload>
+        </div>
+        <!--<div class="col-md-6">
+          <label>* Imagen:</label>
+          <ng-select
+            [items]="[{ nombre: 'Carlos', id: 1 }, { nombre: 'Juan', id: 2 }]"
+            [multiple]="true"
+            class="custom"
+            bindLabel="nombre"
+            (change)="updateItemsSeleccionados($event)"
+          ></ng-select>
+        </div>-->
+      </div>
+    </form>
+  </div>
+  <div class="m-portlet__foot">
+    <div class="row">
+      <div class="col-lg-6">
+        <button type="submit" form="form" class="btn btn-primary">
+          Guardar
+        </button>
+        <span class="m--margin-left-10"
+          >o
+          <a class="m-link m--font-bold" (click)="borrar()">Borrar</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

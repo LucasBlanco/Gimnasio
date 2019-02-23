@@ -1,33 +1,98 @@
-<table class="table table-striped- table-bordered table-hover table-checkable" id="m_table_1">
-    <thead>
-        <tr>
-            <th *ngIf="imagen">Imagen</th>
-            <th *ngFor="let columna of columnas">{{columna}}</th>
-            <th *ngIf="hayAcciones()">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dato of datos, let i = index">
-            <td *ngIf="imagen"><img [src]="imagen[0]" [ngStyle]="{'max-height': imagen[1]}" class="rounded-circle"></td>
-            <td *ngFor="let fila of valorColumnas" [ngClass]="estilos[fila]? estilos[fila](dato[fila]): ''">
-                <ng-container *ngIf="dato[fila] === false">
-                    <span class="m-badge  m-badge--danger m-badge--wide font-weight-normal">No</span>
-                </ng-container>
-                <ng-container *ngIf="dato[fila] === true">
-                    <span class="m-badge m-badge--success m-badge--wide font-weight-normal">Si &nbsp;</span>
-                </ng-container>
-                <ng-container *ngIf="dato[fila] != false && dato[fila] != true">
-                    {{dato[fila]}}
-                </ng-container>
-            </td>
-            <td *ngIf="hayAcciones()">
-                <ng-container class="hidden-sm-down">
-                    <button *ngFor="let accion of acciones" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"
-                        [title]="accion.name" (click)="accion.callback(dato)">
-                        <i [class]="accion.class"></i>
-                    </button>
-                </ng-container>
-            </td>
-        </tr>
-    </tbody>
+<table
+  class="table table-striped- table-bordered table-hover table-checkable"
+  id="m_table_1"
+>
+  <thead>
+    <tr>
+      <th *ngIf="checked" style="text-align: center;">
+        <label
+          class="m-checkbox m-checkbox--check-bold m-checkbox--state-brand"
+          style="display: initial;"
+        >
+          <input
+            type="checkbox"
+            (change)="seleccionarTodos($event.target.checked)"
+          />
+          <span></span>
+        </label>
+      </th>
+      <th *ngIf="imagen">Imagen</th>
+      <th *ngFor="let columna of columnas">{{ columna }}</th>
+      <th *ngIf="hayAcciones()">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of datos; let i = index">
+      <!--Check-->
+      <td *ngIf="checked" style="text-align: center;">
+        <label
+          class="m-checkbox m-checkbox--check-bold m-checkbox--state-brand"
+          style="display: initial;"
+        >
+          <input
+            type="checkbox"
+            [(ngModel)]="dato.checked"
+            (change)="emitOnCheck(dato, $event.target.checked)"
+          />
+          <span></span>
+        </label>
+      </td>
+      <!--Imagen-->
+      <td *ngIf="imagen">
+        <img
+          [src]="dato[imagen[0]] || fallbackImagen"
+          [ngStyle]="{ 'max-height': imagen[1] }"
+          class="rounded-circle"
+          (click)="expandirImagen(dato[imagen[0]] || fallbackImagen)"
+        />
+      </td>
+
+      <td
+        *ngFor="let fila of valorColumnas; let i = index"
+        [ngClass]="estilos[fila] ? estilos[fila](dato[fila]) : ''"
+      >
+        <!--Badge false-->
+        <ng-container *ngIf="dato[fila] === false">
+          <span
+            class="m-badge  m-badge--danger m-badge--wide font-weight-normal"
+            >No</span
+          >
+        </ng-container>
+        <!--Badge true-->
+        <ng-container *ngIf="dato[fila] === true">
+          <span
+            class="m-badge m-badge--success m-badge--wide font-weight-normal"
+            >Si &nbsp;</span
+          >
+        </ng-container>
+        <ng-container *ngIf="inputs[fila]">
+          <input
+            [type]="inputs[fila].tipo"
+            class="form-control m-input"
+            [name]="'input' + i"
+            [(ngModel)]="dato[fila]"
+          />
+        </ng-container>
+        <!--Fila-->
+        <ng-container
+          *ngIf="dato[fila] != false && dato[fila] != true && !inputs[fila]"
+        >
+          {{ dato[fila] }}
+        </ng-container>
+      </td>
+      <td *ngIf="hayAcciones()">
+        <ng-container class="hidden-sm-down">
+          <button
+            *ngFor="let accion of acciones"
+            class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill"
+            [title]="accion.name"
+            (click)="accion.callback(dato)"
+          >
+            <i [class]="accion.class"></i>
+          </button>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
 </table>
+<m-file-upload-modal [img]="imagenExpandida"></m-file-upload-modal>

@@ -1,0 +1,134 @@
+<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <span class="m-portlet__head-icon">
+          <i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+        </span>
+        <h3 class="m-portlet__head-text">Gestion de stock</h3>
+      </div>
+    </div>
+  </div>
+  <div class="m-portlet__body">
+    <div class="row">
+      <div class="col-lg-8">
+        <m-tabla
+          [nombreColumnas]="[
+            '/*Nombre',
+            '/*Precio compra',
+            '/*Precio venta',
+            '/Stock',
+            '<input>Cantidad'
+          ]"
+          [valorColumnas]="[
+            'concepto',
+            'precioCompra',
+            'precioVenta',
+            'stock',
+            'cantidad'
+          ]"
+          [datos]="productos"
+          [checked]="true"
+          [imagen]="['imagen', '60px']"
+          [fallbackImagen]="'./assets/app/media/img/blog/protein.png'"
+          (onCheck)="agregarItemATransaccion($event)"
+        >
+        </m-tabla>
+      </div>
+      <div class="col-lg-4">
+        <div
+          class="border rounded p-4"
+          style="border: 2px solid #ebedf2;top: 100px;position: sticky;"
+        >
+          <h6>Resumen:</h6>
+
+          <ul>
+            <li *ngFor="let producto of transaccion.productos">
+              <div class="row">
+                <div class="col-md-6 col-lg-12 col-xl-8">
+                  Producto:
+                  <strong style="white-space: nowrap;">{{
+                    producto.concepto
+                  }}</strong>
+                </div>
+                <div class="col-md-6 col-lg-12 col-xl-4">
+                  Cantidad: <strong>{{ producto.cantidad }}</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <h6>Total:</h6>
+
+          <ul>
+            <li>
+              Compra:
+              <strong class="m--font-danger">${{ totalCompra() }}</strong>
+            </li>
+            <li>
+              Venta:
+              <strong class="m--font-success">${{ totalVenta() }}</strong>
+            </li>
+          </ul>
+
+          <div class="row">
+            <div class="col">
+              <div
+                class="m-form__seperator m-form__seperator--dashed"
+                style="margin-top: 30px;
+                  margin-bottom: 20px;
+                  border-top: 1px dashed #ebedf2;"
+              ></div>
+              <div class="form-group m-form__group  row">
+                <div class="col-md-6 col-lg-12">
+                  <label>Observacion:</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input
+                      type="string"
+                      class="form-control m-input"
+                      name="observacion"
+                      [(ngModel)]="transaccion.observacion"
+                    />
+                    <span class="m-input-icon__icon m-input-icon__icon--right">
+                      <span>
+                        <i class="la la-money"></i>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-12">
+                  <label>* Forma de pago:</label>
+                  <select
+                    class="form-control m-input"
+                    name="tipoPago"
+                    [(ngModel)]="transaccion.tipoPago"
+                  >
+                    <option [ngValue]="'efectivo'" selected>Efectivo</option>
+                    <option [ngValue]="'credito'">Credito</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-success" (click)="comprar()">
+                Comprar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary ml-2"
+                (click)="vender()"
+                [disabled]="
+                  productoNoTieneStock() || cantidadAVenderMayorAStock()
+                "
+              >
+                Vender
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

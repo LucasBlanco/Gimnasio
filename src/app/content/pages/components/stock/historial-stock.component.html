@@ -1,0 +1,64 @@
+<div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <span class="m-portlet__head-icon">
+          <i style="font-size: 2.2rem;" class="flaticon-edit"></i>
+        </span>
+        <h3 class="m-portlet__head-text">
+          Movimientos
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-portlet__body">
+    <form
+      class="form-group m-form__group row"
+      (submit)="filtrar(desde.value, hasta.value)"
+      ngNativeValidate
+    >
+      <label class="col-lg-2 col-form-label">Fecha desde:</label>
+      <div class="col-lg-3">
+        <input type="date" class="form-control m-input" #desde required />
+      </div>
+      <label class="col-lg-2 col-form-label">Fecha hasta:</label>
+      <div class="col-lg-3">
+        <input type="date" class="form-control m-input" #hasta required />
+      </div>
+      <div class="col-lg-auto d-flex justify-content-end pt-2 pt-lg-0">
+        <button
+          type="submit"
+          class="btn btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill "
+        >
+          <i class="la la-filter" style="color:white"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="m-separator m-separator--dashed m-separator--lg"></div>
+    <m-tabla
+      [datos]="historialTabla"
+      [nombreColumnas]="[
+        '/*Tipo',
+        '/*Fecha',
+        '/*Producto',
+        'Cantidad',
+        '/*Monto',
+        'Observacion',
+        '/*Tipo de pago',
+        '/*Usuario'
+      ]"
+      [valorColumnas]="[
+        'tipo',
+        'fecha',
+        'producto',
+        'cantidad',
+        'precio',
+        'observacion',
+        'tipoPago',
+        'usuario'
+      ]"
+    ></m-tabla>
+  </div>
+</div>

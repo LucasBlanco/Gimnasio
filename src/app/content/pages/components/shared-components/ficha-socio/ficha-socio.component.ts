@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, ViewChildren, Renderer2 } from '@angular/core';
-import { Socio } from '../../../../models/socio';
+import { Socio, SocioBuilder } from '../../../../models/socio';
 
 declare var $: any
 
@@ -9,7 +9,7 @@ declare var $: any
 })
 export class FichaSocioComponent implements OnChanges, OnInit {
 	@ViewChildren('bold') elemsABoldear
-	@Input() socio: Socio = new Socio('...', '...', '...', '...', '...', '...', '...', '...')
+	@Input() socio: Socio = new SocioBuilder().empty()
 
 	constructor(private renderer: Renderer2) { }
 
@@ -28,7 +28,7 @@ export class FichaSocioComponent implements OnChanges, OnInit {
 					this.renderer.removeClass(elem.nativeElement, 'm--font-bolder')
 				})
 			}
-			this.socio = new Socio('...', '...', '...', '...', '...', '...', '...', '...')
+			this.socio = new SocioBuilder().empty()
 		}
 	}
 

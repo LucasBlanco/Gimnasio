@@ -17,10 +17,10 @@ export class ModalInput extends ModalInterface {
     @ViewChildren('fileInput') fileInput
 
     getValues() {
-        if (this.inputs.length == 1) {
+        if (this.inputs.length === 1) {
             return this.inputs[0].value
         } else {
-            var objectToReturn = new Object()
+            const objectToReturn = new Object()
             this.inputs.forEach(input => objectToReturn[input.name] = input.value)
             this.files.forEach(file => objectToReturn[file.name] = file.file)
             return objectToReturn
@@ -28,15 +28,15 @@ export class ModalInput extends ModalInterface {
     }
 
     fileChange(event, fileName, index) {
-        let fileList: FileList = event.target.files;
+        const fileList: FileList = event.target.files;
         if (fileList.length > 0) {
-            let file: File = fileList[0];
+            const file: File = fileList[0];
             this.files.push({ 'name': fileName, 'file': file })
             this.fileName[index] = file.name
         }
     }
 
-    seleccionarArchivo(indice){
+    seleccionarArchivo(indice) {
         this.fileInput._results[indice].nativeElement.click()
     }
 

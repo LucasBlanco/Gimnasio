@@ -1,0 +1,30 @@
+<div class="form-group m-form__group">
+  <h5>Membresias:</h5>
+  <ng-container *ngIf="this.ventas.length > 0">
+    <div class="row">
+      <div
+        class="col-lg-6 mt-2"
+        *ngFor="let venta of ventas; let i = index"
+        @slowExitUp
+      >
+        <m-membresia
+          [membresia]="venta.membresia"
+          (onCheck)="agregarMembresia($event)"
+          [seleccionada]="membresiaSeleccionada(venta)"
+          [descuentoSocio]="socio.descuento"
+        ></m-membresia>
+      </div>
+    </div>
+    <div class="m-form__actions mt-5 d-flex justify-content-end">
+      <button (click)="cancelarCuotas()" class="btn btn-primary mr-3">
+        Revertir ultimo pago
+      </button>
+      <button (click)="cancelarSubscripciones()" class="btn btn-danger">
+        Eliminar
+      </button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="this.ventas.length === 0">
+    El socio no tiene subscripciones vigentes
+  </ng-container>
+</div>

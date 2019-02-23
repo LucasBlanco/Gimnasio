@@ -63,7 +63,7 @@ export class SearchDropdownComponent
 	}
 
 	ngOnInit(): void {
-		this.subscription = this.httpSociosSrv.getSociosSubscription().subscribe(
+		this.subscription = this.httpSociosSrv.getSubscription().subscribe(
 			socios => {
 				this.datos = socios.map(({ nombre, apellido, ...socio }) => ({
 					nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio

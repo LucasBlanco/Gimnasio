@@ -1,25 +1,45 @@
-
-	<div class="m-widget12">
-		<div class="m-widget12__item">
-			<span class="m-widget12__text1">Nombre<br><span>{{socio.apellido+', '+ socio.nombre}}</span></span>
-			<span class="m-widget12__text2">Documento<br><span>{{socio.dni}}</span></span>
-		</div>
-		<div class="m-separator m-separator--dashed m-separator--lg" style="margin-top: 20px"></div>
-		<div class="m-widget12__item">
-			<span class="m-widget12__text1">Telefono<br><span>{{socio.telefono}}</span></span>
-			<span class="m-widget12__text2">Fecha nacimiento<br><span>{{socio.fechaNacimiento}}</span></span>
-		</div>
-		<div class="m-separator m-separator--dashed m-separator--lg" style="margin-top: 20px"></div>
-		<div class="m-widget12__item">
-			<span class="m-widget12__text1">Genero<br><span>{{socio.genero}}</span></span>
-			<span class="m-widget12__text2">Descuento<br><span>{{socio.descuento.nombre}}</span></span>
-		</div>
-		<div class="m-separator m-separator--dashed m-separator--lg" style="margin-top: 20px"></div>
-		<div class="m-widget12__item">
-			<span class="m-widget12__text1">Domicilio<br><span>{{socio.direccion}}</span></span>
-			
-		</div>
-	</div>
-
-
-
+<div class="m-widget12">
+  <div class="m-widget12__item">
+    <span class="m-widget12__text1"
+      >Nombre<br /><span>{{ socio.apellido + ", " + socio.nombre }}</span></span
+    >
+    <span class="m-widget12__text2"
+      >Documento<br /><span>{{ socio.dni }}</span></span
+    >
+  </div>
+  <div
+    class="m-separator m-separator--dashed m-separator--lg"
+    style="margin-top: 20px"
+  ></div>
+  <div class="m-widget12__item">
+    <span class="m-widget12__text1"
+      >Telefono<br /><span>{{ socio.telefono }}</span></span
+    >
+    <span class="m-widget12__text2"
+      >Fecha nacimiento<br /><span>{{ socio.fechaNacimiento }}</span></span
+    >
+  </div>
+  <div
+    class="m-separator m-separator--dashed m-separator--lg"
+    style="margin-top: 20px"
+  ></div>
+  <div class="m-widget12__item">
+    <span class="m-widget12__text1"
+      >Genero<br /><span>{{ socio.genero }}</span></span
+    >
+    <span class="m-widget12__text2"
+      >Descuento<br /><span>{{
+        socio.descuento ? socio.descuento.nombre : "Sin descuento"
+      }}</span></span
+    >
+  </div>
+  <div
+    class="m-separator m-separator--dashed m-separator--lg"
+    style="margin-top: 20px"
+  ></div>
+  <div class="m-widget12__item">
+    <span class="m-widget12__text1"
+      >Domicilio<br /><span>{{ socio.direccion }}</span></span
+    >
+  </div>
+</div>

@@ -1,29 +1,89 @@
-
-import { Descuento } from './descuento';
+import { Descuento, DescuentoBuilder, DescuentoBack } from "./descuento";
+import { Venta, VentaBack, VentaBuilder } from "./venta";
 
 export class Socio {
+  constructor(
+    public nombre: string,
+    public apellido: string,
+    public descuento: Descuento,
+    public fechaNacimiento: any,
+    public dni: number,
+    public telefono: string,
+    public direccion: string,
+    public genero: "masculino" | "femenino" | "otro",
+    public email: string,
+    public nroSocio: string | number,
+    public imagen: string,
+    public id?: number,
+    public ventas?: Venta[]
+  ) {}
+}
 
-	nombre: string;
-	apellido: string;
-	descuento: Descuento;
-	fechaNacimiento: any;
-	dni: number;
-	telefono: string;
-	email: string;
-	direccion: string;
-	genero: string;
-	id: number;
+export class SocioBack {
+  constructor(
+    public nombre: string,
+    public apellido: string,
+    public descuento: DescuentoBack,
+    public fecha_nacimiento: any,
+    public dni: number,
+    public celular: string,
+    public domicilio: string,
+    public genero: "masculino" | "femenino" | "otro",
+    public email: string,
+    public nro_socio: string | number,
+    public id?: number,
+    public ventas?: VentaBack[]
+  ) {}
+}
 
-	constructor(nombre?, apellido?, descuento?, fechaNacimiento?, dni?, telefono?, direccion?, genero?, email?, id?) {
-		this.nombre = nombre || null;
-		this.dni = dni || null;
-		this.apellido = apellido || null;
-		this.descuento = descuento || null;
-		this.fechaNacimiento = fechaNacimiento || null;
-		this.telefono = telefono || null;
-		this.direccion = direccion || null;
-		this.genero = genero || null;
-		this.email = email || null;
-		if (id) { this.id = id; }
-	}
+export class SocioBuilder {
+  empty() {
+    return new Socio(
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    );
+  }
+  fromBackEnd(sb: SocioBack) {
+    return new Socio(
+      sb.nombre,
+      sb.apellido,
+      sb.descuento && new DescuentoBuilder().fromBackEnd(sb.descuento),
+      sb.fecha_nacimiento,
+      sb.dni,
+      sb.celular,
+      sb.domicilio,
+      sb.genero,
+      sb.email,
+      sb.nro_socio,
+      `foto/socio/${sb.id}`,
+      sb.id,
+      sb.ventas.map(venta => new VentaBuilder().fromBackEnd(venta))
+    );
+  }
+  toBackEnd(sf: Socio) {
+    const socio = new SocioBack(
+      sf.nombre,
+      sf.apellido,
+      null,
+      sf.fechaNacimiento,
+      sf.dni,
+      sf.telefono,
+      sf.direccion,
+      sf.genero,
+      sf.email,
+      sf.nroSocio
+    );
+
+    const { descuento, ...resto } = socio;
+    return { ...resto, id_descuento: sf.descuento && sf.descuento.id };
+  }
 }

@@ -3,13 +3,15 @@
     // Mantenga el puntero para ver las descripciones de los existentes atributos 
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [{
+    "configurations": [
+        
+        {
         "type": "chrome",
         "request": "launch",
         "name": "Launch Chromium against localhost",
         "url": "http://localhost:4200/#",
         "webRoot": "${workspaceFolder}",
-        "runtimeExecutable": "/usr/bin/chromium-browser",
+        //"runtimeExecutable": "/usr/bin/chromium-browser",
         "runtimeArgs": [
             "--new-window",
             "-user-data-dir=\"/${workspaceFolder}/DevProfile\"",

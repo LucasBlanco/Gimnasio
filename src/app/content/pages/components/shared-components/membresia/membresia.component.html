@@ -1,0 +1,124 @@
+<label class="m-option shadow">
+  <span class="m-option__control">
+    <span class="m-radio m-radio--brand m-radio--check-bold">
+      <input
+        type="checkbox"
+        [checked]="seleccionada"
+        (change)="seleccionar()"
+      />
+      <span></span>
+    </span>
+  </span>
+  <span class="m-option__label">
+    <span class="m-option__head">
+      <span class="m-option__title bolder">
+        {{ membresia.nombre }}
+        <span class="ml-3">
+          <span
+            *ngIf="membresiaTieneCuotasImpagas()"
+            class="m-badge m-badge--info m-badge--wide"
+            >Cuota {{ cuotaAPagar().nroCuota }}</span
+          >
+        </span>
+      </span>
+      <span class="m-option__focus" *ngIf="!membresiaConDescuento()">
+        $ {{ membresia.precio }}
+      </span>
+      <m-popover
+        *ngIf="membresiaConDescuento()"
+        [content]="tipoDescuento(membresia)"
+      >
+        <span class="m-option__focus" style="text-decoration:line-through;">
+          $ {{ membresia.precio }}
+        </span>
+        <span class="m-option__focus ml-1" style="color: #34bfa3">
+          $ {{ calcularPrecioConDescuento() }}
+        </span>
+      </m-popover>
+    </span>
+    <span class="m-option__body">
+      <ul class="row m--margin-bottom-10" style="padding: 0px">
+        <div class="col-6" *ngFor="let servicio of membresia.servicios">
+          <div class="row">
+            <div class="col-12">
+              <li [class]="'hover bold ' + estadoServicio(servicio) " (click)="mostrarDetalleServicio(servicio)">
+                {{ servicio.nombre }}
+              </li>
+            </div>
+
+            <div class="col-12 px-0 px-md-3" *ngIf="detalleMostrado(servicio)">
+              <span class="bold">Vencimiento:</span>
+              {{ servicio.vencimiento }}
+              <br />
+              <span class="bold">Creditos:</span>
+              {{ servicio.creditos || 'Ilimintado'}}
+            </div>
+          </div>
+        </div>
+      </ul>
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <span class="bold">Vencimiento:</span> {{ membresia.vencimiento }}
+          </div>
+        </div>
+        <div class="col-12 ">
+          <div class="hover" (click)="mostrarDetalleCuota(membresia)">
+            <span class="bold">Nro cuotas:</span> {{ membresia.nroCuotas }}
+          </div>
+          <div *ngIf="mostrandoDetalleCuota(membresia)">
+            <ul class="row m--margin-bottom-10" style="padding: 0px">
+              <div
+                class="col-12 pl-5"
+                *ngFor="let cuota of calcularVencimientoCuota(membresia)"
+              >
+                <div class="row">
+                  <div class="col-12">
+                    <li>
+                      {{ cuota }}
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <ng-container
+          *ngIf="
+            membresia.descuentosDisponibles.length !== 0 &&
+            membresia.descuentosDisponibles !== null
+          "
+        >
+          <div class="col-10">
+            <div>
+              <span class="bold">Descuento:</span>
+              {{ membresia.descuento?.nombre }}
+            </div>
+          </div>
+          <div class="col-2">
+            <button
+              *ngIf="!membresia.descuento"
+              type="button"
+              (click)="agregarDescuento(); (false)"
+              [hidden]="membresia.descuentosDisponibles.length === 0"
+              class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill"
+              style="width: 20px; height: 20px"
+            >
+              <i class="la la-plus" style="font-size: 0.9rem"></i>
+            </button>
+            <button
+              *ngIf="membresia.descuento && !membresiaTieneCuotas()"
+              type="button"
+              (click)="quitarDescuento(); (false)"
+              class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill"
+              style="width: 20px; height: 20px"
+            >
+              <i class="la la-minus" style="font-size: 0.9rem"></i>
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </span>
+  </span>
+</label>
+<m-modal-select [modalId]="'modal' + membresia.id"></m-modal-select>

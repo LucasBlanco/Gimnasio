@@ -1,151 +1,208 @@
-
-import * as Modelos from './httpModels';
-import { Socio } from '../models/socio';
-import { Membresia } from '../models/membresia';
-import { HttpService } from './httpService';
-import { Injectable } from '@angular/core';
-import { Descuento } from '../models/descuento';
-import { HttpServiceMembresia } from './httpServiceMembresia';
-import { HttpServiceDescuento } from './httpServiceDescuento';
-import { HttpServiceServicio } from './httpServiceServicio';
-import { Observable } from 'rxjs/internal/Observable';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import * as moment from 'moment';
+import * as Modelos from "./httpModels";
+import { Socio, SocioBuilder } from "../models/socio";
+import { Membresia, MembresiaBuilder } from "../models/membresia";
+import { HttpService } from "./httpService";
+import { Injectable } from "@angular/core";
+import { Descuento } from "../models/descuento";
+import { HttpServiceMembresia } from "./httpServiceMembresia";
+import { HttpServiceDescuento } from "./httpServiceDescuento";
+import { HttpServiceServicio } from "./httpServiceServicio";
+import { Observable } from "rxjs/internal/Observable";
+import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
+import * as moment from "moment";
+import { ServicioBuilder } from "../models/servicio";
+import { VentaBack, Venta, Cuota } from "../models/venta";
 
 @Injectable()
 export class HttpServiceSocios {
+  subjectSocios = new BehaviorSubject<Socio[]>([]);
+  socios: Socio[] = [];
+  builder = new SocioBuilder();
 
-	subjectSocios = new BehaviorSubject<Socio[]>([]);
-	socios: Socio[] = [];
+  constructor(
+    private httpService: HttpService,
+    private membresiaSrv: HttpServiceMembresia,
+    private descuentoSrv: HttpServiceDescuento,
+    private servicioSrv: HttpServiceServicio
+  ) {
+    this.traerTodos().then(socios => {
+      this.socios = socios;
+      this.updateSociosObservers();
+    });
+  }
 
-	constructor(private httpService: HttpService, private membresiaSrv: HttpServiceMembresia, private descuentoSrv: HttpServiceDescuento, private servicioSrv: HttpServiceServicio) {
-		this.traerTodos().then(socios => {
-			this.socios = socios;
-			this.updateSociosObservers();
-		});
-	}
+  public getSubscription = (): Observable<any> => {
+    return this.subjectSocios.asObservable();
+  };
 
-	public getSociosSubscription(): Observable<any> {
-		return this.subjectSocios.asObservable();
-	}
+  private updateSociosObservers() {
+    this.subjectSocios.next(this.socios);
+  }
 
-	private updateSociosObservers() {
-		this.subjectSocios.next(this.socios);
-	}
+  public crear = (socio: Socio) => {
+    delete socio.id;
+    return this.httpService
+      .post(
+        new Modelos.Post(
+          "/socio/crear",
+          this.builder.toBackEnd(socio),
+          "El socio fue creado con exito",
+          "Hubo un error al crear el socio. Intente nuevamente."
+        )
+      )
+      .then((id: number) => {
+        socio.id = id;
+        this.socios.push(socio);
+        this.updateSociosObservers();
+      });
+  };
 
-	private socioToBack(socio: Socio) {
-		return {
-			nombre: socio.nombre,
-			apellido: socio.apellido,
-			celular: socio.telefono,
-			domicilio: socio.direccion,
-			id_descuento: socio.descuento && socio.descuento.id,
-			genero: socio.genero,
-			email: socio.email,
-			dni: socio.dni,
-			fecha_nacimiento: socio.fechaNacimiento
-		};
-	}
+  public editar = (socio: Socio) => {
+    return this.httpService
+      .put(
+        new Modelos.Post(
+          "/socio/editar/" + socio.id,
+          this.builder.toBackEnd(socio),
+          "El socio fue modificado con exito",
+          "Hubo un error al modificar el socio. Intente nuevamente."
+        )
+      )
+      .then(() => {
+        this.socios = this.socios
+          .filter(s => s.id !== socio.id)
+          .concat([socio]);
+        this.updateSociosObservers();
+      });
+  };
 
-	private socioToFront(socio): Socio {
-		return new Socio(
-			socio.nombre,
-			socio.apellido,
-			new Descuento(
-				socio.descuento && socio.descuento.nombre,
-				socio.descuento && socio.descuento.vencimiento_dias,
-				socio.descuento && socio.descuento.porcentaje,
-				socio.descuento && socio.descuento.aplicableEnConjunto,
-				socio.descuento && socio.descuento.tipo,
-				socio.descuento && socio.descuento.id || socio.id_descuento
-			),
-			socio.fecha_nacimiento,
-			socio.dni,
-			socio.celular,
-			socio.domicilio,
-			socio.genero,
-			socio.email,
-			socio.id);
-	}
+  public traerHistorial(idSocio: number) {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/ventas/historialCompra/" + idSocio,
+          "Hubo un error al traer el historial de compras. intente nuevamente"
+        )
+      ),
+      response => response
+    );
+  }
 
+  public traerAccesos(miSocio: Socio) {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/socio/accesos/" + miSocio.id,
+          "Hubo un error al traer los accesos. intente nuevamente"
+        )
+      ),
+      accesos =>
+        accesos.map(({ created_at, servicio, ...resto }) => ({
+          fecha: created_at,
+          servicio: new ServicioBuilder().fromBackEnd(servicio)
+        }))
+    );
+  }
 
-	public crear(socio: Socio) {
-		delete socio.id;
-		return this.httpService.post(
-			new Modelos.Post('/socio/crear', this.socioToBack(socio),
-				'El socio fue creado con exito',
-				'Hubo un error al crear el socio. Intente nuevamente.')
-		).then((id: number) => { socio.id = id; this.socios.push(socio); this.updateSociosObservers(); });
-	}
+  public traerTodos = (): Promise<any> => {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/socio/all",
+          "Hubo un error al traer los socios. Intente nuevamente."
+        )
+      ),
+      socios => socios.map(socio => this.builder.fromBackEnd(socio))
+    );
+  };
 
-	public editar(socio: Socio) {
-		return this.httpService.put(
-			new Modelos.Post('/socio/editar/' + socio.id, this.socioToBack(socio),
-				'El socio fue modificado con exito',
-				'Hubo un error al modificar el socio. Intente nuevamente.')
-		).then(() => { this.socios = this.socios.filter(s => s.id !== socio.id).concat([socio]); this.updateSociosObservers() });
-	}
+  public traerUno = (socio: Socio, id?: number): Promise<any> => {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/socio/find/" + (id ? id : socio.id),
+          "Hubo un error al traer el socio. Intente nuevamente."
+        )
+      ),
+      _socio => this.builder.fromBackEnd(_socio)
+    );
+  };
 
-	public traerHistorial(miSocio: Socio) {
-		return this.httpService.mapper(
-			this.httpService.get(
-				new Modelos.Get('/ventas/historialCompra/' + miSocio.id,
-					'Hubo un error al traer el historial de compras. intente nuevamente')
-			), (response) => response.map(
-				({ socio, membresia, descuento_membresia, descuento_socio, ...resto }) => ({
-					membresia: this.membresiaSrv.membresiaToFront(membresia),
-					descuento_socio: descuento_socio && this.descuentoSrv.descuentoToFront(descuento_socio),
-					descuento_membresia: descuento_membresia && this.descuentoSrv.descuentoToFront(descuento_membresia),
-					socio: this.socioToFront(socio),
-					...resto
-				})
-			)
-		);
-	}
+  public comprar(
+    idSocio: number,
+    tipoPago: string,
+    observacion: string,
+    membresias: Array<Membresia>
+  ) {
+    const membresiasBack = membresias.map(({ id, descuento, ...resto }) => ({
+      id: id,
+      idDescuento: descuento && descuento.id,
+      cantidad: 1
+    }));
+    return this.httpService.post(
+      new Modelos.Post(
+        "/ventas/crear",
+        {
+          idSocio: idSocio,
+          tipoPago: tipoPago,
+          observacion: observacion,
+          membresias: membresiasBack
+        },
+        "La compra fue realizada exitosamente",
+        "Hubo un error al realizar la compra. Intente nuevamente."
+      )
+    )
+  }
 
-	public traerAccesos(miSocio: Socio) {
-		return this.httpService.mapper(
-			this.httpService.get(
-				new Modelos.Get('/socio/accesos/' + miSocio.id,
-					'Hubo un error al traer los accesos. intente nuevamente')
-			),
-			(accesos) => accesos.map(({ created_at, servicio, ...resto }) => ({ fecha: created_at, servicio: this.servicioSrv.servicioToFront(servicio) }))
-		);
-	}
+  public entrarAServicio(idSocio: number, idServicio: number) {
+    return this.httpService.post(
+      new Modelos.Post(
+        "/socio/registrarEntradaAServicio",
+        { idSocio: idSocio, idServicio: idServicio },
+        "La entrada fue registrada exitosamente",
+        "Hubo un error al registrar la entrada. Intente nuevamente."
+      )
+    );
+  }
 
-	public traerTodos(): Promise<any> {
-		return this.httpService.mapper(
-			this.httpService.get(new Modelos.Get('/socio/all', 'Hubo un error al traer los socios. Intente nuevamente.')),
-			(socios) => (socios.map(socio => this.socioToFront(socio)))
-		);
-	}
+  public traerVencimientos() {
+    return this.traerTodos().then(socios =>
+      socios.map(socio => ({ socio, fecha: "2018-10-20" }))
+    );
+  }
 
-	public traerUno(socio: Socio, id?: number): Promise<any> {
-		return this.httpService.mapper(
-			this.httpService.get(new Modelos.Get('/socio/find/' + ((id) ? id : socio.id), 'Hubo un error al traer el socio. Intente nuevamente.')),
-			(_socio) => this.socioToFront(_socio)
-		);
-	}
+  public eliminarVenta = (idVenta: number, idSocio: number) => {
+    return this.httpService
+      .post(
+        new Modelos.Post(
+          "/ventas/borrar",
+          { idVenta },
+          "La venta fue borrada con exito",
+          "Hubo un error al borrar la venta. Intente nuevamente."
+        )
+      )
+      .then(() => {
+        const socio = this.socios.find(s => s.id === idSocio);
+        socio.ventas = socio.ventas.filter(v => v.id !== idVenta);
+        this.updateSociosObservers();
+      });
+  };
 
-	public comprar(idSocio: number, tipoPago: string, membresias: Array<Membresia>) {
-		const membresiasBack = membresias.map(({ id, descuento, ...resto }) => ({ id: id, idDescuento: descuento && descuento.id, cantidad: 1 }));
-		return this.httpService.post(
-			new Modelos.Post('/socio/comprar', { idSocio: idSocio, tipoPago: tipoPago, observacion: '', membresias: membresiasBack },
-				'La compra fue realizada exitosamente',
-				'Hubo un error al realizar la compra. Intente nuevamente.')
-		);
-	}
-
-	public entrarAServicio(idSocio: number, idServicio: number) {
-		return this.httpService.post(
-			new Modelos.Post('/socio/registrarEntradaAServicio', { idSocio: idSocio, idServicio: idServicio },
-				'La entrada fue registrada exitosamente',
-				'Hubo un error al registrar la entrada. Intente nuevamente.')
-		);
-	}
-
-	public traerVencimientos() {
-		return this.traerTodos().then(socios => socios.map(socio => ({ socio, fecha: '2018-10-20' })))
-	}
-
+  public cancelarCuota(idVenta: number, idCuota: number, idSocio: number) {
+    return this.httpService
+      .post(
+        new Modelos.Post(
+          "/cuotas/cancelarPago",
+          { idCuota },
+          "El pago de la cuota fue revertido con exito",
+          "Hubo un error al revertir el pago de la cuota. Intente nuevamente."
+        )
+      )
+      .then(response => {
+        const socio = this.socios.find(s => s.id === idSocio);
+        const venta = socio.ventas.find(v => v.id === idVenta);
+        const cuota = venta.cuotas.find(c => c.id === idCuota);
+        cuota.pagada = false;
+        this.updateSociosObservers();
+      });
+  }
 }

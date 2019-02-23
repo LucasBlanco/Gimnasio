@@ -93,7 +93,7 @@
 									</span>
 
 									<div class="col-form-label">
-										<span>{{servicio.servicio.nombre}}</span>
+										<span>{{servicio.nombre}}</span>
 									</div>
 
 								</div>
@@ -118,42 +118,22 @@
 					<div class="col-lg-6 col-md-6 col-sm-12">
 						<div style="margin-bottom: 20px;">
 							<label>* Descuentos de membresia:</label>
-							<div *ngFor="let descuento2 of descuentosMembresia(), let i = index">
-								<div class="row">
-									<div class="col-auto">
-										<span class="m-switch m-switch--sm m-switch--icon">
-											<label>
-												<input type="checkbox" [(ngModel)]="descuento2.seleccionado" [name]="'descuento2' + i">
-												<span></span>
-											</label>
-										</span>
-									</div>
-									<div class="col-form-label">
-										<span>{{descuento2.descuento.nombre}}</span>
-									</div>
-								</div>
-							</div>
+							<m-checklist 
+								[items]="descMemb" 
+								[label]="'nombre'" 
+								(onChange)="descMembSelec = $event" 
+								[itemsSeleccionados]="membresiaAModificar && membresiaAModificar.descuentosDisponibles">
+							</m-checklist>
 						</div>
 						<div>
 							<label>* Descuentos de socio aplicables a esta membresia:</label>
-							<div *ngFor="let descuento1 of descuentosSocio(), let i = index">
-								<div class="row">
-									<div class="col-auto">
-										<span class="m-switch m-switch--sm m-switch--icon">
-											<label>
-												<input type="checkbox" [(ngModel)]="descuento1.seleccionado" [name]="'descuento1' + i">
-												<span></span>
-											</label>
-										</span>
-									</div>
-									<div class=" col-form-label">
-										<span>{{descuento1.descuento.nombre}}</span>
-									</div>
-								</div>
-							</div>
+							<m-checklist 
+								[items]="descSocio" 
+								[label]="'nombre'" 
+								(onChange)="descSocioSelec = $event" 
+								[itemsSeleccionados]="membresiaAModificar && membresiaAModificar.descuentosDisponibles">
+							</m-checklist>
 						</div>
-
-
 					</div>
 				</div>
 			</div>

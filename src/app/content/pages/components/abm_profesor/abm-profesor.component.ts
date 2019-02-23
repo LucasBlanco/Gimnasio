@@ -23,11 +23,6 @@ export class AbmProfesoresComponent extends ABM {
 
 	constructor(public activatedRouter: ActivatedRoute, public profesorSrv: HttpServiceProfesor) {
 		super(activatedRouter, profesorSrv)
-		this.alta = this.profesorSrv.crear.bind(this.profesorSrv)
-		this.traerUno = this.profesorSrv.traerUno.bind(this.profesorSrv)
-		this.editar = this.profesorSrv.editar.bind(this.profesorSrv)
-		this.borrar = this.profesorSrv.borrar.bind(this.profesorSrv)
-		this.dataServiceSubscription = this.profesorSrv.getSubscription()
 	}
 
 

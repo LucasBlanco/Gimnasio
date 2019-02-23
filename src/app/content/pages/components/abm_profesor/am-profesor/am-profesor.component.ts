@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, OnInit } from '@angular/core';
-import { Profesor } from '../../../../models/profesor'
+import { Profesor, ProfesorBuilder } from '../../../../models/profesor'
 import { HttpServiceDescuento } from '../../../../services/httpServiceDescuento';
 import { Descuento } from '../../../../models/descuento';
 
@@ -10,7 +10,8 @@ import { Descuento } from '../../../../models/descuento';
 export class AMProfesoresComponent implements OnChanges {
 
 	profesor: Profesor
-	@Input() profesorAModificar: Profesor = new Profesor()
+	ProfesorBuilder = new ProfesorBuilder
+	@Input() profesorAModificar: Profesor = this.ProfesorBuilder.empty()
 	@Input() editando: boolean = false
 	@Output('alta') altaEmitter = new EventEmitter<Profesor>()
 	@Output('modificar') modificacionEmitter = new EventEmitter<Profesor>()
@@ -19,11 +20,11 @@ export class AMProfesoresComponent implements OnChanges {
 	constructor() { }
 
 	ngOnChanges(changes: SimpleChanges) {
-		this.profesor = (this.editando) ? this.profesorAModificar : new Profesor()
+		this.profesor = (this.editando) ? this.profesorAModificar : this.ProfesorBuilder.empty()
 	}
 
 	borrarProfesor() {
-		this.profesor = new Profesor()
+		this.profesor = this.ProfesorBuilder.empty()
 	}
 
 	irALaTabla() {

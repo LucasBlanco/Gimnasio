@@ -1,183 +1,192 @@
-<form class="m-form__section m-form__section--first" (submit)="comprar()" ngNativeValidate>
-	<div class="form-group m-form__group">
-		<label>Membresias:</label>
-		<div class="row">
-			<div class="col-lg-6" *ngFor="let checkMembresia of checkMembresias, let i = index">
-				<label class="m-option">
-					<span class="m-option__control">
-						<span class="m-radio m-radio--brand m-radio--check-bold">
-							<input type="checkbox" [name]="'option'+i" [(ngModel)]="checkMembresia.seleccionada">
-							<span></span>
-						</span>
-					</span>
-					<span class="m-option__label">
-						<span class="m-option__head">
-							<span class="m-option__title">
-								{{checkMembresia.membresia.nombre}}
-							</span>
-							<span class="m-option__focus">
-								$ {{checkMembresia.membresia.precio}}
-							</span>
-						</span>
-						<span class="m-option__body">
+<form
+  class="m-form__section m-form__section--first"
+  (submit)="comprar()"
+  ngNativeValidate
+>
+  <div class="form-group m-form__group">
+    <h5>Membresias:</h5>
+    <div class="row">
+      <div
+        class="col-lg-6 mt-2"
+        *ngFor="let membresia of membresias; let i = index"
+      >
+        <!--Ojo! al pasar la membresia, se tiene efecto de lado.
+          El descuento se agrega en el componente m-membresia a la membresia del componente compra
+        -->
+        <m-membresia
+          [membresia]="membresia"
+          (onCheck)="agregarMembresia($event)"
+          (onUncheck)="eliminarMembresia($event)"
+          [seleccionada]="estaSeleccionada(membresia)"
+          [descuentoSocio]="socio.descuento"
+        ></m-membresia>
+      </div>
+    </div>
+  </div>
+  <div class="m-separator m-separator--dashed m-separator--lg"></div>
+  <div class="form-group m-form__group">
+    <div class="row">
+      <div class="col">
+        <label>Tipo de pago:</label>
 
-							<ul class="row m--margin-bottom-10" style="padding: 0px">
-								<div class="col-lg-4 col-6" *ngFor="let servicio of checkMembresia.membresia.servicios">
-									<li>{{servicio.servicio.nombre}}</li>
-								</div>
-							</ul>
-							<div class="row">
-								<div class="col-12">
-									<div>Duracion: {{checkMembresia.membresia.vencimiento}} dias</div>
-								</div>
-								<div class="col-12">
-									<div>Nro cuotas: {{checkMembresia.membresia.nroCuotas}}</div>
-								</div>
-								<div class="col-10">
-									<div [hidden]="checkMembresia.membresia.descuentosDisponibles.length === 0">Descuento:
-										{{checkMembresia.membresia.descuento?.nombre}}</div>
-									<div [hidden]="checkMembresia.membresia.descuentosDisponibles.length > 0">Sin descuentos disponibles</div>
-								</div>
-								<div class="col-2">
+        <select
+          class="form-control m-input"
+          name="tipo"
+          [(ngModel)]="tipoDePago"
+          required
+        >
+          <option value="efectivo">Efectivo</option>
+          <option value="debito">Tarjeta de debito</option>
+          <option value="credito">Tarjeta de credito</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>Observacion:</label>
 
-									<button *ngIf="!checkMembresia.membresia.descuento" type="button" (click)="agregarDescuento(checkMembresia.membresia); false"
-									 [hidden]="checkMembresia.membresia.descuentosDisponibles.length === 0" class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill"
-									 style="width: 20px; height: 20px">
-										<i class="la la-plus" style="font-size: 0.9rem"></i>
-									</button>
-									<button *ngIf="checkMembresia.membresia.descuento" type="button" (click)="checkMembresia.membresia.descuento = null; false"
-									 class="btn btn-outline-metal m-btn m-btn--icon m-btn--icon-only m-btn--pill" style="width: 20px; height: 20px">
-										<i class="la la-minus" style="font-size: 0.9rem"></i>
-									</button>
-								</div>
-							</div>
+        <input
+          class="form-control m-input"
+          name="obs"
+          type="text"
+          [(ngModel)]="observacion"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="m-separator m-separator--dashed m-separator--lg"></div>
 
-						</span>
-					</span>
-				</label>
-			</div>
-		</div>
-	</div>
-	<div class="m-separator m-separator--dashed m-separator--lg"></div>
-	<div class="form-group m-form__group">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="row">
-					<div class="col-lg-3">
-						<label>Tipo de pago:</label>
-					</div>
-					<div class="col-lg-9">
-						<select class="form-control m-input" name="tipo" [(ngModel)]="tipoDePago" required>
-							<option value="efectivo">Efectivo</option>
-							<option value="debito">Tarjeta de debito</option>
-							<option value="credito">Tarjeta de credito</option>
-						</select>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="m-separator m-separator--dashed m-separator--lg"></div>
+  <div
+    class="m-accordion m-accordion--default"
+    id="m_accordion_1"
+    role="tablist"
+  >
+    <!--begin::Item-->
+    <div class="m-accordion__item">
+      <div
+        class="m-accordion__item-head collapsed"
+        role="tab"
+        id="m_accordion_1_item_1_head"
+        data-toggle="collapse"
+        href="#m_accordion_1_item_1_body"
+        aria-expanded="false"
+      >
+        <span class="m-accordion__item-icon"
+          ><i style="color: #36a3f7" class="la la-money"></i
+        ></span>
+        <span class="m-accordion__item-title"
+          >Total: {{ calcularTotal() }}</span
+        >
+        <span class="m-accordion__item-mode"></span>
+      </div>
 
-	<div class="m-accordion m-accordion--default" id="m_accordion_1" role="tablist">
+      <div
+        class="m-accordion__item-body collapse"
+        id="m_accordion_1_item_1_body"
+        role="tabpanel"
+        aria-labelledby="m_accordion_1_item_1_head"
+        data-parent="#m_accordion_1"
+      >
+        <div class="m-accordion__item-content">
+          <div class="m-demo__preview">
+            <div class="m-list-timeline">
+              <div class="m-list-timeline__items">
+                <div class="m-list-timeline__item">
+                  <div
+                    class="row m--padding-bottom-10"
+                    *ngFor="let membresia of membresiasSelec"
+                  >
+                    <div class="col-12" style="display: inline-flex;">
+                      <span
+                        class="m-list-timeline__badge m-list-timeline__badge--success"
+                      ></span>
+                      <span class="m-list-timeline__text">
+                        <div class="row">
+                          <div class="col-2">{{ membresia.nombre }}:</div>
+                          <div class="col">
+                            <strong style="color:green"
+                              >+ ${{ membresia.precio }}</strong
+                            >
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="col-12" style="padding-left: 35px;">
+                      <ng-container *ngIf="membresia.descuento">
+                        <div class="row">
+                          <div class="col-2">
+                            {{ membresia.descuento?.nombre }}:
+                          </div>
+                          <div class="col">
+                            <strong style="color: #e85b5b"
+                              >- ${{ descuentoMembresia(membresia) }}</strong
+                            >
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                    <div class="col-12" style="padding-left: 35px;">
+                      <ng-container *ngIf="descuentoSocio(membresia)">
+                        <div class="row">
+                          <div class="col-auto">
+                            {{ descuentoSocio(membresia)?.descuento.nombre }}:
+                          </div>
+                          <div class="col">
+                            <strong style="color: #e85b5b"
+                              >- ${{
+                                descuentoSocio(membresia)?.precio
+                              }}</strong
+                            >
+                          </div>
+                        </div>
+                      </ng-container>
+                    </div>
+                    <div class="col" style="text-align: right">
+                      Total:
+                      <strong>${{ calcularTotalParcial(membresia) }}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end::Item-->
+  </div>
 
-		<!--begin::Item-->
-		<div class="m-accordion__item">
-			<div class="m-accordion__item-head collapsed" role="tab" id="m_accordion_1_item_1_head" data-toggle="collapse" href="#m_accordion_1_item_1_body"
-			 aria-expanded="false">
-				<span class="m-accordion__item-icon"><i style="color: #36a3f7" class="la la-money"></i></span>
-				<span class="m-accordion__item-title">Total: {{calcularTotal()}}</span>
-				<span class="m-accordion__item-mode"></span>
-			</div>
+  <div class="m-separator m-separator--dashed m-separator--lg"></div>
 
-			<div class="m-accordion__item-body collapse" id="m_accordion_1_item_1_body" role="tabpanel" aria-labelledby="m_accordion_1_item_1_head"
-			 data-parent="#m_accordion_1">
-				<div class="m-accordion__item-content">
+  <div class="form-group m-form__group row">
+    <div class="col-lg-6">
+      <label>Abona con:</label>
+      <input
+        type="number"
+        class="form-control m-input"
+        [(ngModel)]="abonaCon"
+        name="abonaCon"
+        placeholder="123"
+      />
+    </div>
+    <div class="col-lg-6">
+      <label class="">Vuelto:</label>
+      <input
+        type="number"
+        class="form-control m-input"
+        [value]="
+          abonaCon - calcularTotal() > 0 ? abonaCon - calcularTotal() : 0
+        "
+        placeholder="12"
+        disabled
+      />
+    </div>
+  </div>
 
-					<div class="m-demo__preview">
-						<div class="m-list-timeline">
-							<div class="m-list-timeline__items">
-								<div class="m-list-timeline__item">
-									<div class="row m--padding-bottom-10" *ngFor="let membresia of membresiasSeleccionadas()">
-										<div class="col-12" style="display: inline-flex;">
-											<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
-											<span class="m-list-timeline__text">
-												<div class="row">
-													<div class="col-2">
-														{{membresia.nombre}}:
-													</div>
-													<div class="col">
-														<strong style="color:green">+ ${{membresia.precio}}</strong>
-													</div>
-												</div>
-											</span>
-										</div>
-										<div class="col-12" style="padding-left: 35px;">
-											<ng-container *ngIf="membresia.descuento">
-												<div class="row">
-													<div class="col-2">
-														{{membresia.descuento?.nombre}}:
-													</div>
-													<div class="col">
-														<strong style="color: #e85b5b">- ${{ descuentoMembresia(membresia)}}</strong>
-													</div>
-												</div>
-											</ng-container>
-										</div>
-										<div class="col-12" style="padding-left: 35px;">
-											<ng-container *ngIf="descuentoSocio(membresia)">
-												<div class="row">
-													<div class="col-auto">
-														{{descuentoSocio(membresia)?.descuento.nombre}}:
-													</div>
-													<div class="col">
-														<strong style="color: #e85b5b">- ${{descuentoSocio(membresia)?.precio}}</strong>
-													</div>
-												</div>
-											</ng-container>
-										</div>
-										<div class="col" style="text-align: right">
-											Total:
-											<strong>${{calcularTotalParcial(membresia)}}</strong>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</div>
-		<!--end::Item-->
-	</div>
-
-	<div class="m-separator m-separator--dashed m-separator--lg"></div>
-
-	<div class="form-group m-form__group row">
-		<div class="col-lg-6">
-			<label>Abona con:</label>
-			<input type="number" class="form-control m-input" [(ngModel)]="abonaCon" name="abonaCon" placeholder="123">
-		</div>
-		<div class="col-lg-6">
-			<label class="">Vuelto:</label>
-			<input type="number" class="form-control m-input" [value]="(abonaCon - calcularTotal() > 0)? abonaCon - calcularTotal() : 0"
-			 placeholder="12" disabled>
-		</div>
-	</div>
-
-	<br>
-	<div class="m-portlet__foot">
-		<div class="row">
-			<div class="col-lg-6">
-				<button type="submit" class="btn btn-primary">Guardar</button>
-
-			</div>
-		</div>
-	</div>
-
+  <br />
+  <div class="m-portlet__foot">
+    <div class="row">
+      <div class="col-lg-6">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
 </form>
-<m-modal-select></m-modal-select>

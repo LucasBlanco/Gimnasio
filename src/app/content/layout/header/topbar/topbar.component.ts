@@ -32,7 +32,7 @@ export class TopbarComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	consolear(){
+	consolear() {
 	    console.log(this.entradaSrv.getCantEntradasPendientes())
     }
 	ngOnInit(): void {

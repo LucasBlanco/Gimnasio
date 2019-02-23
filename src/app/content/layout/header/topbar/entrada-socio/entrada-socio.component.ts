@@ -19,7 +19,7 @@ export class EntradaSocioComponent implements OnInit, OnDestroy {
   socioSeleccionado: Profesor;
 
   ngOnInit(): void {
-    this.subscription = this.socioSrv.getSociosSubscription().subscribe( 
+    this.subscription = this.socioSrv.getSubscription().subscribe( 
       socios => {
         this.datos = socios.map(({ nombre, apellido, ...socio }) => ({
           nombre: `${apellido}, ${nombre} (${socio.id})`, ...socio

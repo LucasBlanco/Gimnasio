@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Socio } from '../../../../models/socio';
+import { Socio, SocioBuilder } from '../../../../models/socio';
 import { SociosService } from '../serviceSocio';
 import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 
@@ -10,7 +10,7 @@ import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 })
 export class NavegacionSocioComponent implements OnInit {
 
-	socio: Socio = new Socio()
+	socio: Socio = new SocioBuilder().empty()
 	idSocio = null
 
 	constructor(private router: Router, private httpSrvSocio: HttpServiceSocios, private socioSrv: SociosService) { }
@@ -20,7 +20,7 @@ export class NavegacionSocioComponent implements OnInit {
 			this.idSocio = id
 			this.socio = this.httpSrvSocio.socios.find(s => s.id === this.socioSrv.idSocio) || this.socio
 		})
-		this.httpSrvSocio.getSociosSubscription().subscribe(socios => {
+		this.httpSrvSocio.getSubscription().subscribe(socios => {
 			this.socio = socios.find(s => s.id === this.socioSrv.idSocio) || this.socio
 		})
 	}

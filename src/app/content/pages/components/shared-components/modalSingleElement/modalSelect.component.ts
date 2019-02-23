@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ModalInterface } from './modalInterface.component';
 import * as Modelos from '../../../../models/generales';
 
@@ -10,5 +10,5 @@ import * as Modelos from '../../../../models/generales';
 
 export class ModalSelect extends ModalInterface {
     select: Modelos.Select = new Modelos.Select(null, null, null, null, null)
-    modalId: string = 'modalSelect'
+    @Input() modalId: string = 'modalSelect'
 }

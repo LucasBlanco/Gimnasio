@@ -13,7 +13,7 @@ export class ModalInterface {
     }
     show() {
         $('#' + this.modalId).modal('show');
-		$('#' + this.modalId).css("z-index", "1500");
+		$('#' + this.modalId).css('z-index', '1500');
     }
     hide() {
         $('#' + this.modalId).modal('hide');

@@ -1,31 +1,35 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
-import {Servicio} from '../../../models/servicio';
-import {HttpServiceServicio} from '../../../services/httpServiceServicio';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Servicio } from '../../../models/servicio';
+import { HttpServiceServicio } from '../../../services/httpServiceServicio';
 import { ABM } from '../abm/abm';
 
 @Component({
   selector: 'm-membresia',
-	template: `
-		<div *ngIf="mostrarAlta">
-			<m-am-servicio (alta)="realizarAlta($event)"  (modificar)="realizarModificacion($event)"
-							(mostrarTabla)="this.mostrarAlta = false" [servicioAModificar]="datoSeleccionado"
-							[editando]="editando"></m-am-servicio>
-		</div>
-		<div *ngIf="!mostrarAlta">
-			<m-tabla-servicio (modificar)="cargarDatosModificacion($event)" (baja)="realizarBaja($event)" [datos]="datos"></m-tabla-servicio>
-		</div>
-	`,
+  template: `
+    <div *ngIf="mostrarAlta">
+      <m-am-servicio
+        (alta)="realizarAlta($event)"
+        (modificar)="realizarModificacion($event)"
+        (mostrarTabla)="this.mostrarAlta = false"
+        [servicioAModificar]="datoSeleccionado"
+        [editando]="editando"
+      ></m-am-servicio>
+    </div>
+    <div *ngIf="!mostrarAlta">
+      <m-tabla-servicio
+        (modificar)="cargarDatosModificacion($event)"
+        (baja)="realizarBaja($event)"
+        [datos]="datos"
+      ></m-tabla-servicio>
+    </div>
+  `
 })
 export class AbmServicioComponent extends ABM {
-
-  constructor(public activatedRouter: ActivatedRoute, private servicioSrv: HttpServiceServicio) {
-		super(activatedRouter, servicioSrv)
-		this.alta = this.servicioSrv.crear.bind(this.servicioSrv)
-		this.traerUno = this.servicioSrv.traerUno.bind(this.servicioSrv)
-		this.editar = this.servicioSrv.editar.bind(this.servicioSrv)
-		this.borrar = this.servicioSrv.borrar.bind(this.servicioSrv)
-	  	this.dataServiceSubscription = this.servicioSrv.getSubscription()
-   }
-
+  constructor(
+    public activatedRouter: ActivatedRoute,
+    private servicioSrv: HttpServiceServicio
+  ) {
+    super(activatedRouter, servicioSrv);
+  }
 }

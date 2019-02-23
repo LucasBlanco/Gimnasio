@@ -30,8 +30,9 @@ export class UserProfileComponent implements OnInit {
 
 	ngOnInit (): void {
 		this.nombreUsuario = JSON.parse(localStorage.getItem('username'));
-		if (!this.avatarBg)
+		if (!this.avatarBg) {
 			this.avatarBg = this.sanitizer.bypassSecurityTrustStyle('url(./assets/app/media/img/misc/user_profile_bg.jpg)');
+		}
 	}
 
 	public logout () {
@@ -39,6 +40,6 @@ export class UserProfileComponent implements OnInit {
 		localStorage.setItem('user', '');
 		localStorage.setItem('username', '');
 		this.router.navigate(['/login']);
-		//this.authService.logout(true);
+		// this.authService.logout(true);
 	}
 }

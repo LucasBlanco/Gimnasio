@@ -1,132 +1,179 @@
+<!--Begin::Main Portlet-->
+<div class="m-portlet m-portlet--full-height">
+  <!--begin: Portlet Head-->
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <h3 class="m-portlet__head-text">
+          Socio
+        </h3>
+      </div>
+    </div>
+    <div class="m-portlet__head-tools">
+      <ul class="m-portlet__nav">
+        <li class="m-portlet__nav-item">
+          <a
+            href="#"
+            data-toggle="m-tooltip"
+            class="m-portlet__nav-link m-portlet__nav-link--icon"
+            data-direction="left"
+            data-width="auto"
+            title=""
+            data-original-title="Get help with filling up this form"
+          >
+            <i class="flaticon-info m--icon-font-size-lg3"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--end: Portlet Head-->
 
-	<!--Begin::Main Portlet-->
-	<div class="m-portlet m-portlet--full-height">
-		<!--begin: Portlet Head-->
-		<div class="m-portlet__head">
-			<div class="m-portlet__head-caption">
-				<div class="m-portlet__head-title">
-					<h3 class="m-portlet__head-text">
-						Socio
-					</h3>
-				</div>
-			</div>
-			<div class="m-portlet__head-tools">
-				<ul class="m-portlet__nav">
-					<li class="m-portlet__nav-item">
-						<a href="#" data-toggle="m-tooltip" class="m-portlet__nav-link m-portlet__nav-link--icon" data-direction="left" data-width="auto" title="" data-original-title="Get help with filling up this form">
-							<i class="flaticon-info m--icon-font-size-lg3"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!--end: Portlet Head-->
+  <!--begin: Portlet Body-->
+  <div class="m-portlet__body m-portlet__body--no-padding">
+    <!--begin: Form Wizard-->
+    <div
+      class="m-wizard m-wizard--3 m-wizard--success m-wizard--step-first"
+      id="m_wizard"
+    >
+      <!--begin: Message container -->
+      <div class="m-portlet__padding-x">
+        <!-- Here you can put a message or alert -->
+      </div>
+      <!--end: Message container -->
 
-		<!--begin: Portlet Body-->
-		<div class="m-portlet__body m-portlet__body--no-padding">
+      <div class="row m-row--no-padding">
+        <div
+          class="col-xl-3 col-lg-12"
+          style="border-right: 0.07rem solid #EBEDF2;"
+        >
+          <!--begin: Form Wizard Head -->
+          <div class="m-wizard__head">
+            <div class="m--margin-bottom-25">
+              <div class="row centered">
+                <div class="col-12 centered m--margin-bottom-10">
+                  <img
+                    class="m--img-rounded m--marginless"
+                    src="./assets/app/media/img/blog/weightlifter.png"
+                    style="max-height: 150px; max-width: 150px"
+                  />
+                </div>
+                <div class="col-12 centered">
+                  <span>{{ socio.apellido + ", " + socio.nombre }}</span>
+                </div>
+              </div>
+            </div>
+            <!--begin: Form Wizard Nav -->
 
-			<!--begin: Form Wizard-->
-			<div class="m-wizard m-wizard--3 m-wizard--success m-wizard--step-first" id="m_wizard">
-
-				<!--begin: Message container -->
-				<div class="m-portlet__padding-x">
-					<!-- Here you can put a message or alert -->
-				</div>
-				<!--end: Message container -->
-
-				<div class="row m-row--no-padding">
-					<div class="col-xl-3 col-lg-12" style="border-right: 0.07rem solid #EBEDF2;">
-						<!--begin: Form Wizard Head -->
-						<div class="m-wizard__head">
-							<div class="m--margin-bottom-25">
-								<div class="row centered">
-								<div class="col-12 centered m--margin-bottom-10">
-									<img  class="m--img-rounded m--marginless"  src="./assets/app/media/img/blog/weightlifter.png"
-										  style="max-height: 150px; max-width: 150px">
-								</div>
-								<div class="col-12 centered">
-									<span>{{socio.apellido+', '+socio.nombre}}</span>
-								</div>
-								</div>
-							</div>
-							<!--begin: Form Wizard Nav -->
-
-							<div class="m-wizard__nav">
-								<div class="m-wizard__steps">
-									<div class="m-wizard__step " m-wizard-target="m_wizard_form_step_1" [routerLink]="['/socio/perfil', idSocio]"  routerLinkActive="m-wizard__step--current">
-										<div class="m-wizard__step-info">
-											<a class="m-wizard__step-number">
-												<span><span>1</span></span>
-											</a>
-											<div class="m-wizard__step-line">
-												<span></span>
-											</div>
-											<div class="m-wizard__step-label">
-												Perfil
-											</div>
-										</div>
-									</div>
-<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2" [routerLink]="['/socio/compras', idSocio]"
- routerLinkActive="m-wizard__step--current">
-										<div class="m-wizard__step-info">
-											<a class="m-wizard__step-number">
-												<span><span>2</span></span>
-											</a>
-											<div class="m-wizard__step-line">
-												<span></span>
-											</div>
-											<div class="m-wizard__step-label">
-												Compras
-											</div>
-										</div>
-									</div>
-<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3" [routerLink]="['/socio/historial', idSocio]"
- routerLinkActive="m-wizard__step--current">
-										<div class="m-wizard__step-info">
-											<a class="m-wizard__step-number">
-												<span><span>3</span></span>
-											</a>
-											<div class="m-wizard__step-line">
-												<span></span>
-											</div>
-											<div class="m-wizard__step-label">
-												Historial de compras
-											</div>
-										</div>
-									</div>
-<div class="m-wizard__step" m-wizard-target="m_wizard_form_step_4" [routerLink]="['/socio/accesos', idSocio]"
- routerLinkActive="m-wizard__step--current">
-										<div class="m-wizard__step-info">
-											<a class="m-wizard__step-number">
-												<span><span>4</span></span>
-											</a>
-											<div class="m-wizard__step-line">
-												<span></span>
-											</div>
-											<div class="m-wizard__step-label">
-												Accesos
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!--end: Form Wizard Nav -->
-						</div>
-						<!--end: Form Wizard Head -->
-					</div>
-					<div class="col-xl-9 col-lg-12">
-						<!--begin: Form Wizard Form-->
-						<div class="m-wizard__form" style="border-left: 0px;">
-							<router-outlet></router-outlet>
-						</div>
-						<!--end: Form Wizard Form-->
-
-					</div>
-				</div>
-			</div>
-			<!--end: Form Wizard-->
-
-		</div>
-		<!--end: Portlet Body-->
-	</div>
-	<!--End::Main Portlet-->
+            <div class="m-wizard__nav">
+              <div class="m-wizard__steps">
+                <div
+                  class="m-wizard__step "
+                  m-wizard-target="m_wizard_form_step_1"
+                  [routerLink]="['/socio/perfil', idSocio]"
+                  routerLinkActive="m-wizard__step--current"
+                >
+                  <div class="m-wizard__step-info">
+                    <a class="m-wizard__step-number">
+                      <span><span>1</span></span>
+                    </a>
+                    <div class="m-wizard__step-line">
+                      <span></span>
+                    </div>
+                    <div class="m-wizard__step-label">
+                      Perfil
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="m-wizard__step"
+                  m-wizard-target="m_wizard_form_step_2"
+                  [routerLink]="['/socio/compras', idSocio]"
+                  routerLinkActive="m-wizard__step--current"
+                >
+                  <div class="m-wizard__step-info">
+                    <a class="m-wizard__step-number">
+                      <span><span>2</span></span>
+                    </a>
+                    <div class="m-wizard__step-line">
+                      <span></span>
+                    </div>
+                    <div class="m-wizard__step-label">
+                      Compras
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="m-wizard__step"
+                  m-wizard-target="m_wizard_form_step_3"
+                  [routerLink]="['/socio/historial', idSocio]"
+                  routerLinkActive="m-wizard__step--current"
+                >
+                  <div class="m-wizard__step-info">
+                    <a class="m-wizard__step-number">
+                      <span><span>3</span></span>
+                    </a>
+                    <div class="m-wizard__step-line">
+                      <span></span>
+                    </div>
+                    <div class="m-wizard__step-label">
+                      Historial de compras
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="m-wizard__step"
+                  m-wizard-target="m_wizard_form_step_4"
+                  [routerLink]="['/socio/accesos', idSocio]"
+                  routerLinkActive="m-wizard__step--current"
+                >
+                  <div class="m-wizard__step-info">
+                    <a class="m-wizard__step-number">
+                      <span><span>4</span></span>
+                    </a>
+                    <div class="m-wizard__step-line">
+                      <span></span>
+                    </div>
+                    <div class="m-wizard__step-label">
+                      Accesos
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="m-wizard__step"
+                  m-wizard-target="m_wizard_form_step_5"
+                  [routerLink]="['/socio/membresiasCompradas', idSocio]"
+                  routerLinkActive="m-wizard__step--current"
+                >
+                  <div class="m-wizard__step-info">
+                    <a class="m-wizard__step-number">
+                      <span><span>5</span></span>
+                    </a>
+                    <div class="m-wizard__step-line">
+                      <span></span>
+                    </div>
+                    <div class="m-wizard__step-label">
+                      Subscripciones
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end: Form Wizard Nav -->
+          </div>
+          <!--end: Form Wizard Head -->
+        </div>
+        <div class="col-xl-9 col-lg-12">
+          <!--begin: Form Wizard Form-->
+          <div class="m-wizard__form" style="border-left: 0px;">
+            <router-outlet></router-outlet>
+          </div>
+          <!--end: Form Wizard Form-->
+        </div>
+      </div>
+    </div>
+    <!--end: Form Wizard-->
+  </div>
+  <!--end: Portlet Body-->
+</div>
+<!--End::Main Portlet-->

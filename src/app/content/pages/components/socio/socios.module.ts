@@ -9,6 +9,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import {SociosService} from './serviceSocio';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 import {AccesosComponent} from './accesos/accesos.component';
+import { MembresiasCompradasComponent } from './membresias-compradas/membresias-compradas.component';
 
 
 const parentModuleRoutes: Routes = [
@@ -31,6 +32,10 @@ const parentModuleRoutes: Routes = [
             {
                 path: 'accesos/:id',
                 component: AccesosComponent
+            },
+            {
+                path: 'membresiasCompradas/:id',
+                component: MembresiasCompradasComponent
             }
 		]
 	}
@@ -47,7 +52,8 @@ const parentModuleRoutes: Routes = [
 		NavegacionSocioComponent,
 		PerfilComponent,
 		HistorialComprasComponent,
-        AccesosComponent
+        AccesosComponent,
+        MembresiasCompradasComponent
 	],
 	providers: [
 

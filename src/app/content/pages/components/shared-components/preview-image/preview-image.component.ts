@@ -24,7 +24,7 @@ declare var $: any
   `,
   styleUrls: ['./preview-image.component.css']
 })
-export class PreviewImageComponent{
+export class PreviewImageComponent {
 
   @Input() url;
 
@@ -47,7 +47,7 @@ export class PreviewImageComponent{
   }
   // Get the modal
 
-  cerrar(){
-    $("#modalImg").modal('hide')
+  cerrar() {
+    $('#modalImg').modal('hide')
   }
 }

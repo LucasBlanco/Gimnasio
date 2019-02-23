@@ -45,86 +45,90 @@ import { SplashScreenService } from './core/services/splash-screen.service';
 import { DataTableService } from './core/services/datatable.service';
 
 import 'hammerjs';
-import {HttpServiceEntrada} from './content/services/httpServiceEntrada';
-import {HttpService} from './content/services/httpService';
-import {HttpModule} from '@angular/http';
+import { HttpServiceEntrada } from './content/services/httpServiceEntrada';
+import { HttpService } from './content/services/httpService';
+import { HttpModule } from '@angular/http';
 import { HttpServiceSocios } from './content/services/httpServiceSocios';
 import { HttpServiceCaja } from './content/services/httpServiceCaja';
 import { HttpServiceMembresia } from './content/services/httpServiceMembresia';
 import { HttpServiceServicio } from './content/services/httpServiceServicio';
 import { HttpServiceDescuento } from './content/services/httpServiceDescuento';
-import { HttpServiceProfesor } from './content/services/httpServiceProfesor'
+import { HttpServiceProfesor } from './content/services/httpServiceProfesor';
 import { SociosService } from './content/pages/components/socio/serviceSocio';
-
+import { HttpServiceProducto } from './content/services/httpServiceProducto';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AuthService } from 'ngx-auth';
 import { AuthGuardService } from './content/services/authService';
-
+import { HttpServiceStock } from './content/services/httpServiceStock';
+import { HttpServiceClase } from './content/services/httpServiceClase';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-	// suppressScrollX: true
+  // suppressScrollX: true
 };
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserAnimationsModule,
-		BrowserModule,
-		AppRoutingModule,
-		HttpClientModule,
-		HttpClientInMemoryWebApiModule.forRoot(FakeApiService),
-		LayoutModule,
-		PartialsModule,
-		CoreModule,
-		OverlayModule,
-		AuthenticationModule,
-		NgxPermissionsModule.forRoot(),
-		NgbModule.forRoot(),
-		TranslateModule.forRoot(),
-		MatProgressSpinnerModule,
-		HttpModule
-	],
-	providers: [
-		AclService,
-		LayoutConfigService,
-		LayoutConfigStorageService,
-		LayoutRefService,
-		MenuConfigService,
-		PageConfigService,
-		UserService,
-		UtilsService,
-		ClassInitService,
-		MessengerService,
-		ClipboardService,
-		LogsService,
-		QuickSearchService,
-		DataTableService,
-		SplashScreenService,
-		{
-			provide: PERFECT_SCROLLBAR_CONFIG,
-			useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-		},
+  declarations: [AppComponent],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(FakeApiService),
+    LayoutModule,
+    PartialsModule,
+    CoreModule,
+    OverlayModule,
+    AuthenticationModule,
+    NgxPermissionsModule.forRoot(),
+    NgbModule.forRoot(),
+    TranslateModule.forRoot(),
+    MatProgressSpinnerModule,
+    HttpModule
+  ],
+  providers: [
+    AclService,
+    LayoutConfigService,
+    LayoutConfigStorageService,
+    LayoutRefService,
+    MenuConfigService,
+    PageConfigService,
+    UserService,
+    UtilsService,
+    ClassInitService,
+    MessengerService,
+    ClipboardService,
+    LogsService,
+    QuickSearchService,
+    DataTableService,
+    SplashScreenService,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    },
 
-		// template services
-		SubheaderService,
-		HeaderService,
-		MenuHorizontalService,
-		MenuAsideService,
-		{
-			provide: HAMMER_GESTURE_CONFIG,
-			useClass: GestureConfig
-		},
-		HttpServiceEntrada,
-		HttpService,
-		HttpServiceSocios,
-		HttpServiceCaja,
-		HttpServiceMembresia,
-		HttpServiceServicio,
-		HttpServiceDescuento,
-		HttpServiceProfesor,
-		SociosService,
-		AuthGuardService,
-		{ provide: LocationStrategy, useClass: HashLocationStrategy }
-	],
-	bootstrap: [AppComponent]
+    // template services
+    SubheaderService,
+    HeaderService,
+    MenuHorizontalService,
+    MenuAsideService,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: GestureConfig
+    },
+    HttpServiceEntrada,
+    HttpService,
+    HttpServiceSocios,
+    HttpServiceCaja,
+    HttpServiceMembresia,
+    HttpServiceServicio,
+    HttpServiceDescuento,
+    HttpServiceProfesor,
+    HttpServiceProducto,
+    HttpServiceStock,
+    SociosService,
+    HttpServiceClase,
+    AuthGuardService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

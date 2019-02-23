@@ -21,7 +21,7 @@ export class HttpServiceCaja {
 		this.subject.next(this.datos);
 	}
 
-	public getSubscription(): Observable<any> {
+	public getSubscription = (): Observable<any> => {
 		return this.subject.asObservable();
 	}
 

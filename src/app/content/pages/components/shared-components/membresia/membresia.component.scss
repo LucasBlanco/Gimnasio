@@ -1,0 +1,24 @@
+.hover:hover {
+  color: #6f42c1;
+}
+.option {
+  display: flex;
+  padding: 1.4em;
+  border-radius: 6px;
+  border: 1px solid #ebedf2;
+}
+.option-control {
+  width: 2.7rem;
+  padding-top: 0.1rem;
+}
+.bold {
+  font-weight: 500;
+}
+
+.bolder {
+  font-weight: 400;
+}
+
+.noDisponible {
+  color: #dc3545;
+}

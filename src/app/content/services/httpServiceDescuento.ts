@@ -1,14 +1,13 @@
-import * as Modelos from './httpModels';
-import { HttpService } from './httpService';
-import { Descuento, DescuentoBuilder } from '../models/descuento';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import * as Modelos from "./httpModels";
+import { HttpService } from "./httpService";
+import { Descuento, DescuentoBuilder } from "../models/descuento";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable()
 export class HttpServiceDescuento {
   subject = new BehaviorSubject<Descuento[]>([]);
   datos: Descuento[] = [];
-  builder = new DescuentoBuilder();
 
   constructor(private httpService: HttpService) {
     this.traerTodos().then(datos => {
@@ -30,10 +29,10 @@ export class HttpServiceDescuento {
     return this.httpService
       .post(
         new Modelos.Post(
-          '/descuento/crear',
-          this.builder.toBackEnd(descuento),
-          'El descuento fue creado con exito',
-          'Hubo un error al crear el descuento. Intente nuevamente.'
+          "/descuento/crear",
+          DescuentoBuilder.toBackEnd(descuento),
+          "El descuento fue creado con exito",
+          "Hubo un error al crear el descuento. Intente nuevamente."
         )
       )
       .then((id: number) => {
@@ -47,10 +46,10 @@ export class HttpServiceDescuento {
     return this.httpService
       .put(
         new Modelos.Post(
-          '/descuento/editar/' + descuento.id,
-          this.builder.toBackEnd(descuento),
-          'El descuento fue editado con exito',
-          'Hubo un error al editar el descuento. Intente nuevamente.'
+          "/descuento/editar/" + descuento.id,
+          DescuentoBuilder.toBackEnd(descuento),
+          "El descuento fue editado con exito",
+          "Hubo un error al editar el descuento. Intente nuevamente."
         )
       )
       .then(() => {
@@ -65,10 +64,10 @@ export class HttpServiceDescuento {
     return this.httpService
       .post(
         new Modelos.Post(
-          '/descuento/borrar/',
+          "/descuento/borrar/",
           { id: descuento.id },
-          'El descuento fue eliminado con exito',
-          'Hubo un error al eliminar el descuento. Intente nuevamente.'
+          "El descuento fue eliminado con exito",
+          "Hubo un error al eliminar el descuento. Intente nuevamente."
         )
       )
       .then(() => {
@@ -81,12 +80,12 @@ export class HttpServiceDescuento {
     return this.httpService.mapper(
       this.httpService.get(
         new Modelos.Get(
-          '/descuento/all',
-          'Hubo un error al traer los descuentosDisponibles. Intente nuevamente.'
+          "/descuento/all",
+          "Hubo un error al traer los descuentos. Intente nuevamente."
         )
       ),
       descuentos =>
-        descuentos.map(descuento => this.builder.fromBackEnd(descuento))
+        descuentos.map(descuento => DescuentoBuilder.fromBackEnd(descuento))
     );
   };
 
@@ -94,11 +93,11 @@ export class HttpServiceDescuento {
     return this.httpService.mapper(
       this.httpService.get(
         new Modelos.Get(
-          '/descuento/find/' + descuento.id,
-          'Hubo un error al traer el descuento. Intente nuevamente.'
+          "/descuento/find/" + descuento.id,
+          "Hubo un error al traer el descuento. Intente nuevamente."
         )
       ),
-      _descuento => this.builder.fromBackEnd(_descuento)
+      _descuento => DescuentoBuilder.fromBackEnd(_descuento)
     );
   };
 }

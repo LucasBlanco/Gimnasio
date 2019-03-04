@@ -10,7 +10,7 @@
         <m-membresia
           [membresia]="venta.membresia"
           (onCheck)="agregarMembresia($event)"
-          [seleccionada]="membresiaSeleccionada(venta)"
+          [seleccionada]="membresiaEstaSeleccionada(venta)"
           [descuentoSocio]="socio.descuento"
         ></m-membresia>
       </div>

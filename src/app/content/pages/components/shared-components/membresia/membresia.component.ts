@@ -91,7 +91,6 @@ export class MembresiaComponent implements OnInit, OnChanges {
     const descMemb = "Descuento de membresia";
     const descCuotas = "Precio fijo en cuota 0";
     const descSocio = "Descuento de socio";
-    console.log(this.membresia);
     if (this.membresia.descuento) {
       resultados.push(descMemb);
     }
@@ -122,7 +121,7 @@ export class MembresiaComponent implements OnInit, OnChanges {
   }
 
   detalleMostrado(servicio) {
-    return this.detalleServicio.some(d => d === servicio);
+    return this.detalleServicio.some(d => d.id === servicio.id);
   }
 
   mostrarDetalleCuota(membresia) {
@@ -134,13 +133,19 @@ export class MembresiaComponent implements OnInit, OnChanges {
   }
 
   mostrandoDetalleCuota(membresia) {
-    return this.detalleCuotas.some(d => d === membresia);
+    return this.detalleCuotas.some(d => d.id === membresia.id);
   }
 
   membresiaTieneCuotas = () => this.membresia.cuotas !== undefined;
 
   membresiaTieneCuotasImpagas = () =>
     this.membresiaTieneCuotas() && this.cuotaAPagar() !== undefined;
+
+  estadoCuotaAPagar() {
+    return moment(this.cuotaAPagar().fechaVto).isSameOrBefore(moment())
+      ? "m-badge--danger"
+      : "m-badge--info";
+  }
 
   cuotaAPagar = () =>
     this.membresia.cuotas

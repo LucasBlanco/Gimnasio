@@ -8,21 +8,21 @@ import { Descuento, DescuentoBuilder } from '../../../../models/descuento';
 })
 export class AmDescuentoComponent implements OnChanges {
 
-	@Input() descuentoAModificar: Descuento = new DescuentoBuilder().empty();
+	@Input() descuentoAModificar: Descuento = DescuentoBuilder.empty();
 	@Input() editando: boolean = false;
 	@Output('alta') altaEmitter = new EventEmitter<Descuento>();
 	@Output('modificar') modificacionEmitter = new EventEmitter<Descuento>();
 	@Output('mostrarTabla') irALaTablaEmitter = new EventEmitter<void>();
-	descuento: Descuento = new DescuentoBuilder().empty();
+	descuento: Descuento = DescuentoBuilder.empty();
 
   constructor() { }
 
 	ngOnChanges( changes: SimpleChanges) {
-		this.descuento = (this.editando) ? this.descuentoAModificar : new DescuentoBuilder().empty()
+		this.descuento = (this.editando) ? this.descuentoAModificar : DescuentoBuilder.empty()
 	}
 
 	borrar() {
-		this.descuento = new DescuentoBuilder().empty();
+		this.descuento = DescuentoBuilder.empty();
 	}
 
 	irALaTabla() {

@@ -1,7 +1,6 @@
 import { ActivatedRoute, Params } from "@angular/router";
-import { OnDestroy, OnInit } from "@angular/core";
-import { HttpServiceMembresia } from "../../../services/httpServiceMembresia";
-import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { OnDestroy, OnInit, ChangeDetectorRef } from "@angular/core";
+import { Fecha } from "../../../models/fecha";
 
 export abstract class ABM implements OnDestroy, OnInit {
   public editando: boolean;
@@ -15,10 +14,12 @@ export abstract class ABM implements OnDestroy, OnInit {
   subscription;
   datos;
   dataServiceSubscription;
+  datosEnMemoria: boolean = true;
 
   constructor(
     public activatedRouter: ActivatedRoute,
     public srv,
+    datosEnMemoria?,
     alta?,
     traerUno?,
     traerTodos?,
@@ -30,6 +31,10 @@ export abstract class ABM implements OnDestroy, OnInit {
       this.mostrarAlta = params["view"] === "am";
       this.editando = false;
     });
+    this.datosEnMemoria =
+      datosEnMemoria === undefined || datosEnMemoria === null
+        ? true
+        : datosEnMemoria;
     this.alta = alta || srv.crear;
     this.traerUno = traerUno || srv.traerUno;
     this.borrar = borrar || srv.borrar;
@@ -40,12 +45,15 @@ export abstract class ABM implements OnDestroy, OnInit {
       (srv.hasOwnProperty("getSubscription") && srv.getSubscription());
   }
   ngOnInit() {
-    if (this.dataServiceSubscription) {
+    if (this.datosEnMemoria) {
       this.subscription = this.dataServiceSubscription.subscribe(datos => {
         this.datos = datos;
       });
     } else {
-      this.traerTodos().then(datos => (this.datos = datos));
+      this.subscription = this.dataServiceSubscription.subscribe(datos => {
+        this.datos = datos;
+      });
+      this.traerTodos();
     }
   }
 

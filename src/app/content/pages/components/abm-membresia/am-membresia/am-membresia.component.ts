@@ -18,13 +18,12 @@ import { HttpServiceDescuento } from "../../../../services/httpServiceDescuento"
   templateUrl: "./am-membresia.component.html"
 })
 export class AmMembresiaComponent implements OnChanges, OnInit {
-  MembresiaBuilder = new MembresiaBuilder();
-  @Input() membresiaAModificar: Membresia = this.MembresiaBuilder.empty();
+  @Input() membresiaAModificar: Membresia = MembresiaBuilder.empty();
   @Input() editando: boolean = false;
   @Output("alta") altaEmitter = new EventEmitter<Membresia>();
   @Output("modificar") modificacionEmitter = new EventEmitter<Membresia>();
   @Output("mostrarTabla") irALaTablaEmitter = new EventEmitter<void>();
-  membresia: Membresia = this.MembresiaBuilder.empty();
+  membresia: Membresia = MembresiaBuilder.empty();
   servicios: ({
     seleccionado: boolean;
     creditos: number;
@@ -67,7 +66,7 @@ export class AmMembresiaComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges) {
     this.membresia = this.editando
       ? this.membresiaAModificar
-      : this.MembresiaBuilder.empty();
+      : MembresiaBuilder.empty();
     this.servicios.forEach(s => {
       s.seleccionado = false;
       s.creditos = null;
@@ -76,7 +75,7 @@ export class AmMembresiaComponent implements OnChanges, OnInit {
   }
 
   borrar() {
-    this.membresia = this.MembresiaBuilder.empty();
+    this.membresia = MembresiaBuilder.empty();
     this.servicios.forEach(s => {
       s.seleccionado = false;
       s.creditos = null;

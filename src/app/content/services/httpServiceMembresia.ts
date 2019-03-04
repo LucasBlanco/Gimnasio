@@ -9,7 +9,6 @@ import { BehaviorSubject, Observable } from "rxjs";
 // 1: membresia, 2: socio
 @Injectable()
 export class HttpServiceMembresia {
-  builder = new MembresiaBuilder();
   subject = new BehaviorSubject<Membresia[]>([]);
   datos: Membresia[] = [];
 
@@ -34,7 +33,7 @@ export class HttpServiceMembresia {
       .post(
         new Modelos.Post(
           "/membresia/crear",
-          this.builder.toBackEnd(membresia),
+          MembresiaBuilder.toBackEnd(membresia),
           "La membresia fue creada con exito",
           "Hubo un error al crear la membresia. Intente nuevamente."
         )
@@ -51,7 +50,7 @@ export class HttpServiceMembresia {
       .put(
         new Modelos.Post(
           "/membresia/editar/" + membresia.id,
-          this.builder.toBackEnd(membresia),
+          MembresiaBuilder.toBackEnd(membresia),
           "La membresia fue editada con exito",
           "Hubo un error al editar la membresia. Intente nuevamente."
         )
@@ -89,7 +88,7 @@ export class HttpServiceMembresia {
         )
       ),
       membresias =>
-        membresias.map(membresia => this.builder.fromBackEnd(membresia))
+        membresias.map(membresia => MembresiaBuilder.fromBackEnd(membresia))
     );
   };
 
@@ -102,7 +101,7 @@ export class HttpServiceMembresia {
         )
       ),
       membresias =>
-        membresias.map(membresia => this.builder.fromBackEnd(membresia))
+        membresias.map(membresia => MembresiaBuilder.fromBackEnd(membresia))
     );
   };
 
@@ -114,7 +113,7 @@ export class HttpServiceMembresia {
           "Hubo un error al traer la membresia. Intente nuevamente."
         )
       ),
-      _membresia => this.builder.fromBackEnd(_membresia)
+      _membresia => MembresiaBuilder.fromBackEnd(_membresia)
     );
   };
 }

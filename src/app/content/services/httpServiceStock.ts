@@ -51,7 +51,7 @@ export class HttpServiceStock {
 
   mappearTransaccion(producto, transaccion, usuario) {
     const { observacion, tipo_pago, fecha, tipo, precio } = transaccion;
-    const prod = new ProductoBuilder().fromBackEnd(producto);
+    const prod = ProductoBuilder.fromBackEnd(producto);
     const prod2 = { ...prod, cantidad: producto.cantidad };
     const user = new Usuario(
       usuario.id,

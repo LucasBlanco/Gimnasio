@@ -27,10 +27,10 @@ export class ProfesorBack {
 }
 
 export class ProfesorBuilder {
-  empty() {
+  static empty() {
     return new Profesor(null, null, null, null, null, null, null, null);
   }
-  fromBackEnd(pb: ProfesorBack) {
+  static fromBackEnd(pb: ProfesorBack) {
     return new Profesor(
       pb.nombre,
       pb.apellido,
@@ -43,7 +43,7 @@ export class ProfesorBuilder {
       pb.id
     );
   }
-  toBackEnd(pf: Profesor) {
+  static toBackEnd(pf: Profesor) {
     return new ProfesorBack(
       pf.nombre,
       pf.apellido,

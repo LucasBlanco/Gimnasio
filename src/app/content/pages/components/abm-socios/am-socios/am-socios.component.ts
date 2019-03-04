@@ -17,8 +17,7 @@ import { Descuento } from '../../../../models/descuento';
 })
 export class AMSociosComponent implements OnChanges, OnInit {
   socio: Socio;
-  SocioBuilder = new SocioBuilder();
-  @Input() socioAModificar: Socio = this.SocioBuilder.empty();
+  @Input() socioAModificar: Socio = SocioBuilder.empty();
   @Input() editando: boolean = false;
   @Output('alta') altaEmitter = new EventEmitter<Socio>();
   @Output('modificar') modificacionEmitter = new EventEmitter<Socio>();
@@ -35,11 +34,11 @@ export class AMSociosComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges) {
     this.socio = this.editando
       ? this.socioAModificar
-      : this.SocioBuilder.empty();
+      : SocioBuilder.empty();
   }
 
   borrarSocio() {
-    this.socio = this.SocioBuilder.empty();
+    this.socio = SocioBuilder.empty();
   }
 
   irALaTabla() {

@@ -55,6 +55,7 @@ import { ListaAsistentesComponent } from './components/clases/tomar-presente/lis
 import { TablaClasesComponent } from './components/abm_clase/tabla-clase/tabla-clase.component';
 import { AbmClasesComponent } from './components/abm_clase/abm-clase.component';
 import { AmClasesComponent } from './components/abm_clase/am-clase/am-clase.component';
+import { ListaClasesComponent } from './components/clases/tomar-presente/lista-clases/lista-clases.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { AmClasesComponent } from './components/abm_clase/am-clase/am-clase.comp
     ListaAsistentesComponent,
     AbmClasesComponent,
     AmClasesComponent,
-    TablaClasesComponent
+    TablaClasesComponent,
+    ListaClasesComponent
   ],
   imports: [
     FormsModule,

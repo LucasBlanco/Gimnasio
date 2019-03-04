@@ -86,10 +86,11 @@
                   </div>
                 </div>
                 <div
-                  class="m-wizard__step"
+                  class="m-wizard__step "
                   m-wizard-target="m_wizard_form_step_2"
                   [routerLink]="['/socio/compras', idSocio]"
                   routerLinkActive="m-wizard__step--current"
+                  [ngClass]="isActive('/socio/compras')? 'm-wizard__step--current': ''"
                 >
                   <div class="m-wizard__step-info">
                     <a class="m-wizard__step-number">
@@ -99,7 +100,7 @@
                       <span></span>
                     </div>
                     <div class="m-wizard__step-label">
-                      Compras
+                      Compras 
                     </div>
                   </div>
                 </div>

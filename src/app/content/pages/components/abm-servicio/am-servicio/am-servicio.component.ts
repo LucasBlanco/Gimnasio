@@ -38,13 +38,12 @@ import { Profesor } from "../../../../models/profesor";
   ]
 })
 export class AmServicioComponent implements OnChanges, OnInit {
-  ServicioBuilder = new ServicioBuilder();
-  @Input() servicioAModificar: Servicio = this.ServicioBuilder.empty();
+  @Input() servicioAModificar: Servicio = ServicioBuilder.empty();
   @Input() editando: boolean = false;
   @Output("alta") altaEmitter = new EventEmitter<Servicio>();
   @Output("modificar") modificacionEmitter = new EventEmitter<Servicio>();
   @Output("mostrarTabla") irALaTablaEmitter = new EventEmitter<void>();
-  servicio: Servicio = this.ServicioBuilder.empty();
+  servicio: Servicio = ServicioBuilder.empty();
   profesores: Profesor[] = [];
   dias = [
     { seleccionado: false, dia: "lunes", horarios: [new HorarioServicio()] },
@@ -73,7 +72,7 @@ export class AmServicioComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges) {
     this.servicio = this.editando
       ? this.servicioAModificar
-      : this.ServicioBuilder.empty();
+      : ServicioBuilder.empty();
     if (this.editando) {
       this.dias = this.dias.map(d => {
         const { dia, horarios } = this.servicioAModificar.dias.find(
@@ -91,7 +90,7 @@ export class AmServicioComponent implements OnChanges, OnInit {
   }
 
   borrar() {
-    this.servicio = this.ServicioBuilder.empty();
+    this.servicio = ServicioBuilder.empty();
     this.dias = this.dias.map(dia => ({
       seleccionado: false,
       dia: dia.dia,

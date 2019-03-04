@@ -17,6 +17,7 @@
           [membresia]="membresia"
           (onCheck)="agregarMembresia($event)"
           (onUncheck)="eliminarMembresia($event)"
+          (onUncheck)="eliminarMembresia($event)"
           [seleccionada]="estaSeleccionada(membresia)"
           [descuentoSocio]="socio.descuento"
         ></m-membresia>
@@ -110,29 +111,31 @@
                       </span>
                     </div>
                     <div class="col-12" style="padding-left: 35px;">
-                      <ng-container *ngIf="membresia.descuento">
+                      <ng-container *ngIf="getRebajaDescuentoMembresia(membresia) > 0">
                         <div class="row">
                           <div class="col-2">
                             {{ membresia.descuento?.nombre }}:
                           </div>
                           <div class="col">
                             <strong style="color: #e85b5b"
-                              >- ${{ descuentoMembresia(membresia) }}</strong
+                              >- ${{
+                                getRebajaDescuentoMembresia(membresia)
+                              }}</strong
                             >
                           </div>
                         </div>
                       </ng-container>
                     </div>
                     <div class="col-12" style="padding-left: 35px;">
-                      <ng-container *ngIf="descuentoSocio(membresia)">
+                      <ng-container *ngIf="membresia.getDescuentoSocio(socio)">
                         <div class="row">
                           <div class="col-auto">
-                            {{ descuentoSocio(membresia)?.descuento.nombre }}:
+                            {{ membresia.getDescuentoSocio(socio).nombre }}:
                           </div>
                           <div class="col">
                             <strong style="color: #e85b5b"
                               >- ${{
-                                descuentoSocio(membresia)?.precio
+                                getRebajaDescuentoSocio(membresia)
                               }}</strong
                             >
                           </div>

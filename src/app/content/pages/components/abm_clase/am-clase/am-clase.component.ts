@@ -6,27 +6,27 @@ import {
   Output,
   SimpleChanges,
   OnInit
-} from '@angular/core';
-import { Clase, ClaseBuilder } from '../../../../models/clase';
-import { HttpServiceProfesor } from '../../../../services/httpServiceProfesor';
-import { Profesor } from '../../../../models/profesor';
-import { HttpServiceServicio } from '../../../../services/httpServiceServicio';
-import { Servicio } from '../../../../models/servicio';
+} from "@angular/core";
+import { Clase, ClaseBuilder } from "../../../../models/clase";
+import { HttpServiceProfesor } from "../../../../services/httpServiceProfesor";
+import { Profesor } from "../../../../models/profesor";
+import { HttpServiceServicio } from "../../../../services/httpServiceServicio";
+import { Servicio } from "../../../../models/servicio";
+import { Fecha } from "../../../../models/fecha";
 
 @Component({
-  selector: 'm-am-clase',
-  templateUrl: './am-clase.component.html'
+  selector: "m-am-clase",
+  templateUrl: "./am-clase.component.html"
 })
 export class AmClasesComponent implements OnChanges, OnInit {
   clase: Clase;
-  ClaseBuilder = new ClaseBuilder()
   profesores: Profesor[] = [];
   servicios: Servicio[] = [];
-  @Input() profesorAModificar: Clase = this.ClaseBuilder.empty();
+  @Input() profesorAModificar: Clase = ClaseBuilder.empty();
   @Input() editando: boolean = false;
-  @Output('alta') altaEmitter = new EventEmitter<Clase>();
-  @Output('modificar') modificacionEmitter = new EventEmitter<Clase>();
-  @Output('mostrarTabla') irALaTablaEmitter = new EventEmitter<void>();
+  @Output("alta") altaEmitter = new EventEmitter<Clase>();
+  @Output("modificar") modificacionEmitter = new EventEmitter<Clase>();
+  @Output("mostrarTabla") irALaTablaEmitter = new EventEmitter<void>();
   constructor(
     private profesorSrv: HttpServiceProfesor,
     private servicioSrv: HttpServiceServicio
@@ -34,16 +34,14 @@ export class AmClasesComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     this.profesorSrv.getSubscription().subscribe(p => (this.profesores = p));
-    this.servicioSrv
-      .getSubscription()
-      .subscribe(ss => (this.servicios = ss.map(s => s.servicio)));
+    this.servicioSrv.getSubscription().subscribe(ss => (this.servicios = ss));
   }
   ngOnChanges(changes: SimpleChanges) {
-    this.clase = this.editando ? this.profesorAModificar : this.ClaseBuilder.empty();
+    this.clase = this.editando ? this.profesorAModificar : ClaseBuilder.empty();
   }
 
   borrarClase() {
-    this.clase = this.ClaseBuilder.empty();
+    this.clase = ClaseBuilder.empty();
   }
 
   irALaTabla() {
@@ -58,4 +56,6 @@ export class AmClasesComponent implements OnChanges, OnInit {
     }
     this.borrarClase();
   }
+
+  mapFecha = fecha => new Fecha(fecha).back;
 }

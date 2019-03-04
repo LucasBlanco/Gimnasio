@@ -32,9 +32,9 @@ export class MembresiasCompradasComponent implements OnInit {
     private socioSrv: HttpServiceSocios
   ) {}
   idSocio: number;
-  socio = new SocioBuilder().empty();
+  socio = SocioBuilder.empty();
   ventas: Venta[] = [];
-  membresiasSeleccionadas: (Membresia & { cuotas: Cuota[] })[] = [];
+  membresiaSeleccionada: Membresia & { cuotas: Cuota[] };
 
   ngOnInit() {
     this.activatedRouter.params.subscribe(params => {
@@ -45,16 +45,10 @@ export class MembresiasCompradasComponent implements OnInit {
       this.ventas = this.socio.ventas || [];
       this.ventas.forEach(venta => {
         venta.membresia.descuento = venta.descuentoMembresia;
-        const porcMembresia = venta.descuentoMembresia
-          ? venta.descuentoMembresia.porcentaje
-          : 0;
-        const porcSocio = venta.descuentoSocio
-          ? venta.descuentoSocio.porcentaje
-          : 0;
-        venta.membresia.precio =
-          porcMembresia === 0 && porcSocio === 0
-            ? venta.membresia.precio
-            : venta.precio / ((porcMembresia + porcSocio) / 100);
+        venta.membresia.precio = venta.precio;
+        venta.membresia.precio = venta.membresia.getPrecioConAumento(
+          this.socio
+        );
         venta.membresia.vencimiento = venta.vto;
         venta.membresia.nroCuotas = venta.cuotas.length;
         (venta.membresia as any).cuotas = venta.cuotas;
@@ -63,35 +57,33 @@ export class MembresiasCompradasComponent implements OnInit {
   }
 
   agregarMembresia = membresia => {
-    this.membresiasSeleccionadas = [...this.membresiasSeleccionadas, membresia];
+    this.membresiaSeleccionada = membresia;
   };
 
   eliminarMembresia = membresia => {
-    this.membresiasSeleccionadas = this.membresiasSeleccionadas.filter(
-      m => m === membresia
-    );
+    this.membresiaSeleccionada = null;
   };
 
   cancelarSubscripciones() {
-    this.membresiasSeleccionadas.forEach(m => {
-      const venta = this.ventas.find(v => v.membresia.id === m.id);
-      this.socioSrv.eliminarVenta(venta.id, this.idSocio);
-    });
+    const venta = this.ventas.find(
+      v => v.membresia.id === this.membresiaSeleccionada.id
+    );
+    this.socioSrv.eliminarVenta(venta.id, this.idSocio);
 
-    this.membresiasSeleccionadas = [];
+    this.membresiaSeleccionada = null;
   }
 
-  membresiaSeleccionada = venta => {
-    this.membresiasSeleccionadas.some(m => m === venta.membresia);
+  membresiaEstaSeleccionada = venta => {
+    return this.membresiaSeleccionada === venta.membresia;
   };
 
   cancelarCuotas() {
-    this.membresiasSeleccionadas.forEach(m => {
-      const venta = this.ventas.find(v => v.membresia.id === m.id);
-      const ultimaCuota = m.cuotas.pop();
-      if (ultimaCuota.pagada) {
-        this.socioSrv.cancelarCuota(venta.id, ultimaCuota.id, this.idSocio);
-      }
-    });
+    const venta = this.ventas.find(
+      v => v.membresia.id === this.membresiaSeleccionada.id
+    );
+    const ultimaCuota = this.membresiaSeleccionada.cuotas.pop();
+    if (ultimaCuota.pagada) {
+      this.socioSrv.cancelarCuota(venta.id, ultimaCuota.id, this.idSocio);
+    }
   }
 }

@@ -23,10 +23,10 @@ class ProductoBack {
 }
 
 export class ProductoBuilder {
-  empty() {
+  static empty() {
     return new Producto(null, null, null, null, null, null);
   }
-  fromBackEnd(pb: ProductoBack) {
+  static fromBackEnd(pb: ProductoBack) {
     return new Producto(
       pb.nombre,
       pb.precio_compra,
@@ -37,7 +37,7 @@ export class ProductoBuilder {
       pb.id
     );
   }
-  toBackEnd(pf: Producto) {
+  static toBackEnd(pf: Producto) {
     return new ProductoBack(
       pf.concepto,
       pf.imagen,

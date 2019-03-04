@@ -7,7 +7,6 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class HttpServiceProfesor {
   subject = new BehaviorSubject<Profesor[]>([]);
   datos: Profesor[] = [];
-  builder = new ProfesorBuilder();
 
   constructor(private httpService: HttpService) {
     this.traerTodos().then(datos => {
@@ -30,7 +29,7 @@ export class HttpServiceProfesor {
       .post(
         new Modelos.Post(
           "/profesor/crear",
-          this.builder.toBackEnd(profesor),
+          ProfesorBuilder.toBackEnd(profesor),
           "El profesor fue creado con exito",
           "Hubo un error al crear el profesor. Intente nuevamente."
         )
@@ -47,7 +46,7 @@ export class HttpServiceProfesor {
       .put(
         new Modelos.Post(
           "/profesor/editar/" + profesor.id,
-          this.builder.toBackEnd(profesor),
+          ProfesorBuilder.toBackEnd(profesor),
           "El profesor fue editado con exito",
           "Hubo un error al editar el profesor. Intente nuevamente."
         )
@@ -84,7 +83,7 @@ export class HttpServiceProfesor {
           "Hubo un error al traer los profesores. Intente nuevamente."
         )
       ),
-      profesores => profesores.map(profesor => this.builder.fromBackEnd(profesor))
+      profesores => profesores.map(profesor => ProfesorBuilder.fromBackEnd(profesor))
     );
   };
 
@@ -96,7 +95,7 @@ export class HttpServiceProfesor {
           "Hubo un error al traer el profesor. Intente nuevamente."
         )
       ),
-      _profesor => this.builder.fromBackEnd(_profesor)
+      _profesor => ProfesorBuilder.fromBackEnd(_profesor)
     );
   };
 }

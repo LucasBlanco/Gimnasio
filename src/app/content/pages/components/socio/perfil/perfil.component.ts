@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  socio: Socio = new SocioBuilder().empty()
+  socio: Socio = SocioBuilder.empty()
 
   constructor(private activatedRouter: ActivatedRoute, private socioSrv: SociosService, private httpSrvSocio: HttpServiceSocios) { }
 

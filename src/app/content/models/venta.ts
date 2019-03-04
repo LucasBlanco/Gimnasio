@@ -37,6 +37,15 @@ export class Venta {
     public vto: string,
     public id: number
   ) {}
+
+  tieneCuotasImpagas = () => this.cuotas.some(c => !c.pagada);
+
+  getDescuento() {
+      return DescuentoBuilder.fusion(
+        this.descuentoMembresia,
+        this.descuentoSocio
+      );
+  }
 }
 
 export class VentaBack {
@@ -57,9 +66,9 @@ export class VentaBack {
 }
 
 export class VentaBuilder {
-  fromBackEnd(v: VentaBack) {
+  static fromBackEnd(v: VentaBack) {
     return new Venta(
-      new MembresiaBuilder().fromBackEnd({
+      MembresiaBuilder.fromBackEnd({
         ...v.membresia,
         servicios: v.servicios
       }),
@@ -75,9 +84,8 @@ export class VentaBuilder {
           )
       ),
       v.descuento_membresia &&
-        new DescuentoBuilder().fromBackEnd(v.descuento_membresia),
-      v.descuento_socio &&
-        new DescuentoBuilder().fromBackEnd(v.descuento_socio),
+        DescuentoBuilder.fromBackEnd(v.descuento_membresia),
+      v.descuento_socio && DescuentoBuilder.fromBackEnd(v.descuento_socio),
       v.precio,
       v.fecha,
       v.cantidad,

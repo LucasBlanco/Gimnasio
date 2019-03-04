@@ -5,7 +5,6 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 @Injectable()
 export class HttpServiceServicio {
-  builder = new ServicioBuilder();
   subject = new BehaviorSubject<Servicio[]>([]);
   datos: Servicio[] = [];
 
@@ -30,7 +29,7 @@ export class HttpServiceServicio {
       .post(
         new Modelos.Post(
           "/servicio/crear",
-          this.builder.toBackEnd(servicio),
+          ServicioBuilder.toBackEnd(servicio),
           "El servicio fue creado con exito",
           "Hubo un error al crear el servicio. Intente nuevamente."
         )
@@ -47,7 +46,7 @@ export class HttpServiceServicio {
       .put(
         new Modelos.Post(
           "/servicio/editar/" + servicio.id,
-          this.builder.toBackEnd(servicio),
+          ServicioBuilder.toBackEnd(servicio),
           "El servicio fue editado con exito",
           "Hubo un error al editar el servicio. Intente nuevamente."
         )
@@ -84,7 +83,7 @@ export class HttpServiceServicio {
           "Hubo un error al traer los servicios. Intente nuevamente."
         )
       ),
-      servicios => servicios.map(servicio => this.builder.fromBackEnd(servicio))
+      servicios => servicios.map(servicio => ServicioBuilder.fromBackEnd(servicio))
     );
   };
 
@@ -96,7 +95,7 @@ export class HttpServiceServicio {
           "Hubo un error al traer el servicio. Intente nuevamente."
         )
       ),
-      _servicio => this.builder.fromBackEnd(_servicio)
+      _servicio => ServicioBuilder.fromBackEnd(_servicio)
     );
   };
 }

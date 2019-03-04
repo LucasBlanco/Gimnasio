@@ -21,9 +21,9 @@ class CajaBack {
 }
 
 export class CajaBuilder {
-  empty() {
+  static empty() {
     return new Caja(null, null, null, null, null);
   }
-  fromBackEnd(pb: CajaBack) {}
-  toBackEnd() {}
+  static fromBackEnd(pb: CajaBack) {}
+  static toBackEnd() {}
 }

@@ -13,23 +13,22 @@ import { Producto, ProductoBuilder } from '../../../../models/producto';
 })
 export class AmProductoComponent implements OnChanges {
 
-  ProductoBuilder = new ProductoBuilder
-  @Input() productoAModificar: Producto = this.ProductoBuilder.empty();
+  @Input() productoAModificar: Producto = ProductoBuilder.empty();
   @Input() editando: boolean = false;
   @Output('alta') altaEmitter = new EventEmitter<Producto>();
   @Output('modificar') modificacionEmitter = new EventEmitter<Producto>();
   @Output('mostrarTabla') irALaTablaEmitter = new EventEmitter<void>();
-  producto: Producto = this.ProductoBuilder.empty();
+  producto: Producto = ProductoBuilder.empty();
   itemsSeleccionados = [];
 
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    this.producto = this.editando ? this.productoAModificar : this.ProductoBuilder.empty();
+    this.producto = this.editando ? this.productoAModificar : ProductoBuilder.empty();
   }
 
   borrar() {
-    this.producto = this.ProductoBuilder.empty();
+    this.producto = ProductoBuilder.empty();
   }
 
   irALaTabla() {

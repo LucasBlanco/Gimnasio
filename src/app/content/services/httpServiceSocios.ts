@@ -11,13 +11,12 @@ import { Observable } from "rxjs/internal/Observable";
 import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
 import * as moment from "moment";
 import { ServicioBuilder } from "../models/servicio";
-import { VentaBack, Venta, Cuota } from "../models/venta";
+import { VentaBack, Venta, Cuota, VentaBuilder } from "../models/venta";
 
 @Injectable()
 export class HttpServiceSocios {
   subjectSocios = new BehaviorSubject<Socio[]>([]);
   socios: Socio[] = [];
-  builder = new SocioBuilder();
 
   constructor(
     private httpService: HttpService,
@@ -45,7 +44,7 @@ export class HttpServiceSocios {
       .post(
         new Modelos.Post(
           "/socio/crear",
-          this.builder.toBackEnd(socio),
+          SocioBuilder.toBackEnd(socio),
           "El socio fue creado con exito",
           "Hubo un error al crear el socio. Intente nuevamente."
         )
@@ -62,7 +61,7 @@ export class HttpServiceSocios {
       .put(
         new Modelos.Post(
           "/socio/editar/" + socio.id,
-          this.builder.toBackEnd(socio),
+          SocioBuilder.toBackEnd(socio),
           "El socio fue modificado con exito",
           "Hubo un error al modificar el socio. Intente nuevamente."
         )
@@ -98,7 +97,7 @@ export class HttpServiceSocios {
       accesos =>
         accesos.map(({ created_at, servicio, ...resto }) => ({
           fecha: created_at,
-          servicio: new ServicioBuilder().fromBackEnd(servicio)
+          servicio: ServicioBuilder.fromBackEnd(servicio)
         }))
     );
   }
@@ -111,7 +110,7 @@ export class HttpServiceSocios {
           "Hubo un error al traer los socios. Intente nuevamente."
         )
       ),
-      socios => socios.map(socio => this.builder.fromBackEnd(socio))
+      socios => socios.map(socio => SocioBuilder.fromBackEnd(socio))
     );
   };
 
@@ -123,7 +122,7 @@ export class HttpServiceSocios {
           "Hubo un error al traer el socio. Intente nuevamente."
         )
       ),
-      _socio => this.builder.fromBackEnd(_socio)
+      _socio => SocioBuilder.fromBackEnd(_socio)
     );
   };
 
@@ -138,19 +137,27 @@ export class HttpServiceSocios {
       idDescuento: descuento && descuento.id,
       cantidad: 1
     }));
-    return this.httpService.post(
-      new Modelos.Post(
-        "/ventas/crear",
-        {
-          idSocio: idSocio,
-          tipoPago: tipoPago,
-          observacion: observacion,
-          membresias: membresiasBack
-        },
-        "La compra fue realizada exitosamente",
-        "Hubo un error al realizar la compra. Intente nuevamente."
+    return this.httpService
+      .post(
+        new Modelos.Post(
+          "/ventas/crear",
+          {
+            idSocio: idSocio,
+            tipoPago: tipoPago,
+            observacion: observacion,
+            membresias: membresiasBack
+          },
+          "La compra fue realizada exitosamente",
+          "Hubo un error al realizar la compra. Intente nuevamente."
+        )
       )
-    )
+      .then((ventas: VentaBack[]) => {
+        const socio = this.socios.find(s => s.id === idSocio);
+        const nuevasVentas = ventas.map(v => VentaBuilder.fromBackEnd(v))
+        socio.ventas = socio.ventas.filter(venta => !nuevasVentas.some(v => venta.id === v.id)); // Elimino las ventas repetidas 
+        socio.ventas = [...socio.ventas, ...nuevasVentas];
+        this.updateSociosObservers();
+      });
   }
 
   public entrarAServicio(idSocio: number, idServicio: number) {

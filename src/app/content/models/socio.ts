@@ -1,5 +1,6 @@
 import { Descuento, DescuentoBuilder, DescuentoBack } from "./descuento";
 import { Venta, VentaBack, VentaBuilder } from "./venta";
+import { IBuilder } from "./builder";
 
 export class Socio {
   constructor(
@@ -37,7 +38,7 @@ export class SocioBack {
 }
 
 export class SocioBuilder {
-  empty() {
+  static empty() {
     return new Socio(
       null,
       null,
@@ -52,11 +53,11 @@ export class SocioBuilder {
       null
     );
   }
-  fromBackEnd(sb: SocioBack) {
+  static fromBackEnd(sb: SocioBack) {
     return new Socio(
       sb.nombre,
       sb.apellido,
-      sb.descuento && new DescuentoBuilder().fromBackEnd(sb.descuento),
+      sb.descuento && DescuentoBuilder.fromBackEnd(sb.descuento),
       sb.fecha_nacimiento,
       sb.dni,
       sb.celular,
@@ -66,10 +67,10 @@ export class SocioBuilder {
       sb.nro_socio,
       `foto/socio/${sb.id}`,
       sb.id,
-      sb.ventas.map(venta => new VentaBuilder().fromBackEnd(venta))
+      sb.ventas.map(venta => VentaBuilder.fromBackEnd(venta))
     );
   }
-  toBackEnd(sf: Socio) {
+  static toBackEnd(sf: Socio) {
     const socio = new SocioBack(
       sf.nombre,
       sf.apellido,

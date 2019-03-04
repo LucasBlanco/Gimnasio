@@ -36,7 +36,8 @@
                   type="date"
                   class="form-control m-input"
                   name="fecha"
-                  [(ngModel)]="clase.fecha"
+                  [value]="clase.fecha?.back"
+                  (change)="clase.fecha.change($event.target.value)"
                   required
                 />
                 <span class="m-input-icon__icon m-input-icon__icon--right">
@@ -54,7 +55,7 @@
                   [multiple]="true"
                   class="custom"
                   bindLabel="nombre"
-                  [name]="profesor"
+                  name="profesor"
                   [(ngModel)]="clase.profesores"
                 ></ng-select>
               </div>
@@ -136,7 +137,7 @@
               [items]="servicios"
               class="custom"
               bindLabel="nombre"
-              [name]="servicio"
+              name="servicio"
               [(ngModel)]="clase.servicio"
             ></ng-select>
           </div>

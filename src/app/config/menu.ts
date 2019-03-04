@@ -45,16 +45,16 @@ export class MenuConfig implements ConfigModel {
                             page: "/header/actions"
                           },
                           {
-                            title: 'Timesheet',
-                            page: '/inner'
+                            title: "Timesheet",
+                            page: "/inner"
                           },
                           {
-                            title: 'Payroll',
-                            page: '/inner'
+                            title: "Payroll",
+                            page: "/inner"
                           },
                           {
-                            title: 'Contacts',
-                            page: '/inner'
+                            title: "Contacts",
+                            page: "/inner"
                           }
                         ]
                       }
@@ -62,258 +62,258 @@ export class MenuConfig implements ConfigModel {
                   }
                 },
                 {
-                  title: 'Generate Reports',
-                  page: '/inner',
-                  icon: 'flaticon-diagram',
+                  title: "Generate Reports",
+                  page: "/inner",
+                  icon: "flaticon-diagram",
                   badge: {
-                    type: 'm-badge--success',
-                    value: '2'
+                    type: "m-badge--success",
+                    value: "2"
                   }
                 },
                 {
-                  title: 'Manage Orders',
-                  icon: 'flaticon-business',
+                  title: "Manage Orders",
+                  icon: "flaticon-business",
                   submenu: {
-                    type: 'classic',
-                    alignment: 'right',
-                    bullet: 'line',
+                    type: "classic",
+                    alignment: "right",
+                    bullet: "line",
                     items: [
                       {
-                        title: 'Latest Orders',
-                        page: '/inner',
-                        icon: ''
+                        title: "Latest Orders",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Pending Orders',
-                        page: '/inner',
-                        icon: ''
+                        title: "Pending Orders",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Processed Orders',
-                        page: '/inner',
-                        icon: ''
+                        title: "Processed Orders",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Delivery Reports',
-                        page: '/inner',
-                        icon: ''
+                        title: "Delivery Reports",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Payments',
-                        page: '/inner',
-                        icon: ''
+                        title: "Payments",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Customers',
-                        page: '/inner',
-                        icon: ''
+                        title: "Customers",
+                        page: "/inner",
+                        icon: ""
                       }
                     ]
                   }
                 },
                 {
-                  title: 'Customer Feedbacks',
-                  page: '/#',
-                  icon: 'flaticon-chat-1',
+                  title: "Customer Feedbacks",
+                  page: "/#",
+                  icon: "flaticon-chat-1",
                   submenu: {
-                    type: 'classic',
-                    alignment: 'right',
-                    bullet: 'dot',
+                    type: "classic",
+                    alignment: "right",
+                    bullet: "dot",
                     items: [
                       {
-                        title: 'Customer Feedbacks',
-                        page: '/inner',
-                        icon: ''
+                        title: "Customer Feedbacks",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Supplier Feedbacks',
-                        page: '/inner',
-                        icon: ''
+                        title: "Supplier Feedbacks",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Reviewed Feedbacks',
-                        page: '/inner',
-                        icon: ''
+                        title: "Reviewed Feedbacks",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Resolved Feedbacks',
-                        page: '/inner',
-                        icon: ''
+                        title: "Resolved Feedbacks",
+                        page: "/inner",
+                        icon: ""
                       },
                       {
-                        title: 'Feedback Reports',
-                        page: '/inner',
-                        icon: ''
+                        title: "Feedback Reports",
+                        page: "/inner",
+                        icon: ""
                       }
                     ]
                   }
                 },
                 {
-                  title: 'Register Member',
-                  page: '/inner',
-                  icon: 'flaticon-users'
+                  title: "Register Member",
+                  page: "/inner",
+                  icon: "flaticon-users"
                 }
               ]
             }
           },
           {
-            title: 'Reports',
+            title: "Reports",
             root: true,
-            icon: 'flaticon-line-graph',
-            toggle: 'click',
-            translate: 'MENU.REPORTS',
+            icon: "flaticon-line-graph",
+            toggle: "click",
+            translate: "MENU.REPORTS",
             submenu: {
-              type: 'mega',
-              width: '1000px',
-              alignment: 'left',
+              type: "mega",
+              width: "1000px",
+              alignment: "left",
               columns: [
                 {
                   heading: {
                     heading: true,
-                    title: 'Finance Reports'
+                    title: "Finance Reports"
                   },
                   items: [
                     {
-                      title: 'Annual Reports',
-                      page: '/inner',
-                      icon: 'flaticon-map'
+                      title: "Annual Reports",
+                      page: "/inner",
+                      icon: "flaticon-map"
                     },
                     {
-                      title: 'HR Reports',
-                      page: '/inner',
-                      icon: 'flaticon-user'
+                      title: "HR Reports",
+                      page: "/inner",
+                      icon: "flaticon-user"
                     },
                     {
-                      title: 'IPO Reports',
-                      page: '/inner',
-                      icon: 'flaticon-clipboard'
+                      title: "IPO Reports",
+                      page: "/inner",
+                      icon: "flaticon-clipboard"
                     },
                     {
-                      title: 'Finance Margins',
-                      page: '/inner',
-                      icon: 'flaticon-graphic-1'
+                      title: "Finance Margins",
+                      page: "/inner",
+                      icon: "flaticon-graphic-1"
                     },
                     {
-                      title: 'Revenue Reports',
-                      page: '/inner',
-                      icon: 'flaticon-graphic-2'
+                      title: "Revenue Reports",
+                      page: "/inner",
+                      icon: "flaticon-graphic-2"
                     }
                   ]
                 },
                 {
-                  bullet: 'line',
+                  bullet: "line",
                   heading: {
                     heading: true,
-                    title: 'Project Reports'
+                    title: "Project Reports"
                   },
                   items: [
                     {
-                      title: 'Coca Cola CRM',
-                      page: '/inner',
-                      icon: ''
+                      title: "Coca Cola CRM",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Delta Airlines Booking Site',
-                      page: '/inner',
-                      icon: ''
+                      title: "Delta Airlines Booking Site",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Malibu Accounting',
-                      page: '/inner',
-                      icon: ''
+                      title: "Malibu Accounting",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Vineseed Website Rewamp',
-                      page: '/inner',
-                      icon: ''
+                      title: "Vineseed Website Rewamp",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Zircon Mobile App',
-                      page: '/inner',
-                      icon: ''
+                      title: "Zircon Mobile App",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Mercury CMS',
-                      page: '/inner',
-                      icon: ''
+                      title: "Mercury CMS",
+                      page: "/inner",
+                      icon: ""
                     }
                   ]
                 },
                 {
-                  bullet: 'dot',
+                  bullet: "dot",
                   heading: {
                     heading: true,
-                    title: 'HR Reports'
+                    title: "HR Reports"
                   },
                   items: [
                     {
-                      title: 'Staff Directory',
-                      page: '/inner',
-                      icon: ''
+                      title: "Staff Directory",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Client Directory',
-                      page: '/inner',
-                      icon: ''
+                      title: "Client Directory",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Salary Reports',
-                      page: '/inner',
-                      icon: ''
+                      title: "Salary Reports",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Staff Payslips',
-                      page: '/inner',
-                      icon: ''
+                      title: "Staff Payslips",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Corporate Expenses',
-                      page: '/inner',
-                      icon: ''
+                      title: "Corporate Expenses",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Project Expenses',
-                      page: '/inner',
-                      icon: ''
+                      title: "Project Expenses",
+                      page: "/inner",
+                      icon: ""
                     }
                   ]
                 },
                 {
                   heading: {
                     heading: true,
-                    title: 'Reporting Apps',
-                    icon: ''
+                    title: "Reporting Apps",
+                    icon: ""
                   },
                   items: [
                     {
-                      title: 'Report Adjusments',
-                      page: '/inner',
-                      icon: ''
+                      title: "Report Adjusments",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Sources & Mediums',
-                      page: '/inner',
-                      icon: ''
+                      title: "Sources & Mediums",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Reporting Settings',
-                      page: '/inner',
-                      icon: ''
+                      title: "Reporting Settings",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Conversions',
-                      page: '/inner',
-                      icon: ''
+                      title: "Conversions",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Report Flows',
-                      page: '/inner',
-                      icon: ''
+                      title: "Report Flows",
+                      page: "/inner",
+                      icon: ""
                     },
                     {
-                      title: 'Audit & Logs',
-                      page: '/inner',
-                      icon: ''
+                      title: "Audit & Logs",
+                      page: "/inner",
+                      icon: ""
                     }
                   ]
                 }
@@ -321,127 +321,127 @@ export class MenuConfig implements ConfigModel {
             }
           },
           {
-            title: 'Apps',
+            title: "Apps",
             root: true,
-            icon: 'flaticon-paper-plane',
-            toggle: 'click',
-            translate: 'MENU.APPS',
+            icon: "flaticon-paper-plane",
+            toggle: "click",
+            translate: "MENU.APPS",
             badge: {
-              type: 'm-badge--brand m-badge--wide',
-              value: 'new',
-              translate: 'MENU.NEW'
+              type: "m-badge--brand m-badge--wide",
+              value: "new",
+              translate: "MENU.NEW"
             },
             submenu: {
-              type: 'classic',
-              alignment: 'left',
+              type: "classic",
+              alignment: "left",
               items: [
                 {
-                  title: 'eCommerce',
-                  page: '/inner',
-                  icon: 'flaticon-business',
+                  title: "eCommerce",
+                  page: "/inner",
+                  icon: "flaticon-business",
                   submenu: {
-                    type: 'classic',
-                    alignment: 'right',
+                    type: "classic",
+                    alignment: "right",
                     items: [
                       {
-                        title: 'Customers',
-                        page: '/ecommerce/customers',
-                        icon: 'flaticon-users'
+                        title: "Customers",
+                        page: "/ecommerce/customers",
+                        icon: "flaticon-users"
                       },
                       {
-                        title: 'Orders',
-                        page: '/ecommerce/orders',
-                        icon: 'flaticon-interface-1'
+                        title: "Orders",
+                        page: "/ecommerce/orders",
+                        icon: "flaticon-interface-1"
                       },
                       {
-                        title: 'Products',
-                        page: '/ecommerce/products',
-                        icon: 'flaticon-list-1'
+                        title: "Products",
+                        page: "/ecommerce/products",
+                        icon: "flaticon-list-1"
                       }
                     ]
                   }
                 },
                 {
-                  title: 'Audience',
-                  page: '/crud/datatable_v1',
-                  icon: 'flaticon-computer',
+                  title: "Audience",
+                  page: "/crud/datatable_v1",
+                  icon: "flaticon-computer",
                   submenu: {
-                    type: 'classic',
-                    alignment: 'right',
+                    type: "classic",
+                    alignment: "right",
                     items: [
                       {
-                        title: 'Active Users',
-                        page: '/inner',
-                        icon: 'flaticon-users'
+                        title: "Active Users",
+                        page: "/inner",
+                        icon: "flaticon-users"
                       },
                       {
-                        title: 'User Explorer',
-                        page: '/inner',
-                        icon: 'flaticon-interface-1'
+                        title: "User Explorer",
+                        page: "/inner",
+                        icon: "flaticon-interface-1"
                       },
                       {
-                        title: 'Users Flows',
-                        page: '/inner',
-                        icon: 'flaticon-lifebuoy'
+                        title: "Users Flows",
+                        page: "/inner",
+                        icon: "flaticon-lifebuoy"
                       },
                       {
-                        title: 'Market Segments',
-                        page: '/inner',
-                        icon: 'flaticon-graphic-1'
+                        title: "Market Segments",
+                        page: "/inner",
+                        icon: "flaticon-graphic-1"
                       },
                       {
-                        title: 'User Reports',
-                        page: '/inner',
-                        icon: 'flaticon-graphic'
+                        title: "User Reports",
+                        page: "/inner",
+                        icon: "flaticon-graphic"
                       }
                     ]
                   }
                 },
                 {
-                  title: 'Marketing',
-                  page: '/inner',
-                  icon: 'flaticon-map'
+                  title: "Marketing",
+                  page: "/inner",
+                  icon: "flaticon-map"
                 },
                 {
-                  title: 'Campaigns',
-                  page: '/inner',
-                  icon: 'flaticon-graphic-2',
+                  title: "Campaigns",
+                  page: "/inner",
+                  icon: "flaticon-graphic-2",
                   badge: {
-                    type: 'm-badge--success',
-                    value: '3'
+                    type: "m-badge--success",
+                    value: "3"
                   }
                 },
                 {
-                  title: 'Cloud Manager',
-                  page: '/inner',
-                  icon: 'flaticon-infinity',
+                  title: "Cloud Manager",
+                  page: "/inner",
+                  icon: "flaticon-infinity",
                   submenu: {
-                    type: 'classic',
-                    alignment: 'left',
+                    type: "classic",
+                    alignment: "left",
                     items: [
                       {
-                        title: 'File Upload',
-                        page: '/inner',
-                        icon: 'flaticon-add',
+                        title: "File Upload",
+                        page: "/inner",
+                        icon: "flaticon-add",
                         badge: {
-                          type: 'm-badge--danger',
-                          value: '3'
+                          type: "m-badge--danger",
+                          value: "3"
                         }
                       },
                       {
-                        title: 'File Attributes',
-                        page: '/inner',
-                        icon: 'flaticon-signs-1'
+                        title: "File Attributes",
+                        page: "/inner",
+                        icon: "flaticon-signs-1"
                       },
                       {
-                        title: 'Folders',
-                        page: '/inner',
-                        icon: 'flaticon-folder'
+                        title: "Folders",
+                        page: "/inner",
+                        icon: "flaticon-folder"
                       },
                       {
-                        title: 'System Settings',
-                        page: '/inner',
-                        icon: 'flaticon-cogwheel-2'
+                        title: "System Settings",
+                        page: "/inner",
+                        icon: "flaticon-cogwheel-2"
                       }
                     ]
                   }
@@ -455,175 +455,175 @@ export class MenuConfig implements ConfigModel {
         self: {},
         items: [
           {
-            title: 'Inicio',
-            desc: 'Some description goes here',
+            title: "Inicio",
+            desc: "Some description goes here",
             root: true,
-            icon: 'flaticon-line-graph',
-            page: '/',
+            icon: "flaticon-line-graph",
+            page: "/",
             // badge: {type: 'm-badge--danger', value: '2'},
-            translate: 'MENU.DASHBOARD'
+            translate: "MENU.DASHBOARD"
           },
-          { section: 'ABM' },
+          { section: "ABM" },
           {
-            title: 'Socios',
+            title: "Socios",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-user',
+            bullet: "dot",
+            icon: "flaticon-user",
             submenu: [
               {
-                title: 'Alta',
-                page: '/socios/am'
+                title: "Alta",
+                page: "/socios/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/socios/tabla'
+                title: "Baja-Modificacion",
+                page: "/socios/tabla"
               },
               {
-                title: 'Vencimientos',
-                page: '/vencimientos'
+                title: "Vencimientos",
+                page: "/vencimientos"
               }
             ]
           },
           {
-            title: 'Membresias',
+            title: "Membresias",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-membership',
+            bullet: "dot",
+            icon: "flaticon-membership",
             submenu: [
               {
-                title: 'Alta',
-                page: '/checkMembresia/am'
+                title: "Alta",
+                page: "/checkMembresia/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/checkMembresia/tabla'
+                title: "Baja-Modificacion",
+                page: "/checkMembresia/tabla"
               }
             ]
           },
           {
-            title: 'Servicios',
+            title: "Servicios",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-kettlebell',
+            bullet: "dot",
+            icon: "flaticon-kettlebell",
             submenu: [
               {
-                title: 'Alta',
-                page: '/servicio/am'
+                title: "Alta",
+                page: "/servicio/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/servicio/tabla'
+                title: "Baja-Modificacion",
+                page: "/servicio/tabla"
               }
             ]
           },
           {
-            title: 'Descuentos',
+            title: "Descuentos",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-tag',
+            bullet: "dot",
+            icon: "flaticon-tag",
             submenu: [
               {
-                title: 'Alta',
-                page: '/descuento/am'
+                title: "Alta",
+                page: "/descuento/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/descuento/tabla'
+                title: "Baja-Modificacion",
+                page: "/descuento/tabla"
               }
             ]
           },
           {
-            title: 'Profesores',
+            title: "Profesores",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-muscle',
+            bullet: "dot",
+            icon: "flaticon-muscle",
             submenu: [
               {
-                title: 'Alta',
-                page: '/profesor/am'
+                title: "Alta",
+                page: "/profesor/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/profesor/tabla'
+                title: "Baja-Modificacion",
+                page: "/profesor/tabla"
               }
             ]
           },
           {
-            title: 'Productos',
+            title: "Productos",
             root: true,
-            bullet: 'dot',
-            icon: 'la la-coffee',
+            bullet: "dot",
+            icon: "la la-coffee",
             submenu: [
               {
-                title: 'Alta',
-                page: '/producto/am'
+                title: "Alta",
+                page: "/producto/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/producto/tabla'
+                title: "Baja-Modificacion",
+                page: "/producto/tabla"
               }
             ]
           },
           {
-            title: 'Clases',
+            title: "Clases",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-muscle',
+            bullet: "dot",
+            icon: "flaticon-muscle",
             submenu: [
               {
-                title: 'Alta',
-                page: '/clase/am'
+                title: "Alta",
+                page: "/clase/am"
               },
               {
-                title: 'Baja-Modificacion',
-                page: '/clase/tabla'
+                title: "Baja-Modificacion",
+                page: "/clase/tabla"
               }
             ]
           },
-          { section: 'Caja' },
+          { section: "Caja" },
           {
-            title: 'Caja',
+            title: "Caja",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-bag',
+            bullet: "dot",
+            icon: "flaticon-bag",
             submenu: [
               {
-                title: 'Ingresos/egresos',
-                page: '/caja/ingresos'
+                title: "Ingresos/egresos",
+                page: "/caja/ingresos"
               },
               {
-                title: 'Movimientos',
-                page: '/caja/movimientos'
+                title: "Movimientos",
+                page: "/caja/movimientos"
               }
             ]
           },
-          { section: 'Clases' },
+          { section: "Clases" },
           {
-            title: 'Clase',
+            title: "Clase",
             root: true,
-            bullet: 'dot',
-            icon: 'flaticon-bag',
+            bullet: "dot",
+            icon: "flaticon-bag",
             submenu: [
               {
-                title: 'Tomar Presente',
-                page: '/clase/tomarPresente'
+                title: "Tomar Presente",
+                page: "/presente/tomarPresente"
               }
             ]
           },
-          { section: 'Stock' },
+          { section: "Stock" },
           {
-            title: 'Gestion de stock',
+            title: "Gestion de stock",
             root: true,
-            bullet: 'dot',
-            icon: 'la la-dropbox',
+            bullet: "dot",
+            icon: "la la-dropbox",
             submenu: [
               {
-                title: 'Compras/Ventas',
-                page: '/stock/gestion'
+                title: "Compras/Ventas",
+                page: "/stock/gestion"
               },
               {
-                title: 'Historial',
-                page: '/stock/historial'
+                title: "Historial",
+                page: "/stock/historial"
               }
             ]
           }

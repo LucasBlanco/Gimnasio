@@ -1,0 +1,69 @@
+<div class="m-widget3 px-lg-5">
+  <div class="row">
+    <div class="col-xl-6" *ngFor="let clase of clases">
+      <div class="m-widget3__item rounded border p-5 shadow">
+        <div class="m-widget3__header">
+          <div class="m-widget3__user-img">
+            <img
+              alt=""
+              class="m-widget3__img"
+              src="./assets/app/media/img/logos/barbellSmall.png"
+            />
+          </div>
+          <div class="m-widget3__info">
+            <span class="m-widget3__username" style="font-size: 1.2rem;">
+              {{ clase.servicio.nombre }} </span
+            ><br /><span class="m-widget3__time"> 0 presentes de 15 </span>
+          </div>
+          <span
+            [class]="
+              'm-widget3__status' + clase.presenteTomado
+                ? 'm--font-danger'
+                : 'm--font-success'
+            "
+          >
+            {{ clase.presenteTomado ? "Completo" : "Pendiente" }}
+          </span>
+        </div>
+        <div class="m-widget3__body ">
+          <div class="m-widget3__text">
+            <div class="row ">
+              <div class="col">
+                <div class="row">
+                  <div class="col-md-6      ">
+                    <span>Horarios</span>
+                    <ul>
+                      <li>Inicio: {{ clase.horaInicio }}</li>
+                      <li>Salida: {{ clase.horaFin }}</li>
+                      <li>Entrada desde: {{ clase.entradaDesde }}</li>
+                      <li>Entrada hasta: {{ clase.entradaHasta }}</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <span>Profesores</span>
+                    <ul>
+                      <li *ngFor="let profesor of clase.profesores">
+                        {{ profesor.apellido }}, {{ profesor.nombre }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <a
+                  class="btn btn-outline-success m-btn m-btn--icon btn-lg m-btn--icon-only m-btn--pill m-btn--air "
+                  style="color: #34bfa3;"
+                  ><i
+                    class="la la-angle-right "
+                    (click)="elegirClase(clase)"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

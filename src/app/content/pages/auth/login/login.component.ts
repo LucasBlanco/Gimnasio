@@ -17,6 +17,7 @@ import * as objectPath from "object-path";
 import { TranslateService } from "@ngx-translate/core";
 import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import * as JWT from "jwt-decode";
+import {environment} from "../../../../../environments/environment"
 
 @Component({
   selector: "m-login",
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // https://back.thenewfit.com.ar
     // ng build --prod --base-href ./ --aot=false --build-optimizer=false --watch
     this.http
-      .post("http://localhost:8000/login", userlogin, options)
+      .post(environment.ip + "/login", userlogin, options)
       .toPromise()
       .then((response: any) => {
         const token = JSON.parse(response._body).data.token;

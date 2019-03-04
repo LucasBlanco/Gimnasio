@@ -4,7 +4,7 @@ import { ProfesorBack } from "./profesor";
 export class Servicio {
   constructor(
     public nombre: string,
-    public dias: Array<{ dia: string; horarios: HorarioServicio[] }>,
+    public dias: Array<{ dia: string; horarios: HorarioServicio[] }> = [],
     public registraEntrada: boolean,
     public id?: number
   ) {}
@@ -31,7 +31,7 @@ export class ServicioBack {
 }
 
 export class ServicioBuilder {
-  private getID = dia =>
+  private static getID = dia =>
     [
       "lunes",
       "martes",
@@ -42,7 +42,7 @@ export class ServicioBuilder {
       "domingo"
     ].findIndex(_dia => _dia === dia) + 1;
 
-  private getDia = id =>
+  private static getDia = id =>
     [
       "lunes",
       "martes",
@@ -53,10 +53,10 @@ export class ServicioBuilder {
       "domingo"
     ].find((_dia, i) => i + 1 === id);
 
-  empty() {
+  static empty() {
     return new Servicio(null, [], false);
   }
-  toBackEnd(s: Servicio) {
+  static toBackEnd(s: Servicio) {
     const { nombre, registraEntrada, dias } = s;
     const dias2 = dias.map(({ dia, horarios }) => ({
       id: this.getID(dia),
@@ -81,7 +81,7 @@ export class ServicioBuilder {
     return { nombre, registra_entrada: registraEntrada, dias: dias2 };
   }
 
-  fromBackEnd(s: ServicioBack) {
+  static fromBackEnd(s: ServicioBack) {
     const agruparPorDia = horarios => {
       const dias = Array.from(new Set(horarios.map(h => h.dia)));
       const agrupados = dias.map(dia => ({
@@ -92,21 +92,22 @@ export class ServicioBuilder {
     };
     return new Servicio(
       s.nombre,
-      agruparPorDia(s.horarios).map(h => ({
-        dia: this.getDia(h.dia),
-        horarios: h.horarios.map(
-          hs =>
-            new HorarioServicio(
-              hs.desde,
-              hs.hasta,
-              hs.entrada_desde,
-              hs.entrada_hasta,
-              hs.profesores.map(p => p),
-              null,
-              null
-            )
-        )
-      })),
+      s.horarios &&
+        agruparPorDia(s.horarios).map(h => ({
+          dia: this.getDia(h.dia),
+          horarios: h.horarios.map(
+            hs =>
+              new HorarioServicio(
+                hs.desde,
+                hs.hasta,
+                hs.entrada_desde,
+                hs.entrada_hasta,
+                hs.profesores.map(p => p),
+                null,
+                null
+              )
+          )
+        })),
       s.registra_entrada,
       s.id
     );

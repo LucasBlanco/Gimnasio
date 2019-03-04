@@ -8,7 +8,6 @@ import { CompraProducto } from '../models/compraProducto';
 export class HttpServiceProducto {
   subject = new BehaviorSubject<Producto[]>([]);
   datos: Producto[] = [];
-  builder = new ProductoBuilder
 
   constructor(private httpService: HttpService) {
     this.traerTodos().then(datos => {
@@ -31,7 +30,7 @@ export class HttpServiceProducto {
       .post(
         new Modelos.Post(
           '/producto/crear',
-          this.builder.toBackEnd(producto),
+          ProductoBuilder.toBackEnd(producto),
           'El producto fue creado con exito',
           'Hubo un error al crear el producto. Intente nuevamente.'
         )
@@ -48,7 +47,7 @@ export class HttpServiceProducto {
       .put(
         new Modelos.Post(
           '/producto/editar/' + producto.id,
-          this.builder.toBackEnd(producto),
+          ProductoBuilder.toBackEnd(producto),
           'El producto fue editado con exito',
           'Hubo un error al editar el producto. Intente nuevamente.'
         )
@@ -86,7 +85,7 @@ export class HttpServiceProducto {
         )
       ),
       productos =>
-        productos.map(producto => this.builder.fromBackEnd(producto))
+        productos.map(producto => ProductoBuilder.fromBackEnd(producto))
     );
   };
 
@@ -98,7 +97,7 @@ export class HttpServiceProducto {
           'Hubo un error al traer el producto. Intente nuevamente.'
         )
       ),
-      _producto => this.builder.fromBackEnd(_producto)
+      _producto => ProductoBuilder.fromBackEnd(_producto)
     );
   };
 

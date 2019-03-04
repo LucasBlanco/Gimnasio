@@ -16,11 +16,11 @@
         <span class="ml-3">
           <span
             *ngIf="membresiaTieneCuotasImpagas()"
-            class="m-badge m-badge--info m-badge--wide"
+            [class]="'m-badge m-badge--wide '+ estadoCuotaAPagar(membrsia)"
             >Cuota {{ cuotaAPagar().nroCuota }}</span
           >
           <span
-            *ngIf="!membresiaTieneCuotasImpagas()"
+            *ngIf="membresiaTieneCuotas() && !membresiaTieneCuotasImpagas()"
             class="m-badge m-badge--success m-badge--wide"
             >Pagada</span
           >

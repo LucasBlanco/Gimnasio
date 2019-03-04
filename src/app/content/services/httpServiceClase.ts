@@ -6,7 +6,6 @@ import { Observable, BehaviorSubject } from "rxjs";
 import { Clase, ClaseBuilder } from "../models/clase";
 @Injectable()
 export class HttpServiceClase {
-  builder = new ClaseBuilder();
   subject = new BehaviorSubject<Clase[]>([]);
   datos: Clase[] = [];
 
@@ -16,6 +15,9 @@ export class HttpServiceClase {
     this.subject.next(this.datos);
   }
 
+  public getSubscription = (): Observable<any> => {
+    return this.subject.asObservable();
+  };
 
   public crear = (clase: Clase) => {
     delete clase.id;
@@ -23,14 +25,14 @@ export class HttpServiceClase {
       .post(
         new Modelos.Post(
           "/clase/crear",
-          this.builder.toBackEnd(clase),
+          ClaseBuilder.toBackEnd(clase),
           "El clase fue creado con exito",
           "Hubo un error al crear la clase. Intente nuevamente."
         )
       )
       .then((id: number) => {
         clase.id = id;
-        this.datos.push(clase);
+        this.datos = [...this.datos, clase];
         this.updateObservers();
       });
   };
@@ -40,15 +42,14 @@ export class HttpServiceClase {
       .put(
         new Modelos.Post(
           "/clase/editar/" + clase.id,
-          this.builder.toBackEnd(clase),
+          ClaseBuilder.toBackEnd(clase),
           "El clase fue editado con exito",
           "Hubo un error al editar la clase. Intente nuevamente."
         )
       )
       .then(() => {
-        this.datos = this.datos.map(_producto =>
-          _producto.id === clase.id ? clase : _producto
-        );
+        let _clase = this.datos.find(d => d.id === clase.id);
+        _clase = clase;
         this.updateObservers();
       });
   };
@@ -69,17 +70,46 @@ export class HttpServiceClase {
       });
   };
 
-  public traerTodos = (): Promise<Array<Clase>> => {
-    return this.httpService.mapper(
-      this.httpService.get(
-        new Modelos.Get(
+  public traerTodos = (fechaDesde, fechaHasta): Promise<Array<Clase>> => {
+    return (this.httpService.mapper(
+      this.httpService.post(
+        new Modelos.Post(
           "/clase/all",
+          { fechaDesde: fechaDesde, fechaHasta: fechaHasta },
+          null,
           "Hubo un error al traer los clases. Intente nuevamente."
         )
       ),
-      clases => clases.map(clase => this.builder.fromBackEnd(clase))
-    );
+      clases => clases.map(clase => ClaseBuilder.fromBackEnd(clase))
+    ) as any).then(clases => {
+      this.datos = clases;
+      this.updateObservers();
+    });
   };
+
+  public traerClasesDelDia() {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/clase/delDia",
+          "Hubo un error al traer las clases. Intente nuevamente."
+        )
+      ),
+      clases => clases.map(clase => ClaseBuilder.fromBackEnd(clase))
+    );
+  }
+
+  public traerClasesEnTranscurso() {
+    return this.httpService.mapper(
+      this.httpService.get(
+        new Modelos.Get(
+          "/clase/enTranscurso",
+          "Hubo un error al traer las clases. Intente nuevamente."
+        )
+      ),
+      clases => clases.map(clase => ClaseBuilder.fromBackEnd(clase))
+    );
+  }
 
   public traerUno = (clase: Clase): Promise<Clase> => {
     return this.httpService.mapper(
@@ -89,7 +119,7 @@ export class HttpServiceClase {
           "Hubo un error al traer la clase. Intente nuevamente."
         )
       ),
-      _producto => this.builder.fromBackEnd(_producto)
+      _producto => ClaseBuilder.fromBackEnd(_producto)
     );
   };
 }

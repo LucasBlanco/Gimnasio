@@ -10,7 +10,7 @@ import { HttpServiceSocios } from '../../../../services/httpServiceSocios';
 })
 export class NavegacionSocioComponent implements OnInit {
 
-	socio: Socio = new SocioBuilder().empty()
+	socio: Socio = SocioBuilder.empty()
 	idSocio = null
 
 	constructor(private router: Router, private httpSrvSocio: HttpServiceSocios, private socioSrv: SociosService) { }

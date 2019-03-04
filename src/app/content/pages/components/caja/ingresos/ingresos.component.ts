@@ -10,14 +10,14 @@ export class IngresosComponent implements OnInit {
   @Output("ingreso") emitIngreso = new EventEmitter();
   @Output("egreso") emitEgreso = new EventEmitter();
 
-  caja: Caja = new CajaBuilder().empty();
+  caja: Caja = CajaBuilder.empty();
 
   constructor() {}
 
   ngOnInit() {}
 
   borrar() {
-    this.caja = new CajaBuilder().empty();
+    this.caja = CajaBuilder.empty();
   }
 
   enviarEvento() {

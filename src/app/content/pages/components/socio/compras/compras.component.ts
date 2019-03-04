@@ -10,8 +10,8 @@ import { Socio, SocioBuilder } from "../../../../models/socio";
 import { HttpServiceSocios } from "../../../../services/httpServiceSocios";
 import { SociosService } from "../serviceSocio";
 import { HttpServiceMembresia } from "../../../../services/httpServiceMembresia";
-import { Membresia } from "../../../../models/membresia";
-import { Descuento } from "../../../../models/descuento";
+import { Membresia, MembresiaBuilder } from "../../../../models/membresia";
+import { Descuento, DescuentoBuilder } from "../../../../models/descuento";
 import { ModalSelect } from "../../shared-components/modalSingleElement/modalSelect.component";
 import * as Modelos from "../../../../models/generales";
 import { ActivatedRoute } from "@angular/router";
@@ -23,7 +23,7 @@ declare var $: any;
   templateUrl: "./compras.component.html"
 })
 export class ComprasComponent implements OnInit {
-  @Input() socio: Socio = new SocioBuilder().empty();
+  @Input() socio: Socio = SocioBuilder.empty();
 
   membresias: (Membresia & { cuotas: Cuota[] })[] = []; // cuotas por si es una membresia en cuotas y se debe pagar una cuota N
   membresiasSelec: (Membresia & { cuotas: Cuota[] })[] = [];
@@ -45,14 +45,17 @@ export class ComprasComponent implements OnInit {
 
   iniciar() {
     this.activatedRouter.params.subscribe(params => {
-      this.socio = new SocioBuilder().empty();
+      this.socio = SocioBuilder.empty();
       this.membresias = [];
       this.membresiasSelec = [];
       this.srvSocio.changeIdSocio(+params["id"]);
       this.httpSrvSocio.getSubscription().subscribe(socios => {
+        const descuento = DescuentoBuilder.empty();
+
+        (this.membresias as any) = this.httpServiceMembresia.datos; // reinicio las referencias a las membresias originales para tenerlas como estaban de base
         this.socio =
           socios.find(s => s.id === this.srvSocio.idSocio) ||
-          new SocioBuilder().empty();
+          SocioBuilder.empty();
         this.seleccionarMembresias();
       });
       this.httpServiceMembresia.getSubscription().subscribe(membresias => {
@@ -75,12 +78,16 @@ export class ComprasComponent implements OnInit {
           ventas.some(v => m.id === v.membresia.id)
         );
         this.membresiasSelec.forEach(m => {
-          const venta = ventas.find(v => v.membresia.id === m.id);
-          m.descuento = venta.descuentoMembresia;
-          if (m.nroCuotas > 1) {
-            m.precio =
-              venta.precio / (venta.descuentoMembresia.porcentaje / 100); // para volver al precio orginal de la membresia y que cuando se aplique el descuento seapraezca el precio de venta
-            m.cuotas = venta.cuotas;
+          const venta = ventas
+            .filter(v => v.membresia.id === m.id)
+            .sort((a, b) => b.id - a.id)[0]; // ordeno de mayor a menor por id y me quedo con la primera, para encontrar la ultima venta en el caso que haya repetidas
+          const { descuentoSocio, descuentoMembresia, precio } = venta;
+          m.descuento = descuentoMembresia;
+          if (venta.tieneCuotasImpagas()) {
+            if (m.nroCuotas > 1) {
+              m.cuotas = venta.cuotas;
+              m.precio = venta.getDescuento().aumentarPrecio(precio);
+            }
           }
         });
       }
@@ -107,56 +114,19 @@ export class ComprasComponent implements OnInit {
     );
   }
 
-  descuentoSocio(membresia) {
-    if (!membresia || ! this.socio.descuento) {
-      return null;
-    }
-    const descuento: Descuento = membresia.descuentosDisponibles.find(
-      d => d.tipo === "socio" && d.id === this.socio.descuento.id
-    );
-    let precio = 0;
-    if (!descuento) {
-      return null;
-    }
-    if (!membresia.descuento) {
-      precio = (membresia.precio * descuento.porcentaje) / 100;
-      return { descuento: descuento, precio: precio };
-    }
-    if (
-      descuento.aplicableEnConjunto ||
-      membresia.descuento.aplicableEnConjunto
-    ) {
-      const precioConDescuentoMembresia =
-        membresia.precio -
-        (membresia.precio * membresia.descuento.porcentaje) / 100;
-      precio = (precioConDescuentoMembresia * descuento.porcentaje) / 100;
-    } else {
-      precio = (membresia.precio * descuento.porcentaje) / 100;
-    }
-    return { descuento: descuento, precio: precio };
+  getDescuentoSocio(membresia) {
+    return membresia.getDescuentoSocio(this.socio);
   }
 
-  descuentoMembresia(membresia) {
-    return membresia.descuento
-      ? (membresia.precio * membresia.descuento.porcentaje) / 100
-      : 0;
+  getRebajaDescuentoSocio(membresia: Membresia) {
+    return membresia.getPrecioConDescuentosConDetalle(this.socio).rebajaSocio;
   }
-
+  getRebajaDescuentoMembresia(membresia: Membresia) {
+    return membresia.getPrecioConDescuentosConDetalle(this.socio)
+      .rebajaMembresia;
+  }
   calcularTotalParcial(membresia) {
-    const descuentoMembresia = this.descuentoMembresia(membresia);
-    const descuentoSocio = this.descuentoSocio(membresia)
-      ? this.descuentoSocio(membresia).precio
-      : 0;
-    return membresia.precio - descuentoMembresia - descuentoSocio;
-  }
-
-  membresiaConDescuento(membresia) {
-    return membresia.descuento !== null;
-  }
-
-  calcularPrecioConDescuento(membresia) {
-    const descuentoMembresia = this.descuentoMembresia(membresia);
-    return membresia.precio - descuentoMembresia;
+    return membresia.getPrecioConDescuentos(this.socio);
   }
 
   tipoDescuento(membresia: Membresia) {

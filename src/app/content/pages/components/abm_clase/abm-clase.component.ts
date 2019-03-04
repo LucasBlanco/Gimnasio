@@ -1,9 +1,17 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectorRef,
+  OnChanges
+} from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 import { HttpServiceProfesor } from "../../../services/httpServiceProfesor";
 import { ABM } from "../abm/abm";
 import { Clase } from "../../../models/clase";
 import { HttpServiceClase } from "../../../services/httpServiceClase";
+import { Fecha } from "../../../models/fecha";
+import { NgOnChangesFeature } from "@angular/core/src/render3";
 
 @Component({
   selector: "m-abm-clase",
@@ -21,19 +29,25 @@ import { HttpServiceClase } from "../../../services/httpServiceClase";
       <m-tabla-clase
         (modificar)="cargarDatosModificacion($event)"
         (baja)="realizarBaja($event)"
+        (filtrarClases)="traerClases($event)"
         [datos]="datos"
       ></m-tabla-clase>
     </div>
   `
 })
 export class AbmClasesComponent extends ABM {
-  datos: Array<Clase> = [];
-  datoSeleccionado: Clase;
+  clases: Clase[];
 
   constructor(
     public activatedRouter: ActivatedRoute,
     public claseSrv: HttpServiceClase
   ) {
-    super(activatedRouter, claseSrv);
+    super(activatedRouter, claseSrv, false, null, null, () =>
+      claseSrv.traerTodos(new Fecha().add(-7, "days").back, new Fecha().back)
+    );
+  }
+
+  traerClases(desde, hasta) {
+    this.claseSrv.traerTodos(desde, hasta);
   }
 }

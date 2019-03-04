@@ -24,7 +24,7 @@ export class CajaComponent implements OnInit, OnDestroy {
   tipo: string;
   verIngresos: Boolean = false;
   verMovimientos: Boolean = false;
-  movimientos: Array<Caja> = [new CajaBuilder().empty()];
+  movimientos: Array<Caja> = [CajaBuilder.empty()];
   subscription;
 
   constructor(

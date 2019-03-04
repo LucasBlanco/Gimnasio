@@ -10,17 +10,17 @@ import {
   ViewChild,
   ChangeDetectorRef,
   OnDestroy
-} from '@angular/core';
-import { FileUploadModalComponent } from '../file-upload/file-upload-modal.component';
-import * as $ from 'jquery';
-import 'datatables.net';
-import 'datatables.net-bs4';
-import 'datatables.net-responsive-dt';
-import 'datatables.net-buttons-dt';
+} from "@angular/core";
+import { FileUploadModalComponent } from "../file-upload/file-upload-modal.component";
+import * as $ from "jquery";
+import "datatables.net";
+import "datatables.net-bs4";
+import "datatables.net-responsive-dt";
+import "datatables.net-buttons-dt";
 
 @Component({
-  selector: 'm-tabla',
-  templateUrl: './tabla.component.html'
+  selector: "m-tabla",
+  templateUrl: "./tabla.component.html"
 })
 export class TablaComponent
   implements OnChanges, OnInit, AfterViewInit, OnDestroy {
@@ -49,29 +49,29 @@ export class TablaComponent
     columnDefs: [],
     responsive: !0,
     language: {
-      sProcessing: 'Procesando...',
-      sLengthMenu: 'Mostrar _MENU_ registros',
-      sZeroRecords: 'No se encontraron resultados',
-      sEmptyTable: 'Ningún dato disponible en esta tabla',
-      sInfo: 'Mostrando del _START_ al _END_ de  _TOTAL_ ',
-      sInfoEmpty: '',
-      sInfoFiltered: '(filtrado de un total de _MAX_ registros)',
-      sInfoPostFix: '',
-      sSearch: 'Buscar:',
-      sUrl: '',
-      sInfoThousands: ',',
-      sLoadingRecords: 'Cargando...',
+      sProcessing: "Procesando...",
+      sLengthMenu: "Mostrar _MENU_ registros",
+      sZeroRecords: "No se encontraron resultados",
+      sEmptyTable: "Ningún dato disponible en esta tabla",
+      sInfo: "Mostrando del _START_ al _END_ de  _TOTAL_ ",
+      sInfoEmpty: "",
+      sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+      sInfoPostFix: "",
+      sSearch: "Buscar:",
+      sUrl: "",
+      sInfoThousands: ",",
+      sLoadingRecords: "Cargando...",
       oPaginate: {
-        sFirst: '<<',
-        sLast: '>>',
-        sNext: '>',
-        sPrevious: '<'
+        sFirst: "<<",
+        sLast: ">>",
+        sNext: ">",
+        sPrevious: "<"
       },
       oAria: {
         sSortAscending:
-          ': Activar para ordenar la columna de manera ascendente',
+          ": Activar para ordenar la columna de manera ascendente",
         sSortDescending:
-          ': Activar para ordenar la columna de manera descendente'
+          ": Activar para ordenar la columna de manera descendente"
       }
     }
   };
@@ -80,10 +80,12 @@ export class TablaComponent
   constructor(private chRef: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
+    // tslint:disable-next-line:no-unused-expression
+    this.tabla && this.tabla.clear();
     let priority = 0;
     this.iniciarOptions();
     if (this.checked) {
-      this.datos['checked'] = (this.datos as any).checked || false;
+      this.datos["checked"] = (this.datos as any).checked || false;
     }
     let offset = 0;
     if (this.checked) {
@@ -103,41 +105,40 @@ export class TablaComponent
       offset += 1;
     }
     this.nombreColumnas.forEach((n, i) => {
-      if (n.includes('*')) {
+      if (n.includes("*")) {
         this.options.columnDefs.push({
           responsivePriority: ++priority,
           targets: i + offset
         });
       }
-      if (!n.includes('/')) {
+      if (!n.includes("/")) {
         this.options.columnDefs.push({
           searchable: false,
           targets: i + offset
         });
       }
-      if (n.includes('<input>')) {
+      if (n.includes("<input>")) {
         this.inputs[this.valorColumnas[i]] = {
-          tipo: typeof this.valorColumnas[i] === 'string' ? 'text' : 'number'
+          tipo: typeof this.valorColumnas[i] === "string" ? "text" : "number"
         };
       }
     });
     this.columnas = this.nombreColumnas.map(n =>
       n
-        .replace('*', '')
-        .replace('/', '')
-        .replace('<input>', '')
+        .replace("*", "")
+        .replace("/", "")
+        .replace("<input>", "")
     );
 
-    if (($.fn as any).DataTable.isDataTable('#m_table_1')) {
+    if (($.fn as any).DataTable.isDataTable("#m_table_1")) {
       this.tabla.destroy();
     }
     if (this.hayAcciones()) {
       this.options.columnDefs.push({ responsivePriority: 0, targets: -1 });
     }
-    console.log('tablaOptions', this.options);
     this.chRef.detectChanges();
 
-    this.tabla = ($('#m_table_1') as any).DataTable(this.options);
+    this.tabla = ($("#m_table_1") as any).DataTable(this.options);
   }
 
   ngOnInit() {
@@ -161,36 +162,36 @@ export class TablaComponent
       columnDefs: [],
       responsive: !0,
       language: {
-        sProcessing: 'Procesando...',
-        sLengthMenu: 'Mostrar _MENU_ registros',
-        sZeroRecords: 'No se encontraron resultados',
-        sEmptyTable: 'Ningún dato disponible en esta tabla',
-        sInfo: 'Mostrando del _START_ al _END_ de  _TOTAL_ ',
-        sInfoEmpty: '',
-        sInfoFiltered: '(filtrado de un total de _MAX_ registros)',
-        sInfoPostFix: '',
-        sSearch: 'Buscar:',
-        sUrl: '',
-        sInfoThousands: ',',
-        sLoadingRecords: 'Cargando...',
+        sProcessing: "Procesando...",
+        sLengthMenu: "Mostrar _MENU_ registros",
+        sZeroRecords: "No se encontraron resultados",
+        sEmptyTable: "Ningún dato disponible en esta tabla",
+        sInfo: "Mostrando del _START_ al _END_ de  _TOTAL_ ",
+        sInfoEmpty: "",
+        sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+        sInfoPostFix: "",
+        sSearch: "Buscar:",
+        sUrl: "",
+        sInfoThousands: ",",
+        sLoadingRecords: "Cargando...",
         oPaginate: {
-          sFirst: '<<',
-          sLast: '>>',
-          sNext: '>',
-          sPrevious: '<'
+          sFirst: "<<",
+          sLast: ">>",
+          sNext: ">",
+          sPrevious: "<"
         },
         oAria: {
           sSortAscending:
-            ': Activar para ordenar la columna de manera ascendente',
+            ": Activar para ordenar la columna de manera ascendente",
           sSortDescending:
-            ': Activar para ordenar la columna de manera descendente'
+            ": Activar para ordenar la columna de manera descendente"
         }
       }
     };
   };
 
   expandirImagen(imagen) {
-      this.imagenExpandida = imagen
+    this.imagenExpandida = imagen;
     this.modalImg.show();
   }
 }

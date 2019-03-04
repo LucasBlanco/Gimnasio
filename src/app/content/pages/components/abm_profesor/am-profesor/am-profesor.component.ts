@@ -10,8 +10,7 @@ import { Descuento } from '../../../../models/descuento';
 export class AMProfesoresComponent implements OnChanges {
 
 	profesor: Profesor
-	ProfesorBuilder = new ProfesorBuilder
-	@Input() profesorAModificar: Profesor = this.ProfesorBuilder.empty()
+	@Input() profesorAModificar: Profesor = ProfesorBuilder.empty()
 	@Input() editando: boolean = false
 	@Output('alta') altaEmitter = new EventEmitter<Profesor>()
 	@Output('modificar') modificacionEmitter = new EventEmitter<Profesor>()
@@ -20,11 +19,11 @@ export class AMProfesoresComponent implements OnChanges {
 	constructor() { }
 
 	ngOnChanges(changes: SimpleChanges) {
-		this.profesor = (this.editando) ? this.profesorAModificar : this.ProfesorBuilder.empty()
+		this.profesor = (this.editando) ? this.profesorAModificar : ProfesorBuilder.empty()
 	}
 
 	borrarProfesor() {
-		this.profesor = this.ProfesorBuilder.empty()
+		this.profesor = ProfesorBuilder.empty()
 	}
 
 	irALaTabla() {

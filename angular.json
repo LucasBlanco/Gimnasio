@@ -70,6 +70,7 @@
           "configurations": {
             "production": {
               "browserTarget": "default:build:production"
+              
             }
           }
         },

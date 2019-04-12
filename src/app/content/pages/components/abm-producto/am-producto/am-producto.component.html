@@ -3,7 +3,7 @@
     <div class="m-portlet__head-caption">
       <div class="m-portlet__head-title">
         <span class="m-portlet__head-icon">
-          <i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+          <i style="font-size: 2.2rem;" class="la la-coffee"></i>
         </span>
         <h3 class="m-portlet__head-text">
           {{ editando ? "Modificar producto" : "Alta de producto" }}
@@ -131,9 +131,9 @@
         <div class="col-md-6">
           <label>* Imagen:</label>
           <m-file-upload
-			(fileChange)="producto.imagen = $event"
-			[defaultFile]="producto.imagen"
-			[fallbackFile]="getProductImg()"
+            (fileChange)="producto.imagen = $event"
+            [defaultFile]="producto.imagen"
+            [fallbackFile]="getProductImg()"
           ></m-file-upload>
         </div>
         <!--<div class="col-md-6">

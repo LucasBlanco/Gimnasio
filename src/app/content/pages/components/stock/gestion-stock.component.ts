@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HttpServiceProducto } from "../../../services/httpServiceProducto";
 import { HttpServiceStock } from "../../../services/httpServiceStock";
 import { CompraProducto } from "../../../models/compraProducto";
+import { pesosPipe } from "../shared-components/tabla/pipesTabla";
 
 @Component({
   selector: "m-gestion-stock",
@@ -12,11 +13,15 @@ import { CompraProducto } from "../../../models/compraProducto";
 export class GestionStockComponent implements OnInit {
   productos: Array<Producto> = [];
   transaccion: CompraProducto = new CompraProducto();
+  pesosPipe;
+
   constructor(
     public activatedRouter: ActivatedRoute,
     public productosSrv: HttpServiceProducto,
     public stockSrv: HttpServiceStock
-  ) {}
+  ) {
+    this.pesosPipe = pesosPipe;
+  }
 
   ngOnInit() {
     this.productosSrv.getSubscription().subscribe(datos => {
@@ -68,8 +73,6 @@ export class GestionStockComponent implements OnInit {
     );
   }
   cantidadAVenderMayorAStock() {
-	return this.transaccion.productos.some(
-		p => p.stock < p.cantidad
-	  ); 
+    return this.transaccion.productos.some(p => p.stock < p.cantidad);
   }
 }

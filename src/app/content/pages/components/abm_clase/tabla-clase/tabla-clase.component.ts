@@ -1,5 +1,12 @@
-import { Component, OnChanges, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnChanges,
+  Output,
+  EventEmitter,
+  OnInit
+} from "@angular/core";
 import { Tabla } from "../../abm/tabla";
+import { joinPipe } from "../../shared-components/tabla/pipesTabla";
 
 @Component({
   selector: "m-tabla-clase",
@@ -9,7 +16,7 @@ import { Tabla } from "../../abm/tabla";
         <div class="m-portlet__head-caption">
           <div class="m-portlet__head-title">
             <span class="m-portlet__head-icon">
-              <i style="font-size: 2.2rem;" class="flaticon-edit"></i>
+              <i style="font-size: 2.2rem;" class="flaticon2-muscle"></i>
             </span>
             <h3 class="m-portlet__head-text">
               Tabla de clases
@@ -51,29 +58,37 @@ import { Tabla } from "../../abm/tabla";
             'Entrada desde',
             'Entrada hasta',
             'Servicio',
-            'Profesores'
+            'Profesores',
+            'Cant alumnos'
           ]"
           [valorColumnas]="[
-            'fechaMostrar',
+            'fecha.front',
             'horaInicio',
             'horaFin',
             'entradaDesde',
             'entradaHasta',
-            'servicioMostrar',
-            'profesoresMostrar'
+            'servicio.nombre',
+            'profesores',
+            'alumnos.length'
           ]"
-          [datos]="datosMapeados"
+          [datos]="datos"
+          [pipes]="{ profesores: [joinPipe('nombre')] }"
           [acciones]="acciones"
         ></m-tabla>
       </div>
     </div>
   `
 })
-export class TablaClasesComponent extends Tabla implements OnChanges {
+export class TablaClasesComponent extends Tabla implements OnChanges, OnInit {
   datosMapeados;
+  joinPipe;
   @Output() filtrarClases = new EventEmitter();
 
+  ngOnInit() {
+    this.joinPipe = joinPipe;
+  }
   ngOnChanges() {
+    console.log("DATOS", this.datos);
     this.datosMapeados = this.getClases();
   }
 
@@ -82,14 +97,9 @@ export class TablaClasesComponent extends Tabla implements OnChanges {
   }
 
   getClases() {
-    return this.datos.map(({ profesores, servicio, fecha, ...resto }) => ({
-      servicio,
-      profesores,
-      fecha,
-      profesoresMostrar: profesores.map(p => p.nombre).join(", "),
-      servicioMostrar: servicio.nombre,
-      fechaMostrar: fecha.front,
-      ...resto
+    return this.datos.map(d => ({
+      profesoresMostrar: d.profesores.map(p => p.nombre).join(","),
+      ...d
     }));
   }
 }

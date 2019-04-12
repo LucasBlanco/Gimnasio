@@ -14,6 +14,7 @@ import { Select } from "../../../../models/generales";
 import { Servicio } from "../../../../models/servicio";
 import { Venta, Cuota } from "../../../../models/venta";
 import { Descuento, DescuentoBuilder } from "../../../../models/descuento";
+import { Fecha } from "../../../../models/fecha";
 
 @Component({
   selector: "m-membresia",
@@ -142,7 +143,7 @@ export class MembresiaComponent implements OnInit, OnChanges {
     this.membresiaTieneCuotas() && this.cuotaAPagar() !== undefined;
 
   estadoCuotaAPagar() {
-    return moment(this.cuotaAPagar().fechaVto).isSameOrBefore(moment())
+    return this.cuotaAPagar().fechaVto.isSameOrBefore(new Fecha())
       ? "m-badge--danger"
       : "m-badge--info";
   }

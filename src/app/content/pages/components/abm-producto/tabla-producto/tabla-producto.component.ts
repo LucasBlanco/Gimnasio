@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { Tabla } from '../../abm/tabla';
+import { Component } from "@angular/core";
+import { Tabla } from "../../abm/tabla";
 
 @Component({
-  selector: 'm-tabla-producto',
+  selector: "m-tabla-producto",
   template: `
     <div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
       <div class="m-portlet__head">
         <div class="m-portlet__head-caption">
           <div class="m-portlet__head-title">
             <span class="m-portlet__head-icon">
-              <i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+              <i style="font-size: 2.2rem;" class="la la-coffee"></i>
             </span>
             <h3 class="m-portlet__head-text">
-              Tabla de servicios
+              Tabla de productos
             </h3>
           </div>
         </div>

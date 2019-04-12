@@ -10,7 +10,7 @@ import { Tabla } from '../../abm/tabla';
 				<div class="m-portlet__head-caption">
 					<div class="m-portlet__head-title">
         			<span class="m-portlet__head-icon">
-          				<i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+          				<i style="font-size: 2.2rem;" class="flaticon2-kettlebell"></i>
         			</span>
 						<h3 class="m-portlet__head-text">
 							Tabla de servicios

@@ -44,17 +44,12 @@ export abstract class ABM implements OnDestroy, OnInit {
       dataServiceSub ||
       (srv.hasOwnProperty("getSubscription") && srv.getSubscription());
   }
+
   ngOnInit() {
-    if (this.datosEnMemoria) {
-      this.subscription = this.dataServiceSubscription.subscribe(datos => {
-        this.datos = datos;
-      });
-    } else {
-      this.subscription = this.dataServiceSubscription.subscribe(datos => {
-        this.datos = datos;
-      });
-      this.traerTodos();
-    }
+    this.subscription = this.dataServiceSubscription.subscribe(datos => {
+      this.datos = datos;
+    });
+    !this.datosEnMemoria && this.traerTodos();
   }
 
   realizarAlta(dato) {
@@ -65,11 +60,6 @@ export abstract class ABM implements OnDestroy, OnInit {
     this.datoSeleccionado = dato;
     this.editando = true;
     this.mostrarAlta = true;
-    /*this.traerUno(dato).then(_dato => {
-      this.datoSeleccionado = _dato;
-      this.editando = true;
-      this.mostrarAlta = true;
-    });*/
   }
 
   realizarModificacion(dato) {

@@ -17,7 +17,7 @@ import * as objectPath from "object-path";
 import { TranslateService } from "@ngx-translate/core";
 import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import * as JWT from "jwt-decode";
-import {environment} from "../../../../../environments/environment"
+import { environment } from "../../../../../environments/environment";
 
 @Component({
   selector: "m-login",
@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         const token = JSON.parse(response._body).data.token;
         const permisos = JWT(token).permisos;
         const user = JWT(token).user_id;
+        localStorage.setItem("token", "");
         localStorage.setItem("username", JSON.stringify(usuario));
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("token", token);

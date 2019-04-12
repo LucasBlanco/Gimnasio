@@ -1,13 +1,14 @@
 import { Descuento, DescuentoBuilder, DescuentoBack } from "./descuento";
 import { Venta, VentaBack, VentaBuilder } from "./venta";
 import { IBuilder } from "./builder";
+import { Fecha } from "./fecha";
 
 export class Socio {
   constructor(
     public nombre: string,
     public apellido: string,
     public descuento: Descuento,
-    public fechaNacimiento: any,
+    public fechaNacimiento: Fecha,
     public dni: number,
     public telefono: string,
     public direccion: string,
@@ -58,7 +59,7 @@ export class SocioBuilder {
       sb.nombre,
       sb.apellido,
       sb.descuento && DescuentoBuilder.fromBackEnd(sb.descuento),
-      sb.fecha_nacimiento,
+      new Fecha(sb.fecha_nacimiento),
       sb.dni,
       sb.celular,
       sb.domicilio,
@@ -75,7 +76,7 @@ export class SocioBuilder {
       sf.nombre,
       sf.apellido,
       null,
-      sf.fechaNacimiento,
+      sf.fechaNacimiento.back,
       sf.dni,
       sf.telefono,
       sf.direccion,

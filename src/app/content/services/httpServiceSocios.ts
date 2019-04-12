@@ -30,7 +30,7 @@ export class HttpServiceSocios {
     });
   }
 
-  public getSubscription = (): Observable<any> => {
+  public getSubscription = (): Observable<Socio[]> => {
     return this.subjectSocios.asObservable();
   };
 
@@ -110,7 +110,7 @@ export class HttpServiceSocios {
           "Hubo un error al traer los socios. Intente nuevamente."
         )
       ),
-      socios => socios.map(socio => SocioBuilder.fromBackEnd(socio))
+      socios => socios.map(SocioBuilder.fromBackEnd)
     );
   };
 
@@ -122,7 +122,7 @@ export class HttpServiceSocios {
           "Hubo un error al traer el socio. Intente nuevamente."
         )
       ),
-      _socio => SocioBuilder.fromBackEnd(_socio)
+      SocioBuilder.fromBackEnd
     );
   };
 
@@ -153,8 +153,10 @@ export class HttpServiceSocios {
       )
       .then((ventas: VentaBack[]) => {
         const socio = this.socios.find(s => s.id === idSocio);
-        const nuevasVentas = ventas.map(v => VentaBuilder.fromBackEnd(v))
-        socio.ventas = socio.ventas.filter(venta => !nuevasVentas.some(v => venta.id === v.id)); // Elimino las ventas repetidas 
+        const nuevasVentas = ventas.map(VentaBuilder.fromBackEnd);
+        socio.ventas = socio.ventas.filter(
+          venta => !nuevasVentas.some(v => venta.id === v.id)
+        ); // Elimino las ventas repetidas
         socio.ventas = [...socio.ventas, ...nuevasVentas];
         this.updateSociosObservers();
       });
@@ -168,12 +170,6 @@ export class HttpServiceSocios {
         "La entrada fue registrada exitosamente",
         "Hubo un error al registrar la entrada. Intente nuevamente."
       )
-    );
-  }
-
-  public traerVencimientos() {
-    return this.traerTodos().then(socios =>
-      socios.map(socio => ({ socio, fecha: "2018-10-20" }))
     );
   }
 
@@ -211,5 +207,14 @@ export class HttpServiceSocios {
         cuota.pagada = false;
         this.updateSociosObservers();
       });
+  }
+
+  public getProximoId() {
+    if (this.socios.length > 0) {
+      const ultimo = this.socios.sort((a, b) => b.id - a.id).pop();
+      return ultimo.id + 1;
+    } else {
+      return null;
+    }
   }
 }

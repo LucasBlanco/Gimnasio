@@ -1,3 +1,5 @@
+import { Fecha } from "./fecha";
+
 export class Profesor {
   constructor(
     public nombre: string,
@@ -6,7 +8,7 @@ export class Profesor {
     public telefono: string,
     public domicilio: string,
     public sueldo: number,
-    public diaCobro: any,
+    public diaCobro: number,
     public intervaloCobro: number,
     public id?: number
   ) {}

@@ -22,8 +22,8 @@ class ClaseBack {
   constructor(
     public desde,
     public hasta,
-    public entrada_desde,
-    public entrada_hasta,
+    public entradaDesde,
+    public entradaHasta,
     public profesores: ProfesorBack[],
     public servicio: ServicioBack,
     public alumnos: SocioBack[],
@@ -38,7 +38,9 @@ export class ClaseBuilder {
     return new Clase(null, null, null, null, [], null, [], new Fecha());
   }
 
-  static fromBackEnd(c: ClaseBack) {
+  static fromBackEnd(
+    c: ClaseBack & { entrada_desde: string; entrada_hasta: string }
+  ) {
     return new Clase(
       c.desde,
       c.hasta,

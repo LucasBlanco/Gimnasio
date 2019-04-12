@@ -3,7 +3,7 @@
     <div class="m-portlet__head-caption">
       <div class="m-portlet__head-title">
         <span class="m-portlet__head-icon">
-          <i style="font-size: 2.2rem;" class="flaticon-kettlebell"></i>
+          <i style="font-size: 2.2rem;" class="la la-dropbox"></i>
         </span>
         <h3 class="m-portlet__head-text">Gestion de stock</h3>
       </div>
@@ -27,6 +27,10 @@
             'stock',
             'cantidad'
           ]"
+          [pipes]="{
+            precioCompra: [pesosPipe],
+            precioVenta: [pesosPipe]
+          }"
           [datos]="productos"
           [checked]="true"
           [imagen]="['imagen', '60px']"

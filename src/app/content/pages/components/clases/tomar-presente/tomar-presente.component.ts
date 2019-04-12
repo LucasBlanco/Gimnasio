@@ -7,21 +7,12 @@ import { Clase } from "../../../../models/clase";
 @Component({
   selector: "m-tomar-presente",
   template: `
-    <div class="m-portlet m-portlet--success m-portlet--head-solid-bg">
-      <div class="m-portlet__head">
-        <div class="m-portlet__head-caption">
-          <div class="m-portlet__head-title">
-            <span class="m-portlet__head-icon">
-              <i style="font-size: 2.2rem;" class="flaticon-edit"></i>
-            </span>
-            <h3 class="m-portlet__head-text">
-              Tomar asistencia
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="m-portlet__body">
+    <m-portlet-container>
+      <m-portlet-header
+        [title]="'Tomar asistencia'"
+        [icon]="'flaticon-edit'"
+      ></m-portlet-header>
+      <m-portlet-body>
         <div *ngIf="mostrarClases">
           <m-lista-clases
             [clases]="clases"
@@ -34,8 +25,8 @@ import { Clase } from "../../../../models/clase";
             [asistentes]="asistentes"
           ></m-lista-asistentes>
         </div>
-      </div>
-    </div>
+      </m-portlet-body>
+    </m-portlet-container>
   `
 })
 export class TomarPresenteComponent implements OnInit {

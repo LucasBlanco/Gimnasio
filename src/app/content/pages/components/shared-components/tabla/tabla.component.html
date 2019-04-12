@@ -1,6 +1,6 @@
 <table
   class="table table-striped- table-bordered table-hover table-checkable"
-  id="m_table_1"
+  [id]="idTabla"
 >
   <thead>
     <tr>
@@ -49,17 +49,17 @@
 
       <td
         *ngFor="let fila of valorColumnas; let i = index"
-        [ngClass]="estilos[fila] ? estilos[fila](dato[fila]) : ''"
+        [ngClass]="getDatoAMostrar(dato, fila).clase"
       >
         <!--Badge false-->
-        <ng-container *ngIf="dato[fila] === false">
+        <ng-container *ngIf="getDato(dato, fila) === false">
           <span
             class="m-badge  m-badge--danger m-badge--wide font-weight-normal"
             >No</span
           >
         </ng-container>
         <!--Badge true-->
-        <ng-container *ngIf="dato[fila] === true">
+        <ng-container *ngIf="getDato(dato, fila) === true">
           <span
             class="m-badge m-badge--success m-badge--wide font-weight-normal"
             >Si &nbsp;</span
@@ -70,14 +70,19 @@
             [type]="inputs[fila].tipo"
             class="form-control m-input"
             [name]="'input' + i"
-            [(ngModel)]="dato[fila]"
+            [ngModel]="getDato(dato, fila)"
+            (ngModelChange)="setDato(dato, fila, $event)"
           />
         </ng-container>
         <!--Fila-->
         <ng-container
-          *ngIf="dato[fila] != false && dato[fila] != true && !inputs[fila]"
+          *ngIf="
+            getDato(dato, fila) != false &&
+            getDato(dato, fila) != true &&
+            !inputs[fila]
+          "
         >
-          {{ dato[fila] }}
+          {{ getDatoAMostrar(dato, fila).valor }}
         </ng-container>
       </td>
       <td *ngIf="hayAcciones()">

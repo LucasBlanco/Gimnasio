@@ -24,7 +24,7 @@ export class CajaComponent implements OnInit, OnDestroy {
   tipo: string;
   verIngresos: Boolean = false;
   verMovimientos: Boolean = false;
-  movimientos: Array<Caja> = [CajaBuilder.empty()];
+  movimientos: Array<Caja> = [];
   subscription;
 
   constructor(
@@ -38,7 +38,10 @@ export class CajaComponent implements OnInit, OnDestroy {
       this.verMovimientos = params["view"] === "movimientos";
     });
     this.subscription = this.cajaSrv.getSubscription().subscribe(datos => {
-      this.movimientos = datos;
+      this.movimientos = datos.map(({ fecha, ...resto }) => ({
+        fecha: fecha.front,
+        ...resto
+      }));
     });
   }
 

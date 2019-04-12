@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ip: "http://localhost:8000"
+  ip: "http://gym.test:8000"
 };

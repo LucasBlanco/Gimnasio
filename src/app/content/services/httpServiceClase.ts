@@ -75,7 +75,7 @@ export class HttpServiceClase {
       this.httpService.post(
         new Modelos.Post(
           "/clase/all",
-          { fechaDesde: fechaDesde, fechaHasta: fechaHasta },
+          { fechaDesde, fechaHasta },
           null,
           "Hubo un error al traer los clases. Intente nuevamente."
         )
@@ -103,7 +103,7 @@ export class HttpServiceClase {
     return this.httpService.mapper(
       this.httpService.get(
         new Modelos.Get(
-          "/clase/enTranscurso",
+          "/clase/futuras",
           "Hubo un error al traer las clases. Intente nuevamente."
         )
       ),

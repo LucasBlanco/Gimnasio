@@ -40,4 +40,18 @@ export class Fecha {
     this.front = this.toFront(fecha);
     return this;
   }
+
+  isBefore(fecha: Fecha) {
+    return moment(this.back).isBefore(fecha.back);
+  }
+  isAfter(fecha: Fecha) {
+    return moment(this.back).isAfter(fecha.back);
+  }
+
+  isSameOrBefore(fecha: Fecha) {
+    return moment(this.back).isSameOrBefore(fecha.back);
+  }
+  isSameOrAfter(fecha: Fecha) {
+    return moment(this.back).isSameOrAfter(fecha.back);
+  }
 }

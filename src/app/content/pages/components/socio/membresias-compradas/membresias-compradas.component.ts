@@ -45,6 +45,9 @@ export class MembresiasCompradasComponent implements OnInit {
       this.ventas = this.socio.ventas || [];
       this.ventas.forEach(venta => {
         venta.membresia.descuento = venta.descuentoMembresia;
+        venta.membresia.descuentosDisponibles = venta.descuentoSocio
+          ? [venta.descuentoSocio]
+          : [];
         venta.membresia.precio = venta.precio;
         venta.membresia.precio = venta.membresia.getPrecioConAumento(
           this.socio

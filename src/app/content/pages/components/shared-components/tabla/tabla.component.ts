@@ -12,21 +12,18 @@ import {
   OnDestroy
 } from "@angular/core";
 import { FileUploadModalComponent } from "../file-upload/file-upload-modal.component";
-import * as $ from "jquery";
-import "datatables.net";
-import "datatables.net-bs4";
-import "datatables.net-responsive-dt";
-import "datatables.net-buttons-dt";
+
+import { toPipedValue } from "./pipesTabla";
+import { TablaDataTableBuilder } from "./tablaDataTable";
 
 @Component({
   selector: "m-tabla",
   templateUrl: "./tabla.component.html"
 })
 export class TablaComponent
-  implements OnChanges, OnInit, AfterViewInit, OnDestroy {
+  implements OnChanges, OnInit, OnDestroy, AfterViewInit {
   @Input() filtered: boolean = true; // Si la tabla contiene filtros
   @Input() datos: Array<any> = []; // Los datos que se mostraran en la tabla. Ejemplo: [{'name': Lucas, 'lastName': Blanco}]
-  @Input() estilos = {};
   @Input() nombreColumnas: Array<any>; // Los nombres ordenados de cada una de las columnas. Ejemplo: ['Nombre', 'Apellido']
   @Input() valorColumnas: Array<string>; // Los nombres de las variables de los datos, en el mismo orden que el nombre de la columna correspondiente. Ejemplo: ['name', 'lastName']
   @Input() acciones: Array<{
@@ -39,84 +36,44 @@ export class TablaComponent
   @Input() imagen: Array<string>;
   @Input() fallbackImagen: string;
   @Input() checked: boolean = false;
+  @Input() pipes = {};
   @Output() onCheck: EventEmitter<number> = new EventEmitter();
   @ViewChild(FileUploadModalComponent) modalImg;
   inputs = {};
   columnas;
   totales: Array<any> = [];
+  tablaBuilder;
   tabla;
-  options = {
-    columnDefs: [],
-    responsive: !0,
-    language: {
-      sProcessing: "Procesando...",
-      sLengthMenu: "Mostrar _MENU_ registros",
-      sZeroRecords: "No se encontraron resultados",
-      sEmptyTable: "Ningún dato disponible en esta tabla",
-      sInfo: "Mostrando del _START_ al _END_ de  _TOTAL_ ",
-      sInfoEmpty: "",
-      sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
-      sInfoPostFix: "",
-      sSearch: "Buscar:",
-      sUrl: "",
-      sInfoThousands: ",",
-      sLoadingRecords: "Cargando...",
-      oPaginate: {
-        sFirst: "<<",
-        sLast: ">>",
-        sNext: ">",
-        sPrevious: "<"
-      },
-      oAria: {
-        sSortAscending:
-          ": Activar para ordenar la columna de manera ascendente",
-        sSortDescending:
-          ": Activar para ordenar la columna de manera descendente"
-      }
-    }
-  };
+  idTabla;
+
   imagenExpandida: string = null;
 
-  constructor(private chRef: ChangeDetectorRef) {}
+  constructor(private chRef: ChangeDetectorRef) {
+    this.idTabla =
+      String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now()
+  }
 
   ngOnChanges(changes: SimpleChanges) {
-    // tslint:disable-next-line:no-unused-expression
-    this.tabla && this.tabla.clear();
-    let priority = 0;
-    this.iniciarOptions();
-    if (this.checked) {
-      this.datos["checked"] = (this.datos as any).checked || false;
+    if (
+      changes.datos &&
+      changes.datos.previousValue !== changes.datos.currentValue &&
+      this.tabla &&
+      this.tablaBuilder
+    ) {
+      this.tabla = this.tablaBuilder.createTable();
     }
-    let offset = 0;
-    if (this.checked) {
-      this.options.columnDefs.push({
-        responsivePriority: ++priority,
-        orderable: false,
-        targets: 0
-      });
-      offset += 1;
-    }
-    if (this.imagen) {
-      this.options.columnDefs.push({
-        responsivePriority: 20,
-        orderable: false,
-        targets: this.checked ? 1 : 0
-      });
-      offset += 1;
-    }
+  }
+
+  ngOnDestroy(): void {
+    this.tablaBuilder.destruirTabla();
+  }
+
+  emitOnCheck(dato) {
+    this.onCheck.emit(dato);
+  }
+
+  ngOnInit() {
     this.nombreColumnas.forEach((n, i) => {
-      if (n.includes("*")) {
-        this.options.columnDefs.push({
-          responsivePriority: ++priority,
-          targets: i + offset
-        });
-      }
-      if (!n.includes("/")) {
-        this.options.columnDefs.push({
-          searchable: false,
-          targets: i + offset
-        });
-      }
       if (n.includes("<input>")) {
         this.inputs[this.valorColumnas[i]] = {
           tipo: typeof this.valorColumnas[i] === "string" ? "text" : "number"
@@ -129,69 +86,64 @@ export class TablaComponent
         .replace("/", "")
         .replace("<input>", "")
     );
-
-    if (($.fn as any).DataTable.isDataTable("#m_table_1")) {
-      this.tabla.destroy();
-    }
-    if (this.hayAcciones()) {
-      this.options.columnDefs.push({ responsivePriority: 0, targets: -1 });
-    }
-    this.chRef.detectChanges();
-
-    this.tabla = ($("#m_table_1") as any).DataTable(this.options);
   }
 
-  ngOnInit() {
-    this.iniciarOptions();
+  crearTablaBuilder() {
+    this.tablaBuilder = new TablaDataTableBuilder(
+      this.chRef,
+      this.checked,
+      !!this.imagen,
+      this.acciones.length > 0,
+      this.nombreColumnas,
+      this.idTabla
+    );
   }
-  ngOnDestroy(): void {
-    this.tabla.destroy();
+  ngAfterViewInit() {
+    this.crearTablaBuilder();
+    this.tabla = this.tablaBuilder.createTable();
   }
-  emitOnCheck(dato) {
-    this.onCheck.emit(dato);
-  }
-
-  ngAfterViewInit() {}
 
   seleccionarTodos = bool => this.datos.forEach(dato => (dato.checked = bool));
 
   hayAcciones = () => this.acciones.length > 0;
 
-  iniciarOptions = () => {
-    this.options = {
-      columnDefs: [],
-      responsive: !0,
-      language: {
-        sProcessing: "Procesando...",
-        sLengthMenu: "Mostrar _MENU_ registros",
-        sZeroRecords: "No se encontraron resultados",
-        sEmptyTable: "Ningún dato disponible en esta tabla",
-        sInfo: "Mostrando del _START_ al _END_ de  _TOTAL_ ",
-        sInfoEmpty: "",
-        sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
-        sInfoPostFix: "",
-        sSearch: "Buscar:",
-        sUrl: "",
-        sInfoThousands: ",",
-        sLoadingRecords: "Cargando...",
-        oPaginate: {
-          sFirst: "<<",
-          sLast: ">>",
-          sNext: ">",
-          sPrevious: "<"
-        },
-        oAria: {
-          sSortAscending:
-            ": Activar para ordenar la columna de manera ascendente",
-          sSortDescending:
-            ": Activar para ordenar la columna de manera descendente"
-        }
-      }
-    };
-  };
-
   expandirImagen(imagen) {
     this.imagenExpandida = imagen;
     this.modalImg.show();
+  }
+
+  getProximoAnidamiento(objeto, propiedades) {
+    const arrayPropiedades = propiedades.split(".");
+    const primeraPropiedad = arrayPropiedades.shift();
+    const otrasPropiedades = arrayPropiedades.join(".");
+    return {
+      objeto: objeto[primeraPropiedad],
+      propiedades: otrasPropiedades
+    };
+  }
+
+  getDato(objeto, propiedades) {
+    if (propiedades.includes(".")) {
+      const proximo = this.getProximoAnidamiento(objeto, propiedades);
+      return this.getDato(proximo.objeto, proximo.propiedades);
+    }
+    return objeto[propiedades];
+  }
+
+  setDato(objeto, propiedades, valor) {
+    if (propiedades.split(".").length - 1 > 2) {
+      const proximo = this.getProximoAnidamiento(objeto, propiedades);
+      return this.setDato(proximo.objeto, proximo.propiedades, valor);
+    }
+    objeto[propiedades] = valor;
+  }
+
+  getDatoAMostrar(objeto, propiedades) {
+    const pipedValue = toPipedValue(this.getDato(objeto, propiedades));
+    const pipes = this.pipes[propiedades];
+    if (pipes) {
+      return pipes.reduce((resultado, pipe) => pipe(resultado), pipedValue);
+    }
+    return pipedValue;
   }
 }

@@ -16,6 +16,11 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { MembresiaComponent } from "./membresia/membresia.component";
 import { DatePickerComponent } from "./date-picker/date-picker.component";
 import { NgDatepickerModule } from "ng2-datepicker";
+import { PortletComponent } from "./portlet/portlet.component";
+import { PortletHeaderComponent } from "./portlet/portlet-header/portlet-header.component";
+import { PortletBodyComponent } from "./portlet/portlet-body/portlet-body.component";
+import { ModalComponent } from "./modal/modal.component";
+import { ListaComponent } from "./lista/lista.component";
 
 @NgModule({
   declarations: [
@@ -31,9 +36,15 @@ import { NgDatepickerModule } from "ng2-datepicker";
     PopoverComponent,
     TabsComponent,
     MembresiaComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    PortletComponent,
+    PortletHeaderComponent,
+    PortletBodyComponent,
+    ModalComponent,
+    ListaComponent
   ],
   imports: [FormsModule, CommonModule, NgxTypeaheadModule, NgDatepickerModule],
+
   exports: [
     TablaComponent,
     FormsModule,
@@ -47,7 +58,11 @@ import { NgDatepickerModule } from "ng2-datepicker";
     PopoverComponent,
     TabsComponent,
     MembresiaComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    PortletComponent,
+    PortletHeaderComponent,
+    PortletBodyComponent,
+    ListaComponent
   ]
 })
 export class SharedModule {}

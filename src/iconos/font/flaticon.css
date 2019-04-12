@@ -1,29 +1,29 @@
-	/*
+/*
   	Flaticon icon font: Flaticon
   	Creation date: 10/11/2018 02:21
   	*/
 
 @font-face {
-  font-family: "Flaticon";
-  src: url("./Flaticon.eot");
-  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
-       url("./Flaticon.woff") format("woff"),
-       url("./Flaticon.ttf") format("truetype"),
-       url("./Flaticon.svg#Flaticon") format("svg");
+  font-family: "Flaticon2";
+  src: url("./Flaticon2.eot");
+  src: url("./Flaticon2.eot?#iefix") format("embedded-opentype"),
+    url("./Flaticon2.woff") format("woff"),
+    url("./Flaticon2.ttf") format("truetype"),
+    url("./Flaticon2.svg#Flaticon2") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
-    font-family: "Flaticon";
-    src: url("./Flaticon.svg#Flaticon") format("svg");
+    font-family: "Flaticon2";
+    src: url("./Flaticon2.svg#Flaticon2") format("svg");
   }
 }
 
-[class^="flaticon-"]:before,
-[class*=" flaticon-"]:before {
-  font-family: Flaticon;
+[class^="flaticon2-"]:before,
+[class*=" flaticon2-"]:before {
+  font-family: Flaticon2;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -36,20 +36,54 @@
   font-smoothing: antialiased;
 }
 
-.flaticon-membership:before { content: "\f100"; }
-.flaticon-staff:before { content: "\f101"; }
-.flaticon-kettlebell:before { content: "\f102"; }
-.flaticon-heart:before { content: "\f103"; }
-.flaticon-spinning:before { content: "\f104"; }
-.flaticon-gym:before { content: "\f105"; }
-.flaticon-treadmill:before { content: "\f106"; }
-.flaticon-sneakers:before { content: "\f107"; }
-.flaticon-muscle:before { content: "\f108"; }
-.flaticon-calendar:before { content: "\f109"; }
-.flaticon-gymnastic-rings:before { content: "\f10a"; }
-.flaticon-clipboard:before { content: "\f10b"; }
-.flaticon-jump-rope:before { content: "\f10c"; }
-.flaticon-gym-1:before { content: "\f10d"; }
-.flaticon-hand-grip:before { content: "\f10e"; }
-.flaticon-tag:before { content: "\f10f"; }
-.flaticon-barbell:before { content: "\f110"; }
+.flaticon2-membership:before {
+  content: "\f100";
+}
+.flaticon2-staff:before {
+  content: "\f101";
+}
+.flaticon2-kettlebell:before {
+  content: "\f102";
+}
+.flaticon2-heart:before {
+  content: "\f103";
+}
+.flaticon2-spinning:before {
+  content: "\f104";
+}
+.flaticon2-gym:before {
+  content: "\f105";
+}
+.flaticon2-treadmill:before {
+  content: "\f106";
+}
+.flaticon2-sneakers:before {
+  content: "\f107";
+}
+.flaticon2-muscle:before {
+  content: "\f108";
+}
+.flaticon2-calendar:before {
+  content: "\f109";
+}
+.flaticon2-gymnastic-rings:before {
+  content: "\f10a";
+}
+.flaticon2-clipboard:before {
+  content: "\f10b";
+}
+.flaticon2-jump-rope:before {
+  content: "\f10c";
+}
+.flaticon2-gym-1:before {
+  content: "\f10d";
+}
+.flaticon2-hand-grip:before {
+  content: "\f10e";
+}
+.flaticon2-tag:before {
+  content: "\f10f";
+}
+.flaticon2-barbell:before {
+  content: "\f110";
+}

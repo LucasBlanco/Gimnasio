@@ -488,7 +488,7 @@ export class MenuConfig implements ConfigModel {
             title: "Membresias",
             root: true,
             bullet: "dot",
-            icon: "flaticon-membership",
+            icon: "flaticon2-membership",
             submenu: [
               {
                 title: "Alta",
@@ -504,7 +504,7 @@ export class MenuConfig implements ConfigModel {
             title: "Servicios",
             root: true,
             bullet: "dot",
-            icon: "flaticon-kettlebell",
+            icon: "flaticon2-kettlebell",
             submenu: [
               {
                 title: "Alta",
@@ -520,7 +520,7 @@ export class MenuConfig implements ConfigModel {
             title: "Descuentos",
             root: true,
             bullet: "dot",
-            icon: "flaticon-tag",
+            icon: "flaticon2-tag",
             submenu: [
               {
                 title: "Alta",
@@ -536,7 +536,7 @@ export class MenuConfig implements ConfigModel {
             title: "Profesores",
             root: true,
             bullet: "dot",
-            icon: "flaticon-muscle",
+            icon: "flaticon-avatar",
             submenu: [
               {
                 title: "Alta",
@@ -568,7 +568,7 @@ export class MenuConfig implements ConfigModel {
             title: "Clases",
             root: true,
             bullet: "dot",
-            icon: "flaticon-muscle",
+            icon: "flaticon2-muscle",
             submenu: [
               {
                 title: "Alta",
@@ -585,7 +585,7 @@ export class MenuConfig implements ConfigModel {
             title: "Caja",
             root: true,
             bullet: "dot",
-            icon: "flaticon-bag",
+            icon: "la la-money",
             submenu: [
               {
                 title: "Ingresos/egresos",
